@@ -34,7 +34,7 @@
 
         <!-- Desktop Menu -->
         <div class="hidden lg:flex items-center space-x-13 text-sm text-[13px] uppercase tracking-wider">
-            <a href="#" class="nav-link text-[#D5C578] hover:text-white transition duration-300">Home</a>
+            <a href="{{ route('welcome') }}" class="nav-link text-[#D5C578] hover:text-white transition duration-300">Home</a>
 
             <div class="relative" x-data="{ open: false }" @mouseenter="open = true" @mouseleave="open = false">
                 <button class="flex items-center text-gray-300 hover:text-[#D5C578] transition duration-300 uppercase">
@@ -47,9 +47,8 @@
 
                 <div x-show="open" x-transition class="absolute mt-2 w-48 bg-[#254D43] rounded-md shadow-xl z-20"
                     class="absolute left-0 mt-2 w-40 bg-[#254D43] shadow-md rounded-md z-10">
-                    <a href="#" class="block px-4 py-2 text-sm text-gray-200 hover:bg-white/10">Sejarah</a>
-                    <a href="#" class="block px-4 py-2 text-sm text-gray-200 hover:bg-white/10">Profil Wilayah
-                        Desa</a>
+                    <a href="{{ route('sejarah-desa') }}" class="block px-4 py-2 text-sm text-gray-200 hover:bg-white/10">Sejarah</a>
+                    <a href="{{ route('tata-kelola') }}" class="block px-4 py-2 text-sm text-gray-200 hover:bg-white/10">Tata Kelola Desa</a>
                 </div>
             </div>
 
@@ -75,7 +74,7 @@
 
             <a href="#" class="nav-link text-gray-300 hover:text-[#D5C578] transition duration-300">Dokumen</a>
             <a href="#" class="nav-link text-gray-300 hover:text-[#D5C578] transition duration-300">Galeri</a>
-            <a href="#" class="nav-link text-gray-300 hover:text-[#D5C578] transition duration-300">Berita</a>
+            <a href="{{ route('berita.index') }}" class="nav-link text-gray-300 hover:text-[#D5C578] transition duration-300">Berita</a>
             <a href="#" class="nav-link text-gray-300 hover:text-[#D5C578] transition duration-300">Belanja</a>
         </div>
 
@@ -104,7 +103,7 @@
         class="lg:hidden bg-[#1A3A31] absolute w-full shadow-xl" style="display: none;">
 
         <div class="flex flex-col px-4 pt-2 pb-4 space-y-1">
-            <a href="#"
+            <a href="{{ route('welcome') }}"
                 class="py-2 px-3 text-base text-gray-200 hover:text-white hover:bg-white/5 rounded-md">Home</a>
 
             <!-- Mobile Accordion: Profil Desa -->
@@ -119,15 +118,11 @@
                     </svg>
                 </button>
                 <div x-show="activeAccordion === 'profil'" class="pl-4 mt-1 space-y-1">
-                    <a href="#"
+                    <a href="{{ route('sejarah-desa') }}"
                         class="block py-2 px-3 text-sm text-gray-300 hover:text-white hover:bg-white/5 rounded-md">Sejarah
                         Desa</a>
-                    <a href="#"
-                        class="block py-2 px-3 text-sm text-gray-300 hover:text-white hover:bg-white/5 rounded-md">Profil
-                        Wilayah Desa</a>
-                    <a href="#"
-                        class="block py-2 px-3 text-sm text-gray-300 hover:text-white hover:bg-white/5 rounded-md">Kondisi
-                        Pemerintahan</a>
+                    <a href="{{ route('tata-kelola') }}"
+                        class="block py-2 px-3 text-sm text-gray-300 hover:text-white hover:bg-white/5 rounded-md">Tata Kelola Desa</a>
                 </div>
             </div>
 
@@ -142,26 +137,16 @@
                     </svg>
                 </button>
                 <div x-show="activeAccordion === 'data'" class="pl-4 mt-1 space-y-1">
-                    <a href="#"
-                        class="block py-2 px-3 text-sm text-gray-300 hover:text-white hover:bg-white/5 rounded-md">Data
-                        Jenis Kelamin</a>
-                    <a href="#"
-                        class="block py-2 px-3 text-sm text-gray-300 hover:text-white hover:bg-white/5 rounded-md">Data
-                        Pendidikan</a>
-                    <a href="#"
-                        class="block py-2 px-3 text-sm text-gray-300 hover:text-white hover:bg-white/5 rounded-md">Data
-                        Kesehatan</a>
+                    <a href="#" class="block py-2 px-3 text-sm text-gray-300 hover:text-white hover:bg-white/5 rounded-md">Data Jenis Kelamin</a>
+                    <a href="#" class="block py-2 px-3 text-sm text-gray-300 hover:text-white hover:bg-white/5 rounded-md">Data Pendidikan</a>
+                    <a href="#" class="block py-2 px-3 text-sm text-gray-300 hover:text-white hover:bg-white/5 rounded-md">Data Kesehatan</a>
                 </div>
             </div>
 
-            <a href="#"
-                class="py-2 px-3 text-base text-gray-200 hover:text-white hover:bg-white/5 rounded-md">Dokumen</a>
-            <a href="#"
-                class="py-2 px-3 text-base text-gray-200 hover:text-white hover:bg-white/5 rounded-md">Galeri</a>
-            <a href="#"
-                class="py-2 px-3 text-base text-gray-200 hover:text-white hover:bg-white/5 rounded-md">Berita</a>
-            <a href="#"
-                class="py-2 px-3 text-base text-gray-200 hover:text-white hover:bg-white/5 rounded-md">Belanja</a>
+            <a href="#" class="py-2 px-3 text-base text-gray-200 hover:text-white hover:bg-white/5 rounded-md">Dokumen</a>
+            <a href="#" class="py-2 px-3 text-base text-gray-200 hover:text-white hover:bg-white/5 rounded-md">Galeri</a>
+            <a href="{{ route('berita.index') }}" class="py-2 px-3 text-base text-gray-200 hover:text-white hover:bg-white/5 rounded-md">Berita</a>
+            <a href="#" class="py-2 px-3 text-base text-gray-200 hover:text-white hover:bg-white/5 rounded-md">Belanja</a>
         </div>
     </div>
 
