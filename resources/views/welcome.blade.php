@@ -245,7 +245,7 @@
 
                                 <div class="flex justify-between items-center text-[#0C3B2E] text-sm border-t border-t-gray-300 pt-2"
                                     style="font-family: 'Poppins', sans-serif">
-                                    <p>{{ \Carbon\Carbon::parse($berita->tanggal)->isoFormat('D MMMM Y') }}</p>
+                                    <p>Semarang, {{ \Carbon\Carbon::parse($berita->tanggal)->isoFormat('D MMMM Y') }}</p>
                                     <div class="flex items-center space-x-1">
                                         <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none"
                                             viewBox="0 0 24 24" stroke="currentColor">

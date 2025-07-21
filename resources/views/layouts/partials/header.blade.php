@@ -73,9 +73,9 @@
             </div>
 
             <a href="#" class="nav-link text-gray-300 hover:text-[#D5C578] transition duration-300">Dokumen</a>
-            <a href="#" class="nav-link text-gray-300 hover:text-[#D5C578] transition duration-300">Galeri</a>
             <a href="{{ route('berita.index') }}" class="nav-link text-gray-300 hover:text-[#D5C578] transition duration-300">Berita</a>
-            <a href="#" class="nav-link text-gray-300 hover:text-[#D5C578] transition duration-300">Belanja</a>
+            <a href="#" class="nav-link text-gray-300 hover:text-[#D5C578] transition duration-300">Galeri</a>
+            <a href="{{ route('belanja.index') }}" class="nav-link text-gray-300 hover:text-[#D5C578] transition duration-300">Belanja</a>
         </div>
 
         <!-- Mobile Menu Button -->
@@ -144,9 +144,9 @@
             </div>
 
             <a href="#" class="py-2 px-3 text-base text-gray-200 hover:text-white hover:bg-white/5 rounded-md">Dokumen</a>
-            <a href="#" class="py-2 px-3 text-base text-gray-200 hover:text-white hover:bg-white/5 rounded-md">Galeri</a>
             <a href="{{ route('berita.index') }}" class="py-2 px-3 text-base text-gray-200 hover:text-white hover:bg-white/5 rounded-md">Berita</a>
-            <a href="#" class="py-2 px-3 text-base text-gray-200 hover:text-white hover:bg-white/5 rounded-md">Belanja</a>
+            <a href="#" class="py-2 px-3 text-base text-gray-200 hover:text-white hover:bg-white/5 rounded-md">Galeri</a>
+            <a href="{{ route('belanja.index') }}" class="py-2 px-3 text-base text-gray-200 hover:text-white hover:bg-white/5 rounded-md">Belanja</a>
         </div>
     </div>
 

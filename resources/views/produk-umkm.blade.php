@@ -17,6 +17,7 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Poppins:wght@400;600;700&display=swap"
         rel="stylesheet">
+        
     <!-- Alpine.js -->
     <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
 
@@ -67,7 +68,7 @@
                 <div class="max-w-xl lg:max-w-2xl">
                     <h1 class="text-4xl md:text-5xl lg:text-7xl font-bold text-[#0C3B2E] mt-20"
                         style="font-family: 'Poppins', sans-serif; text-shadow: 2px 2px 4px rgba(0,0,0,0.4);">
-                        Berita
+                        Produk UMKM
                     </h1>
                     <p class="text-4xl md:text-5xl lg:text-7xl text-white italic"
                         style="font-family: 'Playfair Display', serif; text-shadow: 2px 2px 4px rgba(0,0,0,0.4);">
@@ -96,7 +97,7 @@
                                             d="M7.21 14.77a.75.75 0 01.02-1.06L11.168 10 7.23 6.29a.75.75 0 111.04-1.08l4.5 4.25a.75.75 0 010 1.08l-4.5 4.25a.75.75 0 01-1.06-.02z"
                                             clip-rule="evenodd" />
                                     </svg>
-                                    <span class="ml-2 text-sm font-semibold text-white">Berita Desa</span>
+                                    <span class="ml-2 text-sm font-semibold text-white">Belanja</span>
                                 </div>
                             </li>
                         </ol>
@@ -105,52 +106,40 @@
             </div>
         </section>
 
-        <!-- Berita Desa Section -->
+        <!-- Produk UMKM Section -->
         <section class="py-12 md:py-10 bg-white" style="font-family: 'Poppins', sans-serif;">
             <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-
-                <div class="text-center mb-10 reveal-on-scroll">
-                    <h2 class="text-3xl sm:text-[45px] font-bold text-[#0C3B2E]"
-                        style="font-family: 'Poppins', sans-serif">Berita Desa</h2>
-                    <div class="w-45 md:w-70 h-1 bg-[#0C3B2E] mx-auto mt-3"></div>
+                <div class="text-center mb-10 reveal-on-scroll px-6 md:px-50">
+                    <p class="text-xl sm:text-[20px] font-bold text-[#0C3B2E]"
+                        style="font-family: 'Poppins', sans-serif">Layanan yang disediakan promosi produk UMKM desa
+                        sehingga mampu meningkatkan perekonomian masyarakat desa Timpik.</p>
                 </div>
-                <div class="flex flex-col lg:flex-row gap-10 lg:gap-14 items-center">
 
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 reveal-on-scroll">
-                    @forelse ($beritas as $berita)
-                        <div class="bg-white rounded-2xl shadow-lg overflow-hidden group transform hover:-translate-y-2 transition-all duration-300 border border-gray-200/80">
-                            <a href="{{ route('berita.detail', $berita->id) }}" class="block">
-                                <img src="{{ asset('storage/' . $berita->foto) }}" alt="{{ $berita->nama_berita }}"
-                                    class="w-full h-52 object-cover" onerror="this.src='https://placehold.co/600x400?text=Foto+Tidak+Tersedia';">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 reveal-on-scroll px-8 md:px-20">
+                    @foreach ($produks as $produk)
+                        <div
+                            class="bg-gray-50 rounded-2xl shadow-md overflow-hidden group transition-all duration-300 border border-gray-200/80 hover:shadow-xl hover:-translate-y-1">
+                            <a href="{{ route('belanja.detail', $produk->id) }}" class="block">
+                                <div class="aspect-w-1 aspect-h-1">
+                                    <img src="{{ asset('storage/' . $produk->foto) }}" alt="{{ $produk->nama_produk }}"
+                                        onerror="this.onerror=null;this.src='https://placehold.co/500x500?text=No+Image';"
+                                        class="w-full h-full object-cover">
+                                </div>
                                 <div class="p-5">
-                                    <h3 class="font-bold text-lg text-[#0C3B2E] leading-snug mb-2 group-hover:text-green-600 transition-colors">
-                                        {{ \Illuminate\Support\Str::limit($berita->nama_berita, 60) }}
+                                    <h3
+                                        class="font-bold text-lg text-gray-800 leading-snug mb-2 group-hover:text-[#0C3B2E]">
+                                        {{ $produk->nama_produk }}
                                     </h3>
-                                    <p class="text-gray-600 text-sm leading-relaxed mb-4">
-                                        {{ \Illuminate\Support\Str::limit(strip_tags($berita->deskripsi), 180, '...') }}
+                                    <p class="text-gray-600 text-sm leading-relaxed mb-4 h-24 overflow-hidden">
+                                        {{ \Illuminate\Support\Str::limit(strip_tags($produk->deskripsi), 100) }}
                                     </p>
-                                    <div class="flex justify-between items-center text-xs text-gray-500">
-                                        <span>Semarang, {{ \Carbon\Carbon::parse($berita->tanggal)->isoFormat('D MMMM Y') }}</span>
-                                        <div class="flex items-center space-x-1">
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
-                                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                                stroke-linecap="round" stroke-linejoin="round">
-                                                <path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z" />
-                                                <circle cx="12" cy="12" r="3" />
-                                            </svg>
-                                            <span>{{ $berita->views ?? 0 }}</span>
-                                        </div>
-                                    </div>
+                                    <p class="font-semibold text-green-600 text-base">
+                                        {{ $produk->format_harga ?? '-' }}
+                                    </p>
                                 </div>
                             </a>
                         </div>
-                    @empty
-                        <p class="text-center col-span-3 text-gray-500">Belum ada berita yang tersedia.</p>
-                    @endforelse
-                </div>
-
-                <div class="mt-12">
-                    {{ $beritas->links('vendor.pagination.tailwind') }}
+                    @endforeach
                 </div>
 
             </div>

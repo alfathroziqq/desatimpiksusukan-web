@@ -56,7 +56,7 @@
         <div class="container mx-auto px-6 lg:px-16 py-12">
 
             <!-- Breadcrumbs -->
-            <div class="mb-6 text-sm font-semibold text-[#0C3B2E]">
+            <div class="mb-6 text-[15px] font-semibold text-[#0C3B2E]">
                 <a href="{{ route('welcome') }}" class="hover:text-[#DBAA7C]">Home</a>
                 <span class="mx-2">></span>
                 <a href="{{ route('berita.index') }}" class="hover:text-[#DBAA7C]">Berita Desa</a>
@@ -74,7 +74,8 @@
                         <!-- Meta Info -->
                         <div class="flex flex-wrap items-center justify-between text-sm text-gray-500 mb-6">
                             <span class="flex items-center mb-2 md:mb-0">
-                                <i data-lucide="calendar" class="w-4 h-4 mr-1.5"></i>{{ \Carbon\Carbon::parse($berita->tanggal)->isoFormat('dddd, D MMMM Y') }}
+                                <i data-lucide="calendar" class="w-4 h-4 mr-1.5"></i>
+                                Semarang, {{ \Carbon\Carbon::parse($berita->tanggal)->isoFormat('D MMMM Y') }}
                             </span>
 
                             <div class="flex items-center space-x-4">
