@@ -58,10 +58,10 @@
     @include('layouts.partials.header')
 
     <main>
-        <div class="container mx-auto px-6 lg:px-16 py-12" style="font-family: 'Poppins', sans-serif">
+        <div class="container mx-auto px-6 lg:px-16 py-12 font-['Poppins']">
 
             <!-- Breadcrumbs -->
-            <div class="mb-6 text-[15px] font-semibold text-[#0C3B2E]">
+            <div class="mb-6 text-sm md:text-base font-semibold text-[#0C3B2E]">
                 <a href="{{ route('welcome') }}" class="hover:text-[#DBAA7C]">Home</a>
                 <span class="mx-2">></span>
                 <a href="{{ route('belanja.index') }}" class="hover:text-[#DBAA7C]">Produk UMKM</a>
@@ -69,33 +69,34 @@
                 <span class="text-[#DBAA7C]">{{ Str::limit($produk->nama_produk, 30) }}</span>
             </div>
 
-            <div class="bg-white p-6 md:p-8 rounded-2xl shadow-lg border border-gray-200/80 reveal-on-scroll">
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-start">
-                    <!-- Gambar -->
-                    <div class="max-w-[350px] max-h-[400px] rounded-xl overflow-hidden">
-                        <img src="{{ asset('storage/' . $produk->foto) }}" alt="{{ $produk->nama_produk }}"
-                            onerror="this.onerror=null;this.src='https://placehold.co/500x500?text=No+Image';"
-                            class="w-full ma h-full object-cover">
+            <!-- Card Produk -->
+            <div class="bg-white p-6 md:p-8 rounded-xl shadow-md border border-gray-200 reveal-on-scroll">
+                <div class="flex flex-col md:flex-row gap-6 md:gap-10 items-center md:items-start">
+                    
+                    <!-- Gambar Produk -->
+                    <div class="w-full md:w-[280px] max-h-[300px] flex-shrink-0 rounded-xl overflow-hidden border">
+                        <img src="{{ asset('storage/' . $produk->foto) }}"
+                            onerror="this.onerror=null;this.src='https://placehold.co/500x400?text=No+Image';"
+                            alt="{{ $produk->nama_produk }}"
+                            class="w-full h-full object-cover">
                     </div>
 
                     <!-- Detail Produk -->
-                    <div class="flex flex-col justify-start h-full space-y-3">
-                        <h1 class="text-3xl md:text-4xl font-bold text-[#0C3B2E]">{{ $produk->nama_produk }}</h1>
-                        <p class="text-xl md:text-2xl font-semibold text-[#DBAA7C]">
-                            {{ $produk->format_harga ?? '-' }}
-                        </p>
-                        <p class="text-[#0C3B2E] leading-relaxed">
+                    <div class="flex flex-col space-y-3 w-full">
+                        <h1 class="text-xl md:text-2xl font-bold text-[#0C3B2E]">{{ $produk->nama_produk }}</h1>
+                        <p class="text-[#C2977D] text-lg font-semibold">{{ $produk->format_harga ?? '-' }}</p>
+                        <p class="text-sm text-[#0C3B2E] leading-relaxed">
                             {!! nl2br(e($produk->deskripsi)) !!}
                         </p>
 
                         @if ($produk->nomor_wa)
                             <a href="https://wa.me/{{ $produk->nomor_wa }}" target="_blank"
-                                class="inline-flex items-center justify-center px-6 py-2 bg-[#3C7167] text-white text-sm font-semibold rounded-full shadow-md hover:bg-[#2F5C54] transition-all duration-300">
+                                class="inline-flex items-center w-max px-5 py-2 mt-3 rounded-full bg-[#3C7167] text-white font-semibold text-sm shadow hover:bg-[#2F5C54] transition">
                                 <i data-lucide="send" class="w-4 h-4 mr-2"></i>
                                 Hubungi Penjual
                             </a>
-                        @endif
 
+                        @endif
                     </div>
                 </div>
             </div>
@@ -155,7 +156,7 @@
                         </div>
                         <div class="mt-4 flex justify-end">
                             <button type="submit"
-                                class="bg-[#C7F3E7] hover:bg-green-800 font-semibold text-[#0C3B2E] px-6 py-2 rounded-lg flex items-center gap-2">
+                                class="bg-[#C7F3E7] hover:bg-[#A8E2D3] text-[#0C3B2E] font-semibold px-6 py-2 rounded-lg flex items-center gap-2 shadow-md hover:shadow-lg transition-all duration-200">
                                 <i data-lucide="send" class="w-4 h-4"></i>
                                 Kirim
                             </button>
