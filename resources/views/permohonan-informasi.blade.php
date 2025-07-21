@@ -86,25 +86,22 @@
             <!-- Form Section -->
             <section class="py-12 md:py-6">
                 <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-                    <div class="mb-12 reveal-on-scroll">
-                        <h2 class="text-xl md:text-[45px] font-bold text-[#0C3B2E] text-center lg:text-left">
+                    <div class="mb-12 reveal-on-scroll text-center">
+                        <h2 class="text-xl md:text-[45px] font-bold text-[#0C3B2E]">
                             Form Permohonan Informasi
                         </h2>
-                        <div class="w-75 md:w-167 h-1 bg-[#0C3B2E] mx-auto lg:mx-0 mt-3"></div>
+                        <div class="w-75 md:w-167 h-1 bg-[#0C3B2E] mx-auto mt-3"></div>
                     </div>
 
                     <div
-                        class="bg-white p-6 sm:p-8 md:p-10 rounded-2xl shadow-lg border border-gray-200/80 max-w-4xl mx-auto reveal-on-scroll">
+                        class="bg-white p-6 sm:p-8 md:p-10 rounded-2xl shadow-lg border border-gray-200/80 max-w-4xl mx-auto reveal-on-scroll mt-8">
                         <form action="#" method="POST" class="space-y-6">
                             @csrf
                             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-
                                 <div>
-                                    <label for="nama"
-                                        class="block text-sm font-medium text-gray-700 mb-1">Nama</label>
+                                    <label for="nama" class="block text-sm font-medium text-gray-700 mb-1">Nama</label>
                                     <div class="relative">
-                                        <div
-                                            class="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none">
+                                        <div class="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none">
                                             <i data-lucide="user" class="w-5 h-5 text-gray-400"></i>
                                         </div>
                                         <input type="text" name="nama" id="nama"

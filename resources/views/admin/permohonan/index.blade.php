@@ -76,15 +76,12 @@
                                                     @csrf
                                                     @method('PATCH')
                                                     <input type="checkbox" name="status" x-model="on" class="hidden">
-                                                    <button type="button" @click="on = !on; $nextTick(() => $refs.toggleForm.submit())"
-                                                            class="relative inline-flex items-center h-6 rounded-full w-11 transition-colors duration-300 ease-in-out focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 dark:focus:ring-offset-gray-800"
-                                                            :class="on ? 'bg-green-500' : 'bg-gray-300 dark:bg-gray-600'">
-                                                        <span class="sr-only">Toggle Status</span>
-                                                        <span class="inline-block w-4 h-4 transform bg-white rounded-full transition-transform duration-300 ease-in-out"
-                                                            :class="{ 'translate-x-6': on, 'translate-x-1': !on }">
-                                                        </span>
+                                                    <button type="button"
+                                                            @click="on = !on; $nextTick(() => $refs.toggleForm.submit())"
+                                                            class="px-3 py-1 rounded-md text-sm font-medium transition duration-300"
+                                                            :class="on ? 'bg-green-100 text-green-700 hover:bg-green-200' : 'bg-gray-200 text-gray-600 hover:bg-gray-300'">
+                                                        <span x-text="on ? '✔ Selesai' : '⌛ Baru'"></span>
                                                     </button>
-                                                    <span x-text="on ? 'Selesai' : 'Baru'" class="text-sm font-medium" :class="{ 'text-green-600 dark:text-green-400': on, 'text-gray-500': !on }"></span>
                                                 </form>
                                             </div>
 
