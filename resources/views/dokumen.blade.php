@@ -144,7 +144,7 @@
 
         <!-- Informasi Publik Terbaru Section -->
         <section id="informasi-publik">
-            <div class="pt-8 px-12 md:px-30">
+            <div class="pt-8 px-12 md:px-30 reveal-on-scroll">
                 <h2 class="text-2xl md:text-3xl font-bold text-[#0C3B2E] mb-2"
                     style="font-family: 'Poppins', sans-serif">
                     Informasi Publik Terbaru
@@ -153,7 +153,7 @@
             </div>
 
             <!-- Daftar Dokumen -->
-            <div class="space-y-6 px-12 md:px-30" style="font-family: 'Poppins', sans-serif">
+            <div class="space-y-6 px-12 md:px-30 reveal-on-scroll" style="font-family: 'Poppins', sans-serif">
                 @forelse ($dokumens as $dokumen)
                     <div
                         class="bg-white rounded-lg shadow-sm p-6 flex flex-col gap-4 md:flex-row md:justify-between md:items-center">
@@ -194,7 +194,7 @@
 
 
         <!-- Ajukan Permohonan Informasi Section -->
-        <section id="permohonan-info" class="mt-16 text-center bg-gray-200/50 p-10 rounded-lg"
+        <section id="permohonan-info" class="mt-16 mb-6 text-center bg-gray-200/50 p-10 rounded-lg reveal-on-scroll"
             style="font-family: 'Poppins', sans-serif">
             <h2 class="text-2xl font-bold text-[#0C3B2E] mb-3">Ingin mengajukan permohonan informasi?</h2>
             <a href="{{ route('permohonan.create') }}"
