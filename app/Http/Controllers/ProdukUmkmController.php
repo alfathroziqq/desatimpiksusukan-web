@@ -75,7 +75,7 @@ class ProdukUmkmController extends Controller
 
     public function public()
     {
-        $produks = ProdukUmkm::latest()->get();
+        $produks = ProdukUmkm::latest()->paginate(6);
         return view('produk-umkm', compact('produks'));
     }
 

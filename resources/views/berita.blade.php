@@ -116,7 +116,7 @@
                 </div>
                 <div class="flex flex-col lg:flex-row gap-10 lg:gap-14 items-center">
 
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 reveal-on-scroll">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 reveal-on-scroll md:px-30">
                     @forelse ($beritas as $berita)
                         <div class="bg-white rounded-2xl shadow-lg overflow-hidden group transform hover:-translate-y-2 transition-all duration-300 border border-gray-200/80">
                             <a href="{{ route('berita.detail', $berita->id) }}" class="block">
@@ -152,12 +152,11 @@
                         <p class="text-center col-span-3 text-gray-500">Belum ada berita yang tersedia.</p>
                     @endforelse
                 </div>
-
-                <div class="mt-12">
-                    {{ $beritas->links('vendor.pagination.tailwind') }}
-                </div>
-
             </div>
+            <div class="mt-10">
+                {{ $beritas->links('vendor.pagination.tailwind') }}
+            </div>
+
         </section>
 
     </main>

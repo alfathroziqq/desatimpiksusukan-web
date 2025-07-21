@@ -17,7 +17,7 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Poppins:wght@400;600;700&display=swap"
         rel="stylesheet">
-        
+
     <!-- Alpine.js -->
     <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
 
@@ -116,7 +116,7 @@
                 </div>
 
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 reveal-on-scroll px-8 md:px-20">
-                    @foreach ($produks as $produk)
+                    @forelse ($produks as $produk)
                         <div
                             class="bg-gray-50 rounded-2xl shadow-md overflow-hidden group transition-all duration-300 border border-gray-200/80 hover:shadow-xl hover:-translate-y-1">
                             <a href="{{ route('belanja.detail', $produk->id) }}" class="block">
@@ -139,9 +139,13 @@
                                 </div>
                             </a>
                         </div>
-                    @endforeach
+                        @empty
+                        <p class="text-center col-span-3 text-gray-500">Belum ada Produk UMKM yang tersedia.</p>
+                    @endforelse
                 </div>
-
+            </div>
+            <div class="mt-10">
+                {{ $produks->links('vendor.pagination.tailwind') }}
             </div>
         </section>
 
