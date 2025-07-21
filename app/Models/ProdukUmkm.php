@@ -11,6 +11,7 @@ class ProdukUmkm extends Model
 
     protected $fillable = [
         'nama_produk',
+        'harga',
         'deskripsi',
         'foto',
         'format_harga',
