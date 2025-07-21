@@ -3,6 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BeritaController;
 use App\Http\Controllers\ProdukUmkmController;
+use App\Http\Controllers\DokumenController;
+use App\Http\Controllers\PermohonanController;
 
 Route::get('/', fn() => view('welcome'))->name('welcome');
 
@@ -21,6 +23,14 @@ Route::get('/belanja', [ProdukUmkmController::class, 'public'])->name('belanja.i
 Route::get('/belanja/{id}', [ProdukUmkmController::class, 'detail'])->name('belanja.detail');
 Route::post('/belanja/{id}/komentar', [ProdukUmkmController::class, 'simpanKomentar'])->name('belanja.komentar');
 
+// Permohonan Informasi
+Route::get('/permohonan-informasi', fn() => view('permohonan-informasi'))->name('permohonan.create');
+Route::post('/permohonan-informasi', [PermohonanController::class, 'store'])->name('permohonan.store');
+
+// Dokumen Publik
+Route::get('/dokumen', [DokumenController::class, 'dokumenPublik'])->name('dokumen.index');
+Route::get('/unduh-dokumen/{id}', [DokumenController::class, 'download'])->name('dokumen.download');
+
 Route::middleware([
     'auth:sanctum',
     config('jetstream.auth_session'),
@@ -33,4 +43,11 @@ Route::middleware([
 
     // Belanja
     Route::resource('/admin/produk-umkm', ProdukUmkmController::class)->names('admin.produk-umkm');
+
+    // Dokumen
+    Route::resource('/admin/dokumen', DokumenController::class)->names('admin.dokumen');
+
+    // Permohonan Informasi
+    Route::get('/admin/permohonan', [PermohonanController::class, 'index'])->name('admin.permohonan.index');
+    Route::patch('/admin/permohonan/{id}/toggle', [PermohonanController::class, 'toggleStatus'])->name('admin.permohonan.toggle');
 });

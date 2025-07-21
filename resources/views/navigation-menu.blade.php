@@ -73,6 +73,14 @@
                         class="{{ request()->routeIs('dashboard') ? 'text-indigo-600 dark:text-indigo-400 font-semibold' : 'text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 hover:text-gray-900 dark:hover:text-white' }} px-3 py-2 rounded-md text-sm">
                         Dashboard
                     </a>
+                    <a href="{{ route('admin.dokumen.index') }}"
+                        class="{{ request()->routeIs('admin.dokumen.*') ? 'text-indigo-600 dark:text-indigo-400 font-semibold' : 'text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 hover:text-gray-900 dark:hover:text-white' }} px-3 py-2 rounded-md text-sm">
+                        Dokumen
+                    </a>
+                    <a href="{{ route('admin.permohonan.index') }}"
+                        class="{{ request()->routeIs('admin.permohonan.*') ? 'text-indigo-600 dark:text-indigo-400 font-semibold' : 'text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 hover:text-gray-900 dark:hover:text-white' }} px-3 py-2 rounded-md text-sm">
+                        Permohonan Informasi
+                    </a>
                     <a href="{{ route('admin.berita.index') }}"
                         class="{{ request()->routeIs('admin.berita.*') ? 'text-indigo-600 dark:text-indigo-400 font-semibold' : 'text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 hover:text-gray-900 dark:hover:text-white' }} px-3 py-2 rounded-md text-sm">
                         Berita
@@ -150,6 +158,14 @@
                 <a href="{{ route('dashboard') }}"
                     class="{{ request()->routeIs('dashboard') ? 'bg-indigo-50 dark:bg-indigo-500/20 text-indigo-700 dark:text-indigo-300' : 'text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 hover:text-gray-900 dark:hover:text-white' }} block px-3 py-2 rounded-md text-base font-medium">
                     Dashboard
+                </a>
+                <a href="{{ route('admin.dokumen.index') }}"
+                    class="{{ request()->routeIs('admin.dokumen.*') ? 'bg-indigo-50 dark:bg-indigo-500/20 text-indigo-700 dark:text-indigo-300' : 'text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 hover:text-gray-900 dark:hover:text-white' }} block px-3 py-2 rounded-md text-base font-medium">
+                    Dokumen
+                </a>
+                <a href="{{ route('admin.permohonan.index') }}"
+                    class="{{ request()->routeIs('admin.permohonan.*') ? 'bg-indigo-50 dark:bg-indigo-500/20 text-indigo-700 dark:text-indigo-300' : 'text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 hover:text-gray-900 dark:hover:text-white' }} block px-3 py-2 rounded-md text-base font-medium">
+                    Permohonan Informasi
                 </a>
                 <a href="{{ route('admin.berita.index') }}"
                     class="{{ request()->routeIs('admin.berita.*') ? 'bg-indigo-50 dark:bg-indigo-500/20 text-indigo-700 dark:text-indigo-300' : 'text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 hover:text-gray-900 dark:hover:text-white' }} block px-3 py-2 rounded-md text-base font-medium">
