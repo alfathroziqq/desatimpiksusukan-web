@@ -53,7 +53,7 @@
     @include('layouts.partials.header')
 
     <main>
-        <div class="container mx-auto px-6 lg:px-16 py-12">
+        <div class="container mx-auto px-6 lg:px-16 py-12 font-['Poppins']">
 
             <!-- Breadcrumbs -->
             <div class="mb-6 text-[15px] font-semibold text-[#0C3B2E]">

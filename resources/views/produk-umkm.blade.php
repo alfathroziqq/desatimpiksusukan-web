@@ -131,9 +131,9 @@
                                         {{ $produk->nama_produk }}
                                     </h3>
                                     <p class="text-gray-600 text-sm leading-relaxed mb-4 h-24 overflow-hidden">
-                                        {{ \Illuminate\Support\Str::limit(strip_tags($produk->deskripsi), 100) }}
+                                        {{ \Illuminate\Support\Str::limit(strip_tags($produk->deskripsi), 140) }}
                                     </p>
-                                    <p class="font-semibold text-green-600 text-base">
+                                    <p class="font-semibold text-[#C2977D] text-xl">
                                         {{ $produk->format_harga ?? '-' }}
                                     </p>
                                 </div>

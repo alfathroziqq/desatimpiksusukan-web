@@ -129,6 +129,10 @@
                                     <p class="text-gray-600 text-sm leading-relaxed mb-4">
                                         {{ \Illuminate\Support\Str::limit(strip_tags($berita->deskripsi), 180, '...') }}
                                     </p>
+                                <a href="{{ route('berita.detail', $berita->id) }}"
+                                    class="inline-block border border-teal-600 px-4 py-1 rounded-full text-teal-600 hover:bg-teal-100 text-sm font-medium mb-4 transition duration-300">
+                                    Selengkapnya
+                                </a>
                                     <div class="flex justify-between items-center text-xs text-gray-500">
                                         <span>Semarang, {{ \Carbon\Carbon::parse($berita->tanggal)->isoFormat('D MMMM Y') }}</span>
                                         <div class="flex items-center space-x-1">
