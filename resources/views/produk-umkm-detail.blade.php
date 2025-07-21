@@ -74,7 +74,7 @@
                 <div class="flex flex-col md:flex-row gap-6 md:gap-10 items-center md:items-start">
                     
                     <!-- Gambar Produk -->
-                    <div class="w-full md:w-[280px] max-h-[300px] flex-shrink-0 rounded-xl overflow-hidden border">
+                    <div class="w-full md:w-[280px] max-h-[310px] flex-shrink-0 rounded-xl overflow-hidden border"> 
                         <img src="{{ asset('storage/' . $produk->foto) }}"
                             onerror="this.onerror=null;this.src='https://placehold.co/500x400?text=No+Image';"
                             alt="{{ $produk->nama_produk }}"
