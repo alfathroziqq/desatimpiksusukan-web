@@ -353,7 +353,14 @@
                         class="p-2 rounded-full bg-gray-200 hover:bg-gray-300 transition-colors disabled:opacity-50"
                         :disabled="atEnd"><i data-lucide="arrow-right" class="w-5 h-5"></i></button>
                 </div>
+            </div>
         </section>
+
+        <!-- Galeri Desa Section -->
+        @php
+            use App\Models\Galeri;
+            $galeriTerbaru = Galeri::latest()->take(4)->get();
+        @endphp
 
         <section class="py-8 md:py-8 bg-white mb-12">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

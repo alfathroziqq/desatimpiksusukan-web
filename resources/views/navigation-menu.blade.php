@@ -85,6 +85,10 @@
                         class="{{ request()->routeIs('admin.berita.*') ? 'text-indigo-600 dark:text-indigo-400 font-semibold' : 'text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 hover:text-gray-900 dark:hover:text-white' }} px-3 py-2 rounded-md text-sm">
                         Berita
                     </a>
+                    <a href="{{ route('admin.galeri.index') }}"
+                        class="{{ request()->routeIs('admin.galeri.*') ? 'text-indigo-600 dark:text-indigo-400 font-semibold' : 'text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 hover:text-gray-900 dark:hover:text-white' }} px-3 py-2 rounded-md text-sm">
+                        Galeri
+                    </a>
                     <a href="{{ route('admin.produk-umkm.index') }}"
                         class="{{ request()->routeIs('admin.produk-umkm.*') ? 'text-indigo-600 dark:text-indigo-400 font-semibold' : 'text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 hover:text-gray-900 dark:hover:text-white' }} px-3 py-2 rounded-md text-sm">
                         Belanja
@@ -170,6 +174,10 @@
                 <a href="{{ route('admin.berita.index') }}"
                     class="{{ request()->routeIs('admin.berita.*') ? 'bg-indigo-50 dark:bg-indigo-500/20 text-indigo-700 dark:text-indigo-300' : 'text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 hover:text-gray-900 dark:hover:text-white' }} block px-3 py-2 rounded-md text-base font-medium">
                     Berita
+                </a>
+                <a href="{{ route('admin.galeri.index') }}"
+                    class="{{ request()->routeIs('admin.galeri.*') ? 'bg-indigo-50 dark:bg-indigo-500/20 text-indigo-700 dark:text-indigo-300' : 'text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 hover:text-gray-900 dark:hover:text-white' }} block px-3 py-2 rounded-md text-base font-medium">
+                    Galeri
                 </a>
                 <a href="{{ route('admin.produk-umkm.index') }}"
                     class="{{ request()->routeIs('admin.produk-umkm.*') ? 'bg-indigo-50 dark:bg-indigo-500/20 text-indigo-700 dark:text-indigo-300' : 'text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 hover:text-gray-900 dark:hover:text-white' }} block px-3 py-2 rounded-md text-base font-medium">
