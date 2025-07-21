@@ -192,7 +192,12 @@
         </section>
 
         <!-- Aparatur Desa -->
-        <section id="aparatur" class="py-12 md:py-10 bg-white reveal-on-scroll" x-data="slider()">
+        @php
+            use App\Models\Aparatur;
+            $aparaturs = Aparatur::all();
+        @endphp
+
+        <section id="aparatur" class="py-12 md:py-10 bg-white" x-data="slider()">
             <div class="container mx-auto px-6 md:px-30">
                 <div class="mb-8 reveal-on-scroll">
                     <h2 class="text-3xl md:text-[50px] font-bold text-[#0C3B2E] text-center lg:text-left"
@@ -202,70 +207,36 @@
                     <div class="w-60 md:w-94 h-1 bg-[#0C3B2E] mx-auto lg:mx-0 mt-3"></div>
                 </div>
 
-                <div class="overflow-hidden p-2 mt-[-4px]">
+                <div class="overflow-hidden p-2 mt-[-4px] reveal-on-scroll">
                     <div x-ref="slider" @scroll.debounce.100ms="updateButtons()"
                         class="flex overflow-x-auto gap-2 slider-container snap-x snap-mandatory scroll-smooth">
 
-                        <div class="flex-shrink-0 w-65 h-80 snap-start p-2">
-                            <div
-                                class="bg-gray-50 rounded-lg shadow-md overflow-hidden h-full group transition-transform duration-300 ease-in-out hover:scale-105 hover:shadow-lg border border-gray-300">
-                                <img src="{{ asset('images/profile-pic.png') }}" alt="Pelayanan"
-                                    class="mt-4 w-auto max-w-full max-h-55 mx-auto object-contain">
-                                <div class="px-6 text-left mt-1 mb-4">
-                                    <h4 class="font-bold text-[24px] text-[#0C3B2E]">Budi Santoso</h4>
-                                    <p class="mt-[-5px] text-[16px] text-[#0C3B2E]">Kepala Desa</p>
+                        @forelse ($aparaturs as $aparatur)
+                            <div class="flex-shrink-0 w-65 h-80 snap-start p-2" style="font-family: 'Poppins', sans-serif;">
+                                <div
+                                    class="bg-gray-50 rounded-lg shadow-md overflow-hidden h-full group transition-transform duration-300 ease-in-out hover:scale-105 hover:shadow-lg border border-gray-300">
+                                    <img src="{{ asset('storage/' . $aparatur->foto) }}" alt="{{ $aparatur->nama }}"
+                                        class="mt-4 w-auto max-w-full max-h-55 mx-auto object-contain">
+                                    <div class="px-3 text-center mt-3 mb-4">
+                                        <h4 class="font-bold text-[17px] text-[#0C3B2E] leading-snug">
+                                            {{ Str::limit($aparatur->nama, 22, '...') }}
+                                        </h4>
+                                        <p class="text-sm text-[#0C3B2E] leading-tight">
+                                            {{ Str::limit($aparatur->jabatan, 27, '...') }}
+                                        </p>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="flex-shrink-0 w-65 h-80 snap-start p-2">
-                            <div
-                                class="bg-gray-50 rounded-lg shadow-md overflow-hidden h-full group transition-transform duration-300 ease-in-out hover:scale-105 hover:shadow-lg border border-gray-300">
-                                <img src="{{ asset('images/profile-pic.png') }}" alt="Pelayanan"
-                                    class="mt-4 w-auto max-w-full max-h-55 mx-auto object-contain">
-                                <div class="px-6 text-left mt-1 mb-4">
-                                    <h4 class="font-bold text-[24px] text-[#0C3B2E]">Budi Santoso</h4>
-                                    <p class="mt-[-5px] text-[16px] text-[#0C3B2E]">Kepala Desa</p>
-                                </div>
+                        @empty
+                            <div class="flex justify-center items-center w-full h-40">
+                                <p class="text-center text-gray-500">Belum ada data aparatur desa.</p>
                             </div>
-                        </div>
-                        <div class="flex-shrink-0 w-65 h-80 snap-start p-2">
-                            <div
-                                class="bg-gray-50 rounded-lg shadow-md overflow-hidden h-full group transition-transform duration-300 ease-in-out hover:scale-105 hover:shadow-lg border border-gray-300">
-                                <img src="{{ asset('images/profile-pic.png') }}" alt="Pelayanan"
-                                    class="mt-4 w-auto max-w-full max-h-55 mx-auto object-contain">
-                                <div class="px-6 text-left mt-1 mb-4">
-                                    <h4 class="font-bold text-[24px] text-[#0C3B2E]">Budi Santoso</h4>
-                                    <p class="mt-[-5px] text-[16px] text-[#0C3B2E]">Kepala Desa</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="flex-shrink-0 w-65 h-80 snap-start p-2">
-                            <div
-                                class="bg-gray-50 rounded-lg shadow-md overflow-hidden h-full group transition-transform duration-300 ease-in-out hover:scale-105 hover:shadow-lg border border-gray-300">
-                                <img src="{{ asset('images/profile-pic.png') }}" alt="Pelayanan"
-                                    class="mt-4 w-auto max-w-full max-h-55 mx-auto object-contain">
-                                <div class="px-6 text-left mt-1 mb-4">
-                                    <h4 class="font-bold text-[24px] text-[#0C3B2E]">Budi Santoso</h4>
-                                    <p class="mt-[-5px] text-[16px] text-[#0C3B2E]">Kepala Desa</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="flex-shrink-0 w-65 h-80 snap-start p-2">
-                            <div
-                                class="bg-gray-50 rounded-lg shadow-md overflow-hidden h-full group transition-transform duration-300 ease-in-out hover:scale-105 hover:shadow-lg border border-gray-300">
-                                <img src="{{ asset('images/profile-pic.png') }}" alt="Pelayanan"
-                                    class="mt-4 w-auto max-w-full max-h-55 mx-auto object-contain">
-                                <div class="px-6 text-left mt-1 mb-4">
-                                    <h4 class="font-bold text-[24px] text-[#0C3B2E]">Budi Santoso</h4>
-                                    <p class="mt-[-5px] text-[16px] text-[#0C3B2E]">Kepala Desa</p>
-                                </div>
-                            </div>
-                        </div>
+                        @endforelse
                     </div>
                 </div>
 
                 <!-- Tombol Panah -->
-                <div class="flex justify-center mt-6 mb-4 sm:mb-6 space-x-2">
+                <div class="flex justify-center mt-6 mb-4 sm:mb-6 space-x-2 reveal-on-scroll">
                     <button @click="scroll('left')"
                         class="p-2 rounded-full bg-gray-200 hover:bg-gray-300 transition-colors disabled:opacity-50"
                         :disabled="atStart"><i data-lucide="arrow-left" class="w-5 h-5"></i></button>

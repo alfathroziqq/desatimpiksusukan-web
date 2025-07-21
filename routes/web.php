@@ -2,10 +2,11 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BeritaController;
+use App\Http\Controllers\GaleriController;
+use App\Http\Controllers\AparaturController;
 use App\Http\Controllers\ProdukUmkmController;
 use App\Http\Controllers\DokumenController;
 use App\Http\Controllers\PermohonanController;
-use App\Http\Controllers\GaleriController;
 
 /*
 |--------------------------------------------------------------------------
@@ -30,6 +31,9 @@ Route::get('/sejarah-desa', fn() => view('sejarah-desa'))->name('sejarah-desa');
 
 // Tata Kelola Desa
 Route::get('/tata-kelola-desa', action: fn() => view('tata-kelola'))->name('tata-kelola');
+
+// Aparatur Desa
+Route::get('/aparatur', fn() => view('aparatur'))->name('aparatur.index');
 
 // Berita Desa
 Route::get('/berita', [BeritaController::class, 'publik'])->name('berita.index');
@@ -63,6 +67,9 @@ Route::middleware([
     'verified',
 ])->group(function () {
     Route::get('/dashboard', fn() => view('dashboard'))->name('dashboard');
+
+    // Aparatur Desa
+    Route::resource('/admin/aparatur', AparaturController::class)->names('admin.aparatur');
 
     // Berita
     Route::resource('/admin/berita', BeritaController::class)->names('admin.berita');

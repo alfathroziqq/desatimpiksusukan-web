@@ -73,6 +73,10 @@
                         class="{{ request()->routeIs('dashboard') ? 'text-indigo-600 dark:text-indigo-400 font-semibold' : 'text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 hover:text-gray-900 dark:hover:text-white' }} px-3 py-2 rounded-md text-sm">
                         Dashboard
                     </a>
+                    <a href="{{ route('admin.aparatur.index') }}"
+                        class="{{ request()->routeIs('admin.aparatur.*') ? 'text-indigo-600 dark:text-indigo-400 font-semibold' : 'text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 hover:text-gray-900 dark:hover:text-white' }} px-3 py-2 rounded-md text-sm">
+                        Aparatur
+                    </a>
                     <a href="{{ route('admin.dokumen.index') }}"
                         class="{{ request()->routeIs('admin.dokumen.*') ? 'text-indigo-600 dark:text-indigo-400 font-semibold' : 'text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 hover:text-gray-900 dark:hover:text-white' }} px-3 py-2 rounded-md text-sm">
                         Dokumen
@@ -162,6 +166,10 @@
                 <a href="{{ route('dashboard') }}"
                     class="{{ request()->routeIs('dashboard') ? 'bg-indigo-50 dark:bg-indigo-500/20 text-indigo-700 dark:text-indigo-300' : 'text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 hover:text-gray-900 dark:hover:text-white' }} block px-3 py-2 rounded-md text-base font-medium">
                     Dashboard
+                </a>
+                <a href="{{ route('admin.aparatur.index') }}"
+                    class="{{ request()->routeIs('admin.aparatur.*') ? 'bg-indigo-50 dark:bg-indigo-500/20 text-indigo-700 dark:text-indigo-300' : 'text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 hover:text-gray-900 dark:hover:text-white' }} block px-3 py-2 rounded-md text-base font-medium">
+                    Aparatur
                 </a>
                 <a href="{{ route('admin.dokumen.index') }}"
                     class="{{ request()->routeIs('admin.dokumen.*') ? 'bg-indigo-50 dark:bg-indigo-500/20 text-indigo-700 dark:text-indigo-300' : 'text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 hover:text-gray-900 dark:hover:text-white' }} block px-3 py-2 rounded-md text-base font-medium">
