@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Berita - Desa Timpik</title>
+    <title>Berita | Desa Timpik</title>
 
     <link rel="icon" type="image/png" href="{{ asset('images/logo-timpik.png') }}">
 
@@ -77,7 +77,7 @@
                         <ol role="list"
                             class="flex items-center space-x-2 bg-black/20 backdrop-blur-sm px-4 py-2 rounded-full">
                             <li>
-                                <a href="#" class="text-gray-300 hover:text-white transition-colors">
+                                <a href="{{ route('welcome') }}" class="text-gray-300 hover:text-white transition-colors">
                                     <svg class="h-5 w-5 flex-shrink-0" viewBox="0 0 20 20" fill="currentColor"
                                         aria-hidden="true">
                                         <path fill-rule="evenodd"

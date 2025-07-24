@@ -12,12 +12,15 @@
                     dan kearifan lokal.
                 </p>
                 <div class="flex space-x-3 pt-2">
-                    <img src="https://placehold.co/100x80/78909C/FFFFFF?text=Foto+1" alt="Galeri Desa 1"
-                        class="w-1/3 h-20 object-cover rounded-md hover:scale-105 transition-transform duration-300">
-                    <img src="https://placehold.co/100x80/546E7A/FFFFFF?text=Foto+2" alt="Galeri Desa 2"
-                        class="w-1/3 h-20 object-cover rounded-md hover:scale-105 transition-transform duration-300">
-                    <img src="https://placehold.co/100x80/37474F/FFFFFF?text=Foto+3" alt="Galeri Desa 3"
-                        class="w-1/3 h-20 object-cover rounded-md hover:scale-105 transition-transform duration-300">
+                    @php
+                        $galleryItems = \App\Models\Galeri::latest()->take(3)->get();
+                    @endphp
+
+                    @foreach ($galleryItems as $item)
+                        <img src="{{ asset('storage/' . $item->gambar) }}" alt="{{ $item->judul }}"
+                            onerror="this.onerror=null;this.src='https://placehold.co/100x80/E0E0E0/BDBDBD?text=Gambar';"
+                            class="w-1/3 h-20 object-cover rounded-md hover:scale-105 transition-transform duration-300">
+                    @endforeach
                 </div>
             </div>
 
@@ -40,16 +43,16 @@
                         <span>
                             <i data-lucide="phone" class="w-5 h-5 text-gray-300/90"></i>
                         </span>
-                        <span class="text-gray-300/90 leading-relaxed" style="font-family: 'Poppins', sans-serif;">
-                            087854312345 (Info Pelayanan)
+                        <span>
+                            <a href="https://wa.me/6287854312345" class="text-gray-300/90 leading-relaxed hover:text-white" style="font-family: 'Poppins', sans-serif;">087854312345 (Info Pelayanan)</a>
                         </span>
                     </li>
                     <li class="flex items-start space-x-3">
                         <span>
                             <i data-lucide="mail" class="w-5 h-5 text-gray-300/90"></i>
                         </span>
-                        <span class="text-gray-300/90 leading-relaxed" style="font-family: 'Poppins', sans-serif;">
-                            desatimpiksusukan89@gmail.com
+                        <span>
+                            <a href="mailto:desatimpiksusukan89@gmail.com" class="text-gray-300/90 leading-relaxed hover:text-white" style="font-family: 'Poppins', sans-serif;">desatimpiksusukan89@gmail.com</a>
                         </span>
                     </li>
                     <li class="flex items-start space-x-3">

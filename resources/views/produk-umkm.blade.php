@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Berita - Desa Timpik</title>
+    <title>Belanja | Desa Timpik</title>
 
     <link rel="icon" type="image/png" href="{{ asset('images/logo-timpik.png') }}">
 
@@ -118,19 +118,19 @@
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 reveal-on-scroll px-8 md:px-20">
                     @forelse ($produks as $produk)
                         <div
-                            class="bg-gray-50 rounded-2xl shadow-md overflow-hidden group transition-all duration-300 border border-gray-200/80 hover:shadow-xl hover:-translate-y-1">
+                            class="bg-gray rounded-2xl shadow-lg overflow-hidden group transform hover:-translate-y-2 transition-all duration-300 border border-gray-200/80">
                             <a href="{{ route('belanja.detail', $produk->id) }}" class="block">
                                 <div class="aspect-square w-full overflow-hidden">
                                     <img src="{{ asset('storage/' . $produk->foto) }}" alt="{{ $produk->nama_produk }}"
                                         onerror="this.onerror=null;this.src='https://placehold.co/500x500?text=No+Image';"
-                                        class="w-full h-full object-cover">
+                                        class="w-full h-52 object-cover">
                                 </div>
                                 <div class="p-5">
                                     <h3
-                                        class="font-bold text-lg text-gray-800 leading-snug mb-2 group-hover:text-[#0C3B2E]">
+                                        class="font-bold text-lg text-[#0C3B2E] leading-snug mb-2 group-hover:text-green-600 transition-colors">
                                         {{ $produk->nama_produk }}
                                     </h3>
-                                    <p class="text-gray-600 text-sm leading-relaxed mb-4 h-24 overflow-hidden">
+                                    <p class="text-gray-600 text-sm leading-relaxed mb-4">
                                         {{ \Illuminate\Support\Str::limit(strip_tags($produk->deskripsi), 140) }}
                                     </p>
                                     <p class="font-semibold text-[#C2977D] text-xl">

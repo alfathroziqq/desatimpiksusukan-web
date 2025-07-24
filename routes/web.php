@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\DataKelaminController;
+use App\Http\Controllers\DataKesehatanController;
 use App\Http\Controllers\BeritaController;
 use App\Http\Controllers\GaleriController;
 use App\Http\Controllers\AparaturController;
@@ -31,6 +33,12 @@ Route::get('/sejarah-desa', fn() => view('sejarah-desa'))->name('sejarah-desa');
 
 // Tata Kelola Desa
 Route::get('/tata-kelola-desa', action: fn() => view('tata-kelola'))->name('tata-kelola');
+
+// Data Jenis Kelamin
+Route::get('/data-jenis-kelamin', [DataKelaminController::class, 'public'])->name('data-jenis-kelamin');
+
+// Data Kesehatan
+Route::get('/data-kesehatan', [DataKesehatanController::class, 'public'])->name('data-kesehatan');
 
 // Aparatur Desa
 Route::get('/aparatur', fn() => view('aparatur'))->name('aparatur.index');
@@ -67,6 +75,14 @@ Route::middleware([
     'verified',
 ])->group(function () {
     Route::get('/dashboard', fn() => view('dashboard'))->name('dashboard');
+
+    // Data Jenis Kelamin
+    Route::get('/admin/data-kelamin', [DataKelaminController::class, 'index'])->name('admin.data-kelamin.index');
+    Route::post('/admin/data-kelamin', [DataKelaminController::class, 'store'])->name('admin.data-kelamin.store');
+
+    // Data Kesehatan
+    Route::get('/admin/data-kesehatan', [DataKesehatanController::class, 'index'])->name('admin.data-kesehatan.index');
+    Route::post('/admin/data-kesehatan', [DataKesehatanController::class, 'store'])->name('admin.data-kesehatan.store');
 
     // Aparatur Desa
     Route::resource('/admin/aparatur', AparaturController::class)->names('admin.aparatur');

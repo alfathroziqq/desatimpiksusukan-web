@@ -62,11 +62,9 @@
                 </button>
                 <div x-show="open" x-transition class="absolute mt-2 w-48 bg-[#254D43] rounded-md shadow-xl z-20"
                     style="display: none;">
-                    <a href="#" class="block px-4 py-2 text-sm text-gray-200 hover:bg-white/10">Data Jenis
-                        Kelamin</a>
-                    <a href="#" class="block px-4 py-2 text-sm text-gray-200 hover:bg-white/10">Data
-                        Pendidikan</a>
-                    <a href="#" class="block px-4 py-2 text-sm text-gray-200 hover:bg-white/10">Data Kesehatan</a>
+                    <a href="{{ route('data-jenis-kelamin') }}" class="block px-4 py-2 text-sm text-gray-200 hover:bg-white/10">Data Jenis Kelamin</a>
+                    <a href="#" class="block px-4 py-2 text-sm text-gray-200 hover:bg-white/10">Data Pendidikan</a>
+                    <a href="{{ route('data-kesehatan') }}" class="block px-4 py-2 text-sm text-gray-200 hover:bg-white/10">Data Kesehatan</a>
                     <a href="#" class="block px-4 py-2 text-sm text-gray-200 hover:bg-white/10">Data Keagamaan</a>
                     <a href="#" class="block px-4 py-2 text-sm text-gray-200 hover:bg-white/10">Data Ekonomi</a>
                 </div>
@@ -137,9 +135,11 @@
                     </svg>
                 </button>
                 <div x-show="activeAccordion === 'data'" class="pl-4 mt-1 space-y-1">
-                    <a href="#" class="block py-2 px-3 text-sm text-gray-300 hover:text-white hover:bg-white/5 rounded-md">Data Jenis Kelamin</a>
+                    <a href="{{ route('data-jenis-kelamin') }}" class="block py-2 px-3 text-sm text-gray-300 hover:text-white hover:bg-white/5 rounded-md">Data Jenis Kelamin</a>
                     <a href="#" class="block py-2 px-3 text-sm text-gray-300 hover:text-white hover:bg-white/5 rounded-md">Data Pendidikan</a>
-                    <a href="#" class="block py-2 px-3 text-sm text-gray-300 hover:text-white hover:bg-white/5 rounded-md">Data Kesehatan</a>
+                    <a href="{{ route('data-kesehatan') }}" class="block py-2 px-3 text-sm text-gray-300 hover:text-white hover:bg-white/5 rounded-md">Data Kesehatan</a>
+                    <a href="#" class="block py-2 px-3 text-sm text-gray-300 hover:text-white hover:bg-white/5 rounded-md">Data Keagamaan</a>
+                    <a href="#" class="block py-2 px-3 text-sm text-gray-300 hover:text-white hover:bg-white/5 rounded-md">Data Ekonomi</a>
                 </div>
             </div>
 
