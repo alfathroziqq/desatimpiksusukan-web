@@ -240,11 +240,11 @@
                 <div class="flex justify-center mt-6 mb-4 sm:mb-6 space-x-2 reveal-on-scroll">
                     <button @click="scroll('left')"
                         class="p-2 rounded-full bg-gray-200 hover:bg-gray-300 transition-colors disabled:opacity-50"
-                        :disabled="atStart">Desa Timpik, yang terletak di Kecamatan Susukan, Kabupaten Semarang, Jawa Tengah, merupakan salah satu desa yang memiliki nilai sejarah dan budaya penting dalam peta peradaban lokal di lereng timur Gunung Merbabu. Berdasarkan temuan arkeologis, wilayah ini diketahui telah dihuni jauh sebelum masa Islam, yang dibuktikan dengan penemuan artefak berupa yoni—sebuah simbol religius dalam kepercayaan Hindu—yang kini disimpan di area Masjid Kauman Timpik. Artefak tersebut, yang sempat terkubur dan ditemukan kembali oleh warga, menandakan bahwa pada masa lalu kemungkinan terdapat bangunan suci atau pusat kegiatan keagamaan Hindu di wilayah ini. Seiring masuknya Islam dan berkembangnya sistem pemerintahan desa, Timpik mengalami transformasi sosial budaya yang harmonis, ditandai dengan berdirinya masjid-masjid tradisional dan berkembangnya komunitas masyarakat agraris. Saat ini, Desa Timpik tidak hanya menjaga warisan sejarah dan budaya leluhurnya, tetapi juga melakukan inovasi dengan membangun desa wisata edukatif berbasis pertanian modern. Masyarakat mengembangkan berbagai wahana seperti taman bunga, area outbound, dan program edukasi pertanian, menjadikan desa ini sebagai contoh perpaduan antara pelestarian sejarah dan pengembangan ekonomi kreatif pedesaan.</i></button>
+                        :disabled="atStart"><i data-lucide="arrow-left" class="w-5 h-5"></i></button>
                     <button @click="scroll('right')"
                         class="p-2 rounded-full bg-gray-200 hover:bg-gray-300 transition-colors disabled:opacity-50"
                         :disabled="atEnd"><i data-lucide="arrow-right" class="w-5 h-5"></i></button>
-                </div>
+                </div>
             </div>
         </section>
     </main>

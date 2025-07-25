@@ -67,7 +67,7 @@
                 <div class="max-w-xl lg:max-w-2xl">
                     <h1 class="text-4xl md:text-5xl lg:text-7xl font-bold text-[#0C3B2E] mt-20"
                         style="font-family: 'Poppins', sans-serif; text-shadow: 2px 2px 4px rgba(0,0,0,0.4);">
-                        Tata Kelola
+                        Sejarah Desa
                     </h1>
                     <p class="text-4xl md:text-5xl lg:text-7xl text-white italic"
                         style="font-family: 'Playfair Display', serif; text-shadow: 2px 2px 4px rgba(0,0,0,0.4);">
@@ -126,8 +126,8 @@
                         style="font-family: 'Poppins', sans-serif; line-height: 1.1; padding-bottom: 2px;">
                         Sejarah Desa Timpik
                     </h2>
-                    <div class="h-1 w-32 bg-gradient-to-r from-[#12715D] to-[#E8C187] rounded-full mx-auto lg:mx-0">
-                    </div>
+                    <div class="h-1 w-32 bg-gradient-to-r from-[#12715D] to-[#E8C187] rounded-full mx-0"></div>
+
                 </div>
 
                 <div class="flex flex-col-reverse lg:flex-row items-center gap-12 lg:gap-20 reveal-on-scroll">
@@ -184,14 +184,13 @@
 
         <!-- Peta Lokasi -->
         <section class="py-14 bg-[#f7f6f3] overflow-x-clip" style="font-family: 'Poppins', sans-serif;">
-            <div class="container mx-auto px-4 md:px-12 lg:px-28">
+            <div class="container mx-auto px-8 sm:px-12 lg:px-45">
                 <div class="mb-12 reveal-on-scroll">
                     <h2 class="text-3xl md:text-5xl font-extrabold text-center lg:text-left bg-gradient-to-r from-[#125D4E] via-[#619C6A] to-[#E8C187] bg-clip-text text-transparent inline-block mb-2"
                         style="font-family: 'Poppins', sans-serif;">
                         Peta Lokasi
                     </h2>
-                    <div class="h-1 w-28 bg-gradient-to-r from-[#12715D] to-[#E8C187] rounded-full mx-auto lg:mx-0">
-                    </div>
+                    <div class="h-1 w-32 bg-gradient-to-r from-[#12715D] to-[#E8C187] rounded-full mx-0"></div>
                 </div>
 
                 <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center reveal-on-scroll">

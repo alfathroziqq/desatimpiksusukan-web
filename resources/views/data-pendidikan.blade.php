@@ -145,7 +145,8 @@
             <div class="container mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="text-center mb-5 reveal-on-scroll">
                     <h2 class="text-3xl sm:text-[45px] font-bold text-[#0C3B2E]">Data Pendidikan</h2>
-                    <div class="w-55 md:w-82 h-1 bg-[#0C3B2E] mx-auto mt-3"></div>
+                    <div class="mx-auto mt-4 w-24 md:w-48 h-1 bg-gradient-to-r from-[#C7F3E7] via-[#0C3B2E] to-[#E8C187] rounded-full mb-1">
+                    </div>
                     <p class="text-md sm:text-[20px] text-[#0C3B2E] mt-5 px-5 md:px-30">Persebaran penduduk menurut
                         tingkat pendidikan yang telah ditempuh.</p>
                 </div>
@@ -157,112 +158,106 @@
 
             <!-- Grafik dan Tabel Pendidikan -->
             <section class="reveal-on-scroll">
-                <div class="bg-white p-6 sm:p-8 rounded-2xl shadow-xl border border-gray-100">
-                    <!-- Legend Keterangan Warna -->
-                    <div class="justify-center flex flex-wrap gap-5 items-center mb-4">
-                        <div class="flex items-center">
-                            <span class="w-4 h-4 rounded-full mr-2 inline-block"
-                                style="background: rgba(59, 130, 246, 0.7);"></span>
-                            <span class="text-sm">SD / MI</span>
-                        </div>
-                        <div class="flex items-center">
-                            <span class="w-4 h-4 rounded-full mr-2 inline-block"
-                                style="background: rgba(236, 72, 153, 0.7);"></span>
-                            <span class="text-sm">SLTP / MTs</span>
-                        </div>
-                        <div class="flex items-center">
-                            <span class="w-4 h-4 rounded-full mr-2 inline-block"
-                                style="background: rgba(16, 185, 129, 0.7);"></span>
-                            <span class="text-sm">SLTA / MA</span>
-                        </div>
-                        <div class="flex items-center">
-                            <span class="w-4 h-4 rounded-full mr-2 inline-block"
-                                style="background: rgba(168, 85, 247, 0.7);"></span>
-                            <span class="text-sm">S1 / Diploma</span>
-                        </div>
-                        <div class="flex items-center">
-                            <span class="w-4 h-4 rounded-full mr-2 inline-block"
-                                style="background: rgba(249, 115, 22, 0.7);"></span>
-                            <span class="text-sm">Putus Sekolah</span>
-                        </div>
-                        <div class="flex items-center">
-                            <span class="w-4 h-4 rounded-full mr-2 inline-block"
-                                style="background: rgba(107, 114, 128, 0.7);"></span>
-                            <span class="text-sm">Buta Huruf</span>
-                        </div>
+                <div class="bg-yellow-50 p-6 sm:p-10 rounded-3xl shadow-xl border border-gray-100">
+                    <!-- Judul -->
+                    <div class="flex items-center gap-3 mb-6">
+                        <!-- Icon Pendidikan -->
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-blue-600" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M12 14l9-5-9-5-9 5 9 5z" />
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M12 14l6.16-3.422a12.083 12.083 0 01.84 4.626c0 2.21-.895 4.21-2.344 5.656A7.967 7.967 0 0112 22a7.967 7.967 0 01-4.656-1.344A7.972 7.972 0 015 15.204c0-1.651.528-3.177 1.428-4.422L12 14z" />
+                        </svg>
+                        <h2 class="text-xl sm:text-2xl font-bold text-[#0C3B2E]">Distribusi Tingkat Pendidikan Penduduk</h2>
                     </div>
-                    <div class="w-full h-96">
-                        <canvas id="pendidikanChart"></canvas>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
+                        <!-- Chart -->
+                        <div class="relative w-full h-80">
+                            <canvas id="pendidikanChart"></canvas>
+                        </div>
+
+                        <!-- Legend -->
+                        <div class="space-y-3">
+                            <div class="flex items-center gap-3">
+                                <span class="w-4 h-4 rounded-full bg-blue-500/70 shadow-md"></span>
+                                <span class="text-gray-700 font-medium text-sm bg-white rounded-full px-3 py-1 shadow border">SD / MI</span>
+                            </div>
+                            <div class="flex items-center gap-3">
+                                <span class="w-4 h-4 rounded-full bg-pink-500/70 shadow-md"></span>
+                                <span class="text-gray-700 font-medium text-sm bg-white rounded-full px-3 py-1 shadow border">SLTP / MTs</span>
+                            </div>
+                            <div class="flex items-center gap-3">
+                                <span class="w-4 h-4 rounded-full bg-emerald-500/70 shadow-md"></span>
+                                <span class="text-gray-700 font-medium text-sm bg-white rounded-full px-3 py-1 shadow border">SLTA / MA</span>
+                            </div>
+                            <div class="flex items-center gap-3">
+                                <span class="w-4 h-4 rounded-full bg-purple-500/70 shadow-md"></span>
+                                <span class="text-gray-700 font-medium text-sm bg-white rounded-full px-3 py-1 shadow border">S1 / Diploma</span>
+                            </div>
+                            <div class="flex items-center gap-3">
+                                <span class="w-4 h-4 rounded-full bg-orange-500/70 shadow-md"></span>
+                                <span class="text-gray-700 font-medium text-sm bg-white rounded-full px-3 py-1 shadow border">Putus Sekolah</span>
+                            </div>
+                            <div class="flex items-center gap-3">
+                                <span class="w-4 h-4 rounded-full bg-gray-500/70 shadow-md"></span>
+                                <span class="text-gray-700 font-medium text-sm bg-white rounded-full px-3 py-1 shadow border">Buta Huruf</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </section>
 
-            <!-- Tabel Rincian Pendidikan -->
-            <section class="reveal-on-scroll">
-                <div class="text-center mb-4">
-                    <h2 class="text-3xl font-bold tracking-tight">Tabel Rincian Pendidikan</h2>
-                </div>
-                <div class="max-w-4xl mx-auto">
-                    <div class="shadow-2xl overflow-hidden border border-gray-200 sm:rounded-2xl">
-                        <table class="min-w-full divide-y divide-gray-200">
-                            <thead class="bg-slate-700">
-                                <tr>
-                                    <th scope="col"
-                                        class="px-6 py-4 text-left text-xs font-bold text-white uppercase tracking-wider">
-                                        Tingkat Pendidikan</th>
-                                    <th scope="col"
-                                        class="px-6 py-4 text-center text-xs font-bold text-white uppercase tracking-wider">
-                                        Jumlah</th>
-                                </tr>
-                            </thead>
-                            <tbody class="bg-white divide-y divide-gray-200">
-                                <tr class="hover:bg-gray-50 transition-colors">
-                                    <td class="px-6 py-4 whitespace-nowrap text-sm font-medium">SD /
-                                        MI</td>
-                                    <td class="px-6 py-4 whitespace-nowrap text-sm font-semibold text-center">
-                                        {{ number_format($data->sd_mi) }} Orang
-                                    </td>
-                                </tr>
-                                <tr class="bg-gray-50/50 hover:bg-gray-100 transition-colors">
-                                    <td class="px-6 py-4 whitespace-nowrap text-sm font-medium">SLTP /
-                                        MTs</td>
-                                    <td class="px-6 py-4 whitespace-nowrap text-sm font-semibold text-center">
-                                        {{ number_format($data->sltp_mts) }}
-                                    </td>
-                                </tr>
-                                <tr class="hover:bg-gray-50 transition-colors">
-                                    <td class="px-6 py-4 whitespace-nowrap text-sm font-medium">SLTA /
-                                        MA</td>
-                                    <td class="px-6 py-4 whitespace-nowrap text-sm font-semibold text-center">
-                                        {{ number_format($data->slta_ma) }}
-                                    </td>
-                                </tr>
-                                <tr class="bg-gray-50/50 hover:bg-gray-100 transition-colors">
-                                    <td class="px-6 py-4 whitespace-nowrap text-sm font-medium">S1 /
-                                        Diploma</td>
-                                    <td class="px-6 py-4 whitespace-nowrap text-sm font-semibold text-center">
-                                        {{ number_format($data->s1_diploma) }}
-                                    </td>
-                                </tr>
-                                <tr class="hover:bg-gray-50 transition-colors">
-                                    <td class="px-6 py-4 whitespace-nowrap text-sm font-medium">Putus
-                                        Sekolah</td>
-                                    <td class="px-6 py-4 whitespace-nowrap text-sm font-semibold text-center">
-                                        {{ number_format($data->putus_sekolah) }}
-                                    </td>
-                                </tr>
-                                <tr class="bg-gray-50/50 hover:bg-gray-100 transition-colors">
-                                    <td class="px-6 py-4 whitespace-nowrap text-sm font-medium">Buta
-                                        Huruf</td>
-                                    <td class="px-6 py-4 whitespace-nowrap text-sm font-semibold text-center">
-                                        {{ number_format($data->buta_huruf) }}
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
+
+            <section class="py-16 px-6 md:px-16 bg-gradient-to-b from-[#F7FBE8] to-[#E8F5E9]">
+                <div class="max-w-3xl mx-auto">
+                    <h2 class="text-3xl md:text-4xl font-bold text-[#2F5233] mb-10 flex items-center gap-4">
+                        <svg class="w-8 h-8 text-green-600" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M10 2a8 8 0 100 16 8 8 0 000-16zM8.5 11.5l-3-3 1.41-1.42L8.5 8.67l4.59-4.58L14.5 5.5l-6 6z" />
+                        </svg>
+                        Data Tingkat Pendidikan Penduduk
+                    </h2>
+
+                    @php
+                        $totalPendidikan = $data->sd_mi + $data->sltp_mts + $data->slta_ma + $data->s1_diploma + $data->putus_sekolah + $data->buta_huruf;
+                    @endphp
+
+                    @php
+                        $items = [
+                            ['label' => 'SD / MI', 'value' => $data->sd_mi, 'color' => 'bg-green-600', 'icon' => '<path d="M12 2H8a2 2 0 00-2 2v14l6-3 6 3V4a2 2 0 00-2-2z"/>' ],
+                            ['label' => 'SLTP / MTs', 'value' => $data->sltp_mts, 'color' => 'bg-yellow-400', 'icon' => '<path d="M5 3h10a2 2 0 012 2v2H3V5a2 2 0 012-2z"/><path d="M3 9h14v2H3z"/><path d="M7 13h2v4H7zM11 13h2v4h-2z"/>' ],
+                            ['label' => 'SLTA / MA', 'value' => $data->slta_ma, 'color' => 'bg-green-400', 'icon' => '<circle cx="10" cy="6" r="4"/><path d="M2 18a8 8 0 0116 0z"/>' ],
+                            ['label' => 'S1 / Diploma', 'value' => $data->s1_diploma, 'color' => 'bg-indigo-400', 'icon' => '<path d="M10 2L2 6l8 4 8-4-8-4z"/><path d="M2 10v4l8 4 8-4v-4"/>' ],
+                            ['label' => 'Putus Sekolah', 'value' => $data->putus_sekolah, 'color' => 'bg-red-300', 'icon' => '<path d="M10 2a8 8 0 100 16 8 8 0 000-16zM6 6l8 8M14 6l-8 8"/>' ],
+                            ['label' => 'Buta Huruf', 'value' => $data->buta_huruf, 'color' => 'bg-gray-400', 'icon' => '<path d="M10 2a8 8 0 100 16 8 8 0 000-16z"/><path d="M4 10h12"/>' ],
+                        ];
+                    @endphp
+
+                    <div class="space-y-6">
+                        @foreach ($items as $item)
+                            @php
+                                $percentage = $totalPendidikan > 0 ? ($item['value'] / $totalPendidikan) * 100 : 0;
+                            @endphp
+                            <div>
+                                <div class="flex items-center justify-between mb-2">
+                                    <div class="flex items-center gap-3 text-gray-700">
+                                        <svg class="w-5 h-5 text-[#2F5233]" fill="currentColor" viewBox="0 0 20 20">{!! $item['icon'] !!}</svg>
+                                        <span class="text-sm font-semibold">{{ $item['label'] }}</span>
+                                    </div>
+                                    <span class="text-sm font-medium text-gray-600">{{ number_format($item['value']) }} Orang</span>
+                                </div>
+                                <div class="w-full bg-white rounded-full h-3 shadow-inner">
+                                    <div class="{{ $item['color'] }} h-3 rounded-full transition-all duration-500"
+                                        style="width: {{ $percentage }}%">
+                                    </div>
+                                </div>
+                            </div>
+                        @endforeach
                     </div>
                 </div>
             </section>
+
 
             <section class="reveal-on-scroll">
                 <div class="text-center mb-4">

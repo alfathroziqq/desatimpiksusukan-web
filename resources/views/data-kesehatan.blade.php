@@ -149,7 +149,8 @@
             <div class="container mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="text-center mb-5 reveal-on-scroll">
                     <h2 class="text-3xl sm:text-[45px] font-bold text-[#0C3B2E]">Grafik Kesehatan</h2>
-                    <div class="w-45 md:w-163 h-1 bg-[#0C3B2E] mx-auto mt-3"></div>
+                    <div class="mx-auto mt-4 w-24 md:w-48 h-1 bg-gradient-to-r from-[#C7F3E7] via-[#0C3B2E] to-[#E8C187] rounded-full mb-1">
+                    </div>
                     <p class="text-md sm:text-[20px] text-[#0C3B2E] mt-5">Statistik dan fasilitas kesehatan untuk kesejahteraan masyarakat desa timpik.</p>
                 </div>
             </div>
@@ -157,153 +158,212 @@
 
         <div class="container mx-auto px-6 lg:px-16 space-y-14 mt-[-20px] mb-20 text-[#0C3B2E]" style="font-family: 'Poppins', sans-serif;">
 
-            <!-- Kematian Bayi & Ibu Melahirkan -->
-            <section class="reveal-on-scroll grid grid-cols-1 md:grid-cols-2 gap-12">
-                <!-- Kematian Bayi -->
-                <div>
-                    <div class="text-center mb-4">
-                        <h2 class="text-3xl font-bold tracking-tight">Kematian Bayi</h2>
-                        <p class="mt-2 text-lg">Data kelahiran dan kematian bayi tahun ini.</p>
-                    </div>
-                    <div class="bg-white p-6 rounded-2xl shadow-xl border border-gray-100">
-                        <table class="min-w-full mb-6 text-sm">
-                            <tbody class="divide-y divide-gray-200">
-                                <tr class="hover:bg-gray-50">
-                                    <td class="py-3 px-2 text-gray-600">Jumlah Bayi Lahir</td>
-                                    <td class="py-3 px-2 font-semibold text-right">{{ number_format($data->bayi_lahir) }} Orang</td>
-                                </tr>
-                                <tr class="hover:bg-gray-50">
-                                    <td class="py-3 px-2">Jumlah Bayi Meninggal</td>
-                                    <td class="py-3 px-2 font-semibold text-right">{{ number_format($data->bayi_meninggal) }} Orang</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                        <div class="w-full h-80">
-                            <canvas id="bayiChart"></canvas>
+            <section class="py-16 bg-[#F9FAFB] font-poppins">
+                <div class="max-w-7xl mx-auto px-6">
+                    <h2 class="text-4xl font-extrabold text-center text-gray-800 mb-2">Statistik Kelahiran & Kematian</h2>
+                    <p class="text-center text-lg text-gray-500 mb-12">Data tahun ini tentang bayi dan ibu yang melahirkan</p>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+                        <!-- Kematian Bayi -->
+                        <div class="bg-[#DFF5E1] p-6 rounded-3xl shadow-md border border-[#B7E4C7] transition hover:shadow-xl">
+                            <div class="flex items-center gap-3 mb-4">
+                                <div class="bg-[#3C7167] text-white rounded-full p-2">
+                                    <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2"
+                                        viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M12 4v1m0 14v1m8-9h-1M5 12H4m15.36 6.36l-.71-.71M6.34 6.34l-.7-.7m12.02 0l-.7.7M6.34 17.66l-.7.7M12 8a4 4 0 110 8 4 4 0 010-8z" /></svg>
+                                </div>
+                                <h3 class="text-2xl font-bold text-gray-800">Kematian Bayi</h3>
+                            </div>
+
+                            <table class="w-full text-sm text-gray-700 mb-6">
+                                <tbody class="divide-y divide-gray-300">
+                                    <tr>
+                                        <td class="py-2">Jumlah Bayi Lahir</td>
+                                        <td class="py-2 text-right font-semibold text-[#065F46]">{{ number_format($data->bayi_lahir) }} Orang</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="py-2">Jumlah Bayi Meninggal</td>
+                                        <td class="py-2 text-right font-semibold text-[#B91C1C]">{{ number_format($data->bayi_meninggal) }} Orang</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+
+                            <div class="h-72">
+                                <canvas id="bayiChart"></canvas>
+                            </div>
                         </div>
-                    </div>
-                </div>
-                <!-- Kematian Ibu Melahirkan -->
-                <div>
-                    <div class="text-center mb-4">
-                        <h2 class="text-3xl font-bold tracking-tight">Kematian Ibu Melahirkan</h2>
-                        <p class="mt-2 text-lg">Data kelahiran dan kematian ibu tahun ini.</p>
-                    </div>
-                    <div class="bg-white p-6 rounded-2xl shadow-xl border border-gray-100">
-                        <table class="min-w-full mb-6 text-sm">
-                            <tbody class="divide-y divide-gray-200">
-                                <tr class="hover:bg-gray-50">
-                                    <td class="py-3 px-2">Jumlah Ibu Melahirkan</td>
-                                    <td class="py-3 px-2 font-semibold text-right">{{ number_format($data->ibu_melahirkan) }} Orang</td>
-                                </tr>
-                                <tr class="hover:bg-gray-50">
-                                    <td class="py-3 px-2">Jumlah Ibu Melahirkan Meninggal</td>
-                                    <td class="py-3 px-2 font-semibold text-right">{{ number_format($data->ibu_meninggal) }} Orang</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                        <div class="w-full h-80">
-                            <canvas id="ibuChart"></canvas>
+
+                        <!-- Kematian Ibu -->
+                        <div class="bg-[#FFF9D6] p-6 rounded-3xl shadow-md border border-[#FDE68A] transition hover:shadow-xl">
+                            <div class="flex items-center gap-3 mb-4">
+                                <div class="bg-[#E8C187] text-white rounded-full p-2">
+                                    <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2"
+                                        viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M12 4v1m0 14v1m8-9h-1M5 12H4m15.36 6.36l-.71-.71M6.34 6.34l-.7-.7m12.02 0l-.7.7M6.34 17.66l-.7.7M12 8a4 4 0 110 8 4 4 0 010-8z" /></svg>
+                                </div>
+                                <h3 class="text-2xl font-bold text-gray-800">Kematian Ibu</h3>
+                            </div>
+
+                            <table class="w-full text-sm text-gray-700 mb-6">
+                                <tbody class="divide-y divide-gray-300">
+                                    <tr>
+                                        <td class="py-2">Jumlah Ibu Melahirkan</td>
+                                        <td class="py-2 text-right font-semibold text-[#92400E]">{{ number_format($data->ibu_melahirkan) }} Orang</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="py-2">Jumlah Ibu Meninggal</td>
+                                        <td class="py-2 text-right font-semibold text-[#B91C1C]">{{ number_format($data->ibu_meninggal) }} Orang</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+
+                            <div class="h-72">
+                                <canvas id="ibuChart"></canvas>
+                            </div>
                         </div>
                     </div>
                 </div>
             </section>
+
 
             <!-- Gizi Balita -->
-            <section class="reveal-on-scroll">
-                <div class="text-center mb-6">
+            <section class="reveal-on-scroll py-8">
+                <div class="text-center mb-10">
                     <h2 class="text-3xl font-bold tracking-tight">Status Gizi Balita</h2>
-                    <p class="mt-2 text-lg">Data kondisi gizi anak-anak balita di Desa Kunden.</p>
+                    <p class="mt-2 text-lg text-gray-600">Data kondisi gizi anak-anak balita di Desa Timpik.</p>
                 </div>
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-                    <div class="bg-blue-500 text-white p-6 rounded-xl shadow-lg">
-                        <i data-lucide="users" class="w-8 h-8 mb-3 opacity-70"></i>
-                        <p class="text-3xl font-bold">{{ number_format($data->jumlah_balita) }}</p>
-                        <p class="text-blue-100">Jumlah Balita</p>
+
+                <div class="space-y-6 max-w-4xl mx-auto">
+                    <!-- Jumlah Balita -->
+                    <div class="flex items-center p-5 bg-[#ECFDF5] border border-green-200 rounded-xl shadow-sm">
+                        <div class="bg-green-100 p-4 rounded-full">
+                            <i data-lucide="users" class="w-6 h-6 text-green-600"></i>
+                        </div>
+                        <div class="ml-5">
+                            <p class="text-sm text-gray-600">Jumlah Balita</p>
+                            <p class="text-2xl font-bold text-green-800">{{ number_format($data->jumlah_balita) }}</p>
+                        </div>
                     </div>
-                    <div class="bg-green-500 text-white p-6 rounded-xl shadow-lg">
-                        <i data-lucide="smile" class="w-8 h-8 mb-3 opacity-70"></i>
-                        <p class="text-3xl font-bold">{{ number_format($data->gizi_baik) }}</p>
-                        <p class="text-green-100">Balita Gizi Baik</p>
+
+                    <!-- Gizi Baik -->
+                    <div class="flex items-center p-5 bg-[#F0FDF4] border border-green-200 rounded-xl shadow-sm">
+                        <div class="bg-green-100 p-4 rounded-full">
+                            <i data-lucide="smile" class="w-6 h-6 text-green-600"></i>
+                        </div>
+                        <div class="ml-5">
+                            <p class="text-sm text-gray-600">Balita Gizi Baik</p>
+                            <p class="text-2xl font-bold text-green-800">{{ number_format($data->gizi_baik) }}</p>
+                        </div>
                     </div>
-                    <div class="bg-yellow-500 text-white p-6 rounded-xl shadow-lg">
-                        <i data-lucide="frown" class="w-8 h-8 mb-3 opacity-70"></i>
-                        <p class="text-3xl font-bold">{{ number_format($data->gizi_kurang) }}</p>
-                        <p class="text-yellow-100">Balita Gizi Kurang</p>
+
+                    <!-- Gizi Kurang -->
+                    <div class="flex items-center p-5 bg-[#FEFCE8] border border-yellow-200 rounded-xl shadow-sm">
+                        <div class="bg-yellow-100 p-4 rounded-full">
+                            <i data-lucide="meh" class="w-6 h-6 text-yellow-600"></i>
+                        </div>
+                        <div class="ml-5">
+                            <p class="text-sm text-gray-600">Balita Gizi Kurang</p>
+                            <p class="text-2xl font-bold text-yellow-700">{{ number_format($data->gizi_kurang) }}</p>
+                        </div>
                     </div>
-                    <div class="bg-red-500 text-white p-6 rounded-xl shadow-lg">
-                        <i data-lucide="alert-triangle" class="w-8 h-8 mb-3 opacity-70"></i>
-                        <p class="text-3xl font-bold">{{ number_format($data->gizi_buruk) }}</p>
-                        <p class="text-red-100">Balita Gizi Buruk</p>
+
+                    <!-- Gizi Buruk -->
+                    <div class="flex items-center p-5 bg-[#FEF2F2] border border-red-200 rounded-xl shadow-sm">
+                        <div class="bg-red-100 p-4 rounded-full">
+                            <i data-lucide="alert-triangle" class="w-6 h-6 text-red-600"></i>
+                        </div>
+                        <div class="ml-5">
+                            <p class="text-sm text-gray-600">Balita Gizi Buruk</p>
+                            <p class="text-2xl font-bold text-red-700">{{ number_format($data->gizi_buruk) }}</p>
+                        </div>
                     </div>
                 </div>
             </section>
 
+
             <!-- Cakupan Imunisasi & Air Bersih -->
-            <section class="reveal-on-scroll grid grid-cols-1 lg:grid-cols-2 gap-12">
-                <div>
-                    <div class="text-center lg:text-left mb-4">
-                        <h2 class="text-3xl font-bold tracking-tight">Cakupan Imunisasi</h2>
-                        <p class="mt-2 text-lg">Partisipasi program imunisasi anak.</p>
+            <section class="w-full bg-gradient-to-r from-green-50 via-yellow-50 to-yellow-100 py-16 font-sans">
+            <div class="max-w-7xl mx-auto px-6 lg:px-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-12 text-center">
+                Cakupan Imunisasi & Akses Air Bersih
+                </h2>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+
+                <!-- CARD IMUNISASI -->
+                <div class="bg-white/60 backdrop-blur-md rounded-xl shadow-md p-6 border border-green-100">
+                    <div class="flex items-center gap-2 mb-5 text-green-800">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2"
+                        viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                        d="M15 12H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                    <h3 class="text-xl font-semibold">Cakupan Imunisasi</h3>
                     </div>
-                    <div class="bg-white p-6 rounded-2xl shadow-xl border border-gray-100">
-                        <table class="min-w-full mb-6 text-sm">
-                            <tbody class="divide-y divide-gray-200">
-                                <tr class="hover:bg-gray-50">
-                                    <td class="py-3 px-2 text-gray-600">Cakupan Imunisasi Polio 3</td>
-                                    <td class="py-3 px-2 font-semibold text-gray-800 text-right">{{ number_format($data->imunisasi_polio) }} Orang</td>
-                                </tr>
-                                <tr class="hover:bg-gray-50">
-                                    <td class="py-3 px-2 text-gray-600">Cakupan Imunisasi DPT-1</td>
-                                    <td class="py-3 px-2 font-semibold text-gray-800 text-right">{{ number_format($data->imunisasi_dpt1) }} Orang</td>
-                                </tr>
-                                <tr class="hover:bg-gray-50">
-                                    <td class="py-3 px-2 text-gray-600">Cakupan Imunisasi Cacar</td>
-                                    <td class="py-3 px-2 font-semibold text-gray-800 text-right">{{ number_format($data->imunisasi_cacar) }} Orang</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                        <div class="w-full h-80">
-                            <canvas id="imunisasiChart"></canvas>
-                        </div>
+
+                    <div class="space-y-3 text-base">
+                    <div class="flex justify-between bg-green-50 p-3 rounded shadow-sm">
+                        <span>Polio 3</span>
+                        <strong class="text-green-700">{{ number_format($data->imunisasi_polio) }} Orang</strong>
                     </div>
-                </div>
-                <div>
-                    <div class="text-center lg:text-left mb-4">
-                        <h2 class="text-3xl font-bold tracking-tight">Akses Air Bersih</h2>
-                        <p class="mt-2 text-lg">Sumber air bersih utama keluarga.</p>
+                    <div class="flex justify-between bg-green-50 p-3 rounded shadow-sm">
+                        <span>DPT-1</span>
+                        <strong class="text-green-700">{{ number_format($data->imunisasi_dpt1) }} Orang</strong>
                     </div>
-                    <div class="bg-white p-6 rounded-2xl shadow-xl border border-gray-100">
-                        <table class="min-w-full mb-6 text-sm">
-                            <tbody class="divide-y divide-gray-200">
-                                <tr class="hover:bg-gray-50">
-                                    <td class="py-3 px-2 text-gray-600">Pengguna Sumur Galian</td>
-                                    <td class="py-3 px-2 font-semibold text-gray-800 text-right">{{ number_format($data->sumur_galian) }} KK</td>
-                                </tr>
-                                <tr class="hover:bg-gray-50">
-                                    <td class="py-3 px-2 text-gray-600">Pengguna Air PAH</td>
-                                    <td class="py-3 px-2 font-semibold text-gray-800 text-right">{{ number_format($data->air_pah) }} KK</td>
-                                </tr>
-                                <tr class="hover:bg-gray-50">
-                                    <td class="py-3 px-2 text-gray-600">Pengguna Sumur Pompa</td>
-                                    <td class="py-3 px-2 font-semibold text-gray-800 text-right">{{ number_format($data->sumur_pompa) }} KK</td>
-                                </tr>
-                                <tr class="hover:bg-gray-50">
-                                    <td class="py-3 px-2 text-gray-600">Pengguna Sumur Hidran Umum</td>
-                                    <td class="py-3 px-2 font-semibold text-gray-800 text-right">{{ number_format($data->hidran_umum) }} KK</td>
-                                </tr>
-                                <tr class="hover:bg-gray-50">
-                                    <td class="py-3 px-2 text-gray-600">Pengguna Air Sungai</td>
-                                    <td class="py-3 px-2 font-semibold text-gray-800 text-right">{{ number_format($data->air_sungai) }} KK</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                        <div class="w-full h-80">
-                            <canvas id="airChart"></canvas>
-                        </div>
+                    <div class="flex justify-between bg-green-50 p-3 rounded shadow-sm">
+                        <span>Cacar</span>
+                        <strong class="text-green-700">{{ number_format($data->imunisasi_cacar) }} Orang</strong>
+                    </div>
+                    </div>
+
+                    <div class="mt-6">
+                    <canvas id="imunisasiChart" class="w-full h-[300px]"></canvas>
                     </div>
                 </div>
+
+                <!-- CARD AIR BERSIH -->
+                <div class="bg-white/60 backdrop-blur-md rounded-xl shadow-md p-6 border border-yellow-100">
+                    <div class="flex items-center gap-2 mb-5 text-yellow-700">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2"
+                        viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                        d="M3 10h11M9 21V3m0 0L5 7m4-4l4 4" />
+                    </svg>
+                    <h3 class="text-xl font-semibold">Akses Air Bersih</h3>
+                    </div>
+
+                    <div class="space-y-3 text-base">
+                    <div class="flex justify-between bg-yellow-50 p-3 rounded shadow-sm">
+                        <span>Sumur Galian</span>
+                        <strong class="text-yellow-700">{{ number_format($data->sumur_galian) }} KK</strong>
+                    </div>
+                    <div class="flex justify-between bg-yellow-50 p-3 rounded shadow-sm">
+                        <span>Air PAH</span>
+                        <strong class="text-yellow-700">{{ number_format($data->air_pah) }} KK</strong>
+                    </div>
+                    <div class="flex justify-between bg-yellow-50 p-3 rounded shadow-sm">
+                        <span>Sumur Pompa</span>
+                        <strong class="text-yellow-700">{{ number_format($data->sumur_pompa) }} KK</strong>
+                    </div>
+                    <div class="flex justify-between bg-yellow-50 p-3 rounded shadow-sm">
+                        <span>Hidran Umum</span>
+                        <strong class="text-yellow-700">{{ number_format($data->hidran_umum) }} KK</strong>
+                    </div>
+                    <div class="flex justify-between bg-yellow-50 p-3 rounded shadow-sm">
+                        <span>Air Sungai</span>
+                        <strong class="text-yellow-700">{{ number_format($data->air_sungai) }} KK</strong>
+                    </div>
+                    </div>
+
+                    <div class="mt-6">
+                    <canvas id="airChart" class="w-full h-[300px]"></canvas>
+                    </div>
+                </div>
+
+                </div>
+            </div>
             </section>
+
 
         </div>
 

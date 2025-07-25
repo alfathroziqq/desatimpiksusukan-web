@@ -116,6 +116,7 @@
 
                             <li>
                                 <div class="flex items-center">
+                                    
                                     <svg class="h-5 w-5 flex-shrink-0 text-gray-400" viewBox="0 0 20 20"
                                         fill="currentColor" aria-hidden="true">
                                         <path fill-rule="evenodd"
@@ -135,8 +136,9 @@
         <section class="py-12 md:py-10 bg-white" style="font-family: 'Poppins', sans-serif;">
             <div class="container mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="text-center mb-5 reveal-on-scroll">
-                    <h2 class="text-3xl sm:text-[45px] font-bold text-[#0C3B2E]">Grafik Komposisi Penduduk</h2>
-                    <div class="w-45 md:w-163 h-1 bg-[#0C3B2E] mx-auto mt-3"></div>
+                    <h2 class="text-3xl sm:text-[45px] font-bold text-[#0C3B2E] drop-shadow-lg">Grafik Komposisi Penduduk</h2>
+                    <div class="mx-auto mt-4 w-24 md:w-48 h-1 bg-gradient-to-r from-[#C7F3E7] via-[#0C3B2E] to-[#E8C187] rounded-full mb-1">
+                    </div>
                     <p class="text-md sm:text-[20px] text-[#0C3B2E] mt-5">Menampilkan visualisasi data kependudukan desa timpik berdasarkan jenis kelamin.</p>
                 </div>
             </div>
@@ -144,73 +146,94 @@
 
         <div class="container mx-auto px-6 lg:px-16 space-y-14 mt-[-20px] mb-20">
 
-            <section class="reveal-on-scroll">
-                <div class="bg-white p-6 sm:p-8 rounded-2xl shadow-xl border border-gray-100">
-                    <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-6">
+            <!-- Section Data Jenis Kelamin -->
+            <section class="reveal-on-scroll py-16 lg:py-20">
+                <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                    <!-- Grid Utama: Grafik dan Kartu Statistik -->
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
+                        
+                        <!-- Grafik Jenis Kelamin -->
+                        <div class="bg-white p-6 sm:p-8 rounded-3xl shadow-xl border border-[#E8C187]/30 relative overflow-hidden">
+                            <!-- Strip Accent -->
+                            <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-[#E8C187] via-[#f2d9a0] to-[#E8C187] rounded-t-3xl"></div>
 
-                        <div x-data="{ chartType: 'pie' }"
-                            class="flex items-center space-x-2 mt-4 sm:mt-0 p-1 bg-gray-100 rounded-lg">
-                            <button @click="chartType = 'pie'; toggleChartType('pie');"
-                                :class="{ 'bg-white text-blue-600 shadow': chartType === 'pie', 'text-gray-600': chartType !== 'pie' }"
-                                class="px-3 py-1.5 text-sm font-semibold rounded-md transition-all">
-                                Pie Chart
-                            </button>
-                            <button @click="chartType = 'bar'; toggleChartType('bar');"
-                                :class="{ 'bg-white text-blue-600 shadow': chartType === 'bar', 'text-gray-600': chartType !== 'bar' }"
-                                class="px-3 py-1.5 text-sm font-semibold rounded-md transition-all">
-                                Bar Chart
-                            </button>
+                            <!-- Header -->
+                            <div class="flex justify-between items-center mb-6">
+                                <div>
+                                    <h3 class="text-2xl font-bold text-[#0C3B2E] flex items-center gap-2">
+                                        <i data-lucide="pie-chart" class="w-6 h-6 text-[#E8C187]"></i>
+                                        Grafik Jenis Kelamin
+                                    </h3>
+                                    <p class="text-sm text-gray-500 mt-1">Distribusi penduduk berdasarkan jenis kelamin</p>
+                                </div>
+
+                                <!-- Chart Type Switch -->
+                                <div x-data="{ chartType: 'pie' }" class="flex items-center gap-2 bg-gray-100 border border-[#E8C187] rounded-full px-2 py-1">
+                                    <button @click="chartType = 'pie'; toggleChartType('pie');"
+                                        :class="{ 'bg-[#E8C187] text-white': chartType === 'pie', 'text-[#0C3B2E]': chartType !== 'pie' }"
+                                        class="px-3 py-1.5 text-sm font-medium rounded-full transition-all duration-200 hover:bg-[#E8C187]/80">
+                                        Pie
+                                    </button>
+                                    <button @click="chartType = 'bar'; toggleChartType('bar');"
+                                        :class="{ 'bg-[#E8C187] text-white': chartType === 'bar', 'text-[#0C3B2E]': chartType !== 'bar' }"
+                                        class="px-3 py-1.5 text-sm font-medium rounded-full transition-all duration-200 hover:bg-[#E8C187]/80">
+                                        Bar
+                                    </button>
+                                </div>
+                            </div>
+
+                            <!-- Chart -->
+                            <div class="w-full h-72 sm:h-80 md:h-96">
+                                <canvas id="genderChart"></canvas>
+                            </div>
                         </div>
-                    </div>
-                    <div class="w-full h-80 md:h-96">
-                        <canvas id="genderChart"></canvas>
+
+                        <!-- Kartu Statistik Jenis Kelamin -->
+                        <div class="flex flex-col gap-6 justify-center">
+                            <!-- Laki-laki -->
+                            <div class="bg-gradient-to-tr from-[#0C3B2E] to-[#145A46] text-white p-6 rounded-3xl shadow-lg border-t-4 border-[#E8C187] hover:-translate-y-1 transition-transform duration-300">
+                                <div class="flex justify-between items-center">
+                                    <div>
+                                        <p class="text-base font-medium text-white/70">Laki-laki</p>
+                                        <h4 class="text-3xl font-bold mt-1">{{ number_format($data->laki_laki) }}</h4>
+                                    </div>
+                                    <div class="bg-white/20 backdrop-blur-md p-3 rounded-full shadow-inner">
+                                        <i data-lucide="male" class="w-6 h-6 text-white"></i>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Perempuan -->
+                            <div class="bg-gradient-to-tr from-[#E8C187] to-[#f6ddae] text-[#0C3B2E] p-6 rounded-3xl shadow-lg border-t-4 border-[#0C3B2E] hover:-translate-y-1 transition-transform duration-300">
+                                <div class="flex justify-between items-center">
+                                    <div>
+                                        <p class="text-base font-medium text-[#0C3B2E]/70">Perempuan</p>
+                                        <h4 class="text-3xl font-bold mt-1">{{ number_format($data->perempuan) }}</h4>
+                                    </div>
+                                    <div class="bg-white/30 backdrop-blur-md p-3 rounded-full shadow-inner">
+                                        <i data-lucide="female" class="w-6 h-6 text-[#0C3B2E]"></i>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Total Penduduk -->
+                            <div class="bg-slate-800 text-white p-6 rounded-3xl shadow-lg border-t-4 border-[#E8C187] hover:-translate-y-1 transition-transform duration-300">
+                                <div class="flex justify-between items-center">
+                                    <div>
+                                        <p class="text-base font-medium text-gray-300">Total Penduduk</p>
+                                        <h4 class="text-3xl font-bold mt-1">{{ number_format($data->laki_laki + $data->perempuan) }}</h4>
+                                    </div>
+                                    <div class="bg-white/20 backdrop-blur-md p-3 rounded-full shadow-inner">
+                                        <i data-lucide="users" class="w-6 h-6 text-white"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
                     </div>
                 </div>
             </section>
-
-            <!-- Kartu Statistik Utama -->
-            <section class="reveal-on-scroll">
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                    <div
-                        class="bg-blue-500 text-white p-8 rounded-2xl shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300">
-                        <div class="flex items-center justify-between">
-                            <div>
-                                <p class="text-lg font-medium text-blue-100">Laki-laki</p>
-                                <p class="text-4xl font-extrabold">{{ number_format($data->laki_laki) }}</p>
-                            </div>
-                            <div class="bg-white/20 p-4 rounded-full">
-                                <i data-lucide="male" class="w-8 h-8"></i>
-                            </div>
-                        </div>
-                    </div>
-                    <div
-                        class="bg-pink-500 text-white p-8 rounded-2xl shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300">
-                        <div class="flex items-center justify-between">
-                            <div>
-                                <p class="text-lg font-medium text-pink-100">Perempuan</p>
-                                <p class="text-4xl font-extrabold">{{ number_format($data->perempuan) }}</p>
-                            </div>
-                            <div class="bg-white/20 p-4 rounded-full">
-                                <i data-lucide="female" class="w-8 h-8"></i>
-                            </div>
-                        </div>
-                    </div>
-                    <div
-                        class="bg-slate-700 text-white p-8 rounded-2xl shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300">
-                        <div class="flex items-center justify-between">
-                            <div>
-                                <p class="text-lg font-medium text-slate-300">Total Penduduk</p>
-                                <p class="text-4xl font-extrabold">{{ number_format($data->laki_laki + $data->perempuan) }}</p>
-                            </div>
-                            <div class="bg-white/20 p-4 rounded-full">
-                                <i data-lucide="users" class="w-8 h-8"></i>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-        </div>
+</div>
 
     </main>
 
@@ -222,7 +245,7 @@
         const genderData = {
             labels: ['Laki-laki', 'Perempuan'],
             values: [{{ $data->laki_laki }}, {{ $data->perempuan }}],
-            colors: ['#3b82f6', '#ec4899'] // blue-500, pink-500
+            colors: ['#a0c0f3', '#ffa9d3'] // blue-500, pink-500
         };
 
         // Konfigurasi umum

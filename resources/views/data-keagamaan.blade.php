@@ -88,7 +88,7 @@
                 <div class="max-w-xl lg:max-w-2xl">
                     <h1 class="text-4xl md:text-5xl lg:text-5xl font-bold text-[#0C3B2E] mt-20"
                         style="font-family: 'Poppins', sans-serif; text-shadow: 2px 2px 4px rgba(0,0,0,0.4);">
-                        Data Jenis Kelamin
+                        Data Keagamaan
                     </h1>
                     <p class="text-4xl md:text-5xl lg:text-7xl text-white italic"
                         style="font-family: 'Playfair Display', serif; text-shadow: 2px 2px 4px rgba(0,0,0,0.4);">
@@ -143,7 +143,8 @@
             <div class="container mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="text-center mb-5 reveal-on-scroll">
                     <h2 class="text-3xl sm:text-[45px] font-bold text-[#0C3B2E]">Data Keagamaan</h2>
-                    <div class="w-70 md:w-105 h-1 bg-[#0C3B2E] mx-auto mt-3"></div>
+                    <div class="mx-auto mt-4 w-24 md:w-48 h-1 bg-gradient-to-r from-[#C7F3E7] via-[#0C3B2E] to-[#E8C187] rounded-full mb-1">
+                    </div>
                     <p class="text-md sm:text-[20px] text-[#0C3B2E] mt-5 px-5 md:px-30">Informasi yang mencakup jumlah pemeluk agama, sebaran agama yang dianut penduduk, serta fasilitas keagamaan seperti tempat ibadah dan kegiatan keagamaan di desa timpik.</p>
                 </div>
             </div>
@@ -151,48 +152,42 @@
 
         <div class="container mx-auto px-6 lg:px-16 space-y-14 mt-[-20px] mb-20 text-[#0C3B2E]" style="font-family: 'Poppins', sans-serif;">
 
-            <!-- Jumlah Pemeluk Agama -->
+            <!-- Pemeluk Agama Card View -->
             <section class="reveal-on-scroll">
-                <div class="bg-white p-6 sm:p-8 rounded-2xl shadow-xl border border-gray-100">
-                    <div class="overflow-x-auto mb-8">
-                        <table class="min-w-full text-sm">
-                            <thead class="border-b-2 border-gray-200">
-                                <tr>
-                                    <th scope="col" class="px-4 py-3 text-left font-semibold text-gray-600">Agama
-                                    </th>
-                                    <th scope="col" class="px-4 py-3 text-right font-semibold text-gray-600">
-                                        Jumlah</th>
-                                </tr>
-                            </thead>
-                            <tbody class="divide-y divide-gray-100">
-                                <tr>
-                                    <td class="px-4 py-3 text-gray-700">Islam</td>
-                                    <td class="px-4 py-3 text-gray-800 text-right font-medium">{{ number_format($data->islam) }} Orang</td>
-                                </tr>
-                                <tr>
-                                    <td class="px-4 py-3 text-gray-700">Katolik</td>
-                                    <td class="px-4 py-3 text-gray-800 text-right font-medium">{{ number_format($data->katolik) }} Orang</td>
-                                </tr>
-                                <tr>
-                                    <td class="px-4 py-3 text-gray-700">Kristen</td>
-                                    <td class="px-4 py-3 text-gray-800 text-right font-medium">{{ number_format($data->kristen) }} Orang</td>
-                                </tr>
-                                <tr>
-                                    <td class="px-4 py-3 text-gray-700">Hindu</td>
-                                    <td class="px-4 py-3 text-gray-800 text-right font-medium">{{ number_format($data->hindu) }} Orang</td>
-                                </tr>
-                                <tr>
-                                    <td class="px-4 py-3 text-gray-700">Budha</td>
-                                    <td class="px-4 py-3 text-gray-800 text-right font-medium">{{ number_format($data->budha) }} Orang</td>
-                                </tr>
-                                <tr>
-                                    <td class="px-4 py-3 text-gray-700">Aliran Kepercayaan Lainnya</td>
-                                    <td class="px-4 py-3 text-gray-800 text-right font-medium">{{ number_format($data->kepercayaan) }} Orang</td>
-                                </tr>
-                            </tbody>
-                        </table>
+                <div class="bg-white p-6 sm:p-8 rounded-3xl shadow-xl border border-[#E8C187]/30">
+                    <div class="mb-8 text-center">
+                        <h3 class="text-2xl font-bold text-[#0C3B2E] mb-2 flex items-center justify-center gap-2">
+                            <i data-lucide="users" class="w-6 h-6 text-[#E8C187]"></i>
+                            Jumlah Pemeluk Agama
+                        </h3>
                     </div>
-                    <div class="w-full h-96">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+                        @php
+                            $agamaList = [
+                                ['label' => 'Islam', 'jumlah' => $data->islam, 'icon' => 'moon', 'color' => 'green'],
+                                ['label' => 'Katolik', 'jumlah' => $data->katolik, 'icon' => 'cross', 'color' => 'red'],
+                                ['label' => 'Kristen', 'jumlah' => $data->kristen, 'icon' => 'book-open', 'color' => 'blue'],
+                                ['label' => 'Hindu', 'jumlah' => $data->hindu, 'icon' => 'flame', 'color' => 'amber'],
+                                ['label' => 'Budha', 'jumlah' => $data->budha, 'icon' => 'circle', 'color' => 'yellow'],
+                                ['label' => 'Kepercayaan Lain', 'jumlah' => $data->kepercayaan, 'icon' => 'stars', 'color' => 'indigo'],
+                            ];
+                        @endphp
+
+                        @foreach ($agamaList as $agama)
+                            <div class="bg-gradient-to-tr from-{{ $agama['color'] }}-100 to-white border-t-4 border-{{ $agama['color'] }}-500 rounded-2xl shadow-md p-5 flex items-center justify-between hover:-translate-y-1 transition duration-300">
+                                <div>
+                                    <p class="text-sm text-gray-600">{{ $agama['label'] }}</p>
+                                    <h4 class="text-2xl font-bold text-[#0C3B2E] mt-1">{{ number_format($agama['jumlah']) }} Orang</h4>
+                                </div>
+                                <div class="p-3 bg-{{ $agama['color'] }}-100 rounded-full shadow">
+                                    <i data-lucide="{{ $agama['icon'] ?? 'help-circle' }}" class="w-6 h-6 text-{{ $agama['color'] }}-600"></i>
+                                </div>
+                            </div>
+                        @endforeach
+                    </div>
+
+                    <!-- Chart -->
+                    <div class="mt-10 w-full h-96">
                         <canvas id="agamaChart"></canvas>
                     </div>
                 </div>
@@ -200,53 +195,33 @@
 
             <!-- Sarana Peribadatan -->
             <section class="reveal-on-scroll">
-                <div class="text-center mb-8">
-                    <h2 class="text-3xl font-bold tracking-tight">Sarana Peribadatan</h2>
-                    <p class="mt-2 text-lg">Fasilitas tempat ibadah yang tersedia di Desa Kunden.</p>
+                <div class="text-center mb-10">
+                    <h2 class="text-3xl sm:text-4xl font-bold text-[#0C3B2E]">Sarana Peribadatan</h2>
+                    <p class="mt-2 text-lg text-gray-600">Fasilitas tempat ibadah yang tersedia di Desa Timpik</p>
                 </div>
-                <div class="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-                    <div
-                        class="bg-white p-6 rounded-xl shadow-lg border hover:border-green-500 hover:shadow-xl transition-all duration-300 text-center">
-                        <div
-                            class="mx-auto bg-green-100 text-green-600 w-20 h-20 rounded-full flex items-center justify-center mb-4">
-                            <i data-lucide="moon" class="w-10 h-10"></i>
+                <div class="max-w-5xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                    @php
+                        $sarana = [
+                            ['label' => 'Masjid / Musholla', 'jumlah' => $data->masjid, 'icon' => 'moon', 'color' => 'green'],
+                            ['label' => 'Gereja', 'jumlah' => $data->gereja, 'icon' => 'church', 'color' => 'blue'],
+                            ['label' => 'Pura', 'jumlah' => $data->pura, 'icon' => 'castle', 'color' => 'red'],
+                            ['label' => 'Vihara', 'jumlah' => $data->vihara, 'icon' => 'tent', 'color' => 'purple'],
+                        ];
+                    @endphp
+
+                    @foreach ($sarana as $item)
+                        <div class="bg-gradient-to-tr from-white to-{{ $item['color'] }}-50 p-6 rounded-3xl shadow-xl border-t-4 border-{{ $item['color'] }}-600 transition-all hover:shadow-2xl hover:-translate-y-1 text-center">
+                            <div class="mx-auto bg-{{ $item['color'] }}-100 text-{{ $item['color'] }}-600 w-20 h-20 rounded-full flex items-center justify-center mb-4">
+                                <i data-lucide="{{ $item['icon'] }}" class="w-10 h-10"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-[#0C3B2E]">{{ $item['label'] }}</h3>
+                            <p class="text-3xl font-extrabold text-{{ $item['color'] }}-600 mt-2">{{ number_format($item['jumlah']) }}</p>
+                            <p class="text-sm text-gray-500">Tempat</p>
                         </div>
-                        <h3 class="text-xl font-bold">Masjid / Musholla</h3>
-                        <p class="text-3xl font-extrabold text-green-600 mt-2">{{ number_format($data->masjid) }}</p>
-                        <p class="text-sm text-gray-500">Buah</p>
-                    </div>
-                    <div
-                        class="bg-white p-6 rounded-xl shadow-lg border hover:border-blue-500 hover:shadow-xl transition-all duration-300 text-center">
-                        <div
-                            class="mx-auto bg-blue-100 text-blue-600 w-20 h-20 rounded-full flex items-center justify-center mb-4">
-                            <i data-lucide="church" class="w-10 h-10"></i>
-                        </div>
-                        <h3 class="text-xl font-bold">Gereja</h3>
-                        <p class="text-3xl font-extrabold text-blue-600 mt-2">{{ number_format($data->gereja) }}</p>
-                        <p class="text-sm text-gray-500">Buah</p>
-                    </div>
-                    <div
-                        class="bg-white p-6 rounded-xl shadow-lg border hover:border-red-500 hover:shadow-xl transition-all duration-300 text-center">
-                        <div
-                            class="mx-auto bg-red-100 text-red-600 w-20 h-20 rounded-full flex items-center justify-center mb-4">
-                            <i data-lucide="castle" class="w-10 h-10"></i>
-                        </div>
-                        <h3 class="text-xl font-bold">Pura</h3>
-                        <p class="text-3xl font-extrabold text-red-600 mt-2">{{ number_format($data->pura) }}</p>
-                        <p class="text-sm text-gray-500">Buah</p>
-                    </div>
-                    <div
-                        class="bg-white p-6 rounded-xl shadow-lg border hover:border-purple-500 hover:shadow-xl transition-all duration-300 text-center">
-                        <div
-                            class="mx-auto bg-purple-100 text-purple-600 w-20 h-20 rounded-full flex items-center justify-center mb-4">
-                            <i data-lucide="tent" class="w-10 h-10"></i>
-                        </div>
-                        <h3 class="text-xl font-bold">Vihara</h3>
-                        <p class="text-3xl font-extrabold text-purple-600 mt-2">{{ number_format($data->vihara) }}</p>
-                        <p class="text-sm text-gray-500">Buah</p>
-                    </div>
+                    @endforeach
                 </div>
             </section>
+
 
         </div>
 
@@ -254,6 +229,7 @@
 
     @include('layouts.partials.footer')
 
+    
     <script src="//unpkg.com/alpinejs" defer></script>
     <script>
         document.addEventListener('DOMContentLoaded', (event) => {

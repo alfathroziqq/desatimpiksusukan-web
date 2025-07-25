@@ -102,7 +102,7 @@
                 <div class="max-w-xl lg:max-w-2xl">
                     <h1 class="text-4xl md:text-5xl lg:text-5xl font-bold text-[#0C3B2E] mt-20"
                         style="font-family: 'Poppins', sans-serif; text-shadow: 2px 2px 4px rgba(0,0,0,0.4);">
-                        Data Jenis Kelamin
+                        Data Ekonomi
                     </h1>
                     <p class="text-4xl md:text-5xl lg:text-7xl text-white italic"
                         style="font-family: 'Playfair Display', serif; text-shadow: 2px 2px 4px rgba(0,0,0,0.4);">
@@ -158,221 +158,183 @@
             <div class="container mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="text-center mb-5 reveal-on-scroll">
                     <h2 class="text-3xl sm:text-[45px] font-bold text-[#0C3B2E]">Data Ekonomi</h2>
-                    <div class="w-55 md:w-82 h-1 bg-[#0C3B2E] mx-auto mt-3"></div>
+                    <div class="mx-auto mt-4 w-24 md:w-48 h-1 bg-gradient-to-r from-[#C7F3E7] via-[#0C3B2E] to-[#E8C187] rounded-full mb-1">
+                    </div>
                     <p class="text-md sm:text-[20px] text-[#0C3B2E] mt-5 px-5 md:px-30">Pemanfaatan lahan pertanian desa
                         timpik.</p>
                 </div>
             </div>
         </section>
 
-        <div class="container mx-auto px-6 lg:px-16 space-y-14 mt-[-20px] mb-20 text-[#0C3B2E]"
-            style="font-family: 'Poppins', sans-serif;">
+        <div class="container mx-auto px-6 lg:px-16 space-y-20 mt-[-20px] mb-20 text-[#0C3B2E]" style="font-family: 'Poppins', sans-serif;">
 
-            <!-- Luas Tanaman Pertanian -->
-            <section class="reveal-on-scroll">
-                <div class="bg-white p-6 sm:p-8 rounded-2xl shadow-xl border border-gray-100">
-                    <!-- Legend Keterangan Warna -->
-                    <div class="justify-center flex flex-wrap gap-5 items-center mb-4">
-                        <div class="flex items-center">
-                            <span class="w-4 h-4 rounded-full mr-2 inline-block"
-                                style="background: rgba(34, 197, 94, 0.7);"></span>
-                            <span class="text-sm">Padi Sawah</span>
+            <!-- LUAS TANAMAN PERTANIAN -->
+            <section class="reveal-on-scroll px-4 sm:px-8 py-10">
+                <div class="bg-gradient-to-br from-[#F4FCF9] to-[#FFF6EC] p-6 sm:p-10 rounded-3xl shadow-xl border border-gray-100 relative overflow-hidden">
+                    <!-- Aksen Dekoratif -->
+                    <div class="absolute top-4 left-4 w-20 h-20 bg-[#D7EFE8] rounded-full opacity-30 blur-xl"></div>
+                    <div class="absolute bottom-4 right-4 w-32 h-32 bg-[#FFE7C6] rounded-full opacity-40 blur-xl"></div>
+
+                    <!-- Judul -->
+                    <div class="flex items-center gap-3 mb-6">
+                        <div class="bg-[#0C3B2E] text-white p-2 rounded-full">
+                            <i data-lucide="sprout" class="w-6 h-6"></i>
                         </div>
-                        <div class="flex items-center">
-                            <span class="w-4 h-4 rounded-full mr-2 inline-block"
-                                style="background: rgba(234, 179, 8, 0.7);"></span>
-                            <span class="text-sm">Padi Ladang</span>
-                        </div>
-                        <div class="flex items-center">
-                            <span class="w-4 h-4 rounded-full mr-2 inline-block"
-                                style="background: rgba(249, 115, 22, 0.7);"></span>
-                            <span class="text-sm">Jagung</span>
-                        </div>
-                        <div class="flex items-center">
-                            <span class="w-4 h-4 rounded-full mr-2 inline-block"
-                                style="background: rgba(168, 85, 247, 0.7);"></span>
-                            <span class="text-sm">Palawija</span>
-                        </div>
-                        <div class="flex items-center">
-                            <span class="w-4 h-4 rounded-full mr-2 inline-block"
-                                style="background: rgba(59, 130, 246, 0.7);"></span>
-                            <span class="text-sm">Tebu</span>
-                        </div>
+                        <h2 class="text-3xl font-bold text-[#0C3B2E]">Data Luas Tanaman Pertanian</h2>
                     </div>
-                    <div class="w-full h-96">
-                        <canvas id="tanamanChart"></canvas>
-                    </div>
-                </div>
-            </section>
 
-            <!-- Jenis Ternak (Tabel) -->
-            <section class="reveal-on-scroll">
-                <div class="text-center mb-8">
-                    <h2 class="text-3xl font-bold tracking-tight">Jenis Ternak</h2>
-                </div>
+                    <!-- Grid: Chart -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                        <!-- Chart di KIRI -->
+                        <div class="relative w-full h-80">
+                            <canvas id="tanamanChart"></canvas>
+                        </div>
 
-                <div class="max-w-4xl mx-auto">
-                    <div class="flex flex-col">
-                        <div class="overflow-x-auto">
-                            <div class="align-middle inline-block min-w-full">
-                                <div class="shadow-2xl overflow-hidden border-b border-gray-200 sm:rounded-2xl">
-                                    <table class="min-w-full divide-y divide-gray-200">
-                                        <thead class="bg-slate-700">
-                                            <tr>
-                                                <th
-                                                    class="px-6 py-4 text-left text-xs font-bold text-white uppercase tracking-wider">
-                                                    No
-                                                </th>
-                                                <th
-                                                    class="px-6 py-4 text-left text-xs font-bold text-white uppercase tracking-wider">
-                                                    Jenis Ternak
-                                                </th>
-                                                <th
-                                                    class="px-6 py-4 text-right text-xs font-bold text-white uppercase tracking-wider">
-                                                    Jumlah (Ekor)
-                                                </th>
-                                            </tr>
-                                        </thead>
-                                        <tbody class="bg-white divide-y divide-gray-200">
-                                            <tr class="hover:bg-blue-50 transition-colors duration-200">
-                                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">1.
-                                                </td>
-                                                <td
-                                                    class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-                                                    Kambing</td>
-                                                <td
-                                                    class="px-6 py-4 whitespace-nowrap text-sm text-right text-gray-800 font-semibold">
-                                                    {{ $data->kambing }}</td>
-                                            </tr>
-                                            <tr class="bg-gray-50 hover:bg-blue-50 transition-colors duration-200">
-                                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">2.
-                                                </td>
-                                                <td
-                                                    class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-                                                    Sapi</td>
-                                                <td
-                                                    class="px-6 py-4 whitespace-nowrap text-sm text-right text-gray-800 font-semibold">
-                                                    {{ $data->sapi }}</td>
-                                            </tr>
-                                            <tr class="hover:bg-blue-50 transition-colors duration-200">
-                                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">3.
-                                                </td>
-                                                <td
-                                                    class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-                                                    Ayam</td>
-                                                <td
-                                                    class="px-6 py-4 whitespace-nowrap text-sm text-right text-gray-800 font-semibold">
-                                                    {{ $data->ayam }}</td>
-                                            </tr>
-                                            <tr class="bg-gray-50 hover:bg-blue-50 transition-colors duration-200">
-                                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">4.
-                                                </td>
-                                                <td
-                                                    class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-                                                    Burung</td>
-                                                <td
-                                                    class="px-6 py-4 whitespace-nowrap text-sm text-right text-gray-800 font-semibold">
-                                                    {{ $data->burung }}</td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
+                        <!-- Legend -->
+                        <div class="space-y-3">
+                            <div class="flex items-center gap-3">
+                                <span class="w-4 h-4 rounded-full bg-green-400/80 shadow-md"></span>
+                                <span class="text-gray-700 font-medium text-sm bg-white rounded-full px-3 py-1 shadow border">Padi Sawah</span>
+                            </div>
+                            <div class="flex items-center gap-3">
+                                <span class="w-4 h-4 rounded-full bg-yellow-400/80 shadow-md"></span>
+                                <span class="text-gray-700 font-medium text-sm bg-white rounded-full px-3 py-1 shadow border">Padi Ladang</span>
+                            </div>
+                            <div class="flex items-center gap-3">
+                                <span class="w-4 h-4 rounded-full bg-orange-400/80 shadow-md"></span>
+                                <span class="text-gray-700 font-medium text-sm bg-white rounded-full px-3 py-1 shadow border">Jagung</span>
+                            </div>
+                            <div class="flex items-center gap-3">
+                                <span class="w-4 h-4 rounded-full bg-purple-400/80 shadow-md"></span>
+                                <span class="text-gray-700 font-medium text-sm bg-white rounded-full px-3 py-1 shadow border">Palawija</span>
+                            </div>
+                            <div class="flex items-center gap-3">
+                                <span class="w-4 h-4 rounded-full bg-blue-400/80 shadow-md"></span>
+                                <span class="text-gray-700 font-medium text-sm bg-white rounded-full px-3 py-1 shadow border">Tebu</span>
                             </div>
                         </div>
                     </div>
                 </div>
             </section>
 
-            <!-- Pekerjaan / Mata Pencaharian -->
+
+            <!-- JENIS TERNAK -->
             <section class="reveal-on-scroll">
                 <div class="text-center mb-8">
-                    <h2 class="text-3xl font-bold tracking-tight">Struktur Mata Pencaharian</h2>
-                    <p class="mt-2 text-lg">Distribusi jenis pekerjaan utama masyarakat Desa Timpik.
-                    </p>
+                    <h2 class="text-3xl font-bold tracking-tight text-[#0C3B2E]">Jenis Ternak</h2>
+                    <p class="text-gray-600 mt-2">Jumlah ternak berdasarkan jenis di Desa Timpik.</p>
                 </div>
-                <div class="bg-white p-6 sm:p-8 rounded-2xl shadow-xl border border-gray-100">
+
+                <div class="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <!-- Card 1: Kambing -->
+                    <div class="bg-white rounded-3xl shadow-lg p-6 border-t-4 border-green-500 flex flex-col items-center text-center hover:-translate-y-1 transition">
+                        <div class="bg-green-100 p-4 rounded-full mb-3">
+                            <i data-lucide="mountain" class="w-8 h-8 text-green-700"></i> <!-- pengganti sheep -->
+                        </div>
+                        <h3 class="text-lg font-semibold text-gray-800">Kambing</h3>
+                        <p class="text-2xl font-bold text-[#0C3B2E] mt-2">{{ $data->kambing }} Ekor</p>
+                    </div>
+
+                    <!-- Card 2: Sapi -->
+                    <div class="bg-white rounded-3xl shadow-lg p-6 border-t-4 border-yellow-500 flex flex-col items-center text-center hover:-translate-y-1 transition">
+                        <div class="bg-yellow-100 p-4 rounded-full mb-3">
+                            <i data-lucide="milk" class="w-8 h-8 text-yellow-700"></i> <!-- pengganti cow -->
+                        </div>
+                        <h3 class="text-lg font-semibold text-gray-800">Sapi</h3>
+                        <p class="text-2xl font-bold text-[#0C3B2E] mt-2">{{ $data->sapi }} Ekor</p>
+                    </div>
+                    <!-- Card 3: Ayam -->
+                    <div class="bg-white rounded-3xl shadow-lg p-6 border-t-4 border-red-500 flex flex-col items-center text-center hover:-translate-y-1 transition">
+                        <div class="bg-red-100 p-4 rounded-full mb-3">
+                            <i data-lucide="egg-fried" class="w-8 h-8 text-red-700"></i>
+                        </div>
+                        <h3 class="text-lg font-semibold text-gray-800">Ayam</h3>
+                        <p class="text-2xl font-bold text-[#0C3B2E] mt-2">{{ $data->ayam }} Ekor</p>
+                    </div>
+
+                    <!-- Card 4: Burung -->
+                    <div class="bg-white rounded-3xl shadow-lg p-6 border-t-4 border-blue-500 flex flex-col items-center text-center hover:-translate-y-1 transition">
+                        <div class="bg-blue-100 p-4 rounded-full mb-3">
+                            <i data-lucide="bird" class="w-8 h-8 text-blue-700"></i>
+                        </div>
+                        <h3 class="text-lg font-semibold text-gray-800">Burung</h3>
+                        <p class="text-2xl font-bold text-[#0C3B2E] mt-2">{{ $data->burung }} Ekor</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- STRUKTUR MATA PENCAHARIAN -->
+            <section class="reveal-on-scroll py-10">
+                <div class="text-center mb-10">
+                    <h2 class="text-3xl font-bold tracking-tight text-[#0C3B2E]">Struktur Mata Pencaharian</h2>
+                    <p class="mt-2 text-lg text-gray-600">Distribusi jenis pekerjaan utama masyarakat Desa Timpik.</p>
+                </div>
+
+                <div class="bg-white p-6 sm:p-8 rounded-3xl shadow-xl border border-gray-100">
                     <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+                        
+                        <!-- Chart -->
                         <div class="w-full h-80 md:h-96">
                             <canvas id="pekerjaanChart"></canvas>
                         </div>
-                        <div class="overflow-x-auto">
-                            <table class="min-w-full text-sm">
-                                <thead class="border-b-2 border-gray-200">
-                                    <tr>
-                                        <th scope="col" class="px-4 py-3 text-left font-semibold text-gray-600">
-                                            Jenis Pekerjaan
-                                        </th>
-                                        <th scope="col" class="px-4 py-3 text-right font-semibold text-gray-600">
-                                            Jumlah</th>
-                                    </tr>
-                                </thead>
-                                <tbody class="divide-y divide-gray-100">
-                                    <tr>
-                                        <td class="px-4 py-3 text-gray-700">Petani</td>
-                                        <td class="px-4 py-3 text-gray-800 text-right font-medium">{{ $data->petani }}
-                                            Orang</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="px-4 py-3 text-gray-700">Pedagang</td>
-                                        <td class="px-4 py-3 text-gray-800 text-right font-medium">
-                                            {{ $data->pedagang }} Orang</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="px-4 py-3 text-gray-700">PNS</td>
-                                        <td class="px-4 py-3 text-gray-800 text-right font-medium">{{ $data->pns }}
-                                            Orang</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="px-4 py-3 text-gray-700">Tukang</td>
-                                        <td class="px-4 py-3 text-gray-800 text-right font-medium">{{ $data->tukang }}
-                                            Orang</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="px-4 py-3 text-gray-700">Guru</td>
-                                        <td class="px-4 py-3 text-gray-800 text-right font-medium">{{ $data->guru }}
-                                            Orang</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="px-4 py-3 text-gray-700">Bidan/Perawat</td>
-                                        <td class="px-4 py-3 text-gray-800 text-right font-medium">
-                                            {{ $data->bidan_perawat }} Orang</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="px-4 py-3 text-gray-700">TNI/Polri</td>
-                                        <td class="px-4 py-3 text-gray-800 text-right font-medium">
-                                            {{ $data->tni_polri }} Orang</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="px-4 py-3 text-gray-700">Pensiunan</td>
-                                        <td class="px-4 py-3 text-gray-800 text-right font-medium">
-                                            {{ $data->pensiunan }} Orang</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="px-4 py-3 text-gray-700">Sopir/Angkutan</td>
-                                        <td class="px-4 py-3 text-gray-800 text-right font-medium">
-                                            {{ $data->sopir_angkutan }} Orang</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="px-4 py-3 text-gray-700">Buruh</td>
-                                        <td class="px-4 py-3 text-gray-800 text-right font-medium">{{ $data->buruh }}
-                                            Orang</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="px-4 py-3 text-gray-700">Jasa Persewaan</td>
-                                        <td class="px-4 py-3 text-gray-800 text-right font-medium">
-                                            {{ $data->jasa_persewaan }} Orang</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="px-4 py-3 text-gray-700">Swasta</td>
-                                        <td class="px-4 py-3 text-gray-800 text-right font-medium">{{ $data->swasta }}
-                                            Orang</td>
-                                    </tr>
-                                </tbody>
-                            </table>
+
+                        <!-- Pekerjaan List -->
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-gray-700">
+                            <div class="flex items-center space-x-3 bg-[#F3F8F7] p-4 rounded-xl shadow-sm">
+                                <i class="fas fa-tractor text-xl text-[#3C7167]"></i>
+                                <span class="font-medium">Petani: {{ $data->petani }} Orang</span>
+                            </div>
+                            <div class="flex items-center space-x-3 bg-[#F3F8F7] p-4 rounded-xl shadow-sm">
+                                <i class="fas fa-store text-xl text-[#3C7167]"></i>
+                                <span class="font-medium">Pedagang: {{ $data->pedagang }} Orang</span>
+                            </div>
+                            <div class="flex items-center space-x-3 bg-[#F3F8F7] p-4 rounded-xl shadow-sm">
+                                <i class="fas fa-user-tie text-xl text-[#3C7167]"></i>
+                                <span class="font-medium">PNS: {{ $data->pns }} Orang</span>
+                            </div>
+                            <div class="flex items-center space-x-3 bg-[#F3F8F7] p-4 rounded-xl shadow-sm">
+                                <i class="fas fa-tools text-xl text-[#3C7167]"></i>
+                                <span class="font-medium">Tukang: {{ $data->tukang }} Orang</span>
+                            </div>
+                            <div class="flex items-center space-x-3 bg-[#F3F8F7] p-4 rounded-xl shadow-sm">
+                                <i class="fas fa-chalkboard-teacher text-xl text-[#3C7167]"></i>
+                                <span class="font-medium">Guru: {{ $data->guru }} Orang</span>
+                            </div>
+                            <div class="flex items-center space-x-3 bg-[#F3F8F7] p-4 rounded-xl shadow-sm">
+                                <i class="fas fa-user-nurse text-xl text-[#3C7167]"></i>
+                                <span class="font-medium">Bidan/Perawat: {{ $data->bidan_perawat }} Orang</span>
+                            </div>
+                            <div class="flex items-center space-x-3 bg-[#F3F8F7] p-4 rounded-xl shadow-sm">
+                                <i class="fas fa-shield-alt text-xl text-[#3C7167]"></i>
+                                <span class="font-medium">TNI/Polri: {{ $data->tni_polri }} Orang</span>
+                            </div>
+                            <div class="flex items-center space-x-3 bg-[#F3F8F7] p-4 rounded-xl shadow-sm">
+                                <i class="fas fa-user-clock text-xl text-[#3C7167]"></i>
+                                <span class="font-medium">Pensiunan: {{ $data->pensiunan }} Orang</span>
+                            </div>
+                            <div class="flex items-center space-x-3 bg-[#F3F8F7] p-4 rounded-xl shadow-sm">
+                                <i class="fas fa-bus text-xl text-[#3C7167]"></i>
+                                <span class="font-medium">Sopir/Angkutan: {{ $data->sopir_angkutan }} Orang</span>
+                            </div>
+                            <div class="flex items-center space-x-3 bg-[#F3F8F7] p-4 rounded-xl shadow-sm">
+                                <i class="fas fa-hard-hat text-xl text-[#3C7167]"></i>
+                                <span class="font-medium">Buruh: {{ $data->buruh }} Orang</span>
+                            </div>
+                            <div class="flex items-center space-x-3 bg-[#F3F8F7] p-4 rounded-xl shadow-sm">
+                                <i class="fas fa-home text-xl text-[#3C7167]"></i>
+                                <span class="font-medium">Jasa Persewaan: {{ $data->jasa_persewaan }} Orang</span>
+                            </div>
+                            <div class="flex items-center space-x-3 bg-[#F3F8F7] p-4 rounded-xl shadow-sm">
+                                <i class="fas fa-briefcase text-xl text-[#3C7167]"></i>
+                                <span class="font-medium">Swasta: {{ $data->swasta }} Orang</span>
+                            </div>
                         </div>
                     </div>
                 </div>
             </section>
+
+        </div>
+
 
         </div>
 
