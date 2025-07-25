@@ -34,6 +34,16 @@
                             </div>
                         </a>
 
+                        <!-- Data Pendidikan -->
+                        <a href="{{ route('admin.data-pendidikan.index') }}" class="block p-6 bg-white dark:bg-gray-700 rounded-lg shadow-md hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
+                            <div class="flex items-center">
+                                <div class="p-3 bg-green-100 dark:bg-green-900/50 rounded-full">
+                                    <i data-lucide="graduation-cap" class="w-6 h-6 text-green-600 dark:text-green-400"></i>
+                                </div>
+                                <h4 class="ml-4 text-lg font-semibold text-gray-800 dark:text-gray-200">Data Pendidikan</h4>
+                            </div>
+                        </a>
+
                         <!-- Data Kesehatan -->
                         <a href="{{ route('admin.data-kesehatan.index') }}" class="block p-6 bg-white dark:bg-gray-700 rounded-lg shadow-md hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
                             <div class="flex items-center">
@@ -54,17 +64,6 @@
                             </div>
                         </a>
 
-                        {{-- <!-- Data Pendidikan -->
-                        <a href="{{ route('admin.data-pendidikan.index') }}" class="block p-6 bg-white dark:bg-gray-700 rounded-lg shadow-md hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
-                            <div class="flex items-center">
-                                <div class="p-3 bg-green-100 dark:bg-green-900/50 rounded-full">
-                                    <i data-lucide="graduation-cap" class="w-6 h-6 text-green-600 dark:text-green-400"></i>
-                                </div>
-                                <h4 class="ml-4 text-lg font-semibold text-gray-800 dark:text-gray-200">Data Pendidikan</h4>
-                            </div>
-                        </a>
-
-
                         <!-- Data Ekonomi -->
                         <a href="{{ route('admin.data-ekonomi.index') }}" class="block p-6 bg-white dark:bg-gray-700 rounded-lg shadow-md hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
                             <div class="flex items-center">
@@ -73,7 +72,7 @@
                                 </div>
                                 <h4 class="ml-4 text-lg font-semibold text-gray-800 dark:text-gray-200">Data Ekonomi</h4>
                             </div>
-                        </a> --}}
+                        </a>
 
                     </div>
                 </div>

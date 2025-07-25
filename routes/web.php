@@ -2,8 +2,10 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DataKelaminController;
+use App\Http\Controllers\DataPendidikanController;
 use App\Http\Controllers\DataKesehatanController;
 use App\Http\Controllers\DataKeagamaanController;
+use App\Http\Controllers\DataEkonomiController;
 use App\Http\Controllers\BeritaController;
 use App\Http\Controllers\GaleriController;
 use App\Http\Controllers\AparaturController;
@@ -38,11 +40,17 @@ Route::get('/tata-kelola-desa', action: fn() => view('tata-kelola'))->name('tata
 // Data Jenis Kelamin
 Route::get('/data-jenis-kelamin', [DataKelaminController::class, 'public'])->name('data-jenis-kelamin');
 
+// Data Pendidikan
+Route::get('/data-pendidikan', [DataPendidikanController::class, 'public'])->name('data-pendidikan');
+
 // Data Kesehatan
 Route::get('/data-kesehatan', [DataKesehatanController::class, 'public'])->name('data-kesehatan');
 
 // Data Keagamaan
 Route::get('/data-keagamaan', [DataKeagamaanController::class, 'public'])->name('data-keagamaan');
+
+// Data Ekonomi
+Route::get('/data-ekonomi', [DataEkonomiController::class, 'public'])->name('data-ekonomi');
 
 // Aparatur Desa
 Route::get('/aparatur', fn() => view('aparatur'))->name('aparatur.index');
@@ -84,6 +92,10 @@ Route::middleware([
     Route::get('/admin/data-kelamin', [DataKelaminController::class, 'index'])->name('admin.data-kelamin.index');
     Route::post('/admin/data-kelamin', [DataKelaminController::class, 'store'])->name('admin.data-kelamin.store');
 
+    // Data Pendidikan
+    Route::get('/admin/data-pendidikan', [DataPendidikanController::class, 'index'])->name('admin.data-pendidikan.index');
+    Route::post('/admin/data-pendidikan', [DataPendidikanController::class, 'store'])->name('admin.data-pendidikan.store');
+
     // Data Kesehatan
     Route::get('/admin/data-kesehatan', [DataKesehatanController::class, 'index'])->name('admin.data-kesehatan.index');
     Route::post('/admin/data-kesehatan', [DataKesehatanController::class, 'store'])->name('admin.data-kesehatan.store');
@@ -91,6 +103,10 @@ Route::middleware([
     // Data Keagamaan
     Route::get('/admin/data-keagamaan', [DataKeagamaanController::class, 'index'])->name('admin.data-keagamaan.index');
     Route::post('/admin/data-keagamaan', [DataKeagamaanController::class, 'store'])->name('admin.data-keagamaan.store');
+
+    // Data Ekonomi
+    Route::get('/admin/data-ekonomi', [DataEkonomiController::class, 'index'])->name('admin.data-ekonomi.index');
+    Route::post('/admin/data-ekonomi', [DataEkonomiController::class, 'store'])->name('admin.data-ekonomi.store');
 
     // Aparatur Desa
     Route::resource('/admin/aparatur', AparaturController::class)->names('admin.aparatur');
