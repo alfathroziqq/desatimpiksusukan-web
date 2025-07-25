@@ -345,7 +345,7 @@
                             <div class="flex-shrink-0 w-65 h-80 snap-start p-2"
                                 style="font-family: 'Poppins', sans-serif;">
                                 <div
-                                class="bg-gradient-to-br from-[#f7fbe9] via-[#ebf6f2] to-[#f9f6f0] rounded-lg shadow-md overflow-hidden h-full group transition-transform duration-300 ease-in-out hover:scale-105 hover:shadow-lg border border-gray-300">
+                                    class="bg-gray-50 rounded-lg shadow-md overflow-hidden h-full group transition-transform duration-300 ease-in-out hover:scale-105 hover:shadow-lg border border-gray-300">
                                     <img src="{{ asset('storage/' . $aparatur->foto) }}" alt="{{ $aparatur->nama }}"
                                         class="mt-4 w-auto max-w-full max-h-55 mx-auto object-contain">
                                     <div class="px-3 text-center mt-3 mb-4">
@@ -384,42 +384,66 @@
             $galeriTerbaru = Galeri::latest()->take(4)->get();
         @endphp
 
-        <section class="py-8 md:py-8 bg-white mb-12">
+        <section class="mb-12">
             <div class="max-w-7xl mx-auto px-4 sm:px-10 lg:px-16">
-                <div class="grid grid-cols-1 md:grid-cols-[2fr_1fr_2fr] gap-6 items-stretch">
-
+                @if ($galeriTerbaru->count())
                     <div class="flex flex-col justify-start space-y-6 reveal-on-scroll">
                         <div>
-                            <h2 class="text-3xl sm:text-4xl md:text-[70px] font-bold text-[#0C3B2E] leading-none"
+                            <h2 class="text-4xl sm:text-4xl md:text-[70px] font-bold text-[#0C3B2E] leading-none"
                                 style="font-family: 'Poppins', sans-serif;">
                                 Galeri
                             </h2>
-                            <h3 class="text-3xl sm:text-4xl md:text-[80px] italic leading-none"
+                            <h3 class="text-4xl sm:text-4xl md:text-[80px] italic leading-none"
                                 style="font-family: 'Playfair Display', serif;">
                                 <span class="text-[#0C3B2E]">Desa</span>
                                 <span class="text-[#D8A873]">Timpik</span>
                             </h3>
                         </div>
-                        <img src="{{ asset('images/galeri1.png') }}" alt="Galeri 1"
-                            class="w-full h-auto md:h-[300px] object-cover rounded-lg shadow-md mx-auto">
-                    </div>
 
-                    <div class="h-full reveal-on-scroll">
-                        <img src="{{ asset('images/galeri2.png') }}" alt="Galeri 2"
-                            class="w-full h-auto md:h-[475px] object-cover rounded-lg shadow-md md:transform md:scale-x-[1.27] md:origin-left mx-auto">
-                    </div>
+                        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 items-stretch">
 
-                    <div class="flex flex-col gap-4 h-full reveal-on-scroll">
-                        <div class="flex-1">
-                            <img src="{{ asset('images/galeri3.jpg') }}" alt="Galeri 3"
-                                class="w-full max-w-full md:max-w-[335px] h-auto md:h-full object-cover rounded-lg shadow-md mx-auto">
+                            @php $utama = $galeriTerbaru->first(); @endphp
+                            <div
+                                class="relative col-span-1 lg:col-span-2 group overflow-hidden rounded-3xl shadow-xl min-h-[340px] reveal-on-scroll">
+                                <img src="{{ asset('storage/' . $utama->gambar) }}"
+                                    alt="{{ $utama->judul ?? 'Galeri Desa' }}"
+                                    class="object-cover w-full h-full transition-transform duration-700 group-hover:scale-105" />
+                                <div
+                                    class="absolute bottom-0 left-0 right-0 px-7 py-6 bg-gradient-to-t from-[#0C3B2E]/85 to-transparent opacity-95 group-hover:opacity-100 transition-all duration-500">
+                                    <h3 class="font-bold text-2xl text-white mb-1"
+                                        style="font-family:'Poppins',sans-serif;">
+                                        {{ $utama->judul ?? 'Galeri Desa' }}
+                                    </h3>
+                                    <p class="text-white text-sm opacity-80">
+                                        {{ Str::limit($utama->keterangan, 70) ?? '' }}
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="flex flex-col gap-6 lg:gap-8">
+                                @foreach ($galeriTerbaru->skip(1) as $img)
+                                    <div
+                                        class="relative rounded-2xl overflow-hidden shadow-lg group min-h-[130px] reveal-on-scroll">
+                                        <img src="{{ asset('storage/' . $img->gambar) }}"
+                                            alt="{{ $img->judul ?? 'Galeri Desa' }}"
+                                            class="object-cover w-full h-44 lg:h-36 group-hover:scale-105 transition-all duration-500" />
+                                        <div
+                                            class="absolute bottom-0 left-0 right-0 px-5 py-4 bg-gradient-to-t from-[#0C3B2E]/80 to-transparent">
+                                            <h4 class="font-semibold text-lg text-white drop-shadow"
+                                                style="font-family:'Poppins',sans-serif;">
+                                                {{ $img->judul ?? 'Galeri Desa' }}
+                                            </h4>
+                                            <p class="text-xs text-white/80">
+                                                {{ Str::limit($img->keterangan, 50) ?? '' }}
+                                            </p>
+                                        </div>
+                                    </div>
+                                @endforeach
+                            </div>
                         </div>
-                        <div class="flex-1">
-                            <img src="{{ asset('images/merah-putih.jpg') }}" alt="Galeri 4"
-                                class="w-full max-w-full md:max-w-[335px] h-auto md:h-full object-cover rounded-lg shadow-md mx-auto">
-                        </div>
-                    </div>
-                </div>
+                    @else
+                        <div class="text-center text-gray-500 py-16">Belum ada foto galeri tersedia.</div>
+                @endif
 
                 <div class="flex justify-center mt-10 reveal-on-scroll">
                     <a href="{{ route('galeri.index') }}"
