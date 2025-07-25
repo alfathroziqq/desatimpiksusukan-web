@@ -44,6 +44,16 @@
                             </div>
                         </a>
 
+                        <!-- Data Keagamaan -->
+                        <a href="{{ route('admin.data-keagamaan.index') }}" class="block p-6 bg-white dark:bg-gray-700 rounded-lg shadow-md hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
+                            <div class="flex items-center">
+                                <div class="p-3 bg-yellow-100 dark:bg-yellow-900/50 rounded-full">
+                                    <i data-lucide="command" class="w-6 h-6 text-yellow-600 dark:text-yellow-400"></i>
+                                </div>
+                                <h4 class="ml-4 text-lg font-semibold text-gray-800 dark:text-gray-200">Data Keagamaan</h4>
+                            </div>
+                        </a>
+
                         {{-- <!-- Data Pendidikan -->
                         <a href="{{ route('admin.data-pendidikan.index') }}" class="block p-6 bg-white dark:bg-gray-700 rounded-lg shadow-md hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
                             <div class="flex items-center">
@@ -54,15 +64,6 @@
                             </div>
                         </a>
 
-                        <!-- Data Keagamaan -->
-                        <a href="{{ route('admin.data-keagamaan.index') }}" class="block p-6 bg-white dark:bg-gray-700 rounded-lg shadow-md hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
-                            <div class="flex items-center">
-                                <div class="p-3 bg-yellow-100 dark:bg-yellow-900/50 rounded-full">
-                                    <i data-lucide="command" class="w-6 h-6 text-yellow-600 dark:text-yellow-400"></i>
-                                </div>
-                                <h4 class="ml-4 text-lg font-semibold text-gray-800 dark:text-gray-200">Data Keagamaan</h4>
-                            </div>
-                        </a>
 
                         <!-- Data Ekonomi -->
                         <a href="{{ route('admin.data-ekonomi.index') }}" class="block p-6 bg-white dark:bg-gray-700 rounded-lg shadow-md hover:shadow-lg hover:-translate-y-1 transition-all duration-300">

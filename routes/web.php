@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DataKelaminController;
 use App\Http\Controllers\DataKesehatanController;
+use App\Http\Controllers\DataKeagamaanController;
 use App\Http\Controllers\BeritaController;
 use App\Http\Controllers\GaleriController;
 use App\Http\Controllers\AparaturController;
@@ -39,6 +40,9 @@ Route::get('/data-jenis-kelamin', [DataKelaminController::class, 'public'])->nam
 
 // Data Kesehatan
 Route::get('/data-kesehatan', [DataKesehatanController::class, 'public'])->name('data-kesehatan');
+
+// Data Keagamaan
+Route::get('/data-keagamaan', [DataKeagamaanController::class, 'public'])->name('data-keagamaan');
 
 // Aparatur Desa
 Route::get('/aparatur', fn() => view('aparatur'))->name('aparatur.index');
@@ -83,6 +87,10 @@ Route::middleware([
     // Data Kesehatan
     Route::get('/admin/data-kesehatan', [DataKesehatanController::class, 'index'])->name('admin.data-kesehatan.index');
     Route::post('/admin/data-kesehatan', [DataKesehatanController::class, 'store'])->name('admin.data-kesehatan.store');
+
+    // Data Keagamaan
+    Route::get('/admin/data-keagamaan', [DataKeagamaanController::class, 'index'])->name('admin.data-keagamaan.index');
+    Route::post('/admin/data-keagamaan', [DataKeagamaanController::class, 'store'])->name('admin.data-keagamaan.store');
 
     // Aparatur Desa
     Route::resource('/admin/aparatur', AparaturController::class)->names('admin.aparatur');

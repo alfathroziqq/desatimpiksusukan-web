@@ -65,7 +65,7 @@
                     <a href="{{ route('data-jenis-kelamin') }}" class="block px-4 py-2 text-sm text-gray-200 hover:bg-white/10">Data Jenis Kelamin</a>
                     <a href="#" class="block px-4 py-2 text-sm text-gray-200 hover:bg-white/10">Data Pendidikan</a>
                     <a href="{{ route('data-kesehatan') }}" class="block px-4 py-2 text-sm text-gray-200 hover:bg-white/10">Data Kesehatan</a>
-                    <a href="#" class="block px-4 py-2 text-sm text-gray-200 hover:bg-white/10">Data Keagamaan</a>
+                    <a href="{{ route('data-keagamaan') }}" class="block px-4 py-2 text-sm text-gray-200 hover:bg-white/10">Data Keagamaan</a>
                     <a href="#" class="block px-4 py-2 text-sm text-gray-200 hover:bg-white/10">Data Ekonomi</a>
                 </div>
             </div>
@@ -138,7 +138,7 @@
                     <a href="{{ route('data-jenis-kelamin') }}" class="block py-2 px-3 text-sm text-gray-300 hover:text-white hover:bg-white/5 rounded-md">Data Jenis Kelamin</a>
                     <a href="#" class="block py-2 px-3 text-sm text-gray-300 hover:text-white hover:bg-white/5 rounded-md">Data Pendidikan</a>
                     <a href="{{ route('data-kesehatan') }}" class="block py-2 px-3 text-sm text-gray-300 hover:text-white hover:bg-white/5 rounded-md">Data Kesehatan</a>
-                    <a href="#" class="block py-2 px-3 text-sm text-gray-300 hover:text-white hover:bg-white/5 rounded-md">Data Keagamaan</a>
+                    <a href="{{ route('data-keagamaan') }}" class="block py-2 px-3 text-sm text-gray-300 hover:text-white hover:bg-white/5 rounded-md">Data Keagamaan</a>
                     <a href="#" class="block py-2 px-3 text-sm text-gray-300 hover:text-white hover:bg-white/5 rounded-md">Data Ekonomi</a>
                 </div>
             </div>

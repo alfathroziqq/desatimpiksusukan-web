@@ -56,6 +56,16 @@
 
     @include('layouts.partials.header')
 
+    @php
+        use App\Models\DataKelamin;
+
+        $data = DataKelamin::latest()->first() ?? (object)[
+            'laki_laki' => 0,
+            'perempuan' => 0,
+            'kepala_keluarga' => 0,
+        ];
+    @endphp
+
     <main>
         <!-- Hero Section -->
         <section class="relative h-80 md:h-120 w-full flex items-center justify-center text-white -mt-20">

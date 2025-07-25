@@ -115,7 +115,7 @@
                         sehingga mampu meningkatkan perekonomian masyarakat desa Timpik.</p>
                 </div>
 
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 reveal-on-scroll px-8 md:px-20">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 reveal-on-scroll md:px-30">
                     @forelse ($produks as $produk)
                         <div
                             class="bg-gray rounded-2xl shadow-lg overflow-hidden group transform hover:-translate-y-2 transition-all duration-300 border border-gray-200/80">
