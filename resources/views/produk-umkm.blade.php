@@ -109,10 +109,17 @@
         <!-- Produk UMKM Section -->
         <section class="py-12 md:py-10 bg-white" style="font-family: 'Poppins', sans-serif;">
             <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="text-center mb-10 reveal-on-scroll px-6 md:px-50">
-                    <p class="text-xl sm:text-[20px] font-bold text-[#0C3B2E]"
-                        style="font-family: 'Poppins', sans-serif">Layanan yang disediakan promosi produk UMKM desa
-                        sehingga mampu meningkatkan perekonomian masyarakat desa Timpik.</p>
+                <!-- Headline -->
+                <div class="flex flex-col items-center text-center mb-14 reveal-on-scroll">
+                    <span
+                        class="uppercase tracking-widest text-xs font-semibold text-[#12715D] bg-[#C7F3E7]/80 rounded-full px-4 py-1 mb-2 shadow">UMKM
+                        Desa</span>
+                    <h2 class="text-3xl sm:text-5xl font-extrabold text-[#0C3B2E] drop-shadow-xl mb-2">
+                        Temukan Produk Lokal
+                    </h2>
+                    <p class="text-base sm:text-lg text-gray-500 max-w-xl">
+                        Dukung dan beli produk terbaik hasil karya UMKM masyarakat Desa Timpik!
+                    </p>
                 </div>
 
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 reveal-on-scroll md:px-30">
@@ -139,7 +146,7 @@
                                 </div>
                             </a>
                         </div>
-                        @empty
+                    @empty
                         <p class="text-center col-span-3 text-gray-500">Belum ada Produk UMKM yang tersedia.</p>
                     @endforelse
                 </div>

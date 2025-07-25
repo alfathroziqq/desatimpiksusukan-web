@@ -67,53 +67,94 @@
             <div class="grid grid-cols-1 lg:grid-cols-3 lg:gap-12">
 
                 <!-- Main Content -->
-                <div class="lg:col-span-2">
-                    <div class="bg-white p-6 md:p-8 rounded-lg shadow-md">
-                        <h1 class="text-3xl lg:text-4xl font-bold text-gray-800 mb-4">{{ $berita->nama_berita }}</h1>
+                <section class="lg:col-span-2">
+                    <article
+                        class="relative bg-gradient-to-br from-[#F9F7F6] via-white to-[#E8F7F2]/60 border border-[#C7F3E7]/50 rounded-3xl shadow-2xl p-0 md:p-0 overflow-hidden mb-8 lg:mb-0">
+                        <!-- Featured Image with overlay -->
+                        <div class="relative">
+                            <img src="{{ asset('storage/' . $berita->foto) }}" alt="{{ $berita->nama_berita }}"
+                                class="w-full aspect-video object-cover rounded-t-3xl md:rounded-t-3xl shadow"
+                                onerror="this.src='https://placehold.co/600x400?text=Foto+Tidak+Tersedia';">
 
-                        <!-- Meta Info -->
-                        <div class="flex flex-wrap items-center justify-between text-sm text-gray-500 mb-6">
-                            <span class="flex items-center mb-2 md:mb-0">
-                                <i data-lucide="calendar" class="w-4 h-4 mr-1.5"></i>
-                                Semarang, {{ \Carbon\Carbon::parse($berita->tanggal)->isoFormat('D MMMM Y') }}
+                            <span
+                                class="absolute top-4 left-4 px-4 py-1 bg-[#DBAA7C]/90 text-white rounded-full font-bold text-xs tracking-wider shadow-sm backdrop-blur-sm">
+                                BERITA DESA
                             </span>
-
-                            <div class="flex items-center space-x-4">
-                                <span class="flex items-center"><i data-lucide="eye" class="w-4 h-4 mr-1.5"></i>Dilihat {{ $berita->views ?? 0 }} kali</span>
+                            <span
+                                class="absolute bottom-4 left-4 px-3 py-1 bg-[#C7F3E7]/80 text-[#12715D] font-semibold rounded-full text-xs shadow">
+                                {{ \Carbon\Carbon::parse($berita->tanggal)->isoFormat('D MMM Y') }}
+                            </span>
+                            <span
+                                class="absolute bottom-4 right-4 flex items-center gap-1 bg-white/80 rounded-full px-3 py-1 shadow text-xs font-semibold text-[#0C3B2E]">
+                                <i data-lucide="eye" class="w-4 h-4 mr-1.5"></i>
+                                {{ $berita->views ?? 0 }} views
+                            </span>
+                        </div>
+                        <!-- Article Content -->
+                        <div class="p-7 md:p-10">
+                            <h1
+                                class="text-3xl lg:text-4xl font-extrabold mb-2 text-[#0C3B2E] tracking-tight leading-tight drop-shadow-sm">
+                                {{ $berita->nama_berita }}
+                            </h1>
+                            <div class="flex flex-wrap gap-2 items-center mb-8 text-sm text-[#12715D]/80">
+                                <span
+                                    class="flex items-center gap-1.5 bg-[#C7F3E7]/70 px-3 py-1 rounded-full font-medium">
+                                    <i data-lucide="calendar" class="w-4 h-4"></i>
+                                    {{ \Carbon\Carbon::parse($berita->tanggal)->isoFormat('dddd, D MMMM Y') }}
+                                </span>
+                                <span
+                                    class="flex items-center gap-1 bg-[#F9DCC1]/70 px-3 py-1 rounded-full font-medium">
+                                    <i data-lucide="map-pin" class="w-4 h-4"></i>
+                                    Semarang
+                                </span>
+                            </div>
+                            <div class="prose max-w-none text-[#253C36] leading-relaxed mb-6 break-words text-justify">
+                                {!! $berita->deskripsi !!}
+                            </div>
+                            <hr class="my-8 border-[#C7F3E7]/60">
+                            <div class="flex gap-4">
+                                <a href="{{ route('berita.index') }}"
+                                    class="inline-block bg-[#E8C187]/90 text-[#0C3B2E] px-6 py-2 rounded-xl shadow font-bold hover:bg-[#0C3B2E] hover:text-white transition-all duration-200">
+                                    Kembali ke Berita Desa
+                                </a>
                             </div>
                         </div>
+                    </article>
+                </section>
 
-                        <!-- Featured Image -->
-                        <img src="{{ asset('storage/' . $berita->foto) }}" alt="{{ $berita->nama_berita }}" class="w-full aspect-video object-cover rounded-lg mb-8 shadow">
-
-                        <!-- Article Content -->
-                        <div class="prose max-w-none text-gray-700 leading-relaxed">
-                            {!! $berita->deskripsi !!}
-                        </div>
-                    </div>
-                </div>
-
+                <!-- Sidebar: Artikel Terbaru -->
                 <aside class="lg:col-span-1 mt-12 lg:mt-0">
                     <div class="sticky top-24">
-                        <div class="bg-white p-6 rounded-lg shadow-md">
-                            <h3 class="text-xl font-bold border-b pb-3 mb-4">Artikel Terbaru</h3>
-                            <div class="space-y-4">
+                        <div class="bg-white/90 border border-[#C7F3E7]/40 rounded-2xl shadow-lg px-5 py-6">
+                            <h3 class="text-xl font-bold text-[#0C3B2E] mb-4 pb-2 border-b border-[#E8C187]/40">Artikel
+                                Terbaru</h3>
+                            <div class="flex flex-col gap-5">
                                 @foreach ($latestBeritas as $item)
                                     @if ($item->id === $berita->id)
                                         @continue
                                     @endif
-                                    <a href="{{ route('berita.detail', $item) }}" class="flex items-center space-x-3 group">
-                                        <img src="{{ asset('storage/' . $item->foto) }}" alt="{{ $item->nama_berita }}" class="w-20 h-20 object-cover rounded-md flex-shrink-0">
-                                        <div>
-                                            <h4 class="font-semibold text-gray-800 group-hover:text-blue-600 transition-colors line-clamp-2" title="{{ $item->nama_berita }}">
+                                    <a href="{{ route('berita.detail', $item) }}"
+                                        class="flex items-center gap-4 group p-2 rounded-xl hover:bg-[#C7F3E7]/20 transition-all duration-200 border border-transparent hover:border-[#C7F3E7]/60 shadow-sm">
+                                        <div class="relative">
+                                            <img src="{{ asset('storage/' . $item->foto) }}"
+                                                alt="{{ $item->nama_berita }}"
+                                                class="w-16 h-16 rounded-lg object-cover bg-[#e7e7e7] shadow group-hover:scale-105 transition-transform duration-200"
+                                                onerror="this.src='https://placehold.co/100x100?text=No+Image';">
+                                            <span
+                                                class="absolute -top-2 -right-2 bg-[#E8C187]/90 text-white font-semibold text-[10px] px-2 py-0.5 rounded-full shadow">
+                                                {{ $item->jenis ?? 'Berita' }}
+                                            </span>
+                                        </div>
+                                        <div class="flex-1 min-w-0">
+                                            <h4 class="font-semibold text-[#0C3B2E] group-hover:text-[#12715D] text-base line-clamp-2 mb-0.5"
+                                                title="{{ $item->nama_berita }}">
                                                 {{ $item->nama_berita }}
                                             </h4>
-                                            <div class="text-xs font-semibold text-blue-600 mb-2 uppercase">
-                                                {{ $item->jenis }}
-                                            </div>
-                                            <p class="text-xs text-gray-500 mt-1">
+                                            <div
+                                                class="flex items-center gap-2 text-xs text-[#12715D]/80 font-semibold">
+                                                <i data-lucide="calendar" class="w-4 h-4"></i>
                                                 {{ \Carbon\Carbon::parse($item->tanggal)->isoFormat('D MMM Y') }}
-                                            </p>
+                                            </div>
                                         </div>
                                     </a>
                                 @endforeach

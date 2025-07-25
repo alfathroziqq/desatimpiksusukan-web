@@ -110,98 +110,138 @@
             </div>
         </section>
 
-        <!-- PPID Section -->
-        <section id="ppid-intro" class="px-12 md:px-30 py-12 mb-16" style="font-family: 'Poppins', sans-serif">
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-                <div class="reveal-on-scroll">
-                    <h2 class="text-3xl md:text-[45px] font-bold text-[#0C3B2E] text-center lg:text-left"
-                        style="font-family: 'Poppins', sans-serif;">
-                        PPID
+        <div class="container mx-auto px-8 sm:px-12 lg:px-40 py-12">
+            <!-- PPID -->
+            <section id="ppid-intro" style="font-family: 'Poppins', sans-serif;">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+
+                    <div class="reveal-on-scroll">
+                        <div
+                            class="bg-gradient-to-br from-[#E8C187]/70 via-[#C7F3E7]/50 to-[#0C3B2E]/10 shadow-xl rounded-3xl p-8 md:p-12 flex flex-col justify-center items-center md:items-start relative overflow-hidden">
+                            <div class="absolute -top-10 -right-10 w-32 h-32 bg-[#E8C187]/20 rounded-full blur-2xl">
+                            </div>
+                            <h2 class="text-3xl md:text-[45px] font-extrabold text-[#0C3B2E] mb-2 drop-shadow-lg">
+                                PPID <span
+                                    class="ml-2 px-3 py-1 rounded-xl bg-[#C7F3E7]/60 text-[#12715D] text-base font-bold align-middle">Inovasi!</span>
+                            </h2>
+                            <div class="w-16 h-1 bg-[#0C3B2E] mb-6 rounded-xl"></div>
+                            <p class="text-[#0C3B2E] text-lg opacity-90">
+                                <span class="bg-white/50 px-2 py-0.5 rounded-lg font-medium">
+                                    Pejabat Pengelola Informasi dan Dokumentasi (PPID)
+                                </span> adalah ujung tombak keterbukaan informasi publik: penyimpanan, pendokumentasian,
+                                penyediaan, & layanan informasi <b>di era digital</b>.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 text-center reveal-on-scroll">
+                        <div
+                            class="group flex flex-col items-center p-6 bg-white/80 backdrop-blur-lg rounded-2xl shadow-xl border border-[#E8C187]/20 hover:scale-105 hover:shadow-2xl transition-all duration-300 relative overflow-hidden">
+                            <div class="absolute -top-2 -right-3 w-10 h-10 bg-[#C7F3E7]/30 rounded-full blur"></div>
+                            <div
+                                class="flex items-center justify-center w-14 h-14 bg-[#C7F3E7]/70 rounded-full mb-4 group-hover:scale-110 transition">
+                                <i data-lucide="folder-archive" class="w-8 h-8 text-[#0C3B2E]"></i>
+                            </div>
+                            <span class="font-bold text-[#0C3B2E]">Informasi Berkala</span>
+                            <span class="mt-2 text-xs text-[#12715D]/70">Update rutin & terbuka</span>
+                        </div>
+                        <div
+                            class="group flex flex-col items-center p-6 bg-white/80 backdrop-blur-lg rounded-2xl shadow-xl border border-[#E8C187]/20 hover:scale-105 hover:shadow-2xl transition-all duration-300 relative overflow-hidden">
+                            <div class="absolute top-2 left-3 w-10 h-10 bg-[#F9DCC1]/30 rounded-full blur"></div>
+                            <div
+                                class="flex items-center justify-center w-14 h-14 bg-[#F9DCC1]/70 rounded-full mb-4 group-hover:scale-110 transition">
+                                <i data-lucide="file-check-2" class="w-8 h-8 text-[#0C3B2E]"></i>
+                            </div>
+                            <span class="font-bold text-[#0C3B2E]">Informasi Serta Merta</span>
+                            <span class="mt-2 text-xs text-[#E8C187]/70">Saat keadaan genting</span>
+                        </div>
+                        <div
+                            class="group flex flex-col items-center p-6 bg-white/80 backdrop-blur-lg rounded-2xl shadow-xl border border-[#E8C187]/20 hover:scale-105 hover:shadow-2xl transition-all duration-300 relative overflow-hidden">
+                            <div class="absolute -bottom-3 right-4 w-10 h-10 bg-[#12715D]/20 rounded-full blur"></div>
+                            <div
+                                class="flex items-center justify-center w-14 h-14 bg-[#12715D]/40 rounded-full mb-4 group-hover:scale-110 transition">
+                                <i data-lucide="clock-4" class="w-8 h-8 text-[#0C3B2E]"></i>
+                            </div>
+                            <span class="font-bold text-[#0C3B2E]">Informasi Setiap Saat</span>
+                            <span class="mt-2 text-xs text-[#0C3B2E]/60">Siap akses kapanpun</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Informasi Publik Terbaru -->
+            <section id="informasi-publik" class="mt-16">
+                <div class="pt-8 reveal-on-scroll text-center">
+                    <h2 class="text-2xl md:text-3xl font-extrabold text-[#0C3B2E] mb-2 tracking-wide drop-shadow-md"
+                        style="font-family: 'Poppins', sans-serif">
+                        <i data-lucide="megaphone" class="inline w-7 h-7 mr-1 align-text-bottom text-[#C2977D]"></i>
+                        Informasi Publik Terbaru
                     </h2>
-                    <div class="w-20 md:w-25 h-1 bg-[#0C3B2E] mx-auto lg:mx-0 mt-3 mb-5"></div>
-                    <p class="text-[#0C3B2E]">
-                        Pejabat Pengelola Informasi dan Dokumentasi (PPID) adalah pejabat yang bertanggung jawab di
-                        bidang penyimpanan, pendokumentasian, penyediaan, dan/atau pelayanan informasi di badan
-                        publik.
-                    </p>
-                </div>
-                <div class="grid grid-cols-3 gap-4 text-center reveal-on-scroll">
-                    <div class="flex flex-col items-center p-4 bg-white rounded-lg shadow-sm">
-                        <i data-lucide="folder-archive" class="w-12 h-12 text-[#0C3B2E] mb-3"></i>
-                        <span class="text-sm font-semibold text-[#0C3B2E]">Informasi Secara Berkala</span>
-                    </div>
-                    <div class="flex flex-col items-center p-4 bg-white rounded-lg shadow-sm">
-                        <i data-lucide="file-check-2" class="w-12 h-12 text-[#0C3B2E] mb-3"></i>
-                        <span class="text-sm font-semibold text-[#0C3B2E]">Informasi Serta Merta</span>
-                    </div>
-                    <div class="flex flex-col items-center p-4 bg-white rounded-lg shadow-sm">
-                        <i data-lucide="clock-4" class="w-12 h-12 text-[#0C3B2E] mb-3"></i>
-                        <span class="text-sm font-semibold text-[#0C3B2E]">Informasi Setiap Saat</span>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Informasi Publik Terbaru Section -->
-        <section id="informasi-publik">
-            <div class="pt-8 px-12 md:px-30 reveal-on-scroll">
-                <h2 class="text-2xl md:text-3xl font-bold text-[#0C3B2E] mb-2"
-                    style="font-family: 'Poppins', sans-serif">
-                    Informasi Publik Terbaru
-                </h2>
-                <div class="w-24 md:w-40 h-1 bg-[#0C3B2E] mt-3 mb-5"></div>
-            </div>
-
-            <!-- Daftar Dokumen -->
-            <div class="space-y-6 px-12 md:px-30 reveal-on-scroll" style="font-family: 'Poppins', sans-serif">
-                @forelse ($dokumens as $dokumen)
                     <div
-                        class="bg-white rounded-lg shadow-sm p-6 flex flex-col gap-4 md:flex-row md:justify-between md:items-center">
-                        <!-- Kiri: Judul dan Info -->
-                        <div>
-                            <h3 class="font-bold text-lg md:text-xl mb-2 text-[#0C3B2E]">{{ $dokumen->judul }}</h3>
-                            <div class="flex flex-col text-[#0C3B2E] text-sm space-y-2">
-                                <span class="flex items-center">
-                                    <i data-lucide="book" class="w-4 h-4 mr-1.5 text-[#0C3B2E]"></i>
-                                    {{ $dokumen->jenis_dokumen }}
-                                </span>
-                                <span class="flex items-center">
-                                    <i data-lucide="calendar" class="w-4 h-4 mr-1.5 text-[#0C3B2E]"></i>
-                                    {{ \Carbon\Carbon::parse($dokumen->tanggal_input)->isoFormat('dddd, D MMMM Y') }}
-                                </span>
+                        class="w-24 md:w-40 h-1 mx-auto bg-gradient-to-r from-[#C7F3E7] via-[#0C3B2E] to-[#F9DCC1] rounded-lg mt-3 mb-5">
+                    </div>
+                </div>
+
+                <!-- Daftar Dokumen -->
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-6 reveal-on-scroll"
+                    style="font-family: 'Poppins', sans-serif;">
+                    @forelse ($dokumens as $dokumen)
+                        <div
+                            class="relative bg-white/80 backdrop-blur-md rounded-3xl shadow-xl border border-[#C7F3E7]/60 hover:shadow-2xl transition-all duration-300 flex flex-col p-6 group overflow-hidden">
+                            <div class="absolute -top-6 -left-8 w-24 h-24 bg-[#C7F3E7]/30 rounded-full blur-2xl"></div>
+                            <span
+                                class="absolute top-5 right-5 bg-[#F9DCC1]/80 text-[#C2977D] font-bold px-3 py-1 rounded-xl text-xs shadow-md">
+                                {{ $dokumen->jenis_dokumen }}
+                            </span>
+                            <h3 class="font-bold text-lg md:text-xl mb-1 text-[#0C3B2E] line-clamp-2">
+                                {{ $dokumen->judul }}</h3>
+                            <div class="flex items-center text-xs text-[#12715D]/80 mb-2 gap-2">
+                                <i data-lucide="calendar" class="w-4 h-4"></i>
+                                {{ \Carbon\Carbon::parse($dokumen->tanggal_input)->isoFormat('dddd, D MMMM Y') }}
+                            </div>
+                            <div class="flex items-center gap-2 my-2">
+                                <span class="text-[10px] text-[#C2977D]">Download</span>
+                                <div class="w-full h-1 bg-[#E8C187]/30 rounded">
+                                    <div class="h-1 rounded bg-gradient-to-r from-[#C2977D] to-[#12715D]"
+                                        style="width: {{ min(100, $dokumen->download_count * 8) }}%"></div>
+                                </div>
+                                <span class="text-[10px] text-[#12715D]">{{ $dokumen->download_count }}x</span>
+                            </div>
+                            <div class="flex flex-col gap-2 mt-auto">
+                                <a href="{{ asset('storage/' . $dokumen->file_path) }}" target="_blank"
+                                    class="bg-[#F9DCC1]/90 text-[#0C3B2E] font-semibold px-4 py-2 rounded-lg flex items-center justify-center space-x-2 hover:bg-orange-300 hover:scale-105 transition-all">
+                                    <i data-lucide="eye" class="w-5 h-5"></i>
+                                    <span>Lihat Berkas</span>
+                                </a>
+                                <a href="{{ route('dokumen.download', $dokumen->id) }}"
+                                    class="bg-[#C7F3E7]/90 text-[#0C3B2E] font-semibold px-4 py-2 rounded-lg flex items-center justify-center space-x-2 hover:bg-green-300 hover:scale-105 transition-all">
+                                    <i data-lucide="download-cloud" class="w-5 h-5"></i>
+                                    <span>Unduh</span>
+                                </a>
                             </div>
                         </div>
+                    @empty
+                        <p class="text-center col-span-full text-[#0C3B2E] py-8">Belum ada dokumen yang tersedia.</p>
+                    @endforelse
+                </div>
+            </section>
 
-                        <!-- Kanan: Tombol -->
-                        <div class="flex flex-col gap-2 w-full md:w-auto">
-                            <a href="{{ asset('storage/' . $dokumen->file_path) }}" target="_blank"
-                                class="bg-[#F9DCC1] text-[#0C3B2E] font-semibold px-4 py-2 rounded-lg flex items-center justify-center md:justify-start space-x-2 hover:bg-orange-300 transition-colors">
-                                <i data-lucide="eye" class="w-5 h-5"></i>
-                                <span>Lihat Berkas</span>
-                            </a>
-                            <a href="{{ route('dokumen.download', $dokumen->id) }}"
-                                class="bg-[#C7F3E7] text-[#0C3B2E] font-semibold px-4 py-2 rounded-lg flex items-center justify-center md:justify-start space-x-2 hover:bg-green-300 transition-colors">
-                                <i data-lucide="download-cloud" class="w-5 h-5"></i>
-                                <span>Unduh ({{ $dokumen->download_count }}x)</span>
-                            </a>
-                        </div>
-                    </div>
-                @empty
-                    <p class="text-center col-span-3 text-[#0C3B2E]">Belum ada dokumen yang tersedia.</p>
-                @endforelse
-            </div>
-        </section>
-
-
-        <!-- Ajukan Permohonan Informasi Section -->
-        <section id="permohonan-info" class="mt-16 mb-6 text-center bg-gray-200/50 p-10 rounded-lg reveal-on-scroll"
-            style="font-family: 'Poppins', sans-serif">
-            <h2 class="text-2xl font-bold text-[#0C3B2E] mb-3">Ingin mengajukan permohonan informasi?</h2>
-            <a href="{{ route('permohonan.create') }}"
-                class="inline-block bg-white text-[##0C3B2E] font-semibold border border-green-700 px-8 py-3 rounded-lg hover:bg-[#0C3B2E] hover:text-white transition-colors duration-300 mt-4">
-                Ajukan Permohonan Informasi
-            </a>
-        </section>
+            <!-- Permohonan Informasi -->
+            <section id="permohonan-info"
+                class="mt-20 mb-6 text-center bg-gradient-to-tr from-[#F9DCC1]/50 via-white to-[#C7F3E7]/50 p-10 rounded-3xl reveal-on-scroll shadow-lg relative overflow-hidden"
+                style="font-family: 'Poppins', sans-serif">
+                <div class="absolute left-0 top-0 w-28 h-28 bg-[#C7F3E7]/30 rounded-full blur-2xl"></div>
+                <div class="absolute right-0 bottom-0 w-32 h-32 bg-[#E8C187]/40 rounded-full blur-2xl"></div>
+                <h2 class="text-2xl md:text-3xl font-extrabold text-[#0C3B2E] mb-3 drop-shadow">
+                    <i data-lucide="help-circle" class="inline w-7 h-7 align-text-bottom text-[#12715D] mr-2"></i>
+                    Ingin mengajukan permohonan informasi?
+                </h2>
+                <a href="{{ route('permohonan.create') }}"
+                    class="inline-block bg-[#0C3B2E] text-white font-bold px-8 py-3 rounded-xl shadow hover:bg-[#12715D] hover:scale-105 transition-all duration-300 mt-4 text-lg">
+                    Ajukan Permohonan Informasi
+                </a>
+            </section>
+        </div>
 
     </main>
 

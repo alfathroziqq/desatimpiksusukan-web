@@ -53,6 +53,28 @@
         [x-cloak] {
             display: none !important;
         }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .reveal-on-scroll {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+
+        .reveal-on-scroll.animate-fade-in-up {
+            animation: fadeInUp 0.8s ease-out forwards;
+        }
     </style>
 </head>
 
@@ -147,44 +169,51 @@
             </div>
         </section>
 
-        <div class="container mx-auto px-6 lg:px-16 py-12">
+        <div class="container mx-auto px-8 sm:px-12 lg:px-40 py-14">
+
             <!-- Title Section -->
-            <div class="border-b-2 border-gray-200 pb-4 mb-8 text-center">
-                <h1 class="text-4xl font-bold text-gray-800">Galeri Desa</h1>
-                <p class="text-gray-500 mt-2">Menampilkan seluruh gambar yang ada di desa.</p>
+            <div class="flex flex-col items-center mb-14">
+                <span
+                    class="uppercase tracking-widest text-[13px] font-semibold text-[#12715D] bg-[#C7F3E7]/60 rounded-full px-4 py-1 mb-3 shadow-sm">Galeri
+                    Desa</span>
+                <h1
+                    class="text-4xl sm:text-5xl md:text-6xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-[#0C3B2E] via-[#12715D] to-[#E8C187] drop-shadow-lg text-center mb-3">
+                    Temukan Keindahan Desa</h1>
+                <p class="text-lg text-gray-500 text-center max-w-2xl">Kumpulan momen, pemandangan, dan aktivitas seru
+                    di Desa Timpik. Klik gambar untuk melihat lebih besar!</p>
             </div>
 
             <!-- Photo Grid -->
-            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6">
+            <div class="grid gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
                 @forelse ($galleryItems as $index => $item)
                     <div @click="openModal({{ $index }})"
-                        class="group relative block w-full rounded-xl shadow-lg overflow-hidden cursor-pointer aspect-square">
-
-                        <img src="{{ asset('storage/' . $item->gambar) }}" alt="{{ $item->judul }}"
-                            onerror="this.onerror=null;this.src='https://placehold.co/400x400/E0E0E0/BDBDBD?text=Gambar';"
-                            class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110">
-
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent"></div>
+                        class="gallery-card relative rounded-2xl shadow-2xl border border-[#C7F3E7]/60 overflow-hidden cursor-pointer bg-gradient-to-tl from-white via-[#F9DCC1]/20 to-[#C7F3E7]/10 transition-all duration-700 opacity-0 translate-y-8 group hover:shadow-[0_8px_40px_-8px_#0C3B2E33] hover:scale-[1.03]">
 
                         <div
-                            class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-black/40">
-                            <i data-lucide="search" class="text-white text-3xl"></i></i>
+                            class="absolute inset-0 z-10 bg-gradient-to-b from-[#0C3B2E]/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center">
+                            <i data-lucide="search" class="text-white text-5xl drop-shadow-xl"></i>
                         </div>
+                        <img src="{{ asset('storage/' . $item->gambar) }}" alt="{{ $item->judul }}"
+                            onerror="this.onerror=null;this.src='https://placehold.co/400x400/E0E0E0/BDBDBD?text=Gambar';"
+                            class="w-full h-60 object-cover group-hover:scale-105 transition-transform duration-500">
 
-                        <div class="absolute bottom-0 left-0 w-full p-4 flex justify-end">
-                            <h3 class="bg-white inline-block rounded-sm px-2 py-1 font-semibold text-sm truncate"
+                        <div
+                            class="absolute bottom-0 left-0 w-full bg-gradient-to-t from-[#0C3B2E]/70 via-transparent to-transparent px-5 pt-10 pb-4">
+                            <h3 class="font-semibold text-base text-white drop-shadow group-hover:text-[#C7F3E7] truncate"
                                 title="{{ $item->judul }}">
                                 {{ $item->judul }}
                             </h3>
                         </div>
+                        <span
+                            class="absolute top-4 right-4 w-3 h-3 rounded-full bg-[#E8C187] shadow-lg border-2 border-white"></span>
                     </div>
                 @empty
-                    <p class="col-span-full text-gray-500 text-center py-12">Belum ada gambar dalam galeri.</p>
+                    <p class="col-span-full text-gray-500 text-center py-16">Belum ada gambar dalam galeri.</p>
                 @endforelse
             </div>
 
             <!-- Pagination -->
-            <div class="mt-12">
+            <div class="flex justify-center mt-14">
                 {{ $galleryItems->links() }}
             </div>
         </div>
@@ -245,6 +274,42 @@
 
     <script>
         lucide.createIcons();
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const galleryCards = document.querySelectorAll('.gallery-card');
+            const observer = new IntersectionObserver(entries => {
+                entries.forEach((entry, i) => {
+                    if (entry.isIntersecting) {
+                        setTimeout(() => {
+                            entry.target.classList.add('opacity-100', 'translate-y-0');
+                            entry.target.classList.remove('opacity-0', 'translate-y-8');
+                        }, i * 100);
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, {
+                threshold: 0.15
+            });
+
+            galleryCards.forEach(card => observer.observe(card));
+        });
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const observer = new IntersectionObserver(entries => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('animate-fade-in-up');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, {
+                threshold: 0.1
+            });
+
+            document.querySelectorAll('.reveal-on-scroll').forEach(el => {
+                observer.observe(el);
+            });
+        });
     </script>
 </body>
 

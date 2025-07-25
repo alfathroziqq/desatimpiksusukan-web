@@ -48,7 +48,7 @@
     </style>
 </head>
 
-<body class="bg-gray-50">
+<body>
 
     @include('layouts.partials.header')
 
@@ -77,7 +77,8 @@
                         <ol role="list"
                             class="flex items-center space-x-2 bg-black/20 backdrop-blur-sm px-4 py-2 rounded-full">
                             <li>
-                                <a href="{{ route('welcome') }}" class="text-gray-300 hover:text-white transition-colors">
+                                <a href="{{ route('welcome') }}"
+                                    class="text-gray-300 hover:text-white transition-colors">
                                     <svg class="h-5 w-5 flex-shrink-0" viewBox="0 0 20 20" fill="currentColor"
                                         aria-hidden="true">
                                         <path fill-rule="evenodd"
@@ -106,39 +107,104 @@
         </section>
 
         <!-- Berita Desa Section -->
-        <section class="py-12 md:py-10 bg-white" style="font-family: 'Poppins', sans-serif;">
-            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+        <section class="py-12 bg-gradient-to-tr from-[#f7efe5] via-white to-[#e0f7f3] font-['Poppins',sans-serif]">
+            <div class="container mx-auto px-8 sm:px-12 lg:px-40">
 
-                <div class="text-center mb-10 reveal-on-scroll">
-                    <h2 class="text-3xl sm:text-[45px] font-bold text-[#0C3B2E]"
-                        style="font-family: 'Poppins', sans-serif">Berita Desa</h2>
-                    <div class="w-45 md:w-70 h-1 bg-[#0C3B2E] mx-auto mt-3"></div>
+                <!-- Section Title -->
+                <div class="text-center mb-14 reveal-on-scroll">
+                    <span
+                        class="inline-block mb-3 bg-[#C7F3E7] text-[#12715D] px-4 py-1 rounded-full font-semibold text-xs tracking-wider shadow">
+                        INFO & PERISTIWA
+                    </span>
+                    <h2 class="text-4xl md:text-5xl font-extrabold text-[#0C3B2E] drop-shadow-lg mb-2">Berita Desa</h2>
+                    <div
+                        class="mx-auto w-24 md:w-48 h-1 bg-gradient-to-r from-[#C7F3E7] via-[#0C3B2E] to-[#E8C187] rounded-full mb-1">
+                    </div>
+                    <p class="mt-4 text-base md:text-lg text-gray-700 opacity-80">
+                        Update informasi, agenda, dan cerita menarik seputar <span class="text-[#E8C187] font-bold">Desa
+                            Timpik</span>.
+                    </p>
                 </div>
-                <div class="flex flex-col lg:flex-row gap-10 lg:gap-14 items-center">
 
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 reveal-on-scroll md:px-30">
-                    @forelse ($beritas as $berita)
-                        <div class="bg-white rounded-2xl shadow-lg overflow-hidden group transform hover:-translate-y-2 transition-all duration-300 border border-gray-200/80">
+                <!-- Highlight Berita Terbaru -->
+                @if ($beritas->count() > 0)
+                    @php $highlight = $beritas->first(); @endphp
+                    <div
+                        class="reveal-on-scroll relative bg-white/90 backdrop-blur-lg shadow-2xl border border-[#C7F3E7]/40 rounded-3xl mb-16 flex flex-col md:flex-row overflow-hidden hover:shadow-3xl transition group">
+                        <div
+                            class="md:w-1/3 min-h-[270px] bg-gradient-to-tr from-[#C7F3E7]/40 via-[#E8C187]/30 to-[#f7efe5]/50 relative">
+                            <img src="{{ asset('storage/' . $highlight->foto) }}" alt="{{ $highlight->nama_berita }}"
+                                class="w-full h-full object-cover object-center rounded-t-3xl md:rounded-tr-none md:rounded-l-3xl transition group-hover:scale-105"
+                                onerror="this.src='https://placehold.co/600x400?text=Foto+Tidak+Tersedia';">
+                            <span
+                                class="absolute left-4 top-4 px-4 py-1 bg-[#C7F3E7] text-[#12715D] rounded-full font-semibold text-xs shadow">
+                                TERBARU
+                            </span>
+                        </div>
+                        <div class="flex-1 p-7 flex flex-col">
+                            <a href="{{ route('berita.detail', $highlight->id) }}">
+                                <h3
+                                    class="font-extrabold text-2xl md:text-3xl mb-2 text-[#0C3B2E] group-hover:text-[#12715D] transition-colors">
+                                    {{ $highlight->nama_berita }}
+                                </h3>
+                            </a>
+                            <p class="text-gray-700 text-sm md:text-base opacity-90 mb-5 line-clamp-4 text-justify">
+                                {{ \Illuminate\Support\Str::limit(strip_tags($highlight->deskripsi), 230, '...') }}
+                            </p>
+                            <div class="flex justify-between items-center mt-auto text-xs md:text-sm text-[#12715D]">
+                                <span>
+                                    <i class="lucide lucide-calendar w-4 h-4 mr-1 align-middle"></i>
+                                    {{ \Carbon\Carbon::parse($highlight->tanggal)->isoFormat('dddd, D MMMM Y') }}
+                                </span>
+                                <span>
+                                    <i class="lucide lucide-eye w-4 h-4 mr-1 align-middle"></i>
+                                    {{ $highlight->views ?? 0 }} views
+                                </span>
+                            </div>
+                            <a href="{{ route('berita.detail', $highlight->id) }}"
+                                class="inline-block mt-5 px-6 py-2 bg-[#0C3B2E] text-white rounded-xl shadow font-semibold hover:bg-[#12715D] hover:scale-101 transition-all">
+                                Baca Selengkapnya
+                            </a>
+                        </div>
+                    </div>
+                @endif
+
+                <!-- Grid Berita Lainnya -->
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 reveal-on-scroll">
+                    @php $skip = 0; @endphp
+                    @foreach ($beritas as $i => $berita)
+                        @if ($i == 0)
+                            @php
+                                $skip = 1;
+                                continue;
+                            @endphp
+                        @endif
+                        <div
+                            class="bg-white rounded-2xl shadow-lg overflow-hidden group transform hover:-translate-y-2 transition-all duration-300 border border-gray-200/80">
                             <a href="{{ route('berita.detail', $berita->id) }}" class="block">
                                 <img src="{{ asset('storage/' . $berita->foto) }}" alt="{{ $berita->nama_berita }}"
-                                    class="w-full h-52 object-cover" onerror="this.src='https://placehold.co/600x400?text=Foto+Tidak+Tersedia';">
+                                    class="w-full h-52 object-cover"
+                                    onerror="this.src='https://placehold.co/600x400?text=Foto+Tidak+Tersedia';">
                                 <div class="p-5">
-                                    <h3 class="font-bold text-lg text-[#0C3B2E] leading-snug mb-2 group-hover:text-green-600 transition-colors">
+                                    <h3
+                                        class="font-bold text-lg text-[#0C3B2E] leading-snug mb-2 group-hover:text-green-600 transition-colors">
                                         {{ \Illuminate\Support\Str::limit($berita->nama_berita, 60) }}
                                     </h3>
-                                    <p class="text-gray-600 text-sm leading-relaxed mb-4">
+                                    <p
+                                        class="text-gray-600 text-sm leading-relaxed mb-4 break-words line-clamp-3 text-justify">
                                         {{ \Illuminate\Support\Str::limit(strip_tags($berita->deskripsi), 180, '...') }}
                                     </p>
-                                <a href="{{ route('berita.detail', $berita->id) }}"
-                                    class="inline-block border border-teal-600 px-4 py-1 rounded-full text-teal-600 hover:bg-teal-100 text-sm font-medium mb-4 transition duration-300">
-                                    Selengkapnya
-                                </a>
+                                    <a href="{{ route('berita.detail', $berita->id) }}"
+                                        class="inline-block border border-teal-600 px-4 py-1 rounded-full text-teal-600 hover:bg-teal-100 text-sm font-medium mb-4 transition duration-300">
+                                        Selengkapnya
+                                    </a>
                                     <div class="flex justify-between items-center text-xs text-gray-500">
-                                        <span>Semarang, {{ \Carbon\Carbon::parse($berita->tanggal)->isoFormat('D MMMM Y') }}</span>
+                                        <span>Semarang,
+                                            {{ \Carbon\Carbon::parse($berita->tanggal)->isoFormat('D MMMM Y') }}</span>
                                         <div class="flex items-center space-x-1">
                                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
-                                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                                stroke-linecap="round" stroke-linejoin="round">
+                                                viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                                 <path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z" />
                                                 <circle cx="12" cy="12" r="3" />
                                             </svg>
@@ -148,15 +214,16 @@
                                 </div>
                             </a>
                         </div>
-                    @empty
-                        <p class="text-center col-span-3 text-gray-500">Belum ada berita yang tersedia.</p>
-                    @endforelse
+                    @endforeach
+                    @if ($beritas->count() - $skip == 0)
+                        <p class="text-center col-span-full text-gray-500 py-8">Belum ada berita yang tersedia.</p>
+                    @endif
                 </div>
+
             </div>
-            <div class="mt-10">
+            <div class="mt-12">
                 {{ $beritas->links('vendor.pagination.tailwind') }}
             </div>
-
         </section>
 
     </main>

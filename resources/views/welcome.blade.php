@@ -55,6 +55,28 @@
         .slider-container::-webkit-scrollbar {
             display: none;
         }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .reveal-on-scroll {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+
+        .reveal-on-scroll.animate-fade-in-up {
+            animation: fadeInUp 0.8s ease-out forwards;
+        }
     </style>
 </head>
 
@@ -87,98 +109,123 @@
         </section>
 
         <!-- Sejarah Section -->
-        <section class="py-16 md:py-10 bg-white mb-15">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-4">
-                <div class="text-center mb-10">
-                    <h2 class="text-3xl sm:text-[45px] font-bold text-[#0C3B2E]"
-                        style="font-family: 'Poppins', sans-serif">Desa Timpik</h2>
-                    <div class="w-50 md:w-75 h-1 bg-[#0C3B2E] mx-auto mt-3"></div>
-                </div>
-                <div class="flex flex-col lg:flex-row gap-10 lg:gap-14 items-center">
-
+        <section class="py-16 md:py-20 relative overflow-x-clip">
+            <div class="max-w-7xl mx-auto px-4 sm:px-10 lg:px-16">
+                <div class="text-center mb-12 reveal-on-scroll">
+                    <h2 class="text-4xl sm:text-[48px] font-extrabold tracking-tight text-[#0C3B2E] inline-block"
+                        style="font-family: 'Poppins', sans-serif; letter-spacing: 1px;">
+                        Desa Timpik
+                    </h2>
                     <div
-                        class="w-full lg:w-1/3 bg-[#0C3B2E] text-white p-6 sm:p-8 rounded-3xl shadow-2xl transform hover:-translate-y-2 transition duration-300">
-                        <h3 class="text-2xl sm:text-[36px] font-bold mb-4 border-b-2 border-teal-400 pb-2 font-poppins"
-                            style="font-family: 'Poppins', sans-serif">
-                            Sejarah</h3>
-                        <p class="text-2xl sm:text-[16px] text-[#C8C7CC] leading-relaxed mb-6 text-justify text-sm sm:text-base font-poppins"
-                            style="font-family: 'Poppins', sans-serif">
-                            Desa Timpik, yang terletak di Kecamatan Susukan, Kabupaten Semarang, merupakan wilayah yang
-                            kaya sejarah dan budaya.
-                            Di desa ini pernah ditemukan artefak peninggalan Hindu berupa yoni di area Masjid Kauman,
-                            menunjukkan jejak peradaban
-                            kuno sebelum Islam masuk. Kini, Timpik berkembang menjadi desa wisata edukatif berbasis
-                            pertanian modern,
-                            lengkap dengan zona bunga, kolam balon, dan wahana outbound, menjadikannya destinasi menarik
-                            yang memadukan
-                            nilai sejarah dan inovasi pertanian bagi wisata keluarga.
-                        </p>
-                        <a href="#"
-                            class="bg-[#3D7364] text-white border border-white px-6 py-2 rounded-full hover:bg-[#325e51] transition duration-300 font-semibold"
-                            style="font-family: 'Poppins', sans-serif">Selengkapnya
-                        </a>
+                        class="w-40 md:w-60 h-1 bg-gradient-to-r from-[#0C3B2E] via-[#E8C187] to-[#C2977D] rounded-full mx-auto mt-3">
+                    </div>
+                </div>
+                <div class="flex flex-col lg:flex-row gap-12 lg:gap-16 items-center reveal-on-scroll">
+
+                    <div class="relative w-full lg:w-1/3 flex-shrink-0">
+                        <div
+                            class="mt-20 lg:mt-0 bg-gradient-to-tr from-[#0C3B2E] via-[#15634e]/80 to-[#E8C187]/80 text-white p-8 pt-16 sm:pt-20 rounded-3xl shadow-2xl border border-[#E8C187]/30 relative z-0 hover:scale-105 transition-transform duration-300 group">
+                            <h3 class="text-2xl sm:text-[34px] font-bold mb-3 border-b-2 border-[#C7F3E7]/50 pb-2"
+                                style="font-family: 'Poppins', sans-serif">
+                                Sejarah</h3>
+                            <p class="text-base sm:text-[17px] leading-relaxed mb-6 text-[#F8F6F1] text-justify"
+                                style="font-family: 'Poppins', sans-serif">
+                                Desa Timpik, terletak di Kecamatan Susukan, Kabupaten Semarang, kaya sejarah dan budaya.
+                                Pernah ditemukan artefak Hindu berupa yoni di Masjid Kauman, menandakan jejak peradaban
+                                kuno. Kini, Timpik menjadi desa wisata edukatif berbasis pertanian modern dengan taman
+                                bunga, kolam balon, outbound, memadukan warisan sejarah dan inovasi pertanian keluarga.
+                            </p>
+                            <a href="{{ route('sejarah-desa') }}"
+                                class="inline-flex items-center gap-2 bg-[#E8C187] text-[#155145] px-7 py-2 rounded-full font-bold text-base shadow hover:bg-[#D8A873] hover:text-[#0C3B2E] transition duration-300">
+                                Selengkapnya <i data-lucide="arrow-right" class="w-5 h-5"></i>
+                            </a>
+                        </div>
                     </div>
 
-                    <!-- Menu Buttons -->
-                    <div class="w-full lg:w-2/3 grid grid-cols-1 sm:grid-cols-2 gap-10">
-                        <a href="#"
-                            class="flex items-start space-x-4 p-4 min-h-[120px] bg-white border border-[#0C3B2E] rounded-4xl shadow-[0_4px_10px_rgba(0,0,0,0.25)] hover:shadow-[0_6px_16px_rgba(0,0,0,0.35)] hover:border-teal-400 transition-all duration-300">
-                            <i data-lucide="info" class="w-10 h-6 text-teal-500 mt-1"></i>
-                            <div class="flex flex-col">
-                                <span class="font-semibold text-gray-700 text-base sm:text-[20px]"
+                    <!-- Menu Button -->
+                    <div class="w-full lg:w-2/3 grid grid-cols-1 sm:grid-cols-2 gap-8 md:gap-8">
+                        <a href="{{ route('sejarah-desa') }}"
+                            class="flex items-start gap-4 p-5 min-h-[110px] bg-white/90 border border-[#E8C187]/30 rounded-3xl shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group">
+                            <div
+                                class="flex items-center justify-center w-12 h-12 bg-gradient-to-br from-[#E8C187]/80 to-[#C7F3E7]/80 rounded-2xl text-[#0C3B2E] shadow group-hover:bg-[#E8C187] transition">
+                                <i data-lucide="info" class="w-7 h-7"></i>
+                            </div>
+                            <div>
+                                <span class="font-semibold text-[#0C3B2E] text-lg"
                                     style="font-family: 'Poppins', sans-serif">Profil Desa</span>
                                 <p class="text-sm text-gray-600 mt-1" style="font-family: 'Poppins', sans-serif">
-                                    Informasi mengenai profil, sejarah, dan kondisi desa.</p>
+                                    Informasi mengenai profil, sejarah, dan kondisi desa.
+                                </p>
                             </div>
                         </a>
-                        <a href="#"
-                            class="flex items-start space-x-4 p-4 min-h-[120px] bg-white border border-[#0C3B2E] rounded-4xl shadow-[0_4px_10px_rgba(0,0,0,0.25)] hover:shadow-[0_6px_16px_rgba(0,0,0,0.35)] hover:border-teal-400 transition-all duration-300">
-                            <i data-lucide="newspaper" class="w-10 h-6 text-teal-500 mt-1"></i>
-                            <div class="flex flex-col">
-                                <span class="font-semibold text-gray-700 text-base sm:text-[20px]"
+                        <a href="{{ route('berita.index') }}"
+                            class="flex items-start gap-4 p-5 min-h-[110px] bg-white/90 border border-[#E8C187]/30 rounded-3xl shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group">
+                            <div
+                                class="flex items-center justify-center w-12 h-12 bg-gradient-to-br from-[#E8C187]/80 to-[#C7F3E7]/80 rounded-2xl text-[#0C3B2E] shadow group-hover:bg-[#E8C187] transition">
+                                <i data-lucide="newspaper" class="w-7 h-7"></i>
+                            </div>
+                            <div>
+                                <span class="font-semibold text-[#0C3B2E] text-lg"
                                     style="font-family: 'Poppins', sans-serif">Berita Desa</span>
                                 <p class="text-sm text-gray-600 mt-1" style="font-family: 'Poppins', sans-serif">
-                                    Dapatkan informasi terkini seputar kegiatan dan pengumuman desa.</p>
+                                    Info terkini kegiatan dan pengumuman desa.
+                                </p>
                             </div>
                         </a>
-                        <a href="#"
-                            class="flex items-start space-x-4 p-4 min-h-[120px] bg-white border border-[#0C3B2E] rounded-4xl shadow-[0_4px_10px_rgba(0,0,0,0.25)] hover:shadow-[0_6px_16px_rgba(0,0,0,0.35)] hover:border-teal-400 transition-all duration-300">
-                            <i data-lucide="between-horizontal-start" class="w-10 h-6 text-teal-500 mt-1"></i>
-                            <div class="flex flex-col">
-                                <span class="font-semibold text-gray-700 text-base sm:text-[20px]"
+                        <a href="{{ route('data-jenis-kelamin') }}"
+                            class="flex items-start gap-4 p-5 min-h-[110px] bg-white/90 border border-[#E8C187]/30 rounded-3xl shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group">
+                            <div
+                                class="flex items-center justify-center w-12 h-12 bg-gradient-to-br from-[#E8C187]/80 to-[#C7F3E7]/80 rounded-2xl text-[#0C3B2E] shadow group-hover:bg-[#E8C187] transition">
+                                <i data-lucide="between-horizontal-start" class="w-7 h-7"></i>
+                            </div>
+                            <div>
+                                <span class="font-semibold text-[#0C3B2E] text-lg"
                                     style="font-family: 'Poppins', sans-serif">Data Desa</span>
-                                <p class="text-sm text-gray-600 mt-1" style="font-family: 'Poppins', sans-serif">Lihat
-                                    data kependudukan, potensi, dan statistik penting lainnya.</p>
+                                <p class="text-sm text-gray-600 mt-1" style="font-family: 'Poppins', sans-serif">
+                                    Statistik kependudukan, potensi & data penting lainnya.
+                                </p>
                             </div>
                         </a>
-                        <a href="#"
-                            class="flex items-start space-x-4 p-4 min-h-[120px] bg-white border border-[#0C3B2E] rounded-4xl shadow-[0_4px_10px_rgba(0,0,0,0.25)] hover:shadow-[0_6px_16px_rgba(0,0,0,0.35)] hover:border-teal-400 transition-all duration-300">
-                            <i data-lucide="shopping-cart" class="w-10 h-6 text-teal-500 mt-1"></i>
-                            <div class="flex flex-col">
-                                <span class="font-semibold text-gray-700 text-base sm:text-[20px]"
+                        <a href="{{ route('belanja.index') }}"
+                            class="flex items-start gap-4 p-5 min-h-[110px] bg-white/90 border border-[#E8C187]/30 rounded-3xl shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group">
+                            <div
+                                class="flex items-center justify-center w-12 h-12 bg-gradient-to-br from-[#E8C187]/80 to-[#C7F3E7]/80 rounded-2xl text-[#0C3B2E] shadow group-hover:bg-[#E8C187] transition">
+                                <i data-lucide="shopping-cart" class="w-7 h-7"></i>
+                            </div>
+                            <div>
+                                <span class="font-semibold text-[#0C3B2E] text-lg"
                                     style="font-family: 'Poppins', sans-serif">Belanja</span>
                                 <p class="text-sm text-gray-600 mt-1" style="font-family: 'Poppins', sans-serif">
-                                    Jelajahi produk unggulan lokal dan dukung UMKM Timpik.</p>
+                                    Jelajahi produk unggulan & UMKM Timpik.
+                                </p>
                             </div>
                         </a>
-                        <a href="#"
-                            class="flex items-start space-x-4 p-4 min-h-[120px] bg-white border border-[#0C3B2E] rounded-4xl shadow-[0_4px_10px_rgba(0,0,0,0.25)] hover:shadow-[0_6px_16px_rgba(0,0,0,0.35)] hover:border-teal-400 transition-all duration-300">
-                            <i data-lucide="file" class="w-10 h-6 text-teal-500 mt-1"></i>
-                            <div class="flex flex-col">
-                                <span class="font-semibold text-gray-700 text-base sm:text-[20px]"
+                        <a href="{{ route('dokumen.index') }}"
+                            class="flex items-start gap-4 p-5 min-h-[110px] bg-white/90 border border-[#E8C187]/30 rounded-3xl shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group">
+                            <div
+                                class="flex items-center justify-center w-12 h-12 bg-gradient-to-br from-[#E8C187]/80 to-[#C7F3E7]/80 rounded-2xl text-[#0C3B2E] shadow group-hover:bg-[#E8C187] transition">
+                                <i data-lucide="file" class="w-7 h-7"></i>
+                            </div>
+                            <div>
+                                <span class="font-semibold text-[#0C3B2E] text-lg"
                                     style="font-family: 'Poppins', sans-serif">Dokumen</span>
-                                <p class="text-sm text-gray-600 mt-1" style="font-family: 'Poppins', sans-serif">Akses
-                                    berbagai dokumen penting desa seperti laporan dan arsip.</p>
+                                <p class="text-sm text-gray-600 mt-1" style="font-family: 'Poppins', sans-serif">
+                                    Akses dokumen penting desa, laporan & arsip.
+                                </p>
                             </div>
                         </a>
-                        <a href="#"
-                            class="flex items-start space-x-4 p-4 min-h-[120px] bg-white border border-[#0C3B2E] rounded-4xl shadow-[0_4px_10px_rgba(0,0,0,0.25)] hover:shadow-[0_6px_16px_rgba(0,0,0,0.35)] hover:border-teal-400 transition-all duration-300">
-                            <i data-lucide="images" class="w-10 h-6 text-teal-500 mt-1"></i>
-                            <div class="flex flex-col">
-                                <span class="font-semibold text-gray-700 text-base sm:text-[20px]"
+                        <a href="{{ route('galeri.index') }}"
+                            class="flex items-start gap-4 p-5 min-h-[110px] bg-white/90 border border-[#E8C187]/30 rounded-3xl shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group">
+                            <div
+                                class="flex items-center justify-center w-12 h-12 bg-gradient-to-br from-[#E8C187]/80 to-[#C7F3E7]/80 rounded-2xl text-[#0C3B2E] shadow group-hover:bg-[#E8C187] transition">
+                                <i data-lucide="images" class="w-7 h-7"></i>
+                            </div>
+                            <div>
+                                <span class="font-semibold text-[#0C3B2E] text-lg"
                                     style="font-family: 'Poppins', sans-serif">Galeri Desa</span>
-                                <p class="text-sm text-gray-600 mt-1" style="font-family: 'Poppins', sans-serif">Lihat
-                                    dokumentasi visual kegiatan, pemandangan, dan momen istimewa.</p>
+                                <p class="text-sm text-gray-600 mt-1" style="font-family: 'Poppins', sans-serif">
+                                    Dokumentasi visual kegiatan, pemandangan, & momen istimewa.
+                                </p>
                             </div>
                         </a>
                     </div>
@@ -193,15 +240,16 @@
 
         <!-- Berita Desa Section -->
         <section class="py-16 md:py-15 bg-[#0C3B2E] text-white">
-            <div class="container mx-auto px-8 md:px-30">
+            <div class="max-w-7xl mx-auto px-4 sm:px-10 lg:px-16">
                 <div class="flex justify-between items-center mb-8 px-1 sm:px-4 lg:px-8">
-                    <div class="w-full text-center relative">
+                    <div class="w-full text-center relative reveal-on-scroll">
                         <h2 class="text-3xl sm:text-[45px] font-bold text-white"
                             style="font-family: 'Poppins', sans-serif">Berita Terkini</h2>
-                        <div class="w-55 md:w-80 h-1 bg-white mx-auto mt-3"></div>
+                        <div class="h-1 w-50 bg-gradient-to-r from-[#12715D] to-[#E8C187] rounded-full mx-auto mt-3">
+                        </div>
                     </div>
 
-                    <div class="hidden md:flex items-center space-x-2 absolute right-30">
+                    <div class="hidden md:flex items-center space-x-2 absolute right-45 reveal-on-scroll">
                         <button onclick="scrollBeritaLeft()"
                             class="bg-gray-700/50 text-white p-2 rounded-full shadow-md hover:bg-teal-600/70 transition-colors duration-300">
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
@@ -222,16 +270,16 @@
                 </div>
 
                 <div id="beritaCarousel"
-                    class="flex overflow-x-auto scroll-smooth space-x-8 px-1 sm:px-4 lg:px-8 snap-x snap-mandatory no-scrollbar pb-4">
+                    class="flex overflow-x-auto scroll-smooth space-x-8 px-1 sm:px-4 lg:px-8 snap-x snap-mandatory no-scrollbar pb-4 reveal-on-scroll">
                     @forelse ($beritaTerbaru as $berita)
                         <div
                             class="min-w-[80%] md:min-w-[50%] lg:min-w-[27%] bg-white rounded-3xl overflow-hidden shadow-lg snap-start">
-                            <img src="{{ asset('storage/' . $berita->foto) }}" alt="Gambar {{ $berita->nama_berita }}"
-                                class="w-full h-50 object-cover">
+                            <img src="{{ asset('storage/' . $berita->foto) }}"
+                                alt="Gambar {{ $berita->nama_berita }}" class="w-full h-50 object-cover">
                             <div class="p-4">
                                 <h3 class="font-bold text-[18px] mb-2 text-[#0C3B2E]"
                                     style="font-family: 'Poppins', sans-serif" title="{{ $berita->nama_berita }}">
-                                    {{ \Illuminate\Support\Str::limit($berita->nama_berita, 50) }}
+                                    {{ Str::limit($berita->nama_berita, 50) }}
                                 </h3>
                                 <p class="text-[#0C3B2E] leading-relaxed mb-4 text-[13px]"
                                     style="font-family: 'Poppins', sans-serif">
@@ -261,13 +309,14 @@
                             </div>
                         </div>
                     @empty
-                        <p class="text-white text-center w-full">Tidak ada berita terbaru saat ini.</p>
+                        <p class="text-white text-center w-full reveal-on-scroll">Tidak ada berita terbaru saat ini.
+                        </p>
                     @endforelse
                 </div>
 
                 <div class="text-center mt-10">
                     <a href="{{ route('berita.index') }}"
-                        class="bg-[#3D7364] text-white border border-white px-6 py-4 rounded-full hover:bg-[#325e51] transition duration-300 font-semibold text-[16px]"
+                        class="bg-[#3D7364] text-white border border-white px-6 py-4 rounded-full hover:bg-[#325e51] transition duration-300 font-semibold text-[16px] reveal-on-scroll"
                         style="font-family: 'Poppins', sans-serif">
                         Lihat Semua Berita
                     </a>
@@ -281,20 +330,20 @@
             $aparaturs = Aparatur::all();
         @endphp
 
-        <section id="aparatur" class="py-8 md:py-8 bg-white reveal-on-scroll" x-data="window.slider()"
-            x-init="init()">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-4">
-                <div class="text-center mb-8">
+        <section id="aparatur" class="py-8 md:py-8 bg-white" x-data="window.slider()" x-init="init()">
+            <div class="max-w-7xl mx-auto px-4 sm:px-10 lg:px-16">
+                <div class="text-center mb-8 reveal-on-scroll">
                     <h2 class="text-3xl sm:text-[45px] font-bold text-[#0C3B2E]"
                         style="font-family: 'Poppins', sans-serif">Aparatur Desa</h2>
-                    <div class="w-60 md:w-86 h-1 bg-[#0C3B2E] mx-auto mt-3"></div>
+                    <div class="h-1 w-50 bg-gradient-to-r from-[#12715D] to-[#E8C187] rounded-full mx-auto mt-3"></div>
                 </div>
                 <div class="overflow-hidden p-2 mt-[-4px]">
                     <div x-ref="slider" @scroll.debounce.100ms="updateButtons()"
-                        class="flex overflow-x-auto gap-2 slider-container snap-x snap-mandatory scroll-smooth">
+                        class="flex overflow-x-auto gap-2 slider-container snap-x snap-mandatory scroll-smooth reveal-on-scroll">
 
                         @forelse ($aparaturs as $aparatur)
-                            <div class="flex-shrink-0 w-65 h-80 snap-start p-2" style="font-family: 'Poppins', sans-serif;">
+                            <div class="flex-shrink-0 w-65 h-80 snap-start p-2"
+                                style="font-family: 'Poppins', sans-serif;">
                                 <div
                                     class="bg-gray-50 rounded-lg shadow-md overflow-hidden h-full group transition-transform duration-300 ease-in-out hover:scale-105 hover:shadow-lg border border-gray-300">
                                     <img src="{{ asset('storage/' . $aparatur->foto) }}" alt="{{ $aparatur->nama }}"
@@ -310,7 +359,7 @@
                                 </div>
                             </div>
                         @empty
-                            <div class="flex justify-center items-center w-full h-40">
+                            <div class="flex justify-center items-center w-full h-40 reveal-on-scroll">
                                 <p class="text-center text-gray-500">Belum ada data aparatur desa.</p>
                             </div>
                         @endforelse
@@ -318,7 +367,7 @@
                 </div>
 
                 <!-- Tombol Panah -->
-                <div class="flex justify-center mt-6 mb-4 sm:mb-6 space-x-2">
+                <div class="flex justify-center mt-6 mb-4 sm:mb-6 space-x-2 reveal-on-scroll">
                     <button @click="scroll('left')"
                         class="p-2 rounded-full bg-gray-200 hover:bg-gray-300 transition-colors disabled:opacity-50"
                         :disabled="atStart"><i data-lucide="arrow-left" class="w-5 h-5"></i></button>
@@ -336,10 +385,10 @@
         @endphp
 
         <section class="py-8 md:py-8 bg-white mb-12">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="max-w-7xl mx-auto px-4 sm:px-10 lg:px-16">
                 <div class="grid grid-cols-1 md:grid-cols-[2fr_1fr_2fr] gap-6 items-stretch">
 
-                    <div class="flex flex-col justify-start space-y-6">
+                    <div class="flex flex-col justify-start space-y-6 reveal-on-scroll">
                         <div>
                             <h2 class="text-3xl sm:text-4xl md:text-[70px] font-bold text-[#0C3B2E] leading-none"
                                 style="font-family: 'Poppins', sans-serif;">
@@ -355,12 +404,12 @@
                             class="w-full h-auto md:h-[300px] object-cover rounded-lg shadow-md mx-auto">
                     </div>
 
-                    <div class="h-full">
+                    <div class="h-full reveal-on-scroll">
                         <img src="{{ asset('images/galeri2.png') }}" alt="Galeri 2"
                             class="w-full h-auto md:h-[475px] object-cover rounded-lg shadow-md md:transform md:scale-x-[1.27] md:origin-left mx-auto">
                     </div>
 
-                    <div class="flex flex-col gap-4 h-full">
+                    <div class="flex flex-col gap-4 h-full reveal-on-scroll">
                         <div class="flex-1">
                             <img src="{{ asset('images/galeri3.jpg') }}" alt="Galeri 3"
                                 class="w-full max-w-full md:max-w-[335px] h-auto md:h-full object-cover rounded-lg shadow-md mx-auto">
@@ -372,7 +421,7 @@
                     </div>
                 </div>
 
-                <div class="flex justify-center mt-10">
+                <div class="flex justify-center mt-10 reveal-on-scroll">
                     <a href="{{ route('galeri.index') }}"
                         class="bg-[#3D7364] text-white border border-white px-7 py-3 rounded-full hover:bg-[#325e51] transition duration-300 font-semibold"
                         style="font-family: 'Poppins', sans-serif">Lihat Semua Galeri
@@ -447,6 +496,21 @@
                 }
             };
         };
+
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate-fade-in-up');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, {
+            threshold: 0.1
+        });
+
+        document.querySelectorAll('.reveal-on-scroll').forEach(el => {
+            observer.observe(el);
+        });
     </script>
 </body>
 

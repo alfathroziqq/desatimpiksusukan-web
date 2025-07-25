@@ -86,7 +86,8 @@
                         <ol role="list"
                             class="flex items-center space-x-2 bg-black/20 backdrop-blur-sm px-4 py-2 rounded-full">
                             <li>
-                                <a href="{{ route('welcome') }}" class="text-gray-300 hover:text-white transition-colors">
+                                <a href="{{ route('welcome') }}"
+                                    class="text-gray-300 hover:text-white transition-colors">
                                     <svg class="h-5 w-5 flex-shrink-0" viewBox="0 0 20 20" fill="currentColor"
                                         aria-hidden="true">
                                         <path fill-rule="evenodd"
@@ -128,13 +129,13 @@
 
         <!-- Visi dan Misi -->
         <section class="py-12 md:py-10 bg-white">
-            <div class="container mx-auto px-6 md:px-30">
-                <div class="mb-8 reveal-on-scroll">
-                    <h2 class="text-3xl md:text-[50px] font-bold text-[#0C3B2E] text-center lg:text-left"
-                        style="font-family: 'Poppins', sans-serif;">
-                        Visi dan Misi
-                    </h2>
-                    <div class="w-50 md:w-80 h-1 bg-[#0C3B2E] mx-auto lg:mx-0 mt-3"></div>
+            <div class="container mx-auto px-8 sm:px-12 lg:px-45">
+                <div class="mb-12 text-center">
+                    <h2 class="text-4xl md:text-5xl font-extrabold bg-gradient-to-r from-[#0C3B2E] via-[#12715D] to-[#E8C187] bg-clip-text text-transparent inline-block mb-2"
+                        style="font-family: 'Poppins', sans-serif;">Visi & Misi</h2>
+                    <div class="w-24 h-1 mx-auto bg-gradient-to-r from-[#12715D] to-[#E8C187] rounded-full mb-2"></div>
+                    <p class="text-gray-500 text-base max-w-2xl mx-auto">Menuju desa cerdas, berdaya saing dan berbudaya
+                        untuk masa depan yang lebih baik.</p>
                 </div>
 
                 <div class="space-y-8" style="font-family: 'Poppins', sans-serif;">
@@ -174,16 +175,17 @@
 
         <!-- Struktur Organisasi -->
         <section class="py-12 md:py-10 bg-gray-50" style="font-family: 'Poppins', sans-serif;">
-            <div class="container mx-auto px-6 md:px-30">
-                <div class="mb-8 reveal-on-scroll">
-                    <h2 class="text-3xl md:text-[50px] font-bold text-[#0C3B2E] text-center lg:text-left"
-                        style="font-family: 'Poppins', sans-serif;">
-                        Struktur Organisasi
+            <div class="container mx-auto px-8 sm:px-12 lg:px-45">
+                <div class="mb-10 text-center">
+                    <h2 class="text-4xl md:text-5xl font-extrabold bg-gradient-to-r from-[#0C3B2E] via-[#12715D] to-[#E8C187] bg-clip-text text-transparent inline-block mb-2"
+                        style="font-family: 'Poppins', sans-serif; line-height: 1.15; padding-bottom: 2px;">
+                        Struktur <span class="whitespace-nowrap">Organisasi</span>
                     </h2>
-                    <div class="w-78 md:w-127 h-1 bg-[#0C3B2E] mx-auto lg:mx-0 mt-3"></div>
+                    <div class="w-24 h-1 mx-auto bg-gradient-to-r from-[#12715D] to-[#E8C187] rounded-full mb-2"></div>
                 </div>
 
-                <div class="max-w-5xl mx-auto p-4 sm:p-6 md:p-8 rounded-2xl shadow-lg border border-gray-200/80 reveal-on-scroll">
+                <div
+                    class="max-w-5xl mx-auto p-4 sm:p-6 md:p-8 rounded-2xl shadow-lg border border-gray-200/80 reveal-on-scroll">
                     <img src="{{ asset('images/struktur-org.png') }}"
                         onerror="this.onerror=null;this.src='https://placehold.co/1200x800/E0E0E0/BDBDBD?text=Bagan+Struktur+Organisasi';"
                         alt="Bagan Struktur Organisasi Desa Timpik" class="w-full h-auto">
@@ -198,13 +200,11 @@
         @endphp
 
         <section id="aparatur" class="py-12 md:py-10 bg-white" x-data="slider()">
-            <div class="container mx-auto px-6 md:px-30">
-                <div class="mb-8 reveal-on-scroll">
-                    <h2 class="text-3xl md:text-[50px] font-bold text-[#0C3B2E] text-center lg:text-left"
-                        style="font-family: 'Poppins', sans-serif;">
-                        Aparatur Desa
-                    </h2>
-                    <div class="w-60 md:w-94 h-1 bg-[#0C3B2E] mx-auto lg:mx-0 mt-3"></div>
+            <div class="container mx-auto px-8 sm:px-12 lg:px-45">
+                <div class="mb-12 text-center">
+                    <h2 class="text-4xl md:text-5xl font-extrabold bg-gradient-to-r from-[#0C3B2E] via-[#12715D] to-[#E8C187] bg-clip-text text-transparent inline-block mb-2"
+                        style="font-family: 'Poppins', sans-serif;">Aparatur Desa</h2>
+                    <div class="w-24 h-1 mx-auto bg-gradient-to-r from-[#12715D] to-[#E8C187] rounded-full mb-2"></div>
                 </div>
 
                 <div class="overflow-hidden p-2 mt-[-4px] reveal-on-scroll">
@@ -212,7 +212,8 @@
                         class="flex overflow-x-auto gap-2 slider-container snap-x snap-mandatory scroll-smooth">
 
                         @forelse ($aparaturs as $aparatur)
-                            <div class="flex-shrink-0 w-65 h-80 snap-start p-2" style="font-family: 'Poppins', sans-serif;">
+                            <div class="flex-shrink-0 w-65 h-80 snap-start p-2"
+                                style="font-family: 'Poppins', sans-serif;">
                                 <div
                                     class="bg-gray-50 rounded-lg shadow-md overflow-hidden h-full group transition-transform duration-300 ease-in-out hover:scale-105 hover:shadow-lg border border-gray-300">
                                     <img src="{{ asset('storage/' . $aparatur->foto) }}" alt="{{ $aparatur->nama }}"
@@ -239,7 +240,7 @@
                 <div class="flex justify-center mt-6 mb-4 sm:mb-6 space-x-2 reveal-on-scroll">
                     <button @click="scroll('left')"
                         class="p-2 rounded-full bg-gray-200 hover:bg-gray-300 transition-colors disabled:opacity-50"
-                        :disabled="atStart"><i data-lucide="arrow-left" class="w-5 h-5"></i></button>
+                        :disabled="atStart">Desa Timpik, yang terletak di Kecamatan Susukan, Kabupaten Semarang, Jawa Tengah, merupakan salah satu desa yang memiliki nilai sejarah dan budaya penting dalam peta peradaban lokal di lereng timur Gunung Merbabu. Berdasarkan temuan arkeologis, wilayah ini diketahui telah dihuni jauh sebelum masa Islam, yang dibuktikan dengan penemuan artefak berupa yoni—sebuah simbol religius dalam kepercayaan Hindu—yang kini disimpan di area Masjid Kauman Timpik. Artefak tersebut, yang sempat terkubur dan ditemukan kembali oleh warga, menandakan bahwa pada masa lalu kemungkinan terdapat bangunan suci atau pusat kegiatan keagamaan Hindu di wilayah ini. Seiring masuknya Islam dan berkembangnya sistem pemerintahan desa, Timpik mengalami transformasi sosial budaya yang harmonis, ditandai dengan berdirinya masjid-masjid tradisional dan berkembangnya komunitas masyarakat agraris. Saat ini, Desa Timpik tidak hanya menjaga warisan sejarah dan budaya leluhurnya, tetapi juga melakukan inovasi dengan membangun desa wisata edukatif berbasis pertanian modern. Masyarakat mengembangkan berbagai wahana seperti taman bunga, area outbound, dan program edukasi pertanian, menjadikan desa ini sebagai contoh perpaduan antara pelestarian sejarah dan pengembangan ekonomi kreatif pedesaan.</i></button>
                     <button @click="scroll('right')"
                         class="p-2 rounded-full bg-gray-200 hover:bg-gray-300 transition-colors disabled:opacity-50"
                         :disabled="atEnd"><i data-lucide="arrow-right" class="w-5 h-5"></i></button>

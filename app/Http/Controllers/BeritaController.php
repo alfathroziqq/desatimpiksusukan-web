@@ -79,7 +79,7 @@ class BeritaController extends Controller
 
     public function publik()
     {
-        $beritas = Berita::latest()->paginate(6);
+        $beritas = Berita::latest()->paginate(7);
         return view('berita', compact('beritas'));
     }
 
@@ -95,7 +95,7 @@ class BeritaController extends Controller
 
     public function welcome()
     {
-        $beritaTerbaru = Berita::latest()->limit(6)->get();
+        $beritaTerbaru = Berita::latest()->limit(7)->get();
         return view('welcome', compact('beritaTerbaru'));
     }
 }
