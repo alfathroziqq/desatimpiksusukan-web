@@ -116,7 +116,6 @@
 
                             <li>
                                 <div class="flex items-center">
-                                    
                                     <svg class="h-5 w-5 flex-shrink-0 text-gray-400" viewBox="0 0 20 20"
                                         fill="currentColor" aria-hidden="true">
                                         <path fill-rule="evenodd"
@@ -134,7 +133,7 @@
 
         <!-- Data Jenis Kelamin Section -->
         <section class="py-12 md:py-10 bg-white" style="font-family: 'Poppins', sans-serif;">
-            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="container mx-auto px-8 sm:px-12 lg:px-45">
                 <div class="text-center mb-5 reveal-on-scroll">
                     <h2 class="text-3xl sm:text-[45px] font-bold text-[#0C3B2E] drop-shadow-lg">Grafik Komposisi Penduduk</h2>
                     <div class="mx-auto mt-4 w-24 md:w-48 h-1 bg-gradient-to-r from-[#C7F3E7] via-[#0C3B2E] to-[#E8C187] rounded-full mb-1">
@@ -147,13 +146,12 @@
         <div class="container mx-auto px-6 lg:px-16 space-y-14 mt-[-20px] mb-20">
 
             <!-- Section Data Jenis Kelamin -->
-            <section class="reveal-on-scroll py-16 lg:py-20">
-                <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <section>
+                <div class="container mx-auto px-4 sm:px-10 lg:px-30">
                     <!-- Grid Utama: Grafik dan Kartu Statistik -->
                     <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
-                        
                         <!-- Grafik Jenis Kelamin -->
-                        <div class="bg-white p-6 sm:p-8 rounded-3xl shadow-xl border border-[#E8C187]/30 relative overflow-hidden">
+                        <div class="bg-white p-6 sm:p-8 rounded-3xl shadow-xl border border-[#E8C187]/30 relative overflow-hidden reveal-on-scroll">
                             <!-- Strip Accent -->
                             <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-[#E8C187] via-[#f2d9a0] to-[#E8C187] rounded-t-3xl"></div>
 
@@ -191,7 +189,7 @@
                         <!-- Kartu Statistik Jenis Kelamin -->
                         <div class="flex flex-col gap-6 justify-center">
                             <!-- Laki-laki -->
-                            <div class="bg-gradient-to-tr from-[#0C3B2E] to-[#145A46] text-white p-6 rounded-3xl shadow-lg border-t-4 border-[#E8C187] hover:-translate-y-1 transition-transform duration-300">
+                            <div class="bg-gradient-to-tr from-[#0C3B2E] to-[#145A46] text-white p-6 rounded-3xl shadow-lg border-t-4 border-[#E8C187] hover:-translate-y-1 transition-transform duration-300 reveal-on-scroll">
                                 <div class="flex justify-between items-center">
                                     <div>
                                         <p class="text-base font-medium text-white/70">Laki-laki</p>
@@ -204,7 +202,7 @@
                             </div>
 
                             <!-- Perempuan -->
-                            <div class="bg-gradient-to-tr from-[#E8C187] to-[#f6ddae] text-[#0C3B2E] p-6 rounded-3xl shadow-lg border-t-4 border-[#0C3B2E] hover:-translate-y-1 transition-transform duration-300">
+                            <div class="bg-gradient-to-tr from-[#E8C187] to-[#f6ddae] text-[#0C3B2E] p-6 rounded-3xl shadow-lg border-t-4 border-[#0C3B2E] hover:-translate-y-1 transition-transform duration-300 reveal-on-scroll">
                                 <div class="flex justify-between items-center">
                                     <div>
                                         <p class="text-base font-medium text-[#0C3B2E]/70">Perempuan</p>
@@ -217,7 +215,7 @@
                             </div>
 
                             <!-- Total Penduduk -->
-                            <div class="bg-slate-800 text-white p-6 rounded-3xl shadow-lg border-t-4 border-[#E8C187] hover:-translate-y-1 transition-transform duration-300">
+                            <div class="bg-slate-800 text-white p-6 rounded-3xl shadow-lg border-t-4 border-[#E8C187] hover:-translate-y-1 transition-transform duration-300 reveal-on-scroll">
                                 <div class="flex justify-between items-center">
                                     <div>
                                         <p class="text-base font-medium text-gray-300">Total Penduduk</p>

@@ -166,177 +166,124 @@
             </div>
         </section>
 
-        <div class="container mx-auto px-6 lg:px-16 space-y-20 mt-[-20px] mb-20 text-[#0C3B2E]" style="font-family: 'Poppins', sans-serif;">
+        <div class="container mx-auto px-8 sm:px-12 lg:px-45 space-y-20 mt-[-20px] mb-20 text-[#0C3B2E]" style="font-family: 'Poppins', sans-serif;">
 
             <!-- LUAS TANAMAN PERTANIAN -->
-            <section class="reveal-on-scroll px-4 sm:px-8 py-10">
-                <div class="bg-gradient-to-br from-[#F4FCF9] to-[#FFF6EC] p-6 sm:p-10 rounded-3xl shadow-xl border border-gray-100 relative overflow-hidden">
-                    <!-- Aksen Dekoratif -->
-                    <div class="absolute top-4 left-4 w-20 h-20 bg-[#D7EFE8] rounded-full opacity-30 blur-xl"></div>
-                    <div class="absolute bottom-4 right-4 w-32 h-32 bg-[#FFE7C6] rounded-full opacity-40 blur-xl"></div>
-
-                    <!-- Judul -->
-                    <div class="flex items-center gap-3 mb-6">
-                        <div class="bg-[#0C3B2E] text-white p-2 rounded-full">
-                            <i data-lucide="sprout" class="w-6 h-6"></i>
-                        </div>
-                        <h2 class="text-3xl font-bold text-[#0C3B2E]">Data Luas Tanaman Pertanian</h2>
-                    </div>
-
-                    <!-- Grid: Chart -->
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-                        <!-- Chart di KIRI -->
-                        <div class="relative w-full h-80">
+            <section class="reveal-on-scroll">
+                <div class="bg-gradient-to-br from-[#e0f9ee]/80 via-[#fff7e5]/90 to-[#fff] rounded-3xl shadow-2xl p-10 relative overflow-hidden">
+                    <!-- Decorative Accent -->
+                    <div class="absolute -top-10 -left-10 w-48 h-48 bg-[#bff1d7] opacity-20 rounded-full blur-2xl"></div>
+                    <div class="absolute -bottom-10 -right-10 w-64 h-64 bg-[#ffe1b7] opacity-25 rounded-full blur-2xl"></div>
+                    <div class="flex flex-col md:flex-row gap-10 items-center justify-between z-10 relative">
+                        <!-- Left: Chart -->
+                        <div class="w-full md:w-1/2 h-80">
                             <canvas id="tanamanChart"></canvas>
                         </div>
-
-                        <!-- Legend -->
-                        <div class="space-y-3">
-                            <div class="flex items-center gap-3">
-                                <span class="w-4 h-4 rounded-full bg-green-400/80 shadow-md"></span>
-                                <span class="text-gray-700 font-medium text-sm bg-white rounded-full px-3 py-1 shadow border">Padi Sawah</span>
-                            </div>
-                            <div class="flex items-center gap-3">
-                                <span class="w-4 h-4 rounded-full bg-yellow-400/80 shadow-md"></span>
-                                <span class="text-gray-700 font-medium text-sm bg-white rounded-full px-3 py-1 shadow border">Padi Ladang</span>
-                            </div>
-                            <div class="flex items-center gap-3">
-                                <span class="w-4 h-4 rounded-full bg-orange-400/80 shadow-md"></span>
-                                <span class="text-gray-700 font-medium text-sm bg-white rounded-full px-3 py-1 shadow border">Jagung</span>
-                            </div>
-                            <div class="flex items-center gap-3">
-                                <span class="w-4 h-4 rounded-full bg-purple-400/80 shadow-md"></span>
-                                <span class="text-gray-700 font-medium text-sm bg-white rounded-full px-3 py-1 shadow border">Palawija</span>
-                            </div>
-                            <div class="flex items-center gap-3">
-                                <span class="w-4 h-4 rounded-full bg-blue-400/80 shadow-md"></span>
-                                <span class="text-gray-700 font-medium text-sm bg-white rounded-full px-3 py-1 shadow border">Tebu</span>
+                        <!-- Right: Data + Legend -->
+                        <div class="w-full md:w-1/2 flex flex-col gap-3">
+                            <h3 class="text-2xl font-bold mb-4 flex items-center gap-2">
+                                <span class="bg-[#0C3B2E] text-white rounded-full p-2"><i data-lucide="sprout" class="w-6 h-6"></i></span>
+                                Data Luas Tanaman Pertanian
+                            </h3>
+                            <div class="flex flex-col gap-3">
+                                @php
+                                $tanaman = [
+                                    ['label' => 'Padi Sawah', 'value' => $data->padi_sawah, 'color' => 'bg-green-400'],
+                                    ['label' => 'Padi Ladang', 'value' => $data->padi_ladang, 'color' => 'bg-yellow-400'],
+                                    ['label' => 'Jagung', 'value' => $data->jagung, 'color' => 'bg-orange-400'],
+                                    ['label' => 'Palawija', 'value' => $data->palawija, 'color' => 'bg-purple-400'],
+                                    ['label' => 'Tebu', 'value' => $data->tebu, 'color' => 'bg-blue-400'],
+                                ];
+                                @endphp
+                                @foreach($tanaman as $t)
+                                <div class="flex items-center gap-3">
+                                    <span class="w-4 h-4 rounded-full shadow-md {{ $t['color'] }}"></span>
+                                    <span class="font-semibold text-[#0C3B2E] min-w-[100px]">{{ $t['label'] }}</span>
+                                    <span class="flex-1 bg-gray-100 h-2 mx-2 rounded">
+                                        <span class="block h-2 rounded transition-all duration-700 {{ $t['color'] }}"
+                                            style="width:{{ max(7,min(93,($t['value'] ?? 0) * 2)) }}%"></span>
+                                    </span>
+                                    <span class="font-bold text-lg text-right" style="font-variant-numeric: tabular-nums;">
+                                        {{ number_format($t['value']) }} ha
+                                    </span>
+                                </div>
+                                @endforeach
                             </div>
                         </div>
                     </div>
                 </div>
             </section>
 
-
             <!-- JENIS TERNAK -->
-            <section class="reveal-on-scroll">
-                <div class="text-center mb-8">
-                    <h2 class="text-3xl font-bold tracking-tight text-[#0C3B2E]">Jenis Ternak</h2>
-                    <p class="text-gray-600 mt-2">Jumlah ternak berdasarkan jenis di Desa Timpik.</p>
+            <section>
+                <div class="text-center mb-8 reveal-on-scroll">
+                    <h2 class="text-3xl md:text-4xl font-bold tracking-tight">Populasi Ternak</h2>
+                    <p class="text-gray-600 mt-2">Jumlah ternak berdasarkan jenis di Desa Timpik, satuan: ekor.</p>
                 </div>
-
-                <div class="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                    <!-- Card 1: Kambing -->
-                    <div class="bg-white rounded-3xl shadow-lg p-6 border-t-4 border-green-500 flex flex-col items-center text-center hover:-translate-y-1 transition">
-                        <div class="bg-green-100 p-4 rounded-full mb-3">
-                            <i data-lucide="mountain" class="w-8 h-8 text-green-700"></i> <!-- pengganti sheep -->
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-7 max-w-5xl mx-auto reveal-on-scroll">
+                    @php
+                    $ternak = [
+                        ['label'=>'Kambing', 'val'=>$data->kambing, 'icon'=>'mountain', 'color'=>'white', 'border'=>'border-green-400'],
+                        ['label'=>'Sapi', 'val'=>$data->sapi, 'icon'=>'milk', 'color'=>'white', 'border'=>'border-yellow-400'],
+                        ['label'=>'Ayam', 'val'=>$data->ayam, 'icon'=>'egg-fried', 'color'=>'white', 'border'=>'border-red-400'],
+                        ['label'=>'Burung', 'val'=>$data->burung, 'icon'=>'bird', 'color'=>'white', 'border'=>'border-blue-400'],
+                    ];
+                    @endphp
+                    @foreach($ternak as $t)
+                    <div class="bg-gradient-to-br {{ $t['color'] }} rounded-2xl p-7 border-t-4 {{ $t['border'] }} shadow-xl flex flex-col items-center hover:-translate-y-1 transition">
+                        <div class="bg-white/60 p-4 rounded-full shadow mb-2">
+                            <i data-lucide="{{ $t['icon'] }}" class="w-10 h-10 text-[#0C3B2E]"></i>
                         </div>
-                        <h3 class="text-lg font-semibold text-gray-800">Kambing</h3>
-                        <p class="text-2xl font-bold text-[#0C3B2E] mt-2">{{ $data->kambing }} Ekor</p>
+                        <div class="text-xl font-semibold mb-1">{{ $t['label'] }}</div>
+                        <div class="text-2xl font-extrabold text-[#12715D]">{{ number_format($t['val']) }} <span class="text-sm font-semibold">ekor</span></div>
                     </div>
-
-                    <!-- Card 2: Sapi -->
-                    <div class="bg-white rounded-3xl shadow-lg p-6 border-t-4 border-yellow-500 flex flex-col items-center text-center hover:-translate-y-1 transition">
-                        <div class="bg-yellow-100 p-4 rounded-full mb-3">
-                            <i data-lucide="milk" class="w-8 h-8 text-yellow-700"></i> <!-- pengganti cow -->
-                        </div>
-                        <h3 class="text-lg font-semibold text-gray-800">Sapi</h3>
-                        <p class="text-2xl font-bold text-[#0C3B2E] mt-2">{{ $data->sapi }} Ekor</p>
-                    </div>
-                    <!-- Card 3: Ayam -->
-                    <div class="bg-white rounded-3xl shadow-lg p-6 border-t-4 border-red-500 flex flex-col items-center text-center hover:-translate-y-1 transition">
-                        <div class="bg-red-100 p-4 rounded-full mb-3">
-                            <i data-lucide="egg-fried" class="w-8 h-8 text-red-700"></i>
-                        </div>
-                        <h3 class="text-lg font-semibold text-gray-800">Ayam</h3>
-                        <p class="text-2xl font-bold text-[#0C3B2E] mt-2">{{ $data->ayam }} Ekor</p>
-                    </div>
-
-                    <!-- Card 4: Burung -->
-                    <div class="bg-white rounded-3xl shadow-lg p-6 border-t-4 border-blue-500 flex flex-col items-center text-center hover:-translate-y-1 transition">
-                        <div class="bg-blue-100 p-4 rounded-full mb-3">
-                            <i data-lucide="bird" class="w-8 h-8 text-blue-700"></i>
-                        </div>
-                        <h3 class="text-lg font-semibold text-gray-800">Burung</h3>
-                        <p class="text-2xl font-bold text-[#0C3B2E] mt-2">{{ $data->burung }} Ekor</p>
-                    </div>
+                    @endforeach
                 </div>
             </section>
 
             <!-- STRUKTUR MATA PENCAHARIAN -->
-            <section class="reveal-on-scroll py-10">
-                <div class="text-center mb-10">
-                    <h2 class="text-3xl font-bold tracking-tight text-[#0C3B2E]">Struktur Mata Pencaharian</h2>
-                    <p class="mt-2 text-lg text-gray-600">Distribusi jenis pekerjaan utama masyarakat Desa Timpik.</p>
-                </div>
-
-                <div class="bg-white p-6 sm:p-8 rounded-3xl shadow-xl border border-gray-100">
-                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
-                        
+            <section class="reveal-on-scroll">
+                <div class="bg-gradient-to-br from-[#e0f9ee]/80 via-[#fff7e5]/90 to-[#fff] rounded-3xl shadow-2xl p-10">
+                    <div class="text-center mb-10">
+                        <h2 class="text-3xl md:text-4xl font-bold tracking-tight text-[#12715D]">Struktur Mata Pencaharian</h2>
+                        <p class="mt-2 text-lg text-gray-600">Distribusi jenis pekerjaan utama masyarakat Desa Timpik.</p>
+                    </div>
+                    <div class="flex flex-col md:flex-row gap-12 items-center">
                         <!-- Chart -->
-                        <div class="w-full h-80 md:h-96">
+                        <div class="w-full md:w-1/2 h-80 md:h-96">
                             <canvas id="pekerjaanChart"></canvas>
                         </div>
-
-                        <!-- Pekerjaan List -->
-                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-gray-700">
-                            <div class="flex items-center space-x-3 bg-[#F3F8F7] p-4 rounded-xl shadow-sm">
-                                <i class="fas fa-tractor text-xl text-[#3C7167]"></i>
-                                <span class="font-medium">Petani: {{ $data->petani }} Orang</span>
+                        <!-- List pekerjaan -->
+                        <div class="w-full md:w-1/2 grid grid-cols-1 sm:grid-cols-2 gap-3">
+                            @php
+                            $pekerjaan = [
+                                ['icon'=>'tractor','label'=>'Petani','val'=>$data->petani],
+                                ['icon'=>'store','label'=>'Pedagang','val'=>$data->pedagang],
+                                ['icon'=>'badge-check','label'=>'PNS','val'=>$data->pns],
+                                ['icon'=>'hammer','label'=>'Tukang','val'=>$data->tukang],
+                                ['icon'=>'book','label'=>'Guru','val'=>$data->guru],
+                                ['icon'=>'stethoscope','label'=>'Bidan/Perawat','val'=>$data->bidan_perawat],
+                                ['icon'=>'shield','label'=>'TNI/Polri','val'=>$data->tni_polri],
+                                ['icon'=>'user-check','label'=>'Pensiunan','val'=>$data->pensiunan],
+                                ['icon'=>'bus','label'=>'Sopir/Angkutan','val'=>$data->sopir_angkutan],
+                                ['icon'=>'hammer','label'=>'Buruh','val'=>$data->buruh],
+                                ['icon'=>'home','label'=>'Jasa Persewaan','val'=>$data->jasa_persewaan],
+                                ['icon'=>'briefcase','label'=>'Swasta','val'=>$data->swasta],
+                            ];
+                            @endphp
+                            @foreach($pekerjaan as $p)
+                            <div class="flex items-center gap-3 bg-white/90 p-3 rounded-xl shadow-sm hover:shadow-lg transition border border-[#E8C187]/20">
+                                <i data-lucide="{{ $p['icon'] }}" class="w-6 h-6 text-[#12715D]"></i>
+                                <span class="flex-1 font-semibold">{{ $p['label'] }}</span>
+                                <span class="font-bold text-[#12715D]">{{ number_format($p['val']) }}</span>
                             </div>
-                            <div class="flex items-center space-x-3 bg-[#F3F8F7] p-4 rounded-xl shadow-sm">
-                                <i class="fas fa-store text-xl text-[#3C7167]"></i>
-                                <span class="font-medium">Pedagang: {{ $data->pedagang }} Orang</span>
-                            </div>
-                            <div class="flex items-center space-x-3 bg-[#F3F8F7] p-4 rounded-xl shadow-sm">
-                                <i class="fas fa-user-tie text-xl text-[#3C7167]"></i>
-                                <span class="font-medium">PNS: {{ $data->pns }} Orang</span>
-                            </div>
-                            <div class="flex items-center space-x-3 bg-[#F3F8F7] p-4 rounded-xl shadow-sm">
-                                <i class="fas fa-tools text-xl text-[#3C7167]"></i>
-                                <span class="font-medium">Tukang: {{ $data->tukang }} Orang</span>
-                            </div>
-                            <div class="flex items-center space-x-3 bg-[#F3F8F7] p-4 rounded-xl shadow-sm">
-                                <i class="fas fa-chalkboard-teacher text-xl text-[#3C7167]"></i>
-                                <span class="font-medium">Guru: {{ $data->guru }} Orang</span>
-                            </div>
-                            <div class="flex items-center space-x-3 bg-[#F3F8F7] p-4 rounded-xl shadow-sm">
-                                <i class="fas fa-user-nurse text-xl text-[#3C7167]"></i>
-                                <span class="font-medium">Bidan/Perawat: {{ $data->bidan_perawat }} Orang</span>
-                            </div>
-                            <div class="flex items-center space-x-3 bg-[#F3F8F7] p-4 rounded-xl shadow-sm">
-                                <i class="fas fa-shield-alt text-xl text-[#3C7167]"></i>
-                                <span class="font-medium">TNI/Polri: {{ $data->tni_polri }} Orang</span>
-                            </div>
-                            <div class="flex items-center space-x-3 bg-[#F3F8F7] p-4 rounded-xl shadow-sm">
-                                <i class="fas fa-user-clock text-xl text-[#3C7167]"></i>
-                                <span class="font-medium">Pensiunan: {{ $data->pensiunan }} Orang</span>
-                            </div>
-                            <div class="flex items-center space-x-3 bg-[#F3F8F7] p-4 rounded-xl shadow-sm">
-                                <i class="fas fa-bus text-xl text-[#3C7167]"></i>
-                                <span class="font-medium">Sopir/Angkutan: {{ $data->sopir_angkutan }} Orang</span>
-                            </div>
-                            <div class="flex items-center space-x-3 bg-[#F3F8F7] p-4 rounded-xl shadow-sm">
-                                <i class="fas fa-hard-hat text-xl text-[#3C7167]"></i>
-                                <span class="font-medium">Buruh: {{ $data->buruh }} Orang</span>
-                            </div>
-                            <div class="flex items-center space-x-3 bg-[#F3F8F7] p-4 rounded-xl shadow-sm">
-                                <i class="fas fa-home text-xl text-[#3C7167]"></i>
-                                <span class="font-medium">Jasa Persewaan: {{ $data->jasa_persewaan }} Orang</span>
-                            </div>
-                            <div class="flex items-center space-x-3 bg-[#F3F8F7] p-4 rounded-xl shadow-sm">
-                                <i class="fas fa-briefcase text-xl text-[#3C7167]"></i>
-                                <span class="font-medium">Swasta: {{ $data->swasta }} Orang</span>
-                            </div>
+                            @endforeach
                         </div>
                     </div>
                 </div>
             </section>
-
         </div>
-
-
-        </div>
+    </div>
 
     </main>
 

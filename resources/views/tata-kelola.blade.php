@@ -215,7 +215,7 @@
                             <div class="flex-shrink-0 w-65 h-80 snap-start p-2"
                                 style="font-family: 'Poppins', sans-serif;">
                                 <div
-                                    class="bg-gray-50 rounded-lg shadow-md overflow-hidden h-full group transition-transform duration-300 ease-in-out hover:scale-105 hover:shadow-lg border border-gray-300">
+                                    class="bg-gradient-to-br from-[#f7fbe9] via-[#ebf6f2] to-[#f9f6f0] rounded-lg shadow-md overflow-hidden h-full group transition-transform duration-300 ease-in-out hover:scale-105 hover:shadow-lg border border-gray-300">
                                     <img src="{{ asset('storage/' . $aparatur->foto) }}" alt="{{ $aparatur->nama }}"
                                         class="mt-4 w-auto max-w-full max-h-55 mx-auto object-contain">
                                     <div class="px-3 text-center mt-3 mb-4">
@@ -244,7 +244,7 @@
                     <button @click="scroll('right')"
                         class="p-2 rounded-full bg-gray-200 hover:bg-gray-300 transition-colors disabled:opacity-50"
                         :disabled="atEnd"><i data-lucide="arrow-right" class="w-5 h-5"></i></button>
-                </div>
+                </div>
             </div>
         </section>
     </main>

@@ -150,12 +150,12 @@
             </div>
         </section>
 
-        <div class="container mx-auto px-6 lg:px-16 space-y-14 mt-[-20px] mb-20 text-[#0C3B2E]" style="font-family: 'Poppins', sans-serif;">
+        <div class="container mx-auto px-8 sm:px-12 lg:px-45 space-y-14 mt-[-20px] mb-20 text-[#0C3B2E]" style="font-family: 'Poppins', sans-serif;">
 
             <!-- Pemeluk Agama Card View -->
-            <section class="reveal-on-scroll">
-                <div class="bg-white p-6 sm:p-8 rounded-3xl shadow-xl border border-[#E8C187]/30">
-                    <div class="mb-8 text-center">
+            <section>
+                <div class="bg-gradient-to-br from-[#e0f9ee]/80 via-[#fff7e5]/90 to-[#fff] p-6 sm:p-8 rounded-3xl shadow-xl border border-[#E8C187]/30">
+                    <div class="mb-8 text-center reveal-on-scroll">
                         <h3 class="text-2xl font-bold text-[#0C3B2E] mb-2 flex items-center justify-center gap-2">
                             <i data-lucide="users" class="w-6 h-6 text-[#E8C187]"></i>
                             Jumlah Pemeluk Agama
@@ -174,7 +174,7 @@
                         @endphp
 
                         @foreach ($agamaList as $agama)
-                            <div class="bg-gradient-to-tr from-{{ $agama['color'] }}-100 to-white border-t-4 border-{{ $agama['color'] }}-500 rounded-2xl shadow-md p-5 flex items-center justify-between hover:-translate-y-1 transition duration-300">
+                            <div class="bg-gradient-to-tr from-{{ $agama['color'] }}-100 to-white border-t-4 border-{{ $agama['color'] }}-500 rounded-2xl shadow-md p-5 flex items-center justify-between hover:-translate-y-1 transition duration-300 reveal-on-scroll">
                                 <div>
                                     <p class="text-sm text-gray-600">{{ $agama['label'] }}</p>
                                     <h4 class="text-2xl font-bold text-[#0C3B2E] mt-1">{{ number_format($agama['jumlah']) }} Orang</h4>
@@ -187,15 +187,15 @@
                     </div>
 
                     <!-- Chart -->
-                    <div class="mt-10 w-full h-96">
+                    <div class="mt-10 w-full h-96 reveal-on-scroll">
                         <canvas id="agamaChart"></canvas>
                     </div>
                 </div>
             </section>
 
             <!-- Sarana Peribadatan -->
-            <section class="reveal-on-scroll">
-                <div class="text-center mb-10">
+            <section>
+                <div class="text-center mb-10 reveal-on-scroll">
                     <h2 class="text-3xl sm:text-4xl font-bold text-[#0C3B2E]">Sarana Peribadatan</h2>
                     <p class="mt-2 text-lg text-gray-600">Fasilitas tempat ibadah yang tersedia di Desa Timpik</p>
                 </div>
@@ -210,7 +210,7 @@
                     @endphp
 
                     @foreach ($sarana as $item)
-                        <div class="bg-gradient-to-tr from-white to-{{ $item['color'] }}-50 p-6 rounded-3xl shadow-xl border-t-4 border-{{ $item['color'] }}-600 transition-all hover:shadow-2xl hover:-translate-y-1 text-center">
+                        <div class="bg-gradient-to-tr from-white to-{{ $item['color'] }}-50 p-6 rounded-3xl shadow-xl border-t-4 border-{{ $item['color'] }}-600 transition-all hover:shadow-2xl hover:-translate-y-1 text-center reveal-on-scroll">
                             <div class="mx-auto bg-{{ $item['color'] }}-100 text-{{ $item['color'] }}-600 w-20 h-20 rounded-full flex items-center justify-center mb-4">
                                 <i data-lucide="{{ $item['icon'] }}" class="w-10 h-10"></i>
                             </div>
@@ -229,7 +229,7 @@
 
     @include('layouts.partials.footer')
 
-    
+
     <script src="//unpkg.com/alpinejs" defer></script>
     <script>
         document.addEventListener('DOMContentLoaded', (event) => {
