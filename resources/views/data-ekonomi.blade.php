@@ -175,11 +175,11 @@
                     <div class="absolute -top-10 -left-10 w-48 h-48 bg-[#bff1d7] opacity-20 rounded-full blur-2xl"></div>
                     <div class="absolute -bottom-10 -right-10 w-64 h-64 bg-[#ffe1b7] opacity-25 rounded-full blur-2xl"></div>
                     <div class="flex flex-col md:flex-row gap-10 items-center justify-between z-10 relative">
-                        <!-- Left: Chart -->
+
                         <div class="w-full md:w-1/2 h-80">
                             <canvas id="tanamanChart"></canvas>
                         </div>
-                        <!-- Right: Data + Legend -->
+
                         <div class="w-full md:w-1/2 flex flex-col gap-3">
                             <h3 class="text-2xl font-bold mb-4 flex items-center gap-2">
                                 <span class="bg-[#0C3B2E] text-white rounded-full p-2"><i data-lucide="sprout" class="w-6 h-6"></i></span>
