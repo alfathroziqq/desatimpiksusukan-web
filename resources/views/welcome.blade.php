@@ -96,11 +96,11 @@
 
             <div class="relative z-10 container mx-auto px-6 text-center lg:text-left lg:pl-24">
                 <div class="max-w-xl lg:max-w-2xl">
-                    <h1 class="text-4xl md:text-5xl lg:text-7xl font-bold text-[#0C3B2E]"
+                    <h1 class="text-4xl md:text-5xl lg:text-7xl font-bold text-[#0C3B2E] reveal-on-scroll"
                         style="font-family: 'Poppins', sans-serif; text-shadow: 2px 2px 4px rgba(0,0,0,0.4);">
                         Selamat Datang
                     </h1>
-                    <p class="lg:mt-4 text-4xl md:text-5xl lg:text-7xl text-white italic"
+                    <p class="lg:mt-4 text-4xl md:text-5xl lg:text-7xl text-white italic reveal-on-scroll"
                         style="font-family: 'Playfair Display', serif; text-shadow: 2px 2px 4px rgba(0,0,0,0.4);">
                         Website <span class="text-[#E8C187]">Desa Timpik</span>
                     </p>
@@ -124,7 +124,7 @@
 
                     <div class="relative w-full lg:w-1/3 flex-shrink-0">
                         <div
-                            class="mt-20 lg:mt-0 bg-gradient-to-tr from-[#0C3B2E] via-[#15634e]/80 to-[#E8C187]/80 text-white p-8 pt-16 sm:pt-20 rounded-3xl shadow-2xl border border-[#E8C187]/30 relative z-0 hover:scale-105 transition-transform duration-300 group">
+                            class="lg:mt-0 bg-gradient-to-tr from-[#0C3B2E] via-[#15634e]/80 to-[#E8C187]/80 text-white p-8 pt-16 sm:pt-20 rounded-3xl shadow-2xl border border-[#E8C187]/30 relative z-0 hover:scale-105 transition-transform duration-300 group">
                             <h3 class="text-2xl sm:text-[34px] font-bold mb-3 border-b-2 border-[#C7F3E7]/50 pb-2"
                                 style="font-family: 'Poppins', sans-serif">
                                 Sejarah</h3>

@@ -65,15 +65,15 @@
 
             <div class="relative z-10 container mx-auto px-6 text-center lg:text-left lg:pl-24">
                 <div class="max-w-xl lg:max-w-2xl">
-                    <h1 class="text-4xl md:text-5xl lg:text-7xl font-bold text-[#0C3B2E] mt-20"
+                    <h1 class="text-4xl md:text-5xl lg:text-7xl font-bold text-[#0C3B2E] mt-20 reveal-on-scroll"
                         style="font-family: 'Poppins', sans-serif; text-shadow: 2px 2px 4px rgba(0,0,0,0.4);">
                         Sejarah Desa
                     </h1>
-                    <p class="text-4xl md:text-5xl lg:text-7xl text-white italic"
+                    <p class="text-4xl md:text-5xl lg:text-7xl text-white italic reveal-on-scroll"
                         style="font-family: 'Playfair Display', serif; text-shadow: 2px 2px 4px rgba(0,0,0,0.4);">
                         Desa <span class="text-[#E8C187]">Timpik</span>
                     </p>
-                    <nav class="mt-4 flex justify-center lg:justify-start" aria-label="Breadcrumb">
+                    <nav class="mt-4 flex justify-center lg:justify-start reveal-on-scroll" aria-label="Breadcrumb">
                         <ol role="list"
                             class="flex items-center space-x-2 bg-black/20 backdrop-blur-sm px-4 py-2 rounded-full">
                             <li>
