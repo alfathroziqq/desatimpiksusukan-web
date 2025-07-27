@@ -1,4 +1,4 @@
-@section('title', 'Admin - Aparatur Desa')
+@section('title', 'Admin | Aparatur Desa')
 
 <x-app-layout>
     <x-slot name="header">

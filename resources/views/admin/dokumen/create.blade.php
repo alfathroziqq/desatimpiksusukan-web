@@ -1,4 +1,4 @@
-@section('title', content: 'Admin - Dokumen')
+@section('title', content: 'Admin | Dokumen')
 
 <x-app-layout>
     <x-slot name="header">
