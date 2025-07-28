@@ -146,7 +146,7 @@
 
                     <div class="relative w-full lg:w-1/3 flex-shrink-0">
                         <div
-                            class="bg-gradient-to-tr from-[#0C3B2E] via-[#15634e]/80 to-[#E8C187]/80 text-white p-8 pt-16 sm:pt-20 rounded-3xl shadow-2xl border border-[#E8C187]/30 relative z-0 hover:scale-105 transition-transform duration-300 group">
+                            class="bg-gradient-to-tr from-[#0C3B2E] via-[#15634e]/80 to-[#E8C187]/80 text-white p-8 pt-4 sm:pt-6 rounded-3xl shadow-2xl border border-[#E8C187]/30 relative z-0 hover:scale-105 transition-transform duration-300 group">
                             <h3 class="text-2xl sm:text-[34px] font-bold mb-3 border-b-2 border-[#C7F3E7]/50 pb-2"
                                 style="font-family: 'Poppins', sans-serif">
                                 Sejarah</h3>
@@ -292,7 +292,7 @@
                 </div>
 
                 <div id="beritaCarousel"
-                    class="flex overflow-x-auto scroll-smooth space-x-8 px-1 sm:px-4 lg:px-8 snap-x snap-mandatory no-scrollbar pb-4 reveal-on-scroll">
+                    class="rounded-3xl flex overflow-x-auto scroll-smooth space-x-8 px-1 sm:px-4 lg:px-8 snap-x snap-mandatory no-scrollbar reveal-on-scroll">
                     @forelse ($beritaTerbaru as $berita)
                         <div
                             class="min-w-[80%] md:min-w-[50%] lg:min-w-[27%] bg-white rounded-3xl overflow-hidden shadow-lg snap-start">
@@ -361,7 +361,7 @@
                 </div>
                 <div class="overflow-hidden p-2 mt-[-4px]">
                     <div x-ref="slider" @scroll.debounce.100ms="updateButtons()"
-                        class="flex overflow-x-auto gap-2 slider-container snap-x snap-mandatory scroll-smooth reveal-on-scroll">
+                        class="rounded-3xl flex overflow-x-auto gap-2 slider-container snap-x snap-mandatory scroll-smooth reveal-on-scroll">
 
                         @forelse ($aparaturs as $aparatur)
                             <div class="flex-shrink-0 w-65 h-80 snap-start p-2"
@@ -403,7 +403,8 @@
         <!-- Galeri Desa Section -->
         @php
             use App\Models\Galeri;
-            $galeriTerbaru = Galeri::latest()->take(4)->get();
+            $semuaGaleri = Galeri::latest()->get();
+            $galeriTerbaru = $semuaGaleri->take(4);
         @endphp
 
         <section class="mb-12">
@@ -427,19 +428,24 @@
                             @php $utama = $galeriTerbaru->first(); @endphp
                             <div
                                 class="relative col-span-1 lg:col-span-2 group overflow-hidden rounded-3xl shadow-xl min-h-[340px] reveal-on-scroll">
-                                <img src="{{ asset('storage/' . $utama->gambar) }}"
-                                    alt="{{ $utama->judul ?? 'Galeri Desa' }}"
-                                    class="object-cover w-full h-full transition-transform duration-700 group-hover:scale-105" />
-                                <div
-                                    class="absolute bottom-0 left-0 right-0 px-7 py-6 bg-gradient-to-t from-[#0C3B2E]/85 to-transparent opacity-95 group-hover:opacity-100 transition-all duration-500">
-                                    <h3 class="font-bold text-2xl text-white mb-1"
-                                        style="font-family:'Poppins',sans-serif;">
-                                        {{ $utama->judul ?? 'Galeri Desa' }}
-                                    </h3>
-                                    <p class="text-white text-sm opacity-80">
-                                        {{ Str::limit($utama->keterangan, 70) ?? '' }}
-                                    </p>
-                                </div>
+                                @foreach ($semuaGaleri as $index => $item)
+                                    <div
+                                        class="absolute inset-0 transition-opacity duration-1000 ease-in-out slideshow-slide {{ $index === 0 ? 'opacity-100 z-10' : 'opacity-0 z-0' }}">
+                                        <img src="{{ asset('storage/' . $item->gambar) }}"
+                                            alt="{{ $item->judul ?? 'Galeri Desa' }}"
+                                            class="object-cover w-full h-full transition-transform duration-700 group-hover:scale-105" />
+                                        <div
+                                            class="absolute bottom-0 left-0 right-0 px-7 py-6 bg-gradient-to-t from-[#0C3B2E]/85 to-transparent opacity-95 group-hover:opacity-100 transition-all duration-500">
+                                            <h3 class="font-bold text-2xl text-white mb-1"
+                                                style="font-family:'Poppins',sans-serif;">
+                                                {{ $item->judul ?? 'Galeri Desa' }}
+                                            </h3>
+                                            <p class="text-white text-sm opacity-80">
+                                                {{ Str::limit($item->keterangan, 70) ?? '' }}
+                                            </p>
+                                        </div>
+                                    </div>
+                                @endforeach
                             </div>
 
                             <div class="flex flex-col gap-6 lg:gap-8">
@@ -467,7 +473,7 @@
                         <div class="text-center text-gray-500 py-16">Belum ada foto galeri tersedia.</div>
                 @endif
 
-                <div class="flex justify-center mt-10 reveal-on-scroll">
+                <div class="flex justify-center mt-4 reveal-on-scroll">
                     <a href="{{ route('galeri.index') }}"
                         class="bg-[#3D7364] text-white border border-white px-7 py-3 rounded-full hover:bg-[#325e51] transition duration-300 font-semibold"
                         style="font-family: 'Poppins', sans-serif">Lihat Semua Galeri
@@ -578,8 +584,31 @@
         });
 
         scrollTopBtn.addEventListener("click", () => {
-            window.scrollTo({ top: 0, behavior: "smooth" });
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth"
+            });
         });
+
+        const slides = document.querySelectorAll('.slideshow-slide');
+        let currentIndex = 0;
+
+        function showSlide(index) {
+            slides.forEach((slide, i) => {
+                if (i === index) {
+                    slide.classList.add('opacity-100', 'z-10');
+                    slide.classList.remove('opacity-0', 'z-0');
+                } else {
+                    slide.classList.add('opacity-0', 'z-0');
+                    slide.classList.remove('opacity-100', 'z-10');
+                }
+            });
+        }
+
+        setInterval(() => {
+            currentIndex = (currentIndex + 1) % slides.length;
+            showSlide(currentIndex);
+        }, 3000);
     </script>
 </body>
 

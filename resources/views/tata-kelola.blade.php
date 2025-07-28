@@ -235,7 +235,7 @@
 
                 <div class="overflow-hidden p-2 mt-[-4px] reveal-on-scroll">
                     <div x-ref="slider" @scroll.debounce.100ms="updateButtons()"
-                        class="flex overflow-x-auto gap-2 slider-container snap-x snap-mandatory scroll-smooth">
+                        class="rounded-3xl flex overflow-x-auto gap-2 slider-container snap-x snap-mandatory scroll-smooth">
 
                         @forelse ($aparaturs as $aparatur)
                             <div class="flex-shrink-0 w-65 h-80 snap-start p-2"
