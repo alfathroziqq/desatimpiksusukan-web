@@ -133,23 +133,118 @@
         <!-- Sejarah Section -->
         <section class="py-16 md:py-14 relative overflow-x-clip">
             <div class="max-w-7xl mx-auto px-4 sm:px-10 lg:px-16">
-                <div class="text-center mb-12 reveal-on-scroll">
+                <div class="text-center mb-8 reveal-on-scroll">
                     <h2 class="text-4xl sm:text-[48px] font-extrabold tracking-tight text-[#0C3B2E] inline-block"
-                        style="font-family: 'Poppins', sans-serif; letter-spacing: 1px;">
+                        style="font-family: 'Playfair Display', serif; font-style: italic;">
                         Desa Timpik
                     </h2>
                     <div
                         class="w-40 md:w-60 h-1 bg-gradient-to-r from-[#0C3B2E] via-[#E8C187] to-[#C2977D] rounded-full mx-auto mt-3">
                     </div>
                 </div>
-                <div class="flex flex-col lg:flex-row gap-12 lg:gap-16 items-center reveal-on-scroll">
 
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-6 gap-8 lg:gap-4 mb-10 reveal-on-scroll">
+                    <a href="{{ route('sejarah-desa') }}"
+                        class="flex items-start gap-4 p-4 bg-white/90 border border-[#E8C187]/30 rounded-3xl shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group">
+                        <div
+                            class="flex items-center justify-center w-12 h-12 bg-gradient-to-br from-[#E8C187]/80 to-[#C7F3E7]/80 rounded-2xl text-[#0C3B2E] shadow group-hover:bg-[#E8C187] transition">
+                            <i data-lucide="info" class="w-7 h-7"></i>
+                        </div>
+                        <div>
+                            <span class="font-semibold text-[#0C3B2E] text-lg lg:text-base"
+                                style="font-family: 'Poppins', sans-serif">Profil
+                                Desa</span>
+                            <p class="text-sm lg:text-xs text-gray-600 mt-1" style="font-family: 'Poppins', sans-serif">
+                                Informasi kondisi desa.
+                            </p>
+                        </div>
+                    </a>
+                    <a href="{{ route('berita.index') }}"
+                        class="flex items-start gap-4 p-4 bg-white/90 border border-[#E8C187]/30 rounded-3xl shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group">
+                        <div
+                            class="flex items-center justify-center w-12 h-12 bg-gradient-to-br from-[#E8C187]/80 to-[#C7F3E7]/80 rounded-2xl text-[#0C3B2E] shadow group-hover:bg-[#E8C187] transition">
+                            <i data-lucide="newspaper" class="w-7 h-7"></i>
+                        </div>
+                        <div>
+                            <span class="font-semibold text-[#0C3B2E] text-lg lg:text-base"
+                                style="font-family: 'Poppins', sans-serif">Berita
+                                Desa</span>
+                            <p class="text-sm lg:text-xs text-gray-600 mt-1" style="font-family: 'Poppins', sans-serif">
+                                Info terkini.
+                            </p>
+                        </div>
+                    </a>
+                    <a href="{{ route('data-jenis-kelamin') }}"
+                        class="flex items-start gap-4 p-4 bg-white/90 border border-[#E8C187]/30 rounded-3xl shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group">
+                        <div
+                            class="flex items-center justify-center w-12 h-12 bg-gradient-to-br from-[#E8C187]/80 to-[#C7F3E7]/80 rounded-2xl text-[#0C3B2E] shadow group-hover:bg-[#E8C187] transition">
+                            <i data-lucide="between-horizontal-start" class="w-7 h-7"></i>
+                        </div>
+                        <div>
+                            <span class="font-semibold text-[#0C3B2E] text-lg lg:text-base"
+                                style="font-family: 'Poppins', sans-serif">Data
+                                Desa</span>
+                            <p class="text-sm lg:text-xs text-gray-600 mt-1" style="font-family: 'Poppins', sans-serif">
+                                Statistik desa
+                            </p>
+                        </div>
+                    </a>
+                    <a href="{{ route('belanja.index') }}"
+                        class="flex items-start gap-4 p-4 bg-white/90 border border-[#E8C187]/30 rounded-3xl shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group">
+                        <div
+                            class="flex items-center justify-center w-12 h-12 bg-gradient-to-br from-[#E8C187]/80 to-[#C7F3E7]/80 rounded-2xl text-[#0C3B2E] shadow group-hover:bg-[#E8C187] transition">
+                            <i data-lucide="shopping-cart" class="w-7 h-7"></i>
+                        </div>
+                        <div>
+                            <span class="font-semibold text-[#0C3B2E] text-lg lg:text-base"
+                                style="font-family: 'Poppins', sans-serif">Belanja
+                            </span>
+                            <p class="text-sm lg:text-xs text-gray-600 mt-1" style="font-family: 'Poppins', sans-serif">
+                                Jelajahi produk unggulan
+                            </p>
+                        </div>
+                    </a>
+                    <a href="{{ route('dokumen.index') }}"
+                        class="flex items-start gap-4 p-4 bg-white/90 border border-[#E8C187]/30 rounded-3xl shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group">
+                        <div
+                            class="flex items-center justify-center w-12 h-12 bg-gradient-to-br from-[#E8C187]/80 to-[#C7F3E7]/80 rounded-2xl text-[#0C3B2E] shadow group-hover:bg-[#E8C187] transition">
+                            <i data-lucide="file" class="w-7 h-7"></i>
+                        </div>
+                        <div>
+                            <span class="font-semibold text-[#0C3B2E] text-lg lg:text-base"
+                                style="font-family: 'Poppins', sans-serif">Dokumen
+                            </span>
+                            <p class="text-sm lg:text-xs text-gray-600 mt-1" style="font-family: 'Poppins', sans-serif">
+                                Akses, laporan, arsip.
+                            </p>
+                        </div>
+                    </a>
+                    <a href="{{ route('galeri.index') }}"
+                        class="flex items-start gap-4 p-5 bg-white/90 border border-[#E8C187]/30 rounded-3xl shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group">
+                        <div
+                            class="flex items-center justify-center w-12 h-12 bg-gradient-to-br from-[#E8C187]/80 to-[#C7F3E7]/80 rounded-2xl text-[#0C3B2E] shadow group-hover:bg-[#E8C187] transition">
+                            <i data-lucide="file" class="w-7 h-7"></i>
+                        </div>
+                        <div>
+                            <span class="font-semibold text-[#0C3B2E] text-lg lg:text-base"
+                                style="font-family: 'Poppins', sans-serif">Galeri
+                            </span>
+                            <p class="text-sm lg:text-xs text-gray-600 mt-1" style="font-family: 'Poppins', sans-serif">
+                                Dokumentasi visual.
+                            </p>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="flex flex-col lg:flex-row gap-12 lg:gap-16 items-center reveal-on-scroll">
+                    <!-- Card Sejarah -->
                     <div class="relative w-full lg:w-1/3 flex-shrink-0">
                         <div
-                            class="bg-gradient-to-tr from-[#0C3B2E] via-[#15634e]/80 to-[#E8C187]/80 text-white p-8 pt-4 sm:pt-6 rounded-3xl shadow-2xl border border-[#E8C187]/30 relative z-0 hover:scale-105 transition-transform duration-300 group">
+                            class="bg-gradient-to-tr from-[#0C3B2E] via-[#15634e]/80 to-[#E8C187]/80 text-white p-7 rounded-3xl shadow-2xl border border-[#E8C187]/30 relative z-0 hover:scale-102 transition-transform duration-300 group">
                             <h3 class="text-2xl sm:text-[34px] font-bold mb-3 border-b-2 border-[#C7F3E7]/50 pb-2"
                                 style="font-family: 'Poppins', sans-serif">
-                                Sejarah</h3>
+                                Sejarah
+                            </h3>
                             <p class="text-base sm:text-[17px] leading-relaxed mb-6 text-[#F8F6F1] text-justify"
                                 style="font-family: 'Poppins', sans-serif">
                                 Desa Timpik, terletak di Kecamatan Susukan, Kabupaten Semarang, kaya sejarah dan budaya.
@@ -164,92 +259,36 @@
                         </div>
                     </div>
 
-                    <!-- Menu Button -->
-                    <div class="w-full lg:w-2/3 grid grid-cols-1 sm:grid-cols-2 gap-8 md:gap-8">
-                        <a href="{{ route('sejarah-desa') }}"
-                            class="flex items-start gap-4 p-5 min-h-[110px] bg-white/90 border border-[#E8C187]/30 rounded-3xl shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group">
-                            <div
-                                class="flex items-center justify-center w-12 h-12 bg-gradient-to-br from-[#E8C187]/80 to-[#C7F3E7]/80 rounded-2xl text-[#0C3B2E] shadow group-hover:bg-[#E8C187] transition">
-                                <i data-lucide="info" class="w-7 h-7"></i>
+                    <!-- Sambutan Kepala Desa -->
+                    <div class="relative w-full lg:w-2/3">
+                        <div
+                            class="text-[#0C3B2E] p-4 rounded-3xl shadow-2xl border border-[#0C3B2E]/30 relative z-0 hover:scale-102 transition-transform duration-300 group">
+                            <h3 class="text-2xl sm:text-[24px] font-bold mb-3 border-b-2 border-[#0C3B2E]/50 pb-2"
+                                style="font-family: 'Poppins', sans-serif">
+                                Sambutan Kepala Desa
+                            </h3>
+                            <p class="text-base sm:text-[14px] leading-relaxed text-[#0C3B2E] text-justify"
+                                style="font-family: 'Poppins', sans-serif">
+                                Selamat datang di Desa Timpik! Kami bangga memiliki sejarah panjang dan budaya yang
+                                kaya.
+                                Desa kami berkembang menjadi desa wisata yang menggabungkan inovasi pertanian modern
+                                dengan kekayaan alam dan sejarah yang berharga. Mari bersama-sama kita jaga dan
+                                kembangkan
+                                desa ini untuk masa depan yang lebih baik!
+                            </p>
+                        </div>
+
+                        <!-- Video YouTube -->
+                        <div class="relative w-full lg:w-full mt-6">
+                            <div class="aspect-w-16 aspect-h-9">
+                                <iframe class="w-full h-[290px] rounded-3xl shadow-2xl border border-[#0C3B2E]/30"
+                                    src="https://www.youtube.com/embed/kg-qCZroRHo?start=0&autoplay=1&mute=1"
+                                    frameborder="0"
+                                    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                                    allowfullscreen>
+                                </iframe>
                             </div>
-                            <div>
-                                <span class="font-semibold text-[#0C3B2E] text-lg"
-                                    style="font-family: 'Poppins', sans-serif">Profil Desa</span>
-                                <p class="text-sm text-gray-600 mt-1" style="font-family: 'Poppins', sans-serif">
-                                    Informasi mengenai profil, sejarah, dan kondisi desa.
-                                </p>
-                            </div>
-                        </a>
-                        <a href="{{ route('berita.index') }}"
-                            class="flex items-start gap-4 p-5 min-h-[110px] bg-white/90 border border-[#E8C187]/30 rounded-3xl shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group">
-                            <div
-                                class="flex items-center justify-center w-12 h-12 bg-gradient-to-br from-[#E8C187]/80 to-[#C7F3E7]/80 rounded-2xl text-[#0C3B2E] shadow group-hover:bg-[#E8C187] transition">
-                                <i data-lucide="newspaper" class="w-7 h-7"></i>
-                            </div>
-                            <div>
-                                <span class="font-semibold text-[#0C3B2E] text-lg"
-                                    style="font-family: 'Poppins', sans-serif">Berita Desa</span>
-                                <p class="text-sm text-gray-600 mt-1" style="font-family: 'Poppins', sans-serif">
-                                    Info terkini kegiatan dan pengumuman desa.
-                                </p>
-                            </div>
-                        </a>
-                        <a href="{{ route('data-jenis-kelamin') }}"
-                            class="flex items-start gap-4 p-5 min-h-[110px] bg-white/90 border border-[#E8C187]/30 rounded-3xl shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group">
-                            <div
-                                class="flex items-center justify-center w-12 h-12 bg-gradient-to-br from-[#E8C187]/80 to-[#C7F3E7]/80 rounded-2xl text-[#0C3B2E] shadow group-hover:bg-[#E8C187] transition">
-                                <i data-lucide="between-horizontal-start" class="w-7 h-7"></i>
-                            </div>
-                            <div>
-                                <span class="font-semibold text-[#0C3B2E] text-lg"
-                                    style="font-family: 'Poppins', sans-serif">Data Desa</span>
-                                <p class="text-sm text-gray-600 mt-1" style="font-family: 'Poppins', sans-serif">
-                                    Statistik kependudukan, potensi & data penting lainnya.
-                                </p>
-                            </div>
-                        </a>
-                        <a href="{{ route('belanja.index') }}"
-                            class="flex items-start gap-4 p-5 min-h-[110px] bg-white/90 border border-[#E8C187]/30 rounded-3xl shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group">
-                            <div
-                                class="flex items-center justify-center w-12 h-12 bg-gradient-to-br from-[#E8C187]/80 to-[#C7F3E7]/80 rounded-2xl text-[#0C3B2E] shadow group-hover:bg-[#E8C187] transition">
-                                <i data-lucide="shopping-cart" class="w-7 h-7"></i>
-                            </div>
-                            <div>
-                                <span class="font-semibold text-[#0C3B2E] text-lg"
-                                    style="font-family: 'Poppins', sans-serif">Belanja</span>
-                                <p class="text-sm text-gray-600 mt-1" style="font-family: 'Poppins', sans-serif">
-                                    Jelajahi produk unggulan & UMKM Timpik.
-                                </p>
-                            </div>
-                        </a>
-                        <a href="{{ route('dokumen.index') }}"
-                            class="flex items-start gap-4 p-5 min-h-[110px] bg-white/90 border border-[#E8C187]/30 rounded-3xl shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group">
-                            <div
-                                class="flex items-center justify-center w-12 h-12 bg-gradient-to-br from-[#E8C187]/80 to-[#C7F3E7]/80 rounded-2xl text-[#0C3B2E] shadow group-hover:bg-[#E8C187] transition">
-                                <i data-lucide="file" class="w-7 h-7"></i>
-                            </div>
-                            <div>
-                                <span class="font-semibold text-[#0C3B2E] text-lg"
-                                    style="font-family: 'Poppins', sans-serif">Dokumen</span>
-                                <p class="text-sm text-gray-600 mt-1" style="font-family: 'Poppins', sans-serif">
-                                    Akses dokumen penting desa, laporan & arsip.
-                                </p>
-                            </div>
-                        </a>
-                        <a href="{{ route('galeri.index') }}"
-                            class="flex items-start gap-4 p-5 min-h-[110px] bg-white/90 border border-[#E8C187]/30 rounded-3xl shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group">
-                            <div
-                                class="flex items-center justify-center w-12 h-12 bg-gradient-to-br from-[#E8C187]/80 to-[#C7F3E7]/80 rounded-2xl text-[#0C3B2E] shadow group-hover:bg-[#E8C187] transition">
-                                <i data-lucide="images" class="w-7 h-7"></i>
-                            </div>
-                            <div>
-                                <span class="font-semibold text-[#0C3B2E] text-lg"
-                                    style="font-family: 'Poppins', sans-serif">Galeri Desa</span>
-                                <p class="text-sm text-gray-600 mt-1" style="font-family: 'Poppins', sans-serif">
-                                    Dokumentasi visual kegiatan, pemandangan, & momen istimewa.
-                                </p>
-                            </div>
-                        </a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -352,7 +391,7 @@
             $aparaturs = Aparatur::all();
         @endphp
 
-        <section id="aparatur" class="py-8 md:py-8 bg-white" x-data="window.slider()" x-init="init()">
+        <section id="aparatur" class="py-8 md:py-8" x-data="window.slider()" x-init="init()">
             <div class="max-w-7xl mx-auto px-4 sm:px-10 lg:px-16">
                 <div class="text-center mb-8 reveal-on-scroll">
                     <h2 class="text-3xl sm:text-[45px] font-bold text-[#0C3B2E]"
@@ -478,6 +517,274 @@
                         class="bg-[#3D7364] text-white border border-white px-7 py-3 rounded-full hover:bg-[#325e51] transition duration-300 font-semibold"
                         style="font-family: 'Poppins', sans-serif">Lihat Semua Galeri
                     </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- APB Desa Timpik Section -->
+        <section class="mb-16">
+            <div class="max-w-7xl mx-auto px-4 sm:px-10 lg:px-16" style="font-family: 'Poppins', sans-serif;">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+
+                    <div class="text-center lg:text-left reveal-on-scroll">
+                        <h2 class="text-2xl md:text-4xl font-bold text-[#0C3B2E]">APB Desa Timpik Tahun 2024</h2>
+                        <p class="text-base md:text-lg text-gray-600 mt-2">
+                            Desa Timpik, Kecamatan Susukan, Kabupaten Semarang, Provinsi Jawa Tengah
+                        </p>
+                    </div>
+
+                    <div class="w-full">
+                        <div class="flex justify-end mb-4 reveal-on-scroll">
+                            <select
+                                class="w-full sm:w-[100px] px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-green-500">
+                                <option>2024</option>
+                                <option>2023</option>
+                                <option>2022</option>
+                            </select>
+                        </div>
+
+                        <div class="bg-white p-5 rounded-lg border border-gray-200 shadow-sm reveal-on-scroll">
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                                <!-- Pendapatan -->
+                                <div>
+                                    <div class="flex items-center space-x-2 text-gray-700">
+                                        <!-- Up Arrow Icon -->
+                                        <svg class="w-5 h-5 text-green-500" fill="none" stroke="currentColor"
+                                            viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                d="M5 15l7-7 7 7"></path>
+                                        </svg>
+                                        <h3 class="font-semibold">Pendapatan</h3>
+                                    </div>
+                                    <p class="text-2xl text-green-600 font-bold mt-1">Rp4.802.205.800,00</p>
+                                </div>
+                                <!-- Belanja -->
+                                <div>
+                                    <div class="flex items-center space-x-2 text-gray-700">
+                                        <!-- Down Arrow Icon -->
+                                        <svg class="w-5 h-5 text-red-500" fill="none" stroke="currentColor"
+                                            viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                d="M19 9l-7 7-7-7"></path>
+                                        </svg>
+                                        <h3 class="font-semibold">Belanja</h3>
+                                    </div>
+                                    <p class="text-2xl text-red-500 font-bold mt-1">Rp4.888.222.678,75</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="mt-4 bg-white p-5 rounded-lg border border-gray-200 shadow-sm reveal-on-scroll">
+                            <!-- Pembiayaan Section -->
+                            <div>
+                                <h4 class="text-gray-500 font-semibold mb-4">Pembiayaan</h4>
+                                <div class="border-t border-gray-200 grid grid-cols-1 sm:grid-cols-2 gap-6">
+                                    <!-- Penerimaan -->
+                                    <div>
+                                        <div class="mt-2 flex items-center space-x-2 text-gray-700">
+                                            <svg class="w-5 h-5 text-green-500" fill="none" stroke="currentColor"
+                                                viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                    d="M5 15l7-7 7 7"></path>
+                                            </svg>
+                                            <h3 class="font-semibold">Penerimaan</h3>
+                                        </div>
+                                        <p class="text-xl text-green-600 font-bold mt-1">Rp86.016.878,75</p>
+                                    </div>
+                                    <!-- Pengeluaran -->
+                                    <div>
+                                        <div class="flex items-center space-x-2 text-gray-700">
+                                            <svg class="w-2 h-2 text-gray-500 fill-current" viewBox="0 0 8 8">
+                                                <circle cx="4" cy="4" r="4" />
+                                            </svg>
+                                            <h3 class="font-semibold">Pengeluaran</h3>
+                                        </div>
+                                        <p class="text-xl text-gray-800 font-bold mt-1">Rp0,00</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Surplus/Defisit Card -->
+                        <div
+                            class="bg-white mt-4 p-4 rounded-lg border border-gray-200 shadow-sm flex justify-between items-center reveal-on-scroll">
+                            <h3 class="text-lg font-semibold text-gray-700">Surplus/Defisit</h3>
+                            <p class="text-lg text-gray-800 font-bold">Rp0,00</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 reveal-on-scroll">
+                    <!-- Card: Pelaksanaan -->
+                    <div class="bg-white rounded-xl shadow-lg overflow-hidden">
+                        <div class="p-4 bg-[#0C3B2E] text-white text-center">
+                            <h3 class="text-xl font-bold">Pelaksanaan</h3>
+                        </div>
+                        <div class="p-5 space-y-5">
+                            <div class="flex justify-between text-sm font-semibold text-gray-500">
+                                <span>Anggaran</span>
+                                <span>Realisasi</span>
+                            </div>
+
+                            <div class="space-y-2">
+                                <p class="font-semibold text-gray-800 text-sm">Pendapatan</p>
+                                <div class="flex justify-between text-xs font-medium text-gray-600">
+                                    <span>9.225.227.762,00</span>
+                                    <span>9.213.219.247,17</span>
+                                </div>
+                                <div class="w-full bg-gray-200 rounded-full h-4 relative">
+                                    <div class="bg-green-700 h-4 rounded-full" style="width: 99.87%"></div>
+                                    <span
+                                        class="absolute inset-0 flex items-center justify-center text-white text-xs font-bold">99.87%</span>
+                                </div>
+                            </div>
+
+                            <div class="space-y-2">
+                                <p class="font-semibold text-gray-800 text-sm">Belanja</p>
+                                <div class="flex justify-between text-xs font-medium text-gray-600">
+                                    <span>9.982.721.401,03</span>
+                                    <span>8.697.373.498,64</span>
+                                </div>
+                                <div class="w-full bg-gray-200 rounded-full h-4 relative">
+                                    <div class="bg-green-700 h-4 rounded-full" style="width: 87.12%"></div>
+                                    <span
+                                        class="absolute inset-0 flex items-center justify-center text-white text-xs font-bold">87.12%</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card: Pendapatan -->
+                    <div class="bg-white rounded-xl shadow-lg overflow-hidden">
+                        <div class="p-4 bg-[#0C3B2E] text-white text-center">
+                            <h3 class="text-xl font-bold">Pendapatan</h3>
+                        </div>
+                        <div class="p-5 space-y-5">
+                            <div class="flex justify-between text-sm font-semibold text-gray-500">
+                                <span>Anggaran</span>
+                                <span>Realisasi</span>
+                            </div>
+
+                            <div class="space-y-2">
+                                <p class="font-semibold text-gray-800 text-sm">Pendapatan Asli Desa</p>
+                                <div class="flex justify-between text-xs font-medium text-gray-600">
+                                    <span>75.000.000,00</span>
+                                    <span>56.840.558,00</span>
+                                </div>
+                                <div class="w-full bg-gray-200 rounded-full h-4 relative">
+                                    <div class="bg-green-700 h-4 rounded-full" style="width: 75.79%"></div>
+                                    <span
+                                        class="absolute inset-0 flex items-center justify-center text-white text-xs font-bold">75.79%</span>
+                                </div>
+                            </div>
+
+                            <div class="space-y-2">
+                                <p class="font-semibold text-gray-800 text-sm">Pendapatan Transfer</p>
+                                <div class="flex justify-between text-xs font-medium text-gray-600">
+                                    <span>1.322.813.000,00</span>
+                                    <span>1.322.813.000,00</span>
+                                </div>
+                                <div class="w-full bg-gray-200 rounded-full h-4 relative">
+                                    <div class="bg-green-700 h-4 rounded-full" style="width: 100%"></div>
+                                    <span
+                                        class="absolute inset-0 flex items-center justify-center text-white text-xs font-bold">100%</span>
+                                </div>
+                            </div>
+
+                            <div class="space-y-2">
+                                <p class="font-semibold text-gray-800 text-sm">Pendapatan Lain Lain</p>
+                                <div class="flex justify-between text-xs font-medium text-gray-600">
+                                    <span>47.300.000,00</span>
+                                    <span>60.217.448,17</span>
+                                </div>
+                                <div class="w-full bg-gray-200 rounded-full h-4 relative">
+                                    <div class="bg-green-700 h-4 rounded-full" style="width: 100%"></div>
+                                    <span
+                                        class="absolute inset-0 flex items-center justify-center text-white text-xs font-bold">127.31%</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card: Belanja -->
+                    <div class="bg-white rounded-xl shadow-lg overflow-hidden">
+                        <div class="p-4 bg-[#0C3B2E] text-white text-center">
+                            <h3 class="text-xl font-bold">Belanja</h3>
+                        </div>
+                        <div class="p-5 space-y-5">
+                            <div class="flex justify-between text-sm font-semibold text-gray-500">
+                                <span>Anggaran</span>
+                                <span>Realisasi</span>
+                            </div>
+
+                            <div class="space-y-2">
+                                <p class="font-semibold text-gray-800 text-sm">Bidang Penyelenggaraan Pemerintah Desa
+                                </p>
+                                <div class="flex justify-between text-xs font-medium text-gray-600">
+                                    <span>3.547.030.529,00</span>
+                                    <span>3.167.295.824,64</span>
+                                </div>
+                                <div class="w-full bg-gray-200 rounded-full h-4 relative">
+                                    <div class="bg-green-700 h-4 rounded-full" style="width: 89.29%"></div>
+                                    <span
+                                        class="absolute inset-0 flex items-center justify-center text-white text-xs font-bold">89.29%</span>
+                                </div>
+                            </div>
+
+                            <div class="space-y-2">
+                                <p class="font-semibold text-gray-800 text-sm">Bidang Pelaksanaan Pembangunan Desa</p>
+                                <div class="flex justify-between text-xs font-medium text-gray-600">
+                                    <span>4.230.925.327,03</span>
+                                    <span>3.735.026.974,00</span>
+                                </div>
+                                <div class="w-full bg-gray-200 rounded-full h-4 relative">
+                                    <div class="bg-green-700 h-4 rounded-full" style="width: 88.28%"></div>
+                                    <span
+                                        class="absolute inset-0 flex items-center justify-center text-white text-xs font-bold">88.28%</span>
+                                </div>
+                            </div>
+
+                            <div class="space-y-2">
+                                <p class="font-semibold text-gray-800 text-sm">Bidang Pembinaan Kemasyarakatan Desa</p>
+                                <div class="flex justify-between text-xs font-medium text-gray-600">
+                                    <span>4.230.925.327,03</span>
+                                    <span>3.735.026.974,00</span>
+                                </div>
+                                <div class="w-full bg-gray-200 rounded-full h-4 relative">
+                                    <div class="bg-green-700 h-4 rounded-full" style="width: 88.28%"></div>
+                                    <span
+                                        class="absolute inset-0 flex items-center justify-center text-white text-xs font-bold">88.28%</span>
+                                </div>
+                            </div>
+
+                            <div class="space-y-2">
+                                <p class="font-semibold text-gray-800 text-sm">Bidang Pemberdayaan Masyarakat Desa</p>
+                                <div class="flex justify-between text-xs font-medium text-gray-600">
+                                    <span>4.230.925.327,03</span>
+                                    <span>3.735.026.974,00</span>
+                                </div>
+                                <div class="w-full bg-gray-200 rounded-full h-4 relative">
+                                    <div class="bg-green-700 h-4 rounded-full" style="width: 88.28%"></div>
+                                    <span
+                                        class="absolute inset-0 flex items-center justify-center text-white text-xs font-bold">88.28%</span>
+                                </div>
+                            </div>
+
+                            <div class="space-y-2">
+                                <p class="font-semibold text-gray-800 text-sm">Bidang Penanggulangan Bencana, Keadaan
+                                    Darurat dan Mendesak Desa</p>
+                                <div class="flex justify-between text-xs font-medium text-gray-600">
+                                    <span>4.230.925.327,03</span>
+                                    <span>3.735.026.974,00</span>
+                                </div>
+                                <div class="w-full bg-gray-200 rounded-full h-4 relative">
+                                    <div class="bg-green-700 h-4 rounded-full" style="width: 88.28%"></div>
+                                    <span
+                                        class="absolute inset-0 flex items-center justify-center text-white text-xs font-bold">88.28%</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>

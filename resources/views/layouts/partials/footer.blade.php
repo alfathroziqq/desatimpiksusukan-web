@@ -67,12 +67,11 @@
             </div>
 
             <div class="space-y-4">
-                <h3 class="text-2xl font-bold" style="font-family: 'Poppins', sans-serif;">Peta Wilayah</h3>
+                <h3 class="text-2xl font-bold" style="font-family: 'Poppins', sans-serif;">Peta</h3>
                 <div class="h-[200px] rounded-xl overflow-hidden shadow-lg">
                     <iframe
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d63371.18114084348!2d110.5712737!3d-7.4338208!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7a71945f88f9e9%3A0x27718c090face7ff!2sTimpik%2C%20Kec.%20Susukan%2C%20Kabupaten%20Semarang%2C%20Jawa%20Tengah!5e0!3m2!1sid!2sid!4v1721380000000!5m2!1sid!2sid"
-                        width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
-                        referrerpolicy="no-referrer-when-downgrade">
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d63371.18114084348!2d110.5712737!3d-7.4338208!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7a71eaecf72533%3A0xff39386cf8a88d7a!2sKantor+Desa+Timpik!5e0!3m2!1sid!2sid!4v1721380000000!5m2!1sid!2sid"
+                        width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
                     </iframe>
                 </div>
 

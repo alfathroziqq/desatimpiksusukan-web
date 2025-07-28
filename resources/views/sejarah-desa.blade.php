@@ -147,7 +147,7 @@
         <!-- Konten Sejarah Baru -->
         <section class="py-14 overflow-x-clip">
             <div class="container mx-auto px-8 sm:px-12 lg:px-45">
-                <div class="mb-12 reveal-on-scroll">
+                <div class="mb-8 reveal-on-scroll">
                     <h2 class="text-3xl md:text-5xl font-extrabold text-center lg:text-left bg-gradient-to-r from-[#125D4E] via-[#619C6A] to-[#E8C187] bg-clip-text text-transparent inline-block mb-2"
                         style="font-family: 'Poppins', sans-serif; line-height: 1.1; padding-bottom: 2px;">
                         Sejarah Desa Timpik
@@ -209,7 +209,7 @@
         </section>
 
         <!-- Peta Lokasi -->
-        <section class="py-14 bg-[#f7f6f3] overflow-x-clip" style="font-family: 'Poppins', sans-serif;">
+        <section class="py-14 overflow-x-clip" style="font-family: 'Poppins', sans-serif;">
             <div class="container mx-auto px-8 sm:px-12 lg:px-45">
                 <div class="mb-12 reveal-on-scroll">
                     <h2 class="text-3xl md:text-5xl font-extrabold text-center lg:text-left bg-gradient-to-r from-[#125D4E] via-[#619C6A] to-[#E8C187] bg-clip-text text-transparent inline-block mb-2"
