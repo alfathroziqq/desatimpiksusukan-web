@@ -283,7 +283,7 @@
         const genderData = {
             labels: ['Laki-laki', 'Perempuan'],
             values: [{{ $data->laki_laki }}, {{ $data->perempuan }}],
-            colors: ['#a0c0f3', '#ffa9d3'] // blue-500, pink-500
+            colors: ['#6D9773', '#BB8A52'] // blue-500, pink-500
         };
 
         // Konfigurasi umum

@@ -210,11 +210,11 @@
                             <div class="flex flex-col gap-3">
                                 @php
                                 $tanaman = [
-                                    ['label' => 'Padi Sawah', 'value' => $data->padi_sawah, 'color' => 'bg-green-400'],
-                                    ['label' => 'Padi Ladang', 'value' => $data->padi_ladang, 'color' => 'bg-yellow-400'],
-                                    ['label' => 'Jagung', 'value' => $data->jagung, 'color' => 'bg-orange-400'],
-                                    ['label' => 'Palawija', 'value' => $data->palawija, 'color' => 'bg-purple-400'],
-                                    ['label' => 'Tebu', 'value' => $data->tebu, 'color' => 'bg-blue-400'],
+                                    ['label' => 'Padi Sawah', 'value' => $data->padi_sawah, 'color' => 'bg-[#6D9773]'],
+                                    ['label' => 'Padi Ladang', 'value' => $data->padi_ladang, 'color' => 'bg-[#0C3B2E]'],
+                                    ['label' => 'Jagung', 'value' => $data->jagung, 'color' => 'bg-[#BB8A52]'],
+                                    ['label' => 'Palawija', 'value' => $data->palawija, 'color' => 'bg-[#A26769]'],
+                                    ['label' => 'Tebu', 'value' => $data->tebu, 'color' => 'bg-[#E0C097]'], 
                                 ];
                                 @endphp
                                 @foreach($tanaman as $t)
@@ -245,11 +245,36 @@
                 <div class="grid grid-cols-2 md:grid-cols-4 gap-7 max-w-5xl mx-auto reveal-on-scroll">
                     @php
                     $ternak = [
-                        ['label'=>'Kambing', 'val'=>$data->kambing, 'icon'=>'mountain', 'color'=>'white', 'border'=>'border-green-400'],
-                        ['label'=>'Sapi', 'val'=>$data->sapi, 'icon'=>'milk', 'color'=>'white', 'border'=>'border-yellow-400'],
-                        ['label'=>'Ayam', 'val'=>$data->ayam, 'icon'=>'egg-fried', 'color'=>'white', 'border'=>'border-red-400'],
-                        ['label'=>'Burung', 'val'=>$data->burung, 'icon'=>'bird', 'color'=>'white', 'border'=>'border-blue-400'],
+                        [
+                            'label' => 'Kambing',
+                            'val' => $data->kambing,
+                            'icon' => 'mountain',
+                            'color' => 'white',
+                            'border' => 'border-[#6D9773]' // rgba(109, 151, 115, 1)
+                        ],
+                        [
+                            'label' => 'Sapi',
+                            'val' => $data->sapi,
+                            'icon' => 'milk',
+                            'color' => 'white',
+                            'border' => 'border-[#0C3B2E]' // rgba(12, 59, 46, 1)
+                        ],
+                        [
+                            'label' => 'Ayam',
+                            'val' => $data->ayam,
+                            'icon' => 'egg-fried',
+                            'color' => 'white',
+                            'border' => 'border-[#BB8A52]' // rgba(187, 138, 82, 1)
+                        ],
+                        [
+                            'label' => 'Burung',
+                            'val' => $data->burung,
+                            'icon' => 'bird',
+                            'color' => 'white',
+                            'border' => 'border-[#A26769]' // rgba(162, 103, 105, 1)
+                        ]
                     ];
+
                     @endphp
                     @foreach($ternak as $t)
                     <div class="bg-gradient-to-br {{ $t['color'] }} rounded-2xl p-7 border-t-4 {{ $t['border'] }} shadow-xl flex flex-col items-center hover:-translate-y-1 transition">
@@ -338,18 +363,18 @@
                             {{ $data->tebu }}
                         ],
                         backgroundColor: [
-                            'rgba(34, 197, 94, 0.7)',
-                            'rgba(234, 179, 8, 0.7)',
-                            'rgba(249, 115, 22, 0.7)',
-                            'rgba(168, 85, 247, 0.7)',
-                            'rgba(59, 130, 246, 0.7)'
+                            'rgba(109, 151, 115, 0.7)',  // #6D9773
+                            'rgba(12, 59, 46, 0.7)',     // #0C3B2E
+                            'rgba(187, 138, 82, 0.7)',   // #BB8A52
+                            'rgba(162, 103, 105, 0.7)',  // #A26769
+                            'rgba(224, 192, 151, 0.7)',  // #E0C097
                         ],
                         borderColor: [
-                            'rgba(34, 197, 94, 1)',
-                            'rgba(234, 179, 8, 1)',
-                            'rgba(249, 115, 22, 1)',
-                            'rgba(168, 85, 247, 1)',
-                            'rgba(59, 130, 246, 1)'
+                            'rgba(109, 151, 115, 1)',    // #6D9773
+                            'rgba(12, 59, 46, 1)',       // #0C3B2E
+                            'rgba(187, 138, 82, 1)',     // #BB8A52
+                            'rgba(162, 103, 105, 1)',    // #A26769
+                            'rgba(224, 192, 151, 1)',    // #E0C097
                         ],
                         borderWidth: 1,
                         borderRadius: 5,
@@ -409,9 +434,20 @@
                             {{ $data->swasta }}
                         ],
                         backgroundColor: [
-                            '#22c55e', '#3b82f6', '#8b5cf6', '#f97316', '#ec4899', '#14b8a6',
-                            '#6366f1', '#64748b', '#0ea5e9', '#f59e0b', '#84cc16', '#d946ef'
+                            '#6D9773',
+                            '#BB8A52', 
+                            '#A26769', 
+                            '#E0C097', 
+                            '#4C4B16', 
+                            '#0C3B2E', 
+                            '#7C9D96', 
+                            '#BCA371', 
+                            '#A47148', 
+                            '#5A6650',
+                            '#AC8E7E', 
+                            '#8F7E4F'  
                         ],
+
                         hoverOffset: 10
                     }]
                 },

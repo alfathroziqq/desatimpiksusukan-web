@@ -193,23 +193,19 @@
 
                         <div class="w-full md:w-1/2 flex flex-col gap-3">
                             <h3 class="text-2xl font-bold mb-4 flex items-center gap-2">
-                                <span class="bg-blue-600 text-white rounded-full p-2"><i data-lucide="graduation-cap"
+                                <span class="bg-[#0C3B2E] text-white rounded-full p-2"><i data-lucide="graduation-cap"
                                         class="w-6 h-6"></i></span>
                                 Statistik Pendidikan Masyarakat
                             </h3>
                             @php
                                 $stats = [
-                                    ['label' => 'SD / MI', 'val' => $data->sd_mi, 'color' => 'bg-blue-400'],
-                                    ['label' => 'SLTP / MTs', 'val' => $data->sltp_mts, 'color' => 'bg-pink-400'],
-                                    ['label' => 'SLTA / MA', 'val' => $data->slta_ma, 'color' => 'bg-emerald-400'],
-                                    ['label' => 'S1 / Diploma', 'val' => $data->s1_diploma, 'color' => 'bg-purple-400'],
-                                    [
-                                        'label' => 'Putus Sekolah',
-                                        'val' => $data->putus_sekolah,
-                                        'color' => 'bg-orange-400',
-                                    ],
-                                    ['label' => 'Buta Huruf', 'val' => $data->buta_huruf, 'color' => 'bg-gray-400'],
-                                ];
+                                            ['label' => 'SD / MI',         'val' => $data->sd_mi,         'color' => 'bg-[#6D9773]'],
+                                            ['label' => 'SLTP / MTs',      'val' => $data->sltp_mts,      'color' => 'bg-[#0C3B2E]'],
+                                            ['label' => 'SLTA / MA',       'val' => $data->slta_ma,       'color' => 'bg-[#BB8A52]'],
+                                            ['label' => 'S1 / Diploma',    'val' => $data->s1_diploma,    'color' => 'bg-[#A26769]'],
+                                            ['label' => 'Putus Sekolah',   'val' => $data->putus_sekolah, 'color' => 'bg-[#E0C097]'],
+                                            ['label' => 'Buta Huruf',      'val' => $data->buta_huruf,    'color' => 'bg-[#4C4B16]'],
+                                        ];
                                 $total = array_sum(array_column($stats, 'val'));
                             @endphp
                             @foreach ($stats as $s)
@@ -236,10 +232,11 @@
 
             <!-- Gedung Pendidikan -->
             <section class="reveal-on-scroll">
-                <div class="text-center mb-6">
+                <div class="text-center mb-10">
                     <h2 class="text-3xl font-bold tracking-tight text-[#0C3B2E]">Lembaga Pendidikan Desa Timpik</h2>
                     <p class="mt-2 text-lg text-[#12715D]">Sarana pendidikan yang tersedia untuk masyarakat</p>
                 </div>
+
                 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
                     @php
                         $gedungList = [
@@ -253,11 +250,7 @@
                             [
                                 'label' => 'SD / MI',
                                 'jumlah' => $data->gedung_sd_mi ?? 0,
-                                'lokasi' => $data->lokasi_gedung_sd_mi ?? [
-                                    'Dukuh Hagskap',
-                                    'Dukuh Lahag',
-                                    'Dukuh Jakla',
-                                ],
+                                'lokasi' => $data->lokasi_gedung_sd_mi ?? ['Dukuh Hagskap', 'Dukuh Lahag', 'Dukuh Jakla'],
                                 'icon' => 'book-open',
                                 'color' => 'green',
                             ],
@@ -277,52 +270,36 @@
                             ],
                         ];
                     @endphp
-                    @foreach ($gedungList as $idx => $item)
-                        <div x-data="{ open: false }"
-                            class="relative bg-gradient-to-br from-white via-{{ $item['color'] }}-50 to-white p-0 rounded-2xl shadow-lg border hover:shadow-2xl transition-all duration-300">
 
-                            <div class="flex items-center justify-between p-7 rounded-2xl cursor-pointer group hover:shadow-xl hover:border-{{ $item['color'] }}-400"
-                                @click="open = !open">
-                                <div class="flex items-start space-x-4">
-                                    <div
-                                        class="bg-{{ $item['color'] }}-100 text-{{ $item['color'] }}-600 p-4 rounded-lg shadow group-hover:scale-110 transition">
-                                        <i data-lucide="{{ $item['icon'] }}" class="w-8 h-8"></i>
+                    @foreach ($gedungList as $item)
+                        <div class="relative bg-gradient-to-br from-white via-{{ $item['color'] }}-50 to-white rounded-2xl border border-gray-200 shadow-md hover:shadow-xl transition-all duration-300 group">
+                            <div class="p-6">
+                                <div class="flex items-center space-x-4 mb-4">
+                                    <div class="bg-{{ $item['color'] }}-100 text-{{ $item['color'] }}-600 p-3 rounded-xl shadow-sm group-hover:scale-110 transition-transform duration-200">
+                                        <i data-lucide="{{ $item['icon'] }}" class="w-6 h-6"></i>
                                     </div>
                                     <div>
-                                        <h3 class="font-bold text-lg mb-1 text-[#0C3B2E]">{{ $item['label'] }}</h3>
-                                        <div class="text-2xl font-extrabold leading-tight text-[#12715D]">
-                                            {{ $item['jumlah'] }}</div>
+                                        <h3 class="text-lg font-semibold text-[#0C3B2E]">{{ $item['label'] }}</h3>
+                                        <p class="text-2xl font-bold text-[#12715D]">{{ $item['jumlah'] }}</p>
                                     </div>
                                 </div>
-                                <div class="ml-3 flex items-center">
-                                    <template x-if="!open">
-                                        <i data-lucide="chevron-down" class="w-6 h-6 text-gray-500"></i>
-                                    </template>
-                                    <template x-if="open">
-                                        <i data-lucide="chevron-up" class="w-6 h-6 text-gray-500"></i>
-                                    </template>
-                                </div>
-                            </div>
-                            <!-- Accordion content -->
-                            <div x-show="open" x-transition:enter="transition-all ease-out duration-400"
-                                x-transition:enter-start="opacity-0 max-h-0"
-                                x-transition:enter-end="opacity-100 max-h-[200px]"
-                                x-transition:leave="transition-all ease-in duration-300"
-                                x-transition:leave-start="opacity-100 max-h-[200px]"
-                                x-transition:leave-end="opacity-0 max-h-0" class="px-7 pb-7 overflow-hidden"
-                                style="display: none;">
+
                                 <div class="mt-2">
-                                    <div class="font-semibold mb-1 text-[#0C3B2E]">Lokasi:</div>
-                                    <ol class="list-decimal pl-5 space-y-1 text-gray-800">
+                                    <p class="font-semibold text-[#0C3B2E] mb-1">Lokasi:</p>
+                                    <ul class="space-y-2 text-sm text-gray-700">
                                         @foreach ($item['lokasi'] as $lok)
-                                            <li>{{ $lok }}</li>
+                                            <li class="flex items-start space-x-2">
+                                                <i data-lucide="check-circle" class="w-4 h-4 text-{{ $item['color'] }}-500 mt-1"></i>
+                                                <span>{{ $lok }}</span>
+                                            </li>
                                         @endforeach
-                                    </ol>
+                                    </ul>
                                 </div>
                             </div>
                         </div>
                     @endforeach
                 </div>
+
                 <script>
                     document.addEventListener('alpine:init', () => {
                         lucide.createIcons();
@@ -332,6 +309,7 @@
                     });
                 </script>
             </section>
+
         </div>
 
     </main>
@@ -372,21 +350,22 @@
                         label: 'Jumlah Penduduk',
                         data: pendidikanData.values,
                         backgroundColor: [
-                            'rgba(59, 130, 246, 0.7)',
-                            'rgba(236, 72, 153, 0.7)',
-                            'rgba(16, 185, 129, 0.7)',
-                            'rgba(168, 85, 247, 0.7)',
-                            'rgba(249, 115, 22, 0.7)',
-                            'rgba(107, 114, 128, 0.7)'
+                            'rgba(109, 151, 115, 0.7)',  // #6D9773
+                            'rgba(12, 59, 46, 0.7)',     // #0C3B2E
+                            'rgba(187, 138, 82, 0.7)',   // #BB8A52
+                            'rgba(162, 103, 105, 0.7)',  // #A26769
+                            'rgba(224, 192, 151, 0.7)',  // #E0C097
+                            'rgba(76, 75, 22, 0.7)'      // #4C4B16
                         ],
                         borderColor: [
-                            'rgba(59, 130, 246, 1)',
-                            'rgba(236, 72, 153, 1)',
-                            'rgba(16, 185, 129, 1)',
-                            'rgba(168, 85, 247, 1)',
-                            'rgba(249, 115, 22, 1)',
-                            'rgba(107, 114, 128, 1)'
+                            'rgba(109, 151, 115, 1)',    // #6D9773
+                            'rgba(12, 59, 46, 1)',       // #0C3B2E
+                            'rgba(187, 138, 82, 1)',     // #BB8A52
+                            'rgba(162, 103, 105, 1)',    // #A26769
+                            'rgba(224, 192, 151, 1)',    // #E0C097
+                            'rgba(76, 75, 22, 1)'        // #4C4B16
                         ],
+
                         borderWidth: 1,
                         borderRadius: 5,
                     }]

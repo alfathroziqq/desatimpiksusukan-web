@@ -287,23 +287,23 @@
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
 
                         <!-- Imunisasi -->
-                        <div class="bg-white/90 rounded-2xl shadow-lg p-7 border border-green-100 hover:shadow-2xl transition">
-                            <div class="flex items-center gap-2 mb-5 text-green-800">
+                        <div class="bg-white/90 rounded-2xl shadow-lg p-7 border border-yellow-100 hover:shadow-2xl transition">
+                            <div class="flex items-center gap-2 mb-5 text-yellow-800">
                                 <i data-lucide="shield-check" class="w-7 h-7"></i>
                                 <h3 class="text-xl font-semibold">Cakupan Imunisasi</h3>
                             </div>
                             <div class="space-y-3 text-base mb-4">
-                                <div class="flex justify-between items-center bg-green-50 p-3 rounded shadow-sm font-semibold">
+                                <div class="flex justify-between items-center bg-yellow-50 p-3 rounded shadow-sm font-semibold">
                                     <span>Polio 3</span>
-                                    <span class="text-green-700">{{ number_format($data->imunisasi_polio) }} Anak</span>
+                                    <span class="text-yellow-700">{{ number_format($data->imunisasi_polio) }} Anak</span>
                                 </div>
-                                <div class="flex justify-between items-center bg-green-50 p-3 rounded shadow-sm font-semibold">
+                                <div class="flex justify-between items-center bg-yellow-50 p-3 rounded shadow-sm font-semibold">
                                     <span>DPT-1</span>
-                                    <span class="text-green-700">{{ number_format($data->imunisasi_dpt1) }} Anak</span>
+                                    <span class="text-yellow-700">{{ number_format($data->imunisasi_dpt1) }} Anak</span>
                                 </div>
-                                <div class="flex justify-between items-center bg-green-50 p-3 rounded shadow-sm font-semibold">
+                                <div class="flex justify-between items-center bg-yellow-50 p-3 rounded shadow-sm font-semibold">
                                     <span>Cacar</span>
-                                    <span class="text-green-700">{{ number_format($data->imunisasi_cacar) }} Anak</span>
+                                    <span class="text-yellow-700">{{ number_format($data->imunisasi_cacar) }} Anak</span>
                                 </div>
                             </div>
                             <div class="h-52">
@@ -312,31 +312,31 @@
                         </div>
 
                         <!-- Air Bersih -->
-                        <div class="bg-white/90 rounded-2xl shadow-lg p-7 border border-yellow-100 hover:shadow-2xl transition">
-                            <div class="flex items-center gap-2 mb-5 text-yellow-800">
+                        <div class="bg-white/90 rounded-2xl shadow-lg p-7 border border-green-100 hover:shadow-2xl transition">
+                            <div class="flex items-center gap-2 mb-5 text-green-800">
                                 <i data-lucide="droplets" class="w-7 h-7"></i>
                                 <h3 class="text-xl font-semibold">Akses Air Bersih</h3>
                             </div>
                             <div class="space-y-3 text-base mb-4">
-                                <div class="flex justify-between items-center bg-yellow-50 p-3 rounded shadow-sm font-semibold">
+                                <div class="flex justify-between items-center bg-green-50 p-3 rounded shadow-sm font-semibold">
                                     <span>Sumur Galian</span>
-                                    <span class="text-yellow-700">{{ number_format($data->sumur_galian) }} KK</span>
+                                    <span class="text-green-700">{{ number_format($data->sumur_galian) }} KK</span>
                                 </div>
-                                <div class="flex justify-between items-center bg-yellow-50 p-3 rounded shadow-sm font-semibold">
+                                <div class="flex justify-between items-center bg-green-50 p-3 rounded shadow-sm font-semibold">
                                     <span>Air PAH</span>
-                                    <span class="text-yellow-700">{{ number_format($data->air_pah) }} KK</span>
+                                    <span class="text-green-700">{{ number_format($data->air_pah) }} KK</span>
                                 </div>
-                                <div class="flex justify-between items-center bg-yellow-50 p-3 rounded shadow-sm font-semibold">
+                                <div class="flex justify-between items-center bg-green-50 p-3 rounded shadow-sm font-semibold">
                                     <span>Sumur Pompa</span>
-                                    <span class="text-yellow-700">{{ number_format($data->sumur_pompa) }} KK</span>
+                                    <span class="text-green-700">{{ number_format($data->sumur_pompa) }} KK</span>
                                 </div>
-                                <div class="flex justify-between items-center bg-yellow-50 p-3 rounded shadow-sm font-semibold">
+                                <div class="flex justify-between items-center bg-green-50 p-3 rounded shadow-sm font-semibold">
                                     <span>Hidran Umum</span>
-                                    <span class="text-yellow-700">{{ number_format($data->hidran_umum) }} KK</span>
+                                    <span class="text-green-700">{{ number_format($data->hidran_umum) }} KK</span>
                                 </div>
-                                <div class="flex justify-between items-center bg-yellow-50 p-3 rounded shadow-sm font-semibold">
+                                <div class="flex justify-between items-center bg-green-50 p-3 rounded shadow-sm font-semibold">
                                     <span>Air Sungai</span>
-                                    <span class="text-yellow-700">{{ number_format($data->air_sungai) }} KK</span>
+                                    <span class="text-green-700">{{ number_format($data->air_sungai) }} KK</span>
                                 </div>
                             </div>
                             <div class="h-52">
@@ -421,10 +421,37 @@
             const hidranUmum = @json($data->hidran_umum);
             const airSungai = @json($data->air_sungai);
 
-            createBarChart('bayiChart', ['Jumlah Bayi Lahir', 'Jumlah Bayi Meninggal'], [bayiLahir, bayiMeninggal], ['#3b82f6', '#ef4444'], 'Jumlah');
-            createBarChart('ibuChart', ['Jumlah Ibu Melahirkan', 'Jumlah Ibu Meninggal'], [ibuMelahirkan, ibuMeninggal], ['#ec4899', '#ef4444'], 'Jumlah');
-            createBarChart('imunisasiChart', ['Polio 3', 'DPT-1', 'Cacar'], [imunisasiPolio, imunisasiDpt1, imunisasiCacar], ['#8b5cf6', '#10b981', '#f97316'], 'Jumlah Anak');
-            createBarChart('airChart', ['Sumur Galian', 'Air PAH', 'Sumur Pompa', 'Hidran Umum', 'Air Sungai'], [sumurGalian, airPah, sumurPompa, hidranUmum, airSungai], ['#06b6d4', '#0891b2', '#6366f1', '#4f46e5', '#a855f7'], 'Jumlah KK');
+            createBarChart(
+                'bayiChart',
+                ['Jumlah Bayi Lahir', 'Jumlah Bayi Meninggal'],
+                [bayiLahir, bayiMeninggal],
+                ['#4C6B58', '#7C9B81'], 
+                'Jumlah'
+            );
+
+            createBarChart(
+                'ibuChart',
+                ['Jumlah Ibu Melahirkan', 'Jumlah Ibu Meninggal'],
+                [ibuMelahirkan, ibuMeninggal],
+                ['#A4753A', '#C89B65'], 
+                'Jumlah'
+            );
+
+            createBarChart(
+                'imunisasiChart',
+                ['Polio 3', 'DPT-1', 'Cacar'],
+                [imunisasiPolio, imunisasiDpt1, imunisasiCacar],
+                ['#BFA67A', '#D4BC9C', '#E0C097'], 
+                'Jumlah Anak'
+            );
+
+            createBarChart(
+                'airChart',
+                ['Sumur Galian', 'Air PAH', 'Sumur Pompa', 'Hidran Umum', 'Air Sungai'],
+                [sumurGalian, airPah, sumurPompa, hidranUmum, airSungai],
+                ['#0C3B2E', '#2E5246', '#4F6F5A', '#6D9773', '#A8BBA6'], 
+                'Jumlah KK'
+            );
 
             const observerOptions = { root: null, rootMargin: '0px', threshold: 0.1 };
             const observer = new IntersectionObserver((entries, observer) => {
