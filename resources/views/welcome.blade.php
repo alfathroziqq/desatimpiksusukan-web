@@ -77,10 +77,32 @@
         .reveal-on-scroll.animate-fade-in-up {
             animation: fadeInUp 0.8s ease-out forwards;
         }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        #scrollTopBtn {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.4s ease, transform 0.4s ease;
+        }
+
+        #scrollTopBtn.show {
+            opacity: 1;
+            transform: translateY(0);
+            pointer-events: auto;
+        }
+
+        #scrollTopBtn.hide {
+            opacity: 0;
+            transform: translateY(20px);
+            pointer-events: none;
+        }
     </style>
 </head>
 
-<body class="bg-white text-gray-800">
+<body>
 
     @include('layouts.partials.header')
 
@@ -109,7 +131,7 @@
         </section>
 
         <!-- Sejarah Section -->
-        <section class="py-16 md:py-20 relative overflow-x-clip">
+        <section class="py-16 md:py-14 relative overflow-x-clip">
             <div class="max-w-7xl mx-auto px-4 sm:px-10 lg:px-16">
                 <div class="text-center mb-12 reveal-on-scroll">
                     <h2 class="text-4xl sm:text-[48px] font-extrabold tracking-tight text-[#0C3B2E] inline-block"
@@ -124,7 +146,7 @@
 
                     <div class="relative w-full lg:w-1/3 flex-shrink-0">
                         <div
-                            class="lg:mt-0 bg-gradient-to-tr from-[#0C3B2E] via-[#15634e]/80 to-[#E8C187]/80 text-white p-8 pt-16 sm:pt-20 rounded-3xl shadow-2xl border border-[#E8C187]/30 relative z-0 hover:scale-105 transition-transform duration-300 group">
+                            class="bg-gradient-to-tr from-[#0C3B2E] via-[#15634e]/80 to-[#E8C187]/80 text-white p-8 pt-16 sm:pt-20 rounded-3xl shadow-2xl border border-[#E8C187]/30 relative z-0 hover:scale-105 transition-transform duration-300 group">
                             <h3 class="text-2xl sm:text-[34px] font-bold mb-3 border-b-2 border-[#C7F3E7]/50 pb-2"
                                 style="font-family: 'Poppins', sans-serif">
                                 Sejarah</h3>
@@ -345,7 +367,7 @@
                             <div class="flex-shrink-0 w-65 h-80 snap-start p-2"
                                 style="font-family: 'Poppins', sans-serif;">
                                 <div
-                                    class="bg-gray-50 rounded-lg shadow-md overflow-hidden h-full group transition-transform duration-300 ease-in-out hover:scale-105 hover:shadow-lg border border-gray-300">
+                                    class="bg-gradient-to-br from-[#f7fbe9] via-[#ebf6f2] to-[#f9f6f0] rounded-lg shadow-md overflow-hidden h-full group transition-transform duration-300 ease-in-out hover:scale-105 hover:shadow-lg border border-gray-300">
                                     <img src="{{ asset('storage/' . $aparatur->foto) }}" alt="{{ $aparatur->nama }}"
                                         class="mt-4 w-auto max-w-full max-h-55 mx-auto object-contain">
                                     <div class="px-3 text-center mt-3 mb-4">
@@ -455,6 +477,13 @@
         </section>
 
     </main>
+
+    <button id="scrollTopBtn"
+        class="fixed bottom-6 right-6 z-[100] bg-gray-300/60 hover:bg-gray-400/80 text-white rounded-xl p-2 shadow-md hide transition backdrop-blur-sm"
+        aria-label="Scroll to top">
+        <i data-lucide="arrow-up" class="w-6 h-6 text-gray-700"></i>
+    </button>
+
     @include('layouts.partials.footer')
 
     <script>
@@ -534,6 +563,22 @@
 
         document.querySelectorAll('.reveal-on-scroll').forEach(el => {
             observer.observe(el);
+        });
+
+        const scrollTopBtn = document.getElementById("scrollTopBtn");
+
+        window.addEventListener("scroll", () => {
+            if (window.scrollY > 200) {
+                scrollTopBtn.classList.remove("hide");
+                scrollTopBtn.classList.add("show");
+            } else {
+                scrollTopBtn.classList.remove("show");
+                scrollTopBtn.classList.add("hide");
+            }
+        });
+
+        scrollTopBtn.addEventListener("click", () => {
+            window.scrollTo({ top: 0, behavior: "smooth" });
         });
     </script>
 </body>

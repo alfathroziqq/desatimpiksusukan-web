@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Data Jenis Kelamin | Desa Timpik</title>
+    <title>Data Kesehatan | Desa Timpik</title>
 
     <link rel="icon" type="image/png" href="{{ asset('images/logo-timpik.png') }}">
 
@@ -49,10 +49,32 @@
         .reveal-on-scroll.animate-fade-in-up {
             animation: fadeInUp 0.8s ease-out forwards;
         }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        #scrollTopBtn {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.4s ease, transform 0.4s ease;
+        }
+
+        #scrollTopBtn.show {
+            opacity: 1;
+            transform: translateY(0);
+            pointer-events: auto;
+        }
+
+        #scrollTopBtn.hide {
+            opacity: 0;
+            transform: translateY(20px);
+            pointer-events: none;
+        }
     </style>
 </head>
 
-<body class="bg-gray-50">
+<body>
 
     @include('layouts.partials.header')
 
@@ -328,6 +350,12 @@
 
     </main>
 
+    <button id="scrollTopBtn"
+        class="fixed bottom-6 right-6 z-[100] bg-gray-300/60 hover:bg-gray-400/80 text-white rounded-xl p-2 shadow-md hide transition backdrop-blur-sm"
+        aria-label="Scroll to top">
+        <i data-lucide="arrow-up" class="w-6 h-6 text-gray-700"></i>
+    </button>
+
     @include('layouts.partials.footer')
 
     <script src="//unpkg.com/alpinejs" defer></script>
@@ -408,8 +436,21 @@
                 });
             }, observerOptions);
 
-            const targets = document.querySelectorAll('.reveal-on-scroll');
-            targets.forEach(target => observer.observe(target));
+            const scrollTopBtn = document.getElementById("scrollTopBtn");
+
+            window.addEventListener("scroll", () => {
+                if (window.scrollY > 200) {
+                    scrollTopBtn.classList.remove("hide");
+                    scrollTopBtn.classList.add("show");
+                } else {
+                    scrollTopBtn.classList.remove("show");
+                    scrollTopBtn.classList.add("hide");
+                }
+            });
+
+            scrollTopBtn.addEventListener("click", () => {
+                window.scrollTo({ top: 0, behavior: "smooth" });
+            });
         });
     </script>
 

@@ -95,7 +95,7 @@
 
         <hr class="border-t border-white/10 my-8">
 
-        <div class="flex flex-col sm:flex-row justify-between items-center text-center sm:text-left">
+        <div class="px-30 flex flex-col sm:flex-row justify-between items-center text-center sm:text-left">
             <p class="text-sm text-gray-400 mb-4 sm:mb-0" style="font-family: 'Poppins', sans-serif;">
                 &copy; {{ date('Y') }} Desa Timpik. All Rights Reserved.
             </p>

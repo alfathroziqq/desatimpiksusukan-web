@@ -17,6 +17,10 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Poppins:wght@400;600;700&display=swap"
         rel="stylesheet">
+
+    <!-- Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
     <!-- Alpine.js -->
     <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
 
@@ -44,6 +48,28 @@
 
         .reveal-on-scroll.animate-fade-in-up {
             animation: fadeInUp 0.8s ease-out forwards;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        #scrollTopBtn {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.4s ease, transform 0.4s ease;
+        }
+
+        #scrollTopBtn.show {
+            opacity: 1;
+            transform: translateY(0);
+            pointer-events: auto;
+        }
+
+        #scrollTopBtn.hide {
+            opacity: 0;
+            transform: translateY(20px);
+            pointer-events: none;
         }
     </style>
 </head>
@@ -167,9 +193,17 @@
         </div>
     </main>
 
+    <button id="scrollTopBtn"
+        class="fixed bottom-6 right-6 z-[100] bg-gray-300/60 hover:bg-gray-400/80 text-white rounded-xl p-2 shadow-md hide transition backdrop-blur-sm"
+        aria-label="Scroll to top">
+        <i data-lucide="arrow-up" class="w-6 h-6 text-gray-700"></i>
+    </button>
+
     @include('layouts.partials.footer')
 
     <script>
+        lucide.createIcons();
+        
         document.addEventListener('DOMContentLoaded', () => {
             if (window.lucide) lucide.createIcons();
 
@@ -190,6 +224,22 @@
             const targets = document.querySelectorAll('.reveal-on-scroll');
             targets.forEach(target => {
                 observer.observe(target);
+            });
+
+            const scrollTopBtn = document.getElementById("scrollTopBtn");
+
+            window.addEventListener("scroll", () => {
+                if (window.scrollY > 200) {
+                    scrollTopBtn.classList.remove("hide");
+                    scrollTopBtn.classList.add("show");
+                } else {
+                    scrollTopBtn.classList.remove("show");
+                    scrollTopBtn.classList.add("hide");
+                }
+            });
+
+            scrollTopBtn.addEventListener("click", () => {
+                window.scrollTo({ top: 0, behavior: "smooth" });
             });
         });
     </script>

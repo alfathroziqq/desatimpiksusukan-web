@@ -28,12 +28,16 @@
     <nav class="container mx-auto px-6 lg:px-16 py-3 flex justify-between items-center">
         <!-- Logo -->
         <a href="/" class="flex-shrink-0 flex items-center space-x-3">
-            <img src="{{ asset('images/logo-timpik.png') }}" alt="Logo Desa Timpik" class="h-10 w-auto">
-            <span class="hidden sm:inline text-lg font-semibold text-[#D5C578] tracking-wide">Desa Timpik</span>
+            <img src="{{ asset('images/logo-timpik.png') }}" alt="Logo Desa Timpik" class="h-15 w-auto">
+            <div class="flex flex-col leading-tight">
+                <span class="hidden sm:inline text-lg font-semibold text-[#D5C578] tracking-wide">Desa Timpik</span>
+                <span class="hidden sm:inline text-sm text-white">Kec. Susukan, Kab. Semarang</span>
+                <span class="hidden sm:inline text-sm text-white">Prov. Jawa Tengah</span>
+            </div>
         </a>
 
         <!-- Desktop Menu -->
-        <div class="hidden lg:flex items-center space-x-13 text-sm text-[13px] uppercase tracking-wider">
+        <div class="hidden lg:flex items-center space-x-13 text-sm text-[15px] uppercase tracking-wider">
             <!-- Home -->
             <a href="{{ route('welcome') }}"
                 class="nav-link {{ Route::is('welcome') ? 'text-[#D5C578] active' : 'text-gray-300' }} hover:text-white transition duration-300">
