@@ -436,6 +436,9 @@
                 });
             }, observerOptions);
 
+            const targets = document.querySelectorAll('.reveal-on-scroll');
+            targets.forEach(target => observer.observe(target))
+
             const scrollTopBtn = document.getElementById("scrollTopBtn");
 
             window.addEventListener("scroll", () => {

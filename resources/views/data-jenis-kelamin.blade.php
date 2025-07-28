@@ -210,6 +210,20 @@
 
                         <!-- Kartu Statistik Jenis Kelamin -->
                         <div class="flex flex-col gap-6 justify-center">
+
+                            <!-- Total Penduduk -->
+                            <div class="bg-slate-800 text-white p-6 rounded-3xl shadow-lg border-t-4 border-[#E8C187] hover:-translate-y-1 transition-transform duration-300 reveal-on-scroll">
+                                <div class="flex justify-between items-center">
+                                    <div>
+                                        <p class="text-base font-medium text-gray-300">Total Penduduk</p>
+                                        <h4 class="text-3xl font-bold mt-1">{{ number_format($data->laki_laki + $data->perempuan) }}</h4>
+                                    </div>
+                                    <div class="bg-white/20 backdrop-blur-md p-3 rounded-full shadow-inner">
+                                        <i data-lucide="users" class="w-6 h-6 text-white"></i>
+                                    </div>
+                                </div>
+                            </div>
+
                             <!-- Laki-laki -->
                             <div class="bg-gradient-to-tr from-[#0C3B2E] to-[#145A46] text-white p-6 rounded-3xl shadow-lg border-t-4 border-[#E8C187] hover:-translate-y-1 transition-transform duration-300 reveal-on-scroll">
                                 <div class="flex justify-between items-center">
@@ -236,12 +250,12 @@
                                 </div>
                             </div>
 
-                            <!-- Total Penduduk -->
+                            <!-- Keluarga -->
                             <div class="bg-slate-800 text-white p-6 rounded-3xl shadow-lg border-t-4 border-[#E8C187] hover:-translate-y-1 transition-transform duration-300 reveal-on-scroll">
                                 <div class="flex justify-between items-center">
                                     <div>
-                                        <p class="text-base font-medium text-gray-300">Total Penduduk</p>
-                                        <h4 class="text-3xl font-bold mt-1">{{ number_format($data->laki_laki + $data->perempuan) }}</h4>
+                                        <p class="text-base font-medium text-gray-300">Total Keluarga</p>
+                                        <h4 class="text-3xl font-bold mt-1">{{ number_format($data->kepala_keluarga) }}</h4>
                                     </div>
                                     <div class="bg-white/20 backdrop-blur-md p-3 rounded-full shadow-inner">
                                         <i data-lucide="users" class="w-6 h-6 text-white"></i>

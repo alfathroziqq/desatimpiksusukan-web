@@ -1,7 +1,7 @@
 <footer class="bg-[#1A3A31] text-white pt-16 pb-8">
     <div class="container mx-auto px-4 md:px-6">
 
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 lg:gap-12 mb-12">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 lg:gap-12">
 
             <div class="space-y-4">
                 <h3 class="text-2xl font-bold" style="font-family: 'Poppins', sans-serif;">Tentang Desa Timpik</h3>
@@ -76,7 +76,7 @@
                     </iframe>
                 </div>
 
-                <h3 class="text-xl font-bold mb-2">Akses Pengguna</h3>
+                <h3 class="text-xl font-bold mb-2" style="font-family: 'Poppins', sans-serif;">Akses Pengguna</h3>
                 <div class="flex items-center space-x-4 text-sm">
                     @auth
                         <a href="{{ url('/dashboard') }}"
@@ -100,7 +100,7 @@
                 &copy; {{ date('Y') }} Desa Timpik. All Rights Reserved.
             </p>
             <div class="flex space-x-4">
-                <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                <a href="https://web.facebook.com/groups/306956933596513" class="text-gray-400 hover:text-white transition-colors">
                     <i data-lucide="facebook" class="w-5 h-5"></i>
                 </a>
                 <a href="#" class="text-gray-400 hover:text-white transition-colors">
