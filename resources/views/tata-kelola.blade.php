@@ -211,7 +211,7 @@
                 </div>
 
                 <div
-                    class="max-w-5xl mx-auto p-4 sm:p-6 md:p-8 rounded-2xl shadow-lg border border-gray-200/80 reveal-on-scroll">
+                    class="max-w-4xl mx-auto p-4 rounded-2xl shadow-lg border border-gray-200/80 reveal-on-scroll">
                     <img src="{{ asset('images/struktur-org.png') }}"
                         onerror="this.onerror=null;this.src='https://placehold.co/1200x800/E0E0E0/BDBDBD?text=Bagan+Struktur+Organisasi';"
                         alt="Bagan Struktur Organisasi Desa Timpik" class="w-full h-auto">

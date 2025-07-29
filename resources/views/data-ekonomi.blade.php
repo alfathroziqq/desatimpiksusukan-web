@@ -214,7 +214,7 @@
                                     ['label' => 'Padi Ladang', 'value' => $data->padi_ladang, 'color' => 'bg-[#0C3B2E]'],
                                     ['label' => 'Jagung', 'value' => $data->jagung, 'color' => 'bg-[#BB8A52]'],
                                     ['label' => 'Palawija', 'value' => $data->palawija, 'color' => 'bg-[#A26769]'],
-                                    ['label' => 'Tebu', 'value' => $data->tebu, 'color' => 'bg-[#E0C097]'], 
+                                    ['label' => 'Tebu', 'value' => $data->tebu, 'color' => 'bg-[#E0C097]'],
                                 ];
                                 @endphp
                                 @foreach($tanaman as $t)
@@ -290,14 +290,14 @@
 
             <!-- STRUKTUR MATA PENCAHARIAN -->
             <section class="reveal-on-scroll">
-                <div class="bg-gradient-to-br from-[#e0f9ee]/80 via-[#fff7e5]/90 to-[#fff] rounded-3xl shadow-2xl p-10">
-                    <div class="text-center mb-10">
-                        <h2 class="text-3xl md:text-4xl font-bold tracking-tight text-[#12715D]">Struktur Mata Pencaharian</h2>
-                        <p class="mt-2 text-lg text-gray-600">Distribusi jenis pekerjaan utama masyarakat Desa Timpik.</p>
+                <div class="bg-gradient-to-br from-[#e0f9ee]/80 via-[#fff7e5]/90 to-[#fff] rounded-3xl shadow-2xl p-6">
+                    <div class="text-center mb-6">
+                        <h2 class="text-2xl md:text-3xl font-bold tracking-tight text-[#12715D]">Struktur Mata Pencaharian</h2>
+                        <p class="mt-2 text-base md:text-lg text-gray-600">Distribusi jenis pekerjaan utama masyarakat Desa Timpik.</p>
                     </div>
-                    <div class="flex flex-col md:flex-row gap-12 items-center">
+                    <div class="flex flex-col md:flex-row gap-6 items-center">
                         <!-- Chart -->
-                        <div class="w-full md:w-1/2 h-80 md:h-96">
+                        <div class="w-full md:w-1/2 h-72 md:h-80">
                             <canvas id="pekerjaanChart"></canvas>
                         </div>
                         <!-- List pekerjaan -->
@@ -319,10 +319,10 @@
                             ];
                             @endphp
                             @foreach($pekerjaan as $p)
-                            <div class="flex items-center gap-3 bg-white/90 p-3 rounded-xl shadow-sm hover:shadow-lg transition border border-[#E8C187]/20">
-                                <i data-lucide="{{ $p['icon'] }}" class="w-6 h-6 text-[#12715D]"></i>
-                                <span class="flex-1 font-semibold">{{ $p['label'] }}</span>
-                                <span class="font-bold text-[#12715D]">{{ number_format($p['val']) }}</span>
+                            <div class="flex items-center gap-3 bg-white/90 p-2 rounded-xl shadow-sm hover:shadow-lg transition border border-[#E8C187]/20">
+                                <i data-lucide="{{ $p['icon'] }}" class="w-5 h-5 text-[#12715D]"></i>
+                                <span class="flex-1 font-semibold text-sm">{{ $p['label'] }}</span>
+                                <span class="font-bold text-[#12715D] text-sm">{{ number_format($p['val']) }}</span>
                             </div>
                             @endforeach
                         </div>
@@ -435,17 +435,17 @@
                         ],
                         backgroundColor: [
                             '#6D9773',
-                            '#BB8A52', 
-                            '#A26769', 
-                            '#E0C097', 
-                            '#4C4B16', 
-                            '#0C3B2E', 
-                            '#7C9D96', 
-                            '#BCA371', 
-                            '#A47148', 
+                            '#BB8A52',
+                            '#A26769',
+                            '#E0C097',
+                            '#4C4B16',
+                            '#0C3B2E',
+                            '#7C9D96',
+                            '#BCA371',
+                            '#A47148',
                             '#5A6650',
-                            '#AC8E7E', 
-                            '#8F7E4F'  
+                            '#AC8E7E',
+                            '#8F7E4F'
                         ],
 
                         hoverOffset: 10
