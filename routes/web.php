@@ -12,6 +12,7 @@ use App\Http\Controllers\AparaturController;
 use App\Http\Controllers\ProdukUmkmController;
 use App\Http\Controllers\DokumenController;
 use App\Http\Controllers\PermohonanController;
+use App\Http\Controllers\APBDesaController;
 
 /*
 |--------------------------------------------------------------------------
@@ -129,4 +130,9 @@ Route::middleware([
     // Permohonan Informasi
     Route::get('/admin/permohonan', [PermohonanController::class, 'index'])->name('admin.permohonan.index');
     Route::patch('/admin/permohonan/{id}/toggle', [PermohonanController::class, 'toggleStatus'])->name('admin.permohonan.toggle');
+
+    // APB Desa (SPB)
+    Route::get('/admin/apb-desa', [APBDesaController::class, 'index'])->name('admin.apb.index');
+    Route::post('/admin/apb-desa', [APBDesaController::class, 'store'])->name('admin.apb.store');
+
 });
