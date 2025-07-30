@@ -176,14 +176,14 @@
 
             <!-- Pemeluk Agama Card View -->
             <section>
-                <div class="bg-gradient-to-br from-[#e0f9ee]/80 via-[#fff7e5]/90 to-[#fff] p-6 sm:p-8 rounded-3xl shadow-xl border border-[#E8C187]/30">
-                    <div class="mb-8 text-center reveal-on-scroll">
-                        <h3 class="text-2xl font-bold text-[#0C3B2E] mb-2 flex items-center justify-center gap-2">
+                <div class="bg-gradient-to-br from-[#e0f9ee]/80 via-[#fff7e5]/90 to-[#fff] p-4 sm:p-6 rounded-3xl shadow-xl border border-[#E8C187]/30 reveal-on-scroll">
+                    <div class="mb-6 text-center">
+                        <h3 class="text-xl font-bold text-[#0C3B2E] mb-2 flex items-center justify-center gap-2">
                             <i data-lucide="users" class="w-6 h-6 text-[#E8C187]"></i>
                             Jumlah Pemeluk Agama
                         </h3>
                     </div>
-                    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
                         @php
                             $agamaList = [
                                 ['label' => 'Islam', 'jumlah' => $data->islam, 'icon' => 'moon', 'color' => 'green'],
@@ -196,23 +196,24 @@
                         @endphp
 
                         @foreach ($agamaList as $agama)
-                            <div class="bg-gradient-to-tr from-{{ $agama['color'] }}-100 to-white border-t-4 border-{{ $agama['color'] }}-500 rounded-2xl shadow-md p-5 flex items-center justify-between hover:-translate-y-1 transition duration-300 reveal-on-scroll">
+                            <div class="bg-gradient-to-tr from-{{ $agama['color'] }}-100 to-white border-t-4 border-{{ $agama['color'] }}-500 rounded-2xl shadow-md p-4 flex items-center justify-between hover:-translate-y-1 transition duration-300 reveal-on-scroll">
                                 <div>
-                                    <p class="text-sm text-gray-600">{{ $agama['label'] }}</p>
-                                    <h4 class="text-2xl font-bold text-[#0C3B2E] mt-1">{{ number_format($agama['jumlah']) }} Orang</h4>
+                                    <p class="text-xs text-gray-600">{{ $agama['label'] }}</p>
+                                    <h4 class="text-xl font-bold text-[#0C3B2E] mt-1">{{ number_format($agama['jumlah']) }} Orang</h4>
                                 </div>
-                                <div class="p-3 bg-{{ $agama['color'] }}-100 rounded-full shadow">
-                                    <i data-lucide="{{ $agama['icon'] ?? 'help-circle' }}" class="w-6 h-6 text-{{ $agama['color'] }}-600"></i>
+                                <div class="p-2 bg-{{ $agama['color'] }}-100 rounded-full shadow">
+                                    <i data-lucide="{{ $agama['icon'] ?? 'help-circle' }}" class="w-5 h-5 text-{{ $agama['color'] }}-600"></i>
                                 </div>
                             </div>
                         @endforeach
                     </div>
 
                     <!-- Chart -->
-                    <div class="mt-10 w-full h-96 reveal-on-scroll">
+                    <div class="mt-6 w-full h-60 reveal-on-scroll">
                         <canvas id="agamaChart"></canvas>
                     </div>
                 </div>
+
             </section>
 
             <!-- Sarana Peribadatan -->

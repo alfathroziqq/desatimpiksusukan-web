@@ -65,6 +65,10 @@
                         class="block px-4 py-2 text-sm {{ Route::is('tata-kelola') ? 'bg-[#D5C578]/30 text-[#D5C578]' : 'text-gray-200' }} hover:bg-white/10">
                         Tata Kelola Desa
                     </a>
+                    <a href="{{ route('peta-potensi-desa') }}"
+                        class="block px-4 py-2 text-sm {{ Route::is('tata-kelola') ? 'bg-[#D5C578]/30 text-[#D5C578]' : 'text-gray-200' }} hover:bg-white/10">
+                        Peta Potensi Desa
+                    </a>
                 </div>
             </div>
             <!-- Data Desa Dropdown -->
@@ -174,6 +178,10 @@
                     <a href="{{ route('tata-kelola') }}"
                         class="block py-2 px-3 text-sm {{ Route::is('tata-kelola') ? 'bg-[#D5C578]/10 text-[#D5C578] font-bold' : 'text-gray-300' }} hover:text-white hover:bg-white/5 rounded-md">
                         Tata Kelola Desa
+                    </a>
+                    <a href="{{ route('peta-potensi-desa') }}"
+                        class="block py-2 px-3 text-sm {{ Route::is('tata-kelola') ? 'bg-[#D5C578]/10 text-[#D5C578] font-bold' : 'text-gray-300' }} hover:text-white hover:bg-white/5 rounded-md">
+                        Peta Potensi Desa
                     </a>
                 </div>
             </div>
