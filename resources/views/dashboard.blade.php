@@ -73,7 +73,6 @@
                                 <h4 class="ml-4 text-lg font-semibold text-gray-800 dark:text-gray-200">Data Ekonomi</h4>
                             </div>
                         </a>
-
                     </div>
                 </div>
             </div>
