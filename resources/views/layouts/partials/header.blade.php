@@ -28,11 +28,11 @@
     <nav class="container mx-auto px-6 lg:px-16 py-3 flex justify-between items-center">
         <!-- Logo -->
         <a href="/" class="flex-shrink-0 flex items-center space-x-3">
-            <img src="{{ asset('images/logo-timpik.png') }}" alt="Logo Desa Timpik" class="h-15 w-auto">
+            <img src="{{ asset('images/logo-timpik.png') }}" alt="Logo Desa Timpik" class="h-14 w-auto">
             <div class="flex flex-col leading-tight">
                 <span class="hidden sm:inline text-lg font-semibold text-[#D5C578] tracking-wide">Desa Timpik</span>
-                <span class="hidden sm:inline text-sm text-white">Kec. Susukan, Kab. Semarang</span>
-                <span class="hidden sm:inline text-sm text-white">Prov. Jawa Tengah</span>
+                <span class="hidden sm:inline text-xs text-white">Kec. Susukan, Kab. Semarang</span>
+                <span class="hidden sm:inline text-xs text-white">Prov. Jawa Tengah</span>
             </div>
         </a>
 
@@ -46,9 +46,9 @@
             <!-- Profil Desa Dropdown -->
             <div class="relative" x-data="{ open: false }" @mouseenter="open = true" @mouseleave="open = false">
                 <button type="button"
-                    class="flex items-center {{ Route::is('sejarah-desa') || Route::is('tata-kelola') ? 'text-[#D5C578]' : 'text-gray-300' }} hover:text-[#D5C578] transition duration-300 uppercase">
+                    class="flex items-center {{ Route::is('sejarah-desa') || Route::is('tata-kelola') || Route::is('peta-potensi-desa') ? 'text-[#D5C578]' : 'text-gray-300' }} hover:text-[#D5C578] transition duration-300 uppercase">
                     <span
-                        class="nav-link {{ Route::is('sejarah-desa') || Route::is('tata-kelola') ? 'active' : '' }}">
+                        class="nav-link {{ Route::is('sejarah-desa') || Route::is('tata-kelola') || Route::is('peta-potensi-desa') ? 'active' : '' }}">
                         Profil Desa
                     </span>
                     <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 ml-1 transition-transform"
@@ -66,7 +66,7 @@
                         Tata Kelola Desa
                     </a>
                     <a href="{{ route('peta-potensi-desa') }}"
-                        class="block px-4 py-2 text-sm {{ Route::is('tata-kelola') ? 'bg-[#D5C578]/30 text-[#D5C578]' : 'text-gray-200' }} hover:bg-white/10">
+                        class="block px-4 py-2 text-sm {{ Route::is('peta-potensi-desa') ? 'bg-[#D5C578]/30 text-[#D5C578]' : 'text-gray-200' }} hover:bg-white/10">
                         Peta Potensi Desa
                     </a>
                 </div>
@@ -161,7 +161,7 @@
             <div>
                 <button @click="activeAccordion = (activeAccordion === 'profil' ? '' : 'profil')"
                     class="w-full flex justify-between items-center py-2 px-3 text-base
-                    {{ Route::is('sejarah-desa') || Route::is('tata-kelola') ? 'text-[#D5C578] font-bold' : 'text-gray-200' }}
+                    {{ Route::is('sejarah-desa') || Route::is('tata-kelola') || Route::is('peta-potensi-desa') ? 'text-[#D5C578] font-bold' : 'text-gray-200' }}
                     hover:text-white hover:bg-white/5 rounded-md">
                     <span>Profil Desa</span>
                     <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 transition-transform"
@@ -180,7 +180,7 @@
                         Tata Kelola Desa
                     </a>
                     <a href="{{ route('peta-potensi-desa') }}"
-                        class="block py-2 px-3 text-sm {{ Route::is('tata-kelola') ? 'bg-[#D5C578]/10 text-[#D5C578] font-bold' : 'text-gray-300' }} hover:text-white hover:bg-white/5 rounded-md">
+                        class="block py-2 px-3 text-sm {{ Route::is('peta-potensi-desa') ? 'bg-[#D5C578]/10 text-[#D5C578] font-bold' : 'text-gray-300' }} hover:text-white hover:bg-white/5 rounded-md">
                         Peta Potensi Desa
                     </a>
                 </div>

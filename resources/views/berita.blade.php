@@ -129,7 +129,7 @@
         </section>
 
         <!-- Berita Desa Section -->
-        <section class="py-12 bg-gradient-to-tr from-[#f7efe5] via-white to-[#e0f7f3] font-['Poppins',sans-serif]">
+        <section class="py-12 font-['Poppins',sans-serif]">
             <div class="container mx-auto px-8 sm:px-12 lg:px-40">
 
                 <!-- Section Title -->

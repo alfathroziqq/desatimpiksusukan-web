@@ -156,7 +156,7 @@
         <!-- Visi dan Misi -->
         <section class="py-12 md:py-10 bg-white">
             <div class="container mx-auto px-8 sm:px-12 lg:px-45">
-                <div class="mb-12 text-center">
+                <div class="mb-12 text-center reveal-on-scroll">
                     <h2 class="text-4xl md:text-5xl font-extrabold bg-gradient-to-r from-[#0C3B2E] via-[#12715D] to-[#E8C187] bg-clip-text text-transparent inline-block mb-2"
                         style="font-family: 'Poppins', sans-serif;">Visi & Misi</h2>
                     <div class="w-24 h-1 mx-auto bg-gradient-to-r from-[#12715D] to-[#E8C187] rounded-full mb-2"></div>
@@ -202,7 +202,7 @@
         <!-- Struktur Organisasi -->
         <section class="py-12 md:py-10 bg-gray-50" style="font-family: 'Poppins', sans-serif;">
             <div class="container mx-auto px-8 sm:px-12 lg:px-45">
-                <div class="mb-10 text-center">
+                <div class="mb-10 text-center reveal-on-scroll">
                     <h2 class="text-4xl md:text-5xl font-extrabold bg-gradient-to-r from-[#0C3B2E] via-[#12715D] to-[#E8C187] bg-clip-text text-transparent inline-block mb-2"
                         style="font-family: 'Poppins', sans-serif; line-height: 1.15; padding-bottom: 2px;">
                         Struktur <span class="whitespace-nowrap">Organisasi</span>
@@ -227,7 +227,7 @@
 
         <section id="aparatur" class="py-12 md:py-10 bg-white" x-data="slider()">
             <div class="container mx-auto px-8 sm:px-12 lg:px-45">
-                <div class="mb-12 text-center">
+                <div class="mb-12 text-center reveal-on-scroll">
                     <h2 class="text-4xl md:text-5xl font-extrabold bg-gradient-to-r from-[#0C3B2E] via-[#12715D] to-[#E8C187] bg-clip-text text-transparent inline-block mb-2"
                         style="font-family: 'Poppins', sans-serif;">Aparatur Desa</h2>
                     <div class="w-24 h-1 mx-auto bg-gradient-to-r from-[#12715D] to-[#E8C187] rounded-full mb-2"></div>
