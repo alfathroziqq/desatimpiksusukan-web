@@ -522,272 +522,301 @@
         </section>
 
         <!-- APB Desa Timpik Section -->
+        @php
+            use App\Models\APBDesa;
+
+            $tahunList = APBDesa::select('tahun')->distinct()->orderBy('tahun', 'desc')->pluck('tahun');
+            $tahunDipilih = $tahunList->first();
+            $data = APBDesa::where('tahun', $tahunDipilih)->first();
+
+            // Inisialisasi nilai
+            $totalPendapatan = $totalPendapatanRealisasi = $totalBelanja = $totalBelanjaRealisasi = $surplus = 0;
+            $persenPendapatan = $persenBelanja = 0;
+            $pendapatanList = $belanjaList = [];
+
+            if ($data) {
+                $padAnggaran = $data->pendapatan_asli_desa_anggaran;
+                $padRealisasi = $data->pendapatan_asli_desa_realisasi;
+                $transferAnggaran = $data->pendapatan_transfer_anggaran;
+                $transferRealisasi = $data->pendapatan_transfer_realisasi;
+                $lainAnggaran = $data->pendapatan_lain_anggaran;
+                $lainRealisasi = $data->pendapatan_lain_realisasi;
+
+                $totalPendapatan = $padAnggaran + $transferAnggaran + $lainAnggaran;
+                $totalPendapatanRealisasi = $padRealisasi + $transferRealisasi + $lainRealisasi;
+
+                $belanjaFields = [
+                    [
+                        'label' => 'Penyelenggaraan Pemerintah Desa',
+                        'a' => $data->belanja_penyelenggaraan_anggaran,
+                        'r' => $data->belanja_penyelenggaraan_realisasi,
+                    ],
+                    [
+                        'label' => 'Pelaksanaan Pembangunan Desa',
+                        'a' => $data->belanja_pembangunan_anggaran,
+                        'r' => $data->belanja_pembangunan_realisasi,
+                    ],
+                    [
+                        'label' => 'Pembinaan Kemasyarakatan Desa',
+                        'a' => $data->belanja_kemasyarakatan_anggaran,
+                        'r' => $data->belanja_kemasyarakatan_realisasi,
+                    ],
+                    [
+                        'label' => 'Pemberdayaan Masyarakat Desa',
+                        'a' => $data->belanja_pemberdayaan_anggaran,
+                        'r' => $data->belanja_pemberdayaan_realisasi,
+                    ],
+                    [
+                        'label' => 'Penanggulangan Bencana & Mendesak Desa',
+                        'a' => $data->belanja_bencana_anggaran,
+                        'r' => $data->belanja_bencana_realisasi,
+                    ],
+                ];
+
+                $totalBelanja = collect($belanjaFields)->sum('a');
+                $totalBelanjaRealisasi = collect($belanjaFields)->sum('r');
+
+                $surplus = $totalPendapatanRealisasi - $totalBelanjaRealisasi;
+                $persenPendapatan =
+                    $totalPendapatan > 0 ? round(($totalPendapatanRealisasi / $totalPendapatan) * 100, 2) : 0;
+                $persenBelanja = $totalBelanja > 0 ? round(($totalBelanjaRealisasi / $totalBelanja) * 100, 2) : 0;
+
+                $pendapatanList = [
+                    ['label' => 'Pendapatan Asli Desa', 'a' => $padAnggaran, 'r' => $padRealisasi],
+                    ['label' => 'Pendapatan Transfer', 'a' => $transferAnggaran, 'r' => $transferRealisasi],
+                    ['label' => 'Pendapatan Lain Lain', 'a' => $lainAnggaran, 'r' => $lainRealisasi],
+                ];
+
+                $belanjaList = $belanjaFields;
+            }
+        @endphp
+
         <section class="mb-16">
             <div class="max-w-7xl mx-auto px-4 sm:px-10 lg:px-16" style="font-family: 'Poppins', sans-serif;">
-                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                @if ($data)
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                        <div class="text-center lg:text-left reveal-on-scroll">
+                            <h2 class="text-2xl md:text-4xl font-bold text-[#0C3B2E]">APB Desa Timpik Tahun <span
+                                    class="apbdesa-tahun">{{ $tahunDipilih }}</span></h2>
+                            <p class="text-base md:text-lg text-gray-600 mt-2">Desa Timpik, Kecamatan Susukan,
+                                Kabupaten
+                                Semarang</p>
+                        </div>
+                        <div class="w-full">
+                            <div class="flex justify-end mt-4 reveal-on-scroll">
+                                <select id="tahunDropdown"
+                                    class="w-full sm:w-[100px] px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-green-500">
+                                    @foreach ($tahunList as $tahun)
+                                        <option value="{{ $tahun }}"
+                                            {{ $tahun == $tahunDipilih ? 'selected' : '' }}>
+                                            {{ $tahun }}</option>
+                                    @endforeach
+                                </select>
+                            </div>
 
-                    <div class="text-center lg:text-left reveal-on-scroll">
-                        <h2 class="text-2xl md:text-4xl font-bold text-[#0C3B2E]">APB Desa Timpik Tahun 2024</h2>
-                        <p class="text-base md:text-lg text-gray-600 mt-2">
-                            Desa Timpik, Kecamatan Susukan, Kabupaten Semarang, Provinsi Jawa Tengah
-                        </p>
+                            <div
+                                class="bg-white p-5 rounded-lg border border-gray-200 shadow-sm mt-2 reveal-on-scroll">
+                                <div class="grid grid-cols-2 gap-6">
+                                    <div>
+                                        <h3 class="font-semibold text-gray-700">Pendapatan</h3>
+                                        <p class="text-2xl text-green-600 font-bold mt-1" id="pendapatanRealisasi">
+                                            Rp{{ number_format($totalPendapatanRealisasi, 2, ',', '.') }}</p>
+                                    </div>
+                                    <div>
+                                        <h3 class="font-semibold text-gray-700">Belanja</h3>
+                                        <p class="text-2xl text-red-500 font-bold mt-1" id="belanjaRealisasi">
+                                            Rp{{ number_format($totalBelanjaRealisasi, 2, ',', '.') }}</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div
+                                class="mt-2 bg-white p-4 rounded-lg border border-gray-200 shadow-sm flex justify-between items-center reveal-on-scroll">
+                                <h3 class="text-lg font-semibold text-gray-700">Surplus/Defisit</h3>
+                                <p class="text-lg text-gray-800 font-bold" id="surplus">
+                                    Rp{{ number_format($surplus, 2, ',', '.') }}</p>
+                            </div>
+                        </div>
                     </div>
 
-                    <div class="w-full">
-                        <div class="flex justify-end mb-4 reveal-on-scroll">
-                            <select
-                                class="w-full sm:w-[100px] px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-green-500">
-                                <option>2024</option>
-                                <option>2023</option>
-                                <option>2022</option>
-                            </select>
-                        </div>
-
-                        <div class="bg-white p-5 rounded-lg border border-gray-200 shadow-sm reveal-on-scroll">
-                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                                <!-- Pendapatan -->
-                                <div>
-                                    <div class="flex items-center space-x-2 text-gray-700">
-                                        <!-- Up Arrow Icon -->
-                                        <svg class="w-5 h-5 text-green-500" fill="none" stroke="currentColor"
-                                            viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                                d="M5 15l7-7 7 7"></path>
-                                        </svg>
-                                        <h3 class="font-semibold">Pendapatan</h3>
-                                    </div>
-                                    <p class="text-2xl text-green-600 font-bold mt-1">Rp4.802.205.800,00</p>
-                                </div>
-                                <!-- Belanja -->
-                                <div>
-                                    <div class="flex items-center space-x-2 text-gray-700">
-                                        <!-- Down Arrow Icon -->
-                                        <svg class="w-5 h-5 text-red-500" fill="none" stroke="currentColor"
-                                            viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                                d="M19 9l-7 7-7-7"></path>
-                                        </svg>
-                                        <h3 class="font-semibold">Belanja</h3>
-                                    </div>
-                                    <p class="text-2xl text-red-500 font-bold mt-1">Rp4.888.222.678,75</p>
-                                </div>
+                    <div class="mt-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 reveal-on-scroll">
+                        <!-- Pelaksanaan Breakdown -->
+                        <div class="bg-white rounded-xl shadow-lg">
+                            <div class="p-4 bg-[#0C3B2E] text-white text-center rounded-t-xl">
+                                <h3 class="text-xl font-bold">Pelaksanaan</h3>
                             </div>
-                        </div>
-
-                        <div class="mt-4 bg-white p-5 rounded-lg border border-gray-200 shadow-sm reveal-on-scroll">
-                            <!-- Pembiayaan Section -->
-                            <div>
-                                <h4 class="text-gray-500 font-semibold mb-4">Pembiayaan</h4>
-                                <div class="border-t border-gray-200 grid grid-cols-1 sm:grid-cols-2 gap-6">
-                                    <!-- Penerimaan -->
-                                    <div>
-                                        <div class="mt-2 flex items-center space-x-2 text-gray-700">
-                                            <svg class="w-5 h-5 text-green-500" fill="none" stroke="currentColor"
-                                                viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                                    d="M5 15l7-7 7 7"></path>
-                                            </svg>
-                                            <h3 class="font-semibold">Penerimaan</h3>
-                                        </div>
-                                        <p class="text-xl text-green-600 font-bold mt-1">Rp86.016.878,75</p>
-                                    </div>
-                                    <!-- Pengeluaran -->
-                                    <div>
-                                        <div class="flex items-center space-x-2 text-gray-700">
-                                            <svg class="w-2 h-2 text-gray-500 fill-current" viewBox="0 0 8 8">
-                                                <circle cx="4" cy="4" r="4" />
-                                            </svg>
-                                            <h3 class="font-semibold">Pengeluaran</h3>
-                                        </div>
-                                        <p class="text-xl text-gray-800 font-bold mt-1">Rp0,00</p>
-                                    </div>
+                            <div class="m-4">
+                                <div class="flex justify-center text-xs font-bold text-gray-600 mb-2">
+                                    <p>Anggaran | Realisasi</p>
                                 </div>
-                            </div>
-                        </div>
-
-                        <!-- Surplus/Defisit Card -->
-                        <div
-                            class="bg-white mt-4 p-4 rounded-lg border border-gray-200 shadow-sm flex justify-between items-center reveal-on-scroll">
-                            <h3 class="text-lg font-semibold text-gray-700">Surplus/Defisit</h3>
-                            <p class="text-lg text-gray-800 font-bold">Rp0,00</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="mt-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 reveal-on-scroll">
-                    <!-- Card: Pelaksanaan -->
-                    <div class="bg-white rounded-xl shadow-lg overflow-hidden">
-                        <div class="p-4 bg-[#0C3B2E] text-white text-center">
-                            <h3 class="text-xl font-bold">Pelaksanaan</h3>
-                        </div>
-                        <div class="p-5 space-y-5">
-                            <div class="flex justify-between text-sm font-semibold text-gray-500">
-                                <span>Anggaran</span>
-                                <span>Realisasi</span>
-                            </div>
-
-                            <div class="space-y-2">
                                 <p class="font-semibold text-gray-800 text-sm">Pendapatan</p>
-                                <div class="flex justify-between text-xs font-medium text-gray-600">
-                                    <span>9.225.227.762,00</span>
-                                    <span>9.213.219.247,17</span>
+                                <div class="flex justify-between text-xs text-gray-600 mb-1">
+                                    <span
+                                        id="totalPendapatanAnggaran">Rp{{ number_format($totalPendapatan, 2, ',', '.') }}</span>
+                                    <span
+                                        id="totalPendapatanRealisasi">Rp{{ number_format($totalPendapatanRealisasi, 2, ',', '.') }}</span>
                                 </div>
                                 <div class="w-full bg-gray-200 rounded-full h-4 relative">
-                                    <div class="bg-green-700 h-4 rounded-full" style="width: 99.87%"></div>
-                                    <span
-                                        class="absolute inset-0 flex items-center justify-center text-white text-xs font-bold">99.87%</span>
+                                    <div class="bg-green-700 h-4 rounded-full" id="progressPendapatan"
+                                        style="width: {{ $persenPendapatan }}%"></div>
+                                    <span id="persenPendapatan"
+                                        class="absolute inset-0 flex items-center justify-center text-white text-xs font-bold">{{ $persenPendapatan }}%</span>
+                                </div>
+
+                                <!-- Belanja -->
+                                <p class="font-semibold text-gray-800 text-sm mt-4">Belanja</p>
+                                <div class="flex justify-between text-xs text-gray-600 mb-1">
+                                    <span id="totalBelanjaAnggaran">
+                                        Rp{{ number_format($totalBelanja, 2, ',', '.') }}
+                                    </span>
+                                    <span id="totalBelanjaRealisasi">
+                                        Rp{{ number_format($totalBelanjaRealisasi, 2, ',', '.') }}
+                                    </span>
+                                </div>
+                                <div class="w-full bg-gray-200 rounded-full h-4 relative">
+                                    <div class="bg-green-700 h-4 rounded-full" id="progressBelanja"
+                                        style="width: {{ $persenBelanja }}%">
+                                    </div>
+                                    <span id="persenBelanja"
+                                        class="absolute inset-0 flex items-center justify-center text-white text-xs font-bold">
+                                        {{ $persenBelanja }}%
+                                    </span>
                                 </div>
                             </div>
+                        </div>
 
-                            <div class="space-y-2">
-                                <p class="font-semibold text-gray-800 text-sm">Belanja</p>
-                                <div class="flex justify-between text-xs font-medium text-gray-600">
-                                    <span>9.982.721.401,03</span>
-                                    <span>8.697.373.498,64</span>
+                        <!-- Pendapatan Breakdown -->
+                        <div class="bg-white rounded-xl shadow-lg">
+                            <div class="p-4 bg-[#0C3B2E] text-white text-center rounded-t-xl">
+                                <h3 class="text-xl font-bold">Pendapatan</h3>
+                            </div>
+                            <div class="m-4">
+                                <div class="flex justify-center text-xs font-bold text-gray-600 mb-2">
+                                    <p>Anggaran | Realisasi</p>
                                 </div>
-                                <div class="w-full bg-gray-200 rounded-full h-4 relative">
-                                    <div class="bg-green-700 h-4 rounded-full" style="width: 87.12%"></div>
-                                    <span
-                                        class="absolute inset-0 flex items-center justify-center text-white text-xs font-bold">87.12%</span>
+                                @foreach ($pendapatanList as $i => $p)
+                                    @php $persen = $p['a'] > 0 ? round(($p['r'] / $p['a']) * 100, 2) : 0; @endphp
+                                    <div>
+                                        <p class="font-semibold text-gray-800 text-sm"
+                                            id="pendapatanLabel{{ $i }}">{{ $p['label'] }}</p>
+                                        <div class="flex justify-between text-xs text-gray-600">
+                                            <span
+                                                id="pendapatanAnggaran{{ $i }}">Rp{{ number_format($p['a'], 2, ',', '.') }}</span>
+                                            <span
+                                                id="pendapatanRealisasi{{ $i }}">Rp{{ number_format($p['r'], 2, ',', '.') }}</span>
+                                        </div>
+                                        <div class="w-full bg-gray-200 rounded-full h-4 relative">
+                                            <div class="bg-green-700 h-4 rounded-full"
+                                                id="pendapatanProgress{{ $i }}"
+                                                style="width: {{ $persen }}%"></div>
+                                            <span id="pendapatanPersen{{ $i }}"
+                                                class="absolute inset-0 flex items-center justify-center text-white text-xs font-bold">{{ $persen }}%</span>
+                                        </div>
+                                    </div>
+                                @endforeach
+                            </div>
+                        </div>
+
+                        <!-- Belanja Breakdown -->
+                        <div class="bg-white rounded-xl shadow-lg">
+                            <div class="p-4 bg-[#0C3B2E] text-white text-center rounded-t-xl">
+                                <h3 class="text-xl font-bold">Belanja</h3>
+                            </div>
+                            <div class="m-4">
+                                <div class="flex justify-center text-xs font-bold text-gray-600 mb-2">
+                                    <p>Anggaran | Realisasi</p>
                                 </div>
+                                @foreach ($belanjaList as $i => $b)
+                                    @php $persen = $b['a'] > 0 ? round(($b['r'] / $b['a']) * 100, 2) : 0; @endphp
+                                    <div>
+                                        <p class="font-semibold text-gray-800 text-sm"
+                                            id="belanjaLabel{{ $i }}">
+                                            {{ $b['label'] }}</p>
+                                        <div class="flex justify-between text-xs text-gray-600">
+                                            <span
+                                                id="belanjaAnggaran{{ $i }}">Rp{{ number_format($b['a'], 2, ',', '.') }}</span>
+                                            <span
+                                                id="belanjaRealisasi{{ $i }}">Rp{{ number_format($b['r'], 2, ',', '.') }}</span>
+                                        </div>
+                                        <div class="w-full bg-gray-200 rounded-full h-4 relative">
+                                            <div class="bg-green-700 h-4 rounded-full"
+                                                id="belanjaProgress{{ $i }}"
+                                                style="width: {{ $persen }}%">
+                                            </div>
+                                            <span id="belanjaPersen{{ $i }}"
+                                                class="absolute inset-0 flex items-center justify-center text-white text-xs font-bold">{{ $persen }}%</span>
+                                        </div>
+                                    </div>
+                                @endforeach
                             </div>
                         </div>
                     </div>
-
-                    <!-- Card: Pendapatan -->
-                    <div class="bg-white rounded-xl shadow-lg overflow-hidden">
-                        <div class="p-4 bg-[#0C3B2E] text-white text-center">
-                            <h3 class="text-xl font-bold">Pendapatan</h3>
-                        </div>
-                        <div class="p-5 space-y-5">
-                            <div class="flex justify-between text-sm font-semibold text-gray-500">
-                                <span>Anggaran</span>
-                                <span>Realisasi</span>
-                            </div>
-
-                            <div class="space-y-2">
-                                <p class="font-semibold text-gray-800 text-sm">Pendapatan Asli Desa</p>
-                                <div class="flex justify-between text-xs font-medium text-gray-600">
-                                    <span>75.000.000,00</span>
-                                    <span>56.840.558,00</span>
-                                </div>
-                                <div class="w-full bg-gray-200 rounded-full h-4 relative">
-                                    <div class="bg-green-700 h-4 rounded-full" style="width: 75.79%"></div>
-                                    <span
-                                        class="absolute inset-0 flex items-center justify-center text-white text-xs font-bold">75.79%</span>
-                                </div>
-                            </div>
-
-                            <div class="space-y-2">
-                                <p class="font-semibold text-gray-800 text-sm">Pendapatan Transfer</p>
-                                <div class="flex justify-between text-xs font-medium text-gray-600">
-                                    <span>1.322.813.000,00</span>
-                                    <span>1.322.813.000,00</span>
-                                </div>
-                                <div class="w-full bg-gray-200 rounded-full h-4 relative">
-                                    <div class="bg-green-700 h-4 rounded-full" style="width: 100%"></div>
-                                    <span
-                                        class="absolute inset-0 flex items-center justify-center text-white text-xs font-bold">100%</span>
-                                </div>
-                            </div>
-
-                            <div class="space-y-2">
-                                <p class="font-semibold text-gray-800 text-sm">Pendapatan Lain Lain</p>
-                                <div class="flex justify-between text-xs font-medium text-gray-600">
-                                    <span>47.300.000,00</span>
-                                    <span>60.217.448,17</span>
-                                </div>
-                                <div class="w-full bg-gray-200 rounded-full h-4 relative">
-                                    <div class="bg-green-700 h-4 rounded-full" style="width: 100%"></div>
-                                    <span
-                                        class="absolute inset-0 flex items-center justify-center text-white text-xs font-bold">127.31%</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Card: Belanja -->
-                    <div class="bg-white rounded-xl shadow-lg overflow-hidden">
-                        <div class="p-4 bg-[#0C3B2E] text-white text-center">
-                            <h3 class="text-xl font-bold">Belanja</h3>
-                        </div>
-                        <div class="p-5 space-y-5">
-                            <div class="flex justify-between text-sm font-semibold text-gray-500">
-                                <span>Anggaran</span>
-                                <span>Realisasi</span>
-                            </div>
-
-                            <div class="space-y-2">
-                                <p class="font-semibold text-gray-800 text-sm">Bidang Penyelenggaraan Pemerintah Desa
-                                </p>
-                                <div class="flex justify-between text-xs font-medium text-gray-600">
-                                    <span>3.547.030.529,00</span>
-                                    <span>3.167.295.824,64</span>
-                                </div>
-                                <div class="w-full bg-gray-200 rounded-full h-4 relative">
-                                    <div class="bg-green-700 h-4 rounded-full" style="width: 89.29%"></div>
-                                    <span
-                                        class="absolute inset-0 flex items-center justify-center text-white text-xs font-bold">89.29%</span>
-                                </div>
-                            </div>
-
-                            <div class="space-y-2">
-                                <p class="font-semibold text-gray-800 text-sm">Bidang Pelaksanaan Pembangunan Desa</p>
-                                <div class="flex justify-between text-xs font-medium text-gray-600">
-                                    <span>4.230.925.327,03</span>
-                                    <span>3.735.026.974,00</span>
-                                </div>
-                                <div class="w-full bg-gray-200 rounded-full h-4 relative">
-                                    <div class="bg-green-700 h-4 rounded-full" style="width: 88.28%"></div>
-                                    <span
-                                        class="absolute inset-0 flex items-center justify-center text-white text-xs font-bold">88.28%</span>
-                                </div>
-                            </div>
-
-                            <div class="space-y-2">
-                                <p class="font-semibold text-gray-800 text-sm">Bidang Pembinaan Kemasyarakatan Desa</p>
-                                <div class="flex justify-between text-xs font-medium text-gray-600">
-                                    <span>4.230.925.327,03</span>
-                                    <span>3.735.026.974,00</span>
-                                </div>
-                                <div class="w-full bg-gray-200 rounded-full h-4 relative">
-                                    <div class="bg-green-700 h-4 rounded-full" style="width: 88.28%"></div>
-                                    <span
-                                        class="absolute inset-0 flex items-center justify-center text-white text-xs font-bold">88.28%</span>
-                                </div>
-                            </div>
-
-                            <div class="space-y-2">
-                                <p class="font-semibold text-gray-800 text-sm">Bidang Pemberdayaan Masyarakat Desa</p>
-                                <div class="flex justify-between text-xs font-medium text-gray-600">
-                                    <span>4.230.925.327,03</span>
-                                    <span>3.735.026.974,00</span>
-                                </div>
-                                <div class="w-full bg-gray-200 rounded-full h-4 relative">
-                                    <div class="bg-green-700 h-4 rounded-full" style="width: 88.28%"></div>
-                                    <span
-                                        class="absolute inset-0 flex items-center justify-center text-white text-xs font-bold">88.28%</span>
-                                </div>
-                            </div>
-
-                            <div class="space-y-2">
-                                <p class="font-semibold text-gray-800 text-sm">Bidang Penanggulangan Bencana, Keadaan
-                                    Darurat dan Mendesak Desa</p>
-                                <div class="flex justify-between text-xs font-medium text-gray-600">
-                                    <span>4.230.925.327,03</span>
-                                    <span>3.735.026.974,00</span>
-                                </div>
-                                <div class="w-full bg-gray-200 rounded-full h-4 relative">
-                                    <div class="bg-green-700 h-4 rounded-full" style="width: 88.28%"></div>
-                                    <span
-                                        class="absolute inset-0 flex items-center justify-center text-white text-xs font-bold">88.28%</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                    {{-- Jika data apb kosong --}}
+                @else
+                    <p class="text-center text-gray-600 mt-6">Data APBDesa belum tersedia untuk ditampilkan.</p>
+                @endif
             </div>
         </section>
+
+        <script>
+            function formatRupiah(angka) {
+                return 'Rp' + parseFloat(angka).toLocaleString('id-ID', {
+                    minimumFractionDigits: 2
+                });
+            }
+
+            const tahunDropdown = document.getElementById('tahunDropdown');
+            tahunDropdown.addEventListener('change', function() {
+                const tahun = this.value;
+                fetch(`/apbdesa/data/${tahun}`)
+                    .then(res => res.json())
+                    .then(data => {
+                        document.querySelectorAll('.apbdesa-tahun').forEach(el => el.textContent = data.tahun);
+                        document.getElementById('pendapatanRealisasi').textContent = formatRupiah(data
+                            .totalPendapatanRealisasi);
+                        document.getElementById('belanjaRealisasi').textContent = formatRupiah(data
+                            .totalBelanjaRealisasi);
+                        document.getElementById('surplus').textContent = formatRupiah(data.surplus);
+                        document.getElementById('progressPendapatan').style.width = data.persenPendapatan + '%';
+                        document.getElementById('persenPendapatan').textContent = data.persenPendapatan + '%';
+                        document.getElementById('progressBelanja').style.width = data.persenBelanja + '%';
+                        document.getElementById('persenBelanja').textContent = data.persenBelanja + '%';
+                        document.getElementById('totalPendapatanAnggaran').textContent = 'Anggaran: ' +
+                            formatRupiah(data.totalPendapatan);
+                        document.getElementById('totalPendapatanRealisasi').textContent = 'Realisasi: ' +
+                            formatRupiah(data.totalPendapatanRealisasi);
+
+                        document.getElementById('totalBelanjaAnggaran').textContent = 'Anggaran: ' + formatRupiah(
+                            data.totalBelanja);
+                        document.getElementById('totalBelanjaRealisasi').textContent = 'Realisasi: ' + formatRupiah(
+                            data.totalBelanjaRealisasi);
+
+                        data.pendapatan.forEach((item, i) => {
+                            const persen = item.anggaran > 0 ? (item.realisasi / item.anggaran * 100)
+                                .toFixed(2) : 0;
+                            document.getElementById(`pendapatanLabel${i}`).textContent = item.label;
+                            document.getElementById(`pendapatanAnggaran${i}`).textContent = formatRupiah(
+                                item.anggaran);
+                            document.getElementById(`pendapatanRealisasi${i}`).textContent = formatRupiah(
+                                item.realisasi);
+                            document.getElementById(`pendapatanProgress${i}`).style.width = persen + '%';
+                            document.getElementById(`pendapatanPersen${i}`).textContent = persen + '%';
+                        });
+
+                        data.belanja.forEach((item, i) => {
+                            const persen = item.anggaran > 0 ? (item.realisasi / item.anggaran * 100)
+                                .toFixed(2) : 0;
+                            document.getElementById(`belanjaLabel${i}`).textContent = item.label;
+                            document.getElementById(`belanjaAnggaran${i}`).textContent = formatRupiah(item
+                                .anggaran);
+                            document.getElementById(`belanjaRealisasi${i}`).textContent = formatRupiah(item
+                                .realisasi);
+                            document.getElementById(`belanjaProgress${i}`).style.width = persen + '%';
+                            document.getElementById(`belanjaPersen${i}`).textContent = persen + '%';
+                        });
+                    });
+            });
+        </script>
 
     </main>
 

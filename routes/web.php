@@ -79,6 +79,9 @@ Route::post('/permohonan-informasi', [PermohonanController::class, 'store'])->na
 Route::get('/dokumen', [DokumenController::class, 'dokumenPublik'])->name('dokumen.index');
 Route::get('/unduh-dokumen/{id}', [DokumenController::class, 'download'])->name('dokumen.download');
 
+// APB Desa
+Route::get('/apbdesa/data/{tahun}', [App\Http\Controllers\APBDesaController::class, 'getDataByTahun'])->name('apbdesa.data');
+
 /*
 |--------------------------------------------------------------------------
 | HALAMAN ADMIN

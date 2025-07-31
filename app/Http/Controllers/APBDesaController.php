@@ -27,25 +27,25 @@ class APBDesaController extends Controller
 
         if ($data) {
             // Hitung total pendapatan dan realisasi
-            $totalPendapatan = 
+            $totalPendapatan =
                 $data->pendapatan_asli_desa_anggaran +
                 $data->pendapatan_transfer_anggaran +
                 $data->pendapatan_lain_anggaran;
 
-            $totalPendapatanRealisasi = 
+            $totalPendapatanRealisasi =
                 $data->pendapatan_asli_desa_realisasi +
                 $data->pendapatan_transfer_realisasi +
                 $data->pendapatan_lain_realisasi;
 
             // Hitung total belanja dan realisasi
-            $totalBelanja = 
+            $totalBelanja =
                 $data->belanja_penyelenggaraan_anggaran +
                 $data->belanja_pembangunan_anggaran +
                 $data->belanja_kemasyarakatan_anggaran +
                 $data->belanja_pemberdayaan_anggaran +
                 $data->belanja_bencana_anggaran;
 
-            $totalBelanjaRealisasi = 
+            $totalBelanjaRealisasi =
                 $data->belanja_penyelenggaraan_realisasi +
                 $data->belanja_pembangunan_realisasi +
                 $data->belanja_kemasyarakatan_realisasi +
@@ -94,33 +94,38 @@ class APBDesaController extends Controller
             'belanja_bencana_realisasi' => 'required|numeric',
         ]);
 
-        APBDesa::create($validated);
+        // Update data jika tahun sudah ada, insert jika belum
+        APBDesa::updateOrCreate(
+            ['tahun' => $validated['tahun']],
+            $validated
+        );
 
-        return redirect()->route('admin.apb.index')->with('success', 'Data APBDesa berhasil disimpan.');
+        return redirect()->route('admin.apb.index', ['tahun' => $validated['tahun']])
+            ->with('success', 'Data APBDesa berhasil disimpan.');
     }
 
     public function showApbDesa($tahun)
     {
         $data = APBDesa::where('tahun', $tahun)->firstOrFail();
 
-        $totalPendapatan = 
+        $totalPendapatan =
             $data->pendapatan_asli_desa_anggaran +
             $data->pendapatan_transfer_anggaran +
             $data->pendapatan_lain_anggaran;
 
-        $totalPendapatanRealisasi = 
+        $totalPendapatanRealisasi =
             $data->pendapatan_asli_desa_realisasi +
             $data->pendapatan_transfer_realisasi +
             $data->pendapatan_lain_realisasi;
 
-        $totalBelanja = 
+        $totalBelanja =
             $data->belanja_penyelenggaraan_anggaran +
             $data->belanja_pembangunan_anggaran +
             $data->belanja_kemasyarakatan_anggaran +
             $data->belanja_pemberdayaan_anggaran +
             $data->belanja_bencana_anggaran;
 
-        $totalBelanjaRealisasi = 
+        $totalBelanjaRealisasi =
             $data->belanja_penyelenggaraan_realisasi +
             $data->belanja_pembangunan_realisasi +
             $data->belanja_kemasyarakatan_realisasi +
@@ -138,4 +143,86 @@ class APBDesaController extends Controller
             'surplus'
         ));
     }
+
+    public function getDataByTahun($tahun)
+    {
+        $data = APBDesa::where('tahun', $tahun)->first();
+
+        $response = [
+            'totalPendapatan' => 0,
+            'totalPendapatanRealisasi' => 0,
+            'totalBelanja' => 0,
+            'totalBelanjaRealisasi' => 0,
+            'surplus' => 0,
+            'persenPendapatan' => 0,
+            'persenBelanja' => 0,
+            'tahun' => $tahun,
+            'pendapatan' => [],
+            'belanja' => [],
+        ];
+
+        if ($data) {
+            $response['totalPendapatan'] = $data->pendapatan_asli_desa_anggaran + $data->pendapatan_transfer_anggaran + $data->pendapatan_lain_anggaran;
+            $response['totalPendapatanRealisasi'] = $data->pendapatan_asli_desa_realisasi + $data->pendapatan_transfer_realisasi + $data->pendapatan_lain_realisasi;
+
+            $response['totalBelanja'] = $data->belanja_penyelenggaraan_anggaran + $data->belanja_pembangunan_anggaran + $data->belanja_kemasyarakatan_anggaran + $data->belanja_pemberdayaan_anggaran + $data->belanja_bencana_anggaran;
+            $response['totalBelanjaRealisasi'] = $data->belanja_penyelenggaraan_realisasi + $data->belanja_pembangunan_realisasi + $data->belanja_kemasyarakatan_realisasi + $data->belanja_pemberdayaan_realisasi + $data->belanja_bencana_realisasi;
+
+            $response['surplus'] = $response['totalPendapatanRealisasi'] - $response['totalBelanjaRealisasi'];
+
+            $response['persenPendapatan'] = $response['totalPendapatan'] > 0 ? round(($response['totalPendapatanRealisasi'] / $response['totalPendapatan']) * 100, 2) : 0;
+            $response['persenBelanja'] = $response['totalBelanja'] > 0 ? round(($response['totalBelanjaRealisasi'] / $response['totalBelanja']) * 100, 2) : 0;
+
+            // Pendapatan breakdown
+            $response['pendapatan'] = [
+                [
+                    'label' => 'Pendapatan Asli Desa',
+                    'anggaran' => $data->pendapatan_asli_desa_anggaran,
+                    'realisasi' => $data->pendapatan_asli_desa_realisasi,
+                ],
+                [
+                    'label' => 'Pendapatan Transfer',
+                    'anggaran' => $data->pendapatan_transfer_anggaran,
+                    'realisasi' => $data->pendapatan_transfer_realisasi,
+                ],
+                [
+                    'label' => 'Pendapatan Lain Lain',
+                    'anggaran' => $data->pendapatan_lain_anggaran,
+                    'realisasi' => $data->pendapatan_lain_realisasi,
+                ],
+            ];
+
+            // Belanja breakdown
+            $response['belanja'] = [
+                [
+                    'label' => 'Penyelenggaraan Pemerintah Desa',
+                    'anggaran' => $data->belanja_penyelenggaraan_anggaran,
+                    'realisasi' => $data->belanja_penyelenggaraan_realisasi,
+                ],
+                [
+                    'label' => 'Pelaksanaan Pembangunan Desa',
+                    'anggaran' => $data->belanja_pembangunan_anggaran,
+                    'realisasi' => $data->belanja_pembangunan_realisasi,
+                ],
+                [
+                    'label' => 'Pembinaan Kemasyarakatan Desa',
+                    'anggaran' => $data->belanja_kemasyarakatan_anggaran,
+                    'realisasi' => $data->belanja_kemasyarakatan_realisasi,
+                ],
+                [
+                    'label' => 'Pemberdayaan Masyarakat Desa',
+                    'anggaran' => $data->belanja_pemberdayaan_anggaran,
+                    'realisasi' => $data->belanja_pemberdayaan_realisasi,
+                ],
+                [
+                    'label' => 'Penanggulangan Bencana & Mendesak Desa',
+                    'anggaran' => $data->belanja_bencana_anggaran,
+                    'realisasi' => $data->belanja_bencana_realisasi,
+                ],
+            ];
+        }
+
+        return response()->json($response);
+    }
+
 }
