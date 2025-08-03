@@ -697,7 +697,7 @@
                                 @foreach ($pendapatanList as $i => $p)
                                     @php $persen = $p['a'] > 0 ? round(($p['r'] / $p['a']) * 100, 2) : 0; @endphp
                                     <div>
-                                        <p class="font-semibold text-gray-800 text-sm"
+                                        <p class="font-semibold text-gray-800 text-sm mt-4"
                                             id="pendapatanLabel{{ $i }}">{{ $p['label'] }}</p>
                                         <div class="flex justify-between text-xs text-gray-600">
                                             <span
@@ -729,7 +729,7 @@
                                 @foreach ($belanjaList as $i => $b)
                                     @php $persen = $b['a'] > 0 ? round(($b['r'] / $b['a']) * 100, 2) : 0; @endphp
                                     <div>
-                                        <p class="font-semibold text-gray-800 text-sm"
+                                        <p class="font-semibold text-gray-800 text-sm mt-4"
                                             id="belanjaLabel{{ $i }}">
                                             {{ $b['label'] }}</p>
                                         <div class="flex justify-between text-xs text-gray-600">

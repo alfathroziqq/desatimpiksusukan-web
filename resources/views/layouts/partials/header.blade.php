@@ -37,7 +37,7 @@
         </a>
 
         <!-- Desktop Menu -->
-        <div class="hidden lg:flex items-center space-x-13 text-sm text-[15px] uppercase tracking-wider">
+        <div class="hidden lg:flex items-center space-x-9 text-sm text-[15px] uppercase tracking-wider">
             <!-- Home -->
             <a href="{{ route('welcome') }}"
                 class="nav-link {{ Route::is('welcome') ? 'text-[#D5C578] active' : 'text-gray-300' }} hover:text-white transition duration-300">
@@ -104,6 +104,34 @@
                     <a href="{{ route('data-ekonomi') }}"
                         class="block px-4 py-2 text-sm {{ Route::is('data-ekonomi') ? 'bg-[#D5C578]/30 text-[#D5C578]' : 'text-gray-200' }} hover:bg-white/10">
                         Data Ekonomi
+                    </a>
+                </div>
+            </div>
+            <!-- Layanan Publik -->
+            <div class="relative" x-data="{ open: false }" @mouseenter="open = true" @mouseleave="open = false">
+                <button type="button"
+                    class="flex items-center {{ Route::is('mengurus-surat') || Route::is('mengurus-skck') || Route::is('mengurus-kehilangan') ? 'text-[#D5C578]' : 'text-gray-300' }} hover:text-[#D5C578] transition duration-300 uppercase">
+                    <span
+                        class="nav-link {{ Route::is('mengurus-surat') || Route::is('mengurus-skck') || Route::is('mengurus-kehilangan') ? 'active' : '' }}">
+                        Layanan Publik
+                    </span>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 ml-1 transition-transform"
+                        :class="{ 'rotate-180': open }" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                    </svg>
+                </button>
+                <div x-show="open" x-transition class="absolute mt-2 w-48 bg-[#254D43] rounded-md shadow-xl z-20">
+                    <a href="{{ route('mengurus-surat') }}"
+                        class="block px-4 py-2 text-sm {{ Route::is('mengurus-surat') ? 'bg-[#D5C578]/30 text-[#D5C578]' : 'text-gray-200' }} hover:bg-white/10">
+                        Mengurus Surat Masuk & Keluar
+                    </a>
+                    <a href="{{ route('mengurus-skck') }}"
+                        class="block px-4 py-2 text-sm {{ Route::is('mengurus-skck') ? 'bg-[#D5C578]/30 text-[#D5C578]' : 'text-gray-200' }} hover:bg-white/10">
+                        Mengurus SKCK
+                    </a>
+                    <a href="{{ route('mengurus-kehilangan') }}"
+                        class="block px-4 py-2 text-sm {{ Route::is('mengurus-kehilangan') ? 'bg-[#D5C578]/30 text-[#D5C578]' : 'text-gray-200' }} hover:bg-white/10">
+                        Mengurus Surat Kehilangan
                     </a>
                 </div>
             </div>
@@ -218,6 +246,33 @@
                     <a href="{{ route('data-ekonomi') }}"
                         class="block py-2 px-3 text-sm {{ Route::is('data-ekonomi') ? 'bg-[#D5C578]/10 text-[#D5C578] font-bold' : 'text-gray-300' }} hover:text-white hover:bg-white/5 rounded-md">
                         Data Ekonomi
+                    </a>
+                </div>
+            </div>
+            <div>
+                <button @click="activeAccordion = (activeAccordion === 'layanan' ? '' : 'layanan')"
+                    class="w-full flex justify-between items-center py-2 px-3 text-base
+                    {{ Route::is('mengurus-surat') || Route::is('mengurus-skck') || Route::is('mengurus-kehilangan') ? 'text-[#D5C578] font-bold' : 'text-gray-200' }}
+                    hover:text-white hover:bg-white/5 rounded-md">
+                    <span>Layanan Publik</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 transition-transform"
+                        :class="{ 'rotate-180': activeAccordion === 'layanan' }" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                    </svg>
+                </button>
+                <div x-show="activeAccordion === 'layanan'" class="pl-4 mt-1 space-y-1">
+                    <a href="{{ route('mengurus-surat') }}"
+                        class="block py-2 px-3 text-sm {{ Route::is('mengurus-surat') ? 'bg-[#D5C578]/10 text-[#D5C578] font-bold' : 'text-gray-300' }} hover:text-white hover:bg-white/5 rounded-md">
+                        Mengurus Surat Masuk & Keluar
+                    </a>
+                    <a href="{{ route('mengurus-skck') }}"
+                        class="block py-2 px-3 text-sm {{ Route::is('mengurus-skck') ? 'bg-[#D5C578]/10 text-[#D5C578] font-bold' : 'text-gray-300' }} hover:text-white hover:bg-white/5 rounded-md">
+                        Mengurus SKCK
+                    </a>
+                    <a href="{{ route('mengurus-kehilangan') }}"
+                        class="block py-2 px-3 text-sm {{ Route::is('mengurus-kehilangan') ? 'bg-[#D5C578]/10 text-[#D5C578] font-bold' : 'text-gray-300' }} hover:text-white hover:bg-white/5 rounded-md">
+                        Mengurus Surat Kehilangan
                     </a>
                 </div>
             </div>

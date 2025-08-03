@@ -56,6 +56,11 @@ Route::get('/data-keagamaan', [DataKeagamaanController::class, 'public'])->name(
 // Data Ekonomi
 Route::get('/data-ekonomi', [DataEkonomiController::class, 'public'])->name('data-ekonomi');
 
+// Layanan Publik
+Route::get('/mengurus-surat-masuk-keluar', fn() => view('mengurus-surat'))->name('mengurus-surat');
+Route::get('/mengurus-skck', fn() => view('mengurus-skck'))->name('mengurus-skck');
+Route::get('/mengurus-surat-kehilangan', fn() => view('mengurus-kehilangan'))->name('mengurus-kehilangan');
+
 // Aparatur Desa
 Route::get('/aparatur', fn() => view('aparatur'))->name('aparatur.index');
 

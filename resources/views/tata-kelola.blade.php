@@ -170,30 +170,38 @@
                             Visi
                         </h3>
                         <p class="text-center text-base md:text-lg text-[#C8C7CC] max-w-5xl mx-auto leading-relaxed">
-                            Menjadikan Desa Timpik sebagai desa wisata edukatif berbudaya, yang mengangkat potensi
-                            kesenian dan alam sebagai modal utama penguatan ekonomi dan identitas lokal.
+                            "TERWUJUDNYA DESA TIMPIK YANG AMAN TENTERAM MAJU MAKMUR DAN BERKEADILAN"
                         </p>
                     </div>
                     <div class="bg-[#1A3A31] text-[#C8C7CC] p-8 md:p-5 rounded-2xl shadow-xl reveal-on-scroll">
                         <h3 class="text-3xl md:text-4xl font-bold text-center mb-6">
                             Misi
                         </h3>
-                        <ol
-                            class="list-decimal list-inside space-y-2 text-[#C8C7CC] max-w-5xl mx-auto text-base md:text-lg">
-                            <li>Mengembangkan produk wisata edukatif berbasis pertanian yang menarik dan berkelanjutan.
+                        <ol class="list-[upper-alpha] pl-3 space-y-2 text-[#C8C7CC] max-w-5xl mx-auto text-base md:text-lg text-justify">
+                            <li>Melanjutkan program-program yang telah dilaksanakan oleh pemerintah Desa Timpik periode lalu sebagaimana tercantum dalam RPJMDes Timpik.</li>
+                            <li>Pemberdayaan semua potensi yang ada di masyarakat yang meliputi:
+                                <ol class="list-decimal ml-6">
+                                    <li>Pemberdayaan Sumber Daya Manusia (SDM)</li>
+                                    <li>Pemberdayaan Sumber Daya Alam (SDA)</li>
+                                    <li>Pemberdayaan Ekonomi</li>
+                                </ol>
                             </li>
-                            <li>Mengangkat budaya lokal dan kesenian tradisional sebagai daya tarik wisata desa.</li>
-                            <li>Mendorong pelibatan aktif BUMDes dalam pengembangan potensi wisata dan ekonomi desa.
+                            <li>Menciptakan kondisi masyarakat Desa Timpik yang aman, tertib, guyub dan rukun dalam kehidupan bermasyarakat dengan berpegang prinsip-prinsip yaitu:
+                                <ol class="list-decimal ml-6">
+                                    <li>Duduk sama rendah berdiri sama tinggi</li>
+                                    <li>Ringan sama dijinjing berat sama dipikul</li>
+                                    <li>Sepi ing pamrih, rame ing gawe, narimo ing pandum</li>
+                                </ol>
                             </li>
-                            <li>Meningkatkan partisipasi masyarakat dan generasi muda dalam pelestarian seni budaya dan
-                                UMKM lokal.</li>
-                            <li>Mewujudkan pelayanan publik desa yang berkualitas, partisipatif, transparan, dan
-                                inklusif.</li>
-                            <li>Menciptakan lingkungan desa yang ramah wisatawan dan mendukung kenyamanan pengunjung.
+                            <li>Optimalisasi penyelenggaraan pemerintahan Desa Timpik yang meliputi:
+                                <ol class="list-decimal ml-6">
+                                    <li>Pemerintah yang transparan dan akuntabel</li>
+                                    <li>Pelayanan kepada masyarakat yang prima: cepat, tepat, dan benar</li>
+                                    <li>Pelaksanaan pembangunan yang berkesinambungan, serta mengedepankan partisipasi dan gotong royong</li>
+                                </ol>
                             </li>
-                            <li>Memaksimalkan pemanfaatan media sosial dan platform digital sebagai sarana promosi dan
-                                branding desa.</li>
                         </ol>
+
                     </div>
                 </div>
             </div>
