@@ -90,41 +90,35 @@
                 <span class="text-[#DBAA7C]">Surat Masuk & Keluar</span>
             </div>
 
-            <div class="container mx-auto px-2 sm:px-12 lg:px-40 py-8" x-data="{ modalOpen: false, modalImg: '' }">
-                <div class="mt-[-30px] mb-6 reveal-on-scroll max-w-2xl w-full text-center mx-auto">
-                    <h1 class="text-3xl md:text-5xl font-extrabold text-[#0C3B2E] mb-3 drop-shadow"
-                        style="font-family: 'Poppins', sans-serif;">
+            <div class="w-full max-w-7xl mx-auto px-4 sm:px-6 md:px-8 py-8" x-data="{ modalOpen: false, modalImg: '' }">
+                <div class="mt-[-30px] mb-6 reveal-on-scroll w-full text-center">
+                    <h1 class="text-3xl md:text-5xl font-extrabold text-[#0C3B2E] mb-3 drop-shadow font-['Poppins']">
                         Alur Pengurusan Surat Masuk & Keluar
                     </h1>
 
-                    <div
-                        class="w-24 md:w-40 h-1 mx-auto bg-gradient-to-r from-[#C7F3E7] via-[#0C3B2E] to-[#F9DCC1] rounded-lg">
-                    </div>
+                    <div class="w-24 md:w-40 h-1 mx-auto bg-gradient-to-r from-[#C7F3E7] via-[#0C3B2E] to-[#F9DCC1] rounded-lg"></div>
 
-                    <p class="mt-4 text-[#155145] text-md md:text-lg mx-auto">
-                        Berikut alur resmi pelayanan surat-menyurat di <b>Desa Timpik</b>. Layanan ini dibuat untuk
-                        memudahkan dan mempercepat pengelolaan surat masuk maupun keluar, demi keterbukaan dan
-                        tertib administrasi desa.
+                    <p class="mt-4 text-[#155145] text-md md:text-lg mx-auto max-w-4xl">
+                        Berikut alur resmi pelayanan surat-menyurat di <b>Desa Timpik</b>. Layanan ini dibuat untuk memudahkan dan
+                        mempercepat pengelolaan surat masuk maupun keluar, demi keterbukaan dan tertib administrasi desa.
                     </p>
                 </div>
 
                 <!-- Tips -->
                 <div
-                    class="bg-[#E8C187]/30 border-l-4 border-[#C2977D] text-[#0C3B2E] px-4 py-3 rounded-xl mb-8 flex items-center gap-3 shadow-sm max-w-3xl mx-auto reveal-on-scroll">
+                    class="bg-[#E8C187]/30 border-l-4 border-[#C2977D] text-[#0C3B2E] px-4 py-3 rounded-xl mb-8 flex items-center gap-3 shadow-sm max-w-5xl mx-auto reveal-on-scroll">
                     <i data-lucide="alert-circle" class="w-6 h-6"></i>
                     <span class="text-sm md:text-base">
                         Tips: Bawa dokumen asli & fotokopi untuk kelancaran proses surat. Pelayanan buka
-                            Senin–Jumat, 08.00–14.00 WIB.
+                        Senin–Jumat, 08.00–14.00 WIB.
                     </span>
                 </div>
 
                 <!-- Surat Masuk -->
-                <div
-                    class="grid grid-cols-1 md:grid-cols-2 gap-10 items-center mb-16 reveal-on-scroll w-full max-w-4xl mx-auto">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-10 items-center mb-16 reveal-on-scroll w-full max-w-7xl px-4 sm:px-6 md:px-8 mx-auto">
 
                     <div class="flex justify-center">
-                        <div
-                            class="relative group w-full max-w-xl md:max-w-2xl lg:max-w-3xl mx-auto h-64 md:h-[320px]">
+                        <div class="relative group w-full h-64 md:h-[320px]">
                             <img src="{{ asset('images/surat-masuk.jpg') }}" alt="Alur Surat Masuk"
                                 class="w-full h-full object-cover rounded-3xl shadow-xl border-4 border-[#C7F3E7]/70 group-hover:scale-105 transition-all duration-300 bg-white/50 cursor-pointer"
                                 @click="modalOpen = true; modalImg = '{{ asset('images/surat-masuk.jpg') }}'">
@@ -134,9 +128,8 @@
                         </div>
                     </div>
 
-                    <div class="mx-auto">
-                        <h2
-                            class="text-2xl md:text-3xl font-bold text-[#12715D] mb-4 flex items-center gap-2 justify-center md:justify-start">
+                    <div>
+                        <h2 class="text-2xl md:text-3xl font-bold text-[#12715D] mb-4 flex items-center gap-2 justify-center md:justify-start">
                             <i data-lucide="inbox" class="w-7 h-7 text-[#C2977D]"></i>
                             Alur Surat Masuk
                         </h2>
@@ -156,15 +149,13 @@
                             <li>
                                 <span class="font-semibold text-[#0C3B2E]">3. Disposisi Kepala Desa</span>
                                 <div class="text-[#155145] text-sm ml-4">
-                                    Surat diteruskan kepada <b>Kepala Desa</b> untuk diberikan <b>Lembar
-                                        Disposisi</b>.
+                                    Surat diteruskan kepada <b>Kepala Desa</b> untuk diberikan <b>Lembar Disposisi</b>.
                                 </div>
                             </li>
                             <li>
                                 <span class="font-semibold text-[#0C3B2E]">4. Pengendalian & Distribusi</span>
                                 <div class="text-[#155145] text-sm ml-4">
-                                    Surat yang sudah didisposisi dikendalikan dan didistribusikan ke <b>Unit
-                                        Pengelola (KAUR/KADUS)</b> sesuai disposisi.
+                                    Surat yang sudah didisposisi dikendalikan dan didistribusikan ke <b>Unit Pengelola (KAUR/KADUS)</b> sesuai disposisi.
                                 </div>
                             </li>
                             <li>
@@ -175,16 +166,14 @@
                             </li>
                         </ol>
                     </div>
-
                 </div>
 
-                <!-- Surat Keluar -->
-                <div
-                    class="grid grid-cols-1 md:grid-cols-2 gap-10 items-center reveal-on-scroll w-full max-w-4xl mx-auto">
 
-                    <div class="order-2 md:order-1 mx-auto">
-                        <h2
-                            class="text-2xl md:text-3xl font-bold text-[#12715D] mb-4 flex items-center gap-2 justify-center md:justify-start">
+                <!-- Surat Keluar -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-10 items-center reveal-on-scroll w-full max-w-7xl px-4 sm:px-6 md:px-8 mx-auto">
+
+                    <div class="order-2 md:order-1">
+                        <h2 class="text-2xl md:text-3xl font-bold text-[#12715D] mb-4 flex items-center gap-2 justify-center md:justify-start">
                             <i data-lucide="send" class="w-7 h-7 text-[#E8C187]"></i>
                             Alur Surat Keluar
                         </h2>
@@ -199,8 +188,7 @@
                             <li>
                                 <span class="font-semibold text-[#0C3B2E]">2. Verifikasi & Pengajuan</span>
                                 <div class="text-[#155145] text-sm ml-4">
-                                    Surat diajukan ke <b>Sekdes/Unit Kearsipan</b> untuk diverifikasi dan dicatat di
-                                    <b>Buku Kendali Surat Keluar</b>.
+                                    Surat diajukan ke <b>Sekdes/Unit Kearsipan</b> untuk diverifikasi dan dicatat di <b>Buku Kendali Surat Keluar</b>.
                                 </div>
                             </li>
                             <li>
@@ -212,8 +200,7 @@
                             <li>
                                 <span class="font-semibold text-[#0C3B2E]">4. Pengendalian & Expedisi</span>
                                 <div class="text-[#155145] text-sm ml-4">
-                                    Surat yang sudah ditandatangani dicatat pada <b>Buku Expedisi</b> lalu
-                                    didistribusikan ke <b>Instansi Tujuan</b>.
+                                    Surat yang sudah ditandatangani dicatat pada <b>Buku Expedisi</b> lalu didistribusikan ke <b>Instansi Tujuan</b>.
                                 </div>
                             </li>
                             <li>
@@ -223,26 +210,22 @@
                                 </div>
                             </li>
                         </ol>
-
                     </div>
 
                     <div class="flex justify-center order-1 md:order-2">
-                        <div
-                            class="relative group w-full max-w-xl md:max-w-2xl lg:max-w-3xl mx-auto h-64 md:h-[320px]">
+                        <div class="relative group w-full h-64 md:h-[320px]">
                             <img src="{{ asset('images/surat-keluar.jpg') }}" alt="Alur Surat Keluar"
                                 class="w-full h-full object-cover rounded-3xl shadow-xl border-4 border-[#E8C187]/70 group-hover:scale-105 transition-all duration-300 bg-white/50 cursor-pointer"
                                 @click="modalOpen = true; modalImg = '{{ asset('images/surat-keluar.jpg') }}'">
-                            <div
-                                class="absolute inset-0 bg-gradient-to-tr from-[#E8C187]/10 to-transparent rounded-3xl pointer-events-none">
-                            </div>
+                            <div class="absolute inset-0 bg-gradient-to-tr from-[#E8C187]/10 to-transparent rounded-3xl pointer-events-none"></div>
                         </div>
                     </div>
 
                 </div>
 
                 <!-- FAQ Mini -->
-                <div class="mt-14 w-full max-w-4xl mx-auto" x-data="{ openFaq: null }">
-                    <h3 class="text-lg font-bold text-[#12715D] mb-4 flex items-center gap-2 reveal-on-scroll">
+                <div class="mt-14 w-full max-w-7xl mx-auto px-4 sm:px-8 lg:px-12" x-data="{ openFaq: null }">
+                    <h3 class="text-2xl font-bold text-[#12715D] mb-4 flex items-center gap-2 reveal-on-scroll">
                         <i data-lucide="help-circle" class="w-6 h-6 text-[#E8C187]"></i>
                         Tanya Jawab Mengurus Surat
                     </h3>
@@ -255,8 +238,7 @@
                                     class="bg-[#E8C187]/70 text-[#12715D] rounded-full w-7 h-7 flex items-center justify-center font-bold mr-1 group-hover:bg-[#C7F3E7] transition">
                                     <i data-lucide="user-check" class="w-5 h-5"></i>
                                 </span>
-                                <span class="font-semibold text-[#12715D]">Apakah surat bisa diurus oleh
-                                    keluarga?</span>
+                                <span class="font-semibold text-[#12715D]">Apakah surat bisa diurus oleh keluarga?</span>
                                 <i data-lucide="chevron-down"
                                     class="ml-auto w-6 h-6 transition-transform duration-300"
                                     :class="{ 'rotate-180': openFaq === 1 }"></i>
@@ -268,6 +250,7 @@
                                 </div>
                             </div>
                         </div>
+
                         <!-- FAQ 2 -->
                         <div @click="openFaq === 2 ? openFaq = null : openFaq = 2"
                             class="cursor-pointer group bg-[#C7F3E7]/30 hover:bg-[#C7F3E7]/50 rounded-xl shadow transition-all p-4 reveal-on-scroll">
@@ -288,6 +271,7 @@
                                 </div>
                             </div>
                         </div>
+
                         <!-- FAQ 3 -->
                         <div @click="openFaq === 3 ? openFaq = null : openFaq = 3"
                             class="cursor-pointer group bg-[#E8C187]/20 hover:bg-[#F9DCC1]/50 rounded-xl shadow transition-all p-4 reveal-on-scroll">
@@ -296,8 +280,7 @@
                                     class="bg-[#F9DCC1]/80 text-[#C2977D] rounded-full w-7 h-7 flex items-center justify-center font-bold mr-1 group-hover:bg-[#C7F3E7] transition">
                                     <i data-lucide="badge-check" class="w-5 h-5"></i>
                                 </span>
-                                <span class="font-semibold text-[#12715D]">Apakah ada biaya untuk pengurusan
-                                    surat?</span>
+                                <span class="font-semibold text-[#12715D]">Apakah ada biaya untuk pengurusan surat?</span>
                                 <i data-lucide="chevron-down"
                                     class="ml-auto w-6 h-6 transition-transform duration-300"
                                     :class="{ 'rotate-180': openFaq === 3 }"></i>
@@ -309,6 +292,7 @@
                                 </div>
                             </div>
                         </div>
+
                         <!-- FAQ 4 -->
                         <div @click="openFaq === 4 ? openFaq = null : openFaq = 4"
                             class="cursor-pointer group bg-[#C7F3E7]/20 hover:bg-[#C7F3E7]/40 rounded-xl shadow transition-all p-4 reveal-on-scroll">
@@ -317,8 +301,7 @@
                                     class="bg-[#C7F3E7]/80 text-[#0C3B2E] rounded-full w-7 h-7 flex items-center justify-center font-bold mr-1 group-hover:bg-[#E8C187] transition">
                                     <i data-lucide="phone" class="w-5 h-5"></i>
                                 </span>
-                                <span class="font-semibold text-[#12715D]">Jika ada kendala, ke mana
-                                    menghubungi?</span>
+                                <span class="font-semibold text-[#12715D]">Jika ada kendala, ke mana menghubungi?</span>
                                 <i data-lucide="chevron-down"
                                     class="ml-auto w-6 h-6 transition-transform duration-300"
                                     :class="{ 'rotate-180': openFaq === 4 }"></i>
@@ -332,6 +315,7 @@
                         </div>
                     </div>
                 </div>
+
 
                 <!-- Modal Preview Gambar -->
                 <div x-show="modalOpen"
