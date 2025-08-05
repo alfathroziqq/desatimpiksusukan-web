@@ -138,14 +138,15 @@
                             class="bg-white/90 border-l-4 border-[#C7F3E7]/80 shadow-xl rounded-2xl px-6 py-6 flex flex-col gap-3 reveal-on-scroll">
                             <div class="flex items-center gap-2 mb-1">
                                 <i data-lucide="car" class="w-7 h-7 text-[#12715D]"></i>
-                                <span class="text-lg font-bold text-[#12715D]">STNK / BPKB</span>
+                                <span class="text-lg font-bold text-[#12715D]">STNK</span>
                             </div>
                             <div class="text-sm text-[#155145] mb-1">Kehilangan surat kendaraan bermotor.</div>
                             <ul class="list-disc pl-4 text-xs text-[#0C3B2E] mb-2">
-                                <li>Buat Surat Pengantar Kehilangan dari Desa</li>
-                                <li>Bawa KTP, fotokopi STNK/BPKB (jika ada), dan kronologi kehilangan</li>
-                                <li>Ajukan ke Polsek/Polres untuk surat kehilangan polisi</li>
-                                <li>Lanjutkan ke SAMSAT/BPKB untuk penerbitan dokumen baru</li>
+                                <li>Foto Copy KTP dan STNK</li>
+                                <li>Surat Keterangan dari Leasing</li>
+                                <li>Surat Pengantar dari Kepala Desa/Kelurahan</li>
+                                <li>Bukti Iklan</li>
+                                <li>Surat Rekomendasi Satlantas</li>
                             </ul>
                         </div>
                         <!-- Card KTP/KK -->
@@ -157,9 +158,8 @@
                             </div>
                             <div class="text-sm text-[#155145] mb-1">Kehilangan KTP Elektronik / Kartu Keluarga.</div>
                             <ul class="list-disc pl-4 text-xs text-[#0C3B2E] mb-2">
-                                <li>Surat Pengantar dari RT/RW dan Desa</li>
+                                <li>Surat Pengantar dari Kepala Desa/Kelurahan</li>
                                 <li>Fotokopi dokumen hilang (jika ada), KTP anggota keluarga</li>
-                                <li>Laporan kehilangan polisi</li>
                                 <li>Lanjutkan ke Dukcapil untuk cetak dokumen baru</li>
                             </ul>
                         </div>
@@ -172,9 +172,8 @@
                             </div>
                             <div class="text-sm text-[#155145] mb-1">Kehilangan kartu ATM atau buku tabungan bank.</div>
                             <ul class="list-disc pl-4 text-xs text-[#0C3B2E] mb-2">
-                                <li>Surat Pengantar dari Desa</li>
+                                <li>Surat Pengantar dari Kepala Desa/Kelurahan</li>
                                 <li>KTP & buku tabungan/ATM (jika ada)</li>
-                                <li>Laporan kehilangan polisi</li>
                                 <li>Bawa ke Bank untuk cetak baru</li>
                             </ul>
                         </div>
@@ -187,9 +186,8 @@
                             </div>
                             <div class="text-sm text-[#155145] mb-1">Kehilangan Buku Nikah (KUA).</div>
                             <ul class="list-disc pl-4 text-xs text-[#0C3B2E] mb-2">
-                                <li>Surat Pengantar dari Desa</li>
-                                <li>KTP & Buku Nikah (jika ada)</li>
-                                <li>Laporan kehilangan polisi</li>
+                                <li>Surat Pengantar dari Kepala Desa/Kelurahan</li>
+                                <li>Foto Copy KTP, KK, & Buku Nikah (jika ada)</li>
                                 <li>Ajukan duplikat ke KUA</li>
                             </ul>
                         </div>
@@ -202,10 +200,9 @@
                             </div>
                             <div class="text-sm text-[#155145] mb-1">Kehilangan SIM A/C.</div>
                             <ul class="list-disc pl-4 text-xs text-[#0C3B2E] mb-2">
-                                <li>Surat Pengantar Desa</li>
-                                <li>KTP & SIM lama (jika ada)</li>
-                                <li>Surat kehilangan dari Polisi</li>
-                                <li>Proses di SATPAS/Polres</li>
+                                <li>Surat Pengantar dari Kepala Desa/Kelurahan</li>
+                                <li>Foto Copy KTP, SIM lama (jika ada), & tanda bukti permohonan SIM</li>
+                                <li>Proses di Satlantas/Polres</li>
                             </ul>
                         </div>
                         <!-- Card Ijazah -->
@@ -217,9 +214,27 @@
                             </div>
                             <div class="text-sm text-[#155145] mb-1">Kehilangan ijazah sekolah/kuliah.</div>
                             <ul class="list-disc pl-4 text-xs text-[#0C3B2E] mb-2">
-                                <li>Surat Pengantar Desa</li>
-                                <li>Laporan kehilangan polisi</li>
-                                <li>Ajukan duplikat ke sekolah/universitas</li>
+                                <li>Surat Pengantar dari Kepala Desa/Kelurahan</li>
+                                <li>Surat Keterangan dari Sekolah</li>
+                                <li>Foto Copy KTP & Ijazah</li>
+                                <li>Ajukan duplikat ke sekolah</li>
+                            </ul>
+                        </div>
+                        <!-- Card BPKB -->
+                        <div
+                            class="bg-white/90 border-l-4 border-[#12715D]/80 shadow-xl rounded-2xl px-6 py-6 flex flex-col gap-3 reveal-on-scroll">
+                            <div class="flex items-center gap-2 mb-1">
+                                <i data-lucide="graduation-cap" class="w-7 h-7 text-[#12715D]"></i>
+                                <span class="text-lg font-bold text-[#12715D]">BPKB</span>
+                            </div>
+                            <div class="text-sm text-[#155145] mb-1">Kehilangan BPKB</div>
+                            <ul class="list-disc pl-4 text-xs text-[#0C3B2E] mb-2">
+                                <li>Surat Pengantar dari Kepala Desa/Kelurahan</li>
+                                <li>Surat Rekomendasi dari Satlantas</li>
+                                <li>Surat Keterangan dari Bank Nasional</li>
+                                <li>Foto Copy KTP & BPKB</li>
+                                <li>Bukti Iklan</li>
+                                <li>Proses di Satlantas</li>
                             </ul>
                         </div>
                         <!-- Card Sertifikat Tanah -->
@@ -231,9 +246,14 @@
                             </div>
                             <div class="text-sm text-[#155145] mb-1">Kehilangan Sertifikat Hak Milik / Girik.</div>
                             <ul class="list-disc pl-4 text-xs text-[#0C3B2E] mb-2">
-                                <li>Surat Pengantar Desa</li>
-                                <li>Laporan kehilangan polisi</li>
-                                <li>Permohonan duplikat ke BPN</li>
+                                <li>Surat Pengantar dari Kepala Desa/Kelurahan</li>
+                                <li>Surat Keterangan dari Kelurahan bahwa tanah tidak dalam sengketa</li>
+                                <li>Surat Keterangan dari Bank Nasional</li>
+                                <li>Surat Pernyataan Kehilangan Bermaterai</li>
+                                <li>Pemilik harus hadir/ Surat Kuasa</li>
+                                <li>Foto Copy KTP Pemilik, Pelapor, KK, Akta Jual Beli, Sertifikat, & PBB Terakhir</li>
+                                <li>Surat Ahli Waris, Surat Kematian</li>
+                                <li>Bukti Iklan</li>
                                 <li>Bawa dokumen pendukung (fotokopi sertifikat, bukti kepemilikan)</li>
                             </ul>
                         </div>

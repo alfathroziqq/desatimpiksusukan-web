@@ -103,7 +103,7 @@
 
                     <p class="max-w-2xl mx-auto text-[#155145] text-md md:text-xl mt-3">
                         Dapatkan <b>SKCK</b> dengan mudah! Pilih pengurusan secara <b>Offline</b> di Kantor Desa/Polsek
-                        atau <b>Online</b> lewat website resmi Polri.
+                        atau <b>Online</b> lewat aplikasi resmi Polri.
                     </p>
 
                     <div class="mt-4 flex justify-center gap-4">
@@ -190,7 +190,7 @@
                         <div class="space-y-0">
                             <template
                                 x-for="(step, i) in [
-                                { title: 'Kunjungi Website', desc: 'Akses aplikasi Super App Presisi, Pilih SKCK.' },
+                                { title: 'Kunjungi Aplikasi Super App Presisi', desc: 'Akses aplikasi Super App Presisi, Pilih SKCK.' },
                                 { title: 'Isi Formulir & Upload', desc: 'Data diri, dokumen scan: KTP, KK, foto, surat pengantar.' },
                                 { title: 'Cetak Bukti Pendaftaran', desc: 'Print bukti/unduh PDF, bawa ke Polsek.' },
                                 { title: 'Verifikasi di Polsek', desc: 'Verifikasi, sidik jari, pengambilan SKCK.' },
