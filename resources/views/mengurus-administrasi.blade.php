@@ -109,9 +109,9 @@
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-14">
 
                     <div
-                        class="bg-white/70 rounded-2xl shadow-lg px-7 py-8 reveal-on-scroll flex flex-col h-full border-l-4 border-[#C7F3E7]/70">
-                        <h2 class="font-bold text-xl md:text-2xl mb-5 flex items-center gap-2 text-[#12715D]">
-                            <i data-lucide="globe" class="w-7 h-7 text-[#12715D]"></i>
+                        class="bg-white/70 rounded-2xl shadow-lg px-7 py-8 reveal-on-scroll flex flex-col h-full border-l-4 border-[#0C3B2E]">
+                        <h2 class="font-bold text-xl md:text-2xl mb-5 flex items-center gap-2 text-[#0C3B2E]">
+                            <i data-lucide="globe" class="w-7 h-7 text-[#0C3B2E]"></i>
                             Pengajuan Dokumen Online
                         </h2>
                         <div class="flex justify-center mb-6">
@@ -137,10 +137,10 @@
                                 <div class="flex gap-4 items-start">
                                     <div class="flex flex-col items-center">
                                         <div
-                                            class="w-7 h-7 rounded-full bg-[#C7F3E7]/80 flex items-center justify-center text-[#12715D] font-bold">
+                                            class="w-7 h-7 rounded-full bg-[#0C3B2E]/80 flex items-center justify-center text-[#FFFFFF] font-bold">
                                             <span x-text="i+1"></span>
                                         </div>
-                                        <div :class="i < 4 ? 'h-12 w-1 mx-auto bg-[#C7F3E7]/60' : ''"></div>
+                                        <div :class="i < 4 ? 'h-12 w-1 mx-auto bg-[#0C3B2E]' : ''"></div>
                                     </div>
                                     <div class="pb-5">
                                         <!-- Langkah pertama: judul dengan backlink -->

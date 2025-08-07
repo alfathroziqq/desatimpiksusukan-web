@@ -57,11 +57,12 @@ Route::get('/data-keagamaan', [DataKeagamaanController::class, 'public'])->name(
 Route::get('/data-ekonomi', [DataEkonomiController::class, 'public'])->name('data-ekonomi');
 
 // Layanan Publik
-Route::get('/mengurus-surat-masuk-keluar', fn() => view('mengurus-surat'))->name('mengurus-surat');
-Route::get('/mengurus-skck', fn() => view('mengurus-skck'))->name('mengurus-skck');
-Route::get('/mengurus-surat-kehilangan', fn() => view('mengurus-kehilangan'))->name('mengurus-kehilangan');
-Route::get('/mengurus-administrasi', fn() => view('mengurus-administrasi'))->name('mengurus-administrasi');
-Route::get('/mengurus-catatan-sipil', fn() => view('mengurus-catat-sipil'))->name('mengurus-catatan-sipil');
+Route::get('/layanan-surat-masuk-keluar', fn() => view('mengurus-surat'))->name('mengurus-surat');
+Route::get('/layanan-skck', fn() => view('mengurus-skck'))->name('mengurus-skck');
+Route::get('/layanan-surat-kehilangan', fn() => view('mengurus-kehilangan'))->name('mengurus-kehilangan');
+Route::get('/layanan-administrasi', fn() => view('mengurus-administrasi'))->name('mengurus-administrasi');
+Route::get('/layanan-catatan-sipil', fn() => view('mengurus-catat-sipil'))->name('mengurus-catatan-sipil');
+Route::get('/layanan-pendaftaran-penduduk', fn() => view('mengurus-pendaftaran'))->name('mengurus-pendaftaran');
 
 // Aparatur Desa
 Route::get('/aparatur', fn() => view('aparatur'))->name('aparatur.index');

@@ -113,7 +113,7 @@
                     <!-- Tips -->
                     <div
                         class="bg-[#F9DCC1]/50 border-l-4 border-[#E8C187] text-[#155145] px-5 py-4 rounded-xl mb-8 flex items-center gap-3 shadow-sm max-w-2xl mx-auto reveal-on-scroll">
-                        <i data-lucide="info" class="w-6 h-6 text-[#E8C187]"></i>
+                        <i data-lucide="info" class="w-10 h-10 text-[#E8C187]"></i>
                         <span class="text-sm md:text-base">
                             Surat kehilangan akan diterbitkan oleh kepolisian. Kantor desa membantu mengurus
                             pengantar & dokumen pendukung.<br>
@@ -124,10 +124,10 @@
                     <div class="mb-10 flex justify-center w-full reveal-on-scroll">
                         <div class="relative">
                             <img src="{{ asset('images/surat-kehilangan.png') }}" alt="Surat Kehilangan"
-                                class="rounded-xl w-110 h-150 object-cover shadow border-4 border-[#0C3B2E]/40 cursor-pointer transition group-hover:scale-105"
+                                class="rounded-xl w-110 h-150 object-cover shadow border-4 border-[#0C3B2E] cursor-pointer transition group-hover:scale-105"
                                 @click="modalOpen = true; modalImg = '{{ asset('images/surat-kehilangan.png') }}'">
                             <div
-                                class="absolute inset-0 bg-gradient-to-tr from-[#C7F3E7]/10 to-transparent rounded-3xl pointer-events-none">
+                                class="absolute inset-0 bg-gradient-to-tr from-[#0C3B2E]/10 to-transparent rounded-3xl pointer-events-none">
                             </div>
                         </div>
                     </div>

@@ -110,9 +110,9 @@
             <!-- Layanan Publik -->
             <div class="relative" x-data="{ open: false }" @mouseenter="open = true" @mouseleave="open = false">
                 <button type="button"
-                    class="flex items-center {{ Route::is('mengurus-surat') || Route::is('mengurus-skck') || Route::is('mengurus-kehilangan') || Route::is('mengurus-administrasi') || Route::is('mengurus-catatan-sipil') ? 'text-[#D5C578]' : 'text-gray-300' }} hover:text-[#D5C578] transition duration-300 uppercase">
+                    class="flex items-center {{ Route::is('mengurus-surat') || Route::is('mengurus-skck') || Route::is('mengurus-kehilangan') || Route::is('mengurus-administrasi') || Route::is('mengurus-catatan-sipil') || Route::is('mengurus-pendaftaran') ? 'text-[#D5C578]' : 'text-gray-300' }} hover:text-[#D5C578] transition duration-300 uppercase">
                     <span
-                        class="nav-link {{ Route::is('mengurus-surat') || Route::is('mengurus-skck') || Route::is('mengurus-kehilangan') || Route::is('mengurus-administrasi') || Route::is('mengurus-catatan-sipil') ? 'active' : '' }}">
+                        class="nav-link {{ Route::is('mengurus-surat') || Route::is('mengurus-skck') || Route::is('mengurus-kehilangan') || Route::is('mengurus-administrasi') || Route::is('mengurus-catatan-sipil') || Route::is('mengurus-pendaftaran') ? 'active' : '' }}">
                         Layanan Publik
                     </span>
                     <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 ml-1 transition-transform"
@@ -125,14 +125,6 @@
                         class="block px-4 py-2 text-sm {{ Route::is('mengurus-surat') ? 'bg-[#D5C578]/30 text-[#D5C578]' : 'text-gray-200' }} hover:bg-white/10">
                         Surat Masuk & Keluar
                     </a>
-                    <a href="{{ route('mengurus-skck') }}"
-                        class="block px-4 py-2 text-sm {{ Route::is('mengurus-skck') ? 'bg-[#D5C578]/30 text-[#D5C578]' : 'text-gray-200' }} hover:bg-white/10">
-                        SKCK
-                    </a>
-                    <a href="{{ route('mengurus-kehilangan') }}"
-                        class="block px-4 py-2 text-sm {{ Route::is('mengurus-kehilangan') ? 'bg-[#D5C578]/30 text-[#D5C578]' : 'text-gray-200' }} hover:bg-white/10">
-                        Surat Kehilangan
-                    </a>
                     <a href="{{ route('mengurus-administrasi') }}"
                         class="block px-4 py-2 text-sm {{ Route::is('mengurus-administrasi') ? 'bg-[#D5C578]/30 text-[#D5C578]' : 'text-gray-200' }} hover:bg-white/10">
                         Administrasi Kependudukan
@@ -140,6 +132,18 @@
                     <a href="{{ route('mengurus-catatan-sipil') }}"
                         class="block px-4 py-2 text-sm {{ Route::is('mengurus-catatan-sipil') ? 'bg-[#D5C578]/30 text-[#D5C578]' : 'text-gray-200' }} hover:bg-white/10">
                         Pencatatan Sipil
+                    </a>
+                    <a href="{{ route('mengurus-pendaftaran') }}"
+                        class="block px-4 py-2 text-sm {{ Route::is('mengurus-pendaftaran') ? 'bg-[#D5C578]/30 text-[#D5C578]' : 'text-gray-200' }} hover:bg-white/10">
+                        Pendaftaran Penduduk
+                    </a>
+                    <a href="{{ route('mengurus-skck') }}"
+                        class="block px-4 py-2 text-sm {{ Route::is('mengurus-skck') ? 'bg-[#D5C578]/30 text-[#D5C578]' : 'text-gray-200' }} hover:bg-white/10">
+                        SKCK
+                    </a>
+                    <a href="{{ route('mengurus-kehilangan') }}"
+                        class="block px-4 py-2 text-sm {{ Route::is('mengurus-kehilangan') ? 'bg-[#D5C578]/30 text-[#D5C578]' : 'text-gray-200' }} hover:bg-white/10">
+                        Surat Kehilangan
                     </a>
                 </div>
             </div>
@@ -260,7 +264,7 @@
             <div>
                 <button @click="activeAccordion = (activeAccordion === 'layanan' ? '' : 'layanan')"
                     class="w-full flex justify-between items-center py-2 px-3 text-base
-                    {{ Route::is('mengurus-surat') || Route::is('mengurus-skck') || Route::is('mengurus-kehilangan') || Route::is('mengurus-administrasi') || Route::is('mengurus-catatan-sipil') ? 'text-[#D5C578] font-bold' : 'text-gray-200' }}
+                    {{ Route::is('mengurus-surat') || Route::is('mengurus-skck') || Route::is('mengurus-kehilangan') || Route::is('mengurus-administrasi') || Route::is('mengurus-catatan-sipil') || Route::is('mengurus-pendaftaran') ? 'text-[#D5C578] font-bold' : 'text-gray-200' }}
                     hover:text-white hover:bg-white/5 rounded-md">
                     <span>Layanan Publik</span>
                     <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 transition-transform"
@@ -274,14 +278,6 @@
                         class="block py-2 px-3 text-sm {{ Route::is('mengurus-surat') ? 'bg-[#D5C578]/10 text-[#D5C578] font-bold' : 'text-gray-300' }} hover:text-white hover:bg-white/5 rounded-md">
                         Surat Masuk & Keluar
                     </a>
-                    <a href="{{ route('mengurus-skck') }}"
-                        class="block py-2 px-3 text-sm {{ Route::is('mengurus-skck') ? 'bg-[#D5C578]/10 text-[#D5C578] font-bold' : 'text-gray-300' }} hover:text-white hover:bg-white/5 rounded-md">
-                        SKCK
-                    </a>
-                    <a href="{{ route('mengurus-kehilangan') }}"
-                        class="block py-2 px-3 text-sm {{ Route::is('mengurus-kehilangan') ? 'bg-[#D5C578]/10 text-[#D5C578] font-bold' : 'text-gray-300' }} hover:text-white hover:bg-white/5 rounded-md">
-                        Surat Kehilangan
-                    </a>
                     <a href="{{ route('mengurus-administrasi') }}"
                         class="block py-2 px-3 text-sm {{ Route::is('mengurus-administrasi') ? 'bg-[#D5C578]/10 text-[#D5C578] font-bold' : 'text-gray-300' }} hover:text-white hover:bg-white/5 rounded-md">
                         Administrasi Kependudukan
@@ -289,6 +285,18 @@
                     <a href="{{ route('mengurus-catatan-sipil') }}"
                         class="block py-2 px-3 text-sm {{ Route::is('mengurus-catatan-sipil') ? 'bg-[#D5C578]/10 text-[#D5C578] font-bold' : 'text-gray-300' }} hover:text-white hover:bg-white/5 rounded-md">
                         Pencatatan Sipil
+                    </a>
+                    <a href="{{ route('mengurus-pendaftaran') }}"
+                        class="block py-2 px-3 text-sm {{ Route::is('mengurus-pendaftaran') ? 'bg-[#D5C578]/10 text-[#D5C578] font-bold' : 'text-gray-300' }} hover:text-white hover:bg-white/5 rounded-md">
+                        Pendaftaran Penduduk
+                    </a>
+                    <a href="{{ route('mengurus-skck') }}"
+                        class="block py-2 px-3 text-sm {{ Route::is('mengurus-skck') ? 'bg-[#D5C578]/10 text-[#D5C578] font-bold' : 'text-gray-300' }} hover:text-white hover:bg-white/5 rounded-md">
+                        SKCK
+                    </a>
+                    <a href="{{ route('mengurus-kehilangan') }}"
+                        class="block py-2 px-3 text-sm {{ Route::is('mengurus-kehilangan') ? 'bg-[#D5C578]/10 text-[#D5C578] font-bold' : 'text-gray-300' }} hover:text-white hover:bg-white/5 rounded-md">
+                        Surat Kehilangan
                     </a>
                 </div>
             </div>

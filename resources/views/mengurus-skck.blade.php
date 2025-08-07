@@ -90,7 +90,7 @@
                 <span class="text-[#DBAA7C]">Mengurus SKCK</span>
             </div>
 
-            <div class="container mx-auto px-2 sm:px-12 lg:px-40 py-8 font-['Poppins']" x-data="{ modalOpen: false, modalImg: '' }">
+            <div class="container mx-auto px-2 sm:px-12 lg:px-30 py-8 font-['Poppins']" x-data="{ modalOpen: false, modalImg: '' }">
                 <div class="mt-[-30px] mb-8 flex flex-col items-center text-center reveal-on-scroll">
                     <h1 class="text-2xl md:text-5xl font-extrabold text-[#0C3B2E] mb-3 drop-shadow"
                         style="font-family: 'Poppins', sans-serif;">
@@ -108,7 +108,7 @@
 
                     <div class="mt-4 flex justify-center gap-4">
                         <span
-                            class="inline-flex items-center gap-2 bg-[#E8C187]/40 text-[#0C3B2E] font-semibold rounded-full px-4 py-1 text-sm">
+                            class="inline-flex items-center gap-2 bg-[#E8C187]/40 text-[#8d6245] font-semibold rounded-full px-4 py-1 text-sm">
                             <i data-lucide="clock-4" class="w-5 h-5"></i>
                             Selesai 1 Hari Kerja*
                         </span>
@@ -135,7 +135,7 @@
                     <div
                         class="bg-white/70 rounded-2xl shadow-lg px-7 py-8 reveal-on-scroll flex flex-col h-full border-l-4 border-[#E8C187]/70">
 
-                        <h2 class="font-bold text-xl md:text-2xl mb-5 flex items-center gap-2 text-[#12715D]">
+                        <h2 class="font-bold text-xl md:text-2xl mb-5 flex items-center gap-2 text-[#0C3B2E]">
                             <i data-lucide="edit-3" class="w-6 h-6 text-[#E8C187]"></i>
                             SKCK Offline (Kantor Desa & Polsek)
                         </h2>
@@ -175,15 +175,15 @@
 
                     <!-- Online -->
                     <div
-                        class="bg-white/70 rounded-2xl shadow-lg px-7 py-8 reveal-on-scroll flex flex-col h-full border-l-4 border-[#C7F3E7]/70">
-                        <h2 class="font-bold text-xl md:text-2xl mb-5 flex items-center gap-2 text-[#12715D]">
+                        class="bg-white/70 rounded-2xl shadow-lg px-7 py-8 reveal-on-scroll flex flex-col h-full border-l-4 border-[#0C3B2E]">
+                        <h2 class="font-bold text-xl md:text-2xl mb-5 flex items-center gap-2 text-[#0C3B2E]">
                             <i data-lucide="globe" class="w-6 h-6 text-[#0C3B2E]"></i>
-                            SKCK Online (Aplikasi Super App Presisi)
+                            SKCK Online (Apk Super App Presisi)
                         </h2>
 
                         <div class="flex justify-center mb-6">
                             <img src="{{ asset('images/surat-skck-online.png') }}" alt="SKCK Online"
-                                class="rounded-xl w-100 h-135 object-cover shadow border-4 border-[#0C3B2E]/40 cursor-pointer transition group-hover:scale-105"
+                                class="rounded-xl w-100 h-135 object-cover shadow border-4 border-[#0C3B2E] cursor-pointer transition group-hover:scale-105"
                                 @click="modalOpen = true; modalImg = '{{ asset('images/surat-skck-online.png') }}'">
                         </div>
 
@@ -199,10 +199,10 @@
                                 <div class="flex gap-4 items-start">
                                     <div class="flex flex-col items-center">
                                         <div
-                                            class="w-7 h-7 rounded-full bg-[#C7F3E7]/80 flex items-center justify-center text-[#12715D] font-bold">
+                                            class="w-7 h-7 rounded-full bg-[#0C3B2E] flex items-center justify-center text-[#FFFFFF] font-bold">
                                             <span x-text="i+1"></span>
                                         </div>
-                                        <div :class="i < 3 ? 'h-10 w-1 mx-auto bg-[#C7F3E7]/60' : ''"></div>
+                                        <div :class="i < 3 ? 'h-10 w-1 mx-auto bg-[#0C3B2E]' : ''"></div>
                                     </div>
                                     <div class="pb-5">
                                         <div class="font-semibold text-[#0C3B2E] mb-1" x-html="step.title"></div>
