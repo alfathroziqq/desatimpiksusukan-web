@@ -189,18 +189,18 @@
                             </p>
                         </div>
                     </a>
-                    <a href="{{ route('belanja.index') }}"
+                    <a href="{{ route('mengurus-surat') }}"
                         class="flex items-start gap-4 p-4 bg-white/90 border border-[#E8C187]/30 rounded-3xl shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group">
                         <div
                             class="flex items-center justify-center w-12 h-12 bg-gradient-to-br from-[#E8C187]/80 to-[#C7F3E7]/80 rounded-2xl text-[#0C3B2E] shadow group-hover:bg-[#E8C187] transition">
-                            <i data-lucide="shopping-cart" class="w-7 h-7"></i>
+                            <i data-lucide="airplay" class="w-7 h-7"></i>
                         </div>
                         <div>
                             <span class="font-semibold text-[#0C3B2E] text-lg lg:text-base"
-                                style="font-family: 'Poppins', sans-serif">Belanja
+                                style="font-family: 'Poppins', sans-serif">Layanan Publik
                             </span>
                             <p class="text-sm lg:text-xs text-gray-600 mt-1" style="font-family: 'Poppins', sans-serif">
-                                Jelajahi produk unggulan
+                                Surat Menyurat
                             </p>
                         </div>
                     </a>

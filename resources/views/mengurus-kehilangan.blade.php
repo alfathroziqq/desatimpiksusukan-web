@@ -93,7 +93,7 @@
             <div class="container mx-auto px-2 sm:px-12 lg:px-40 py-8">
                 <section class="flex flex-col items-center font-['Poppins']" x-data="{ modalOpen: false, modalImg: '' }">
 
-                    <div class="mb-8 mt-[-30px] max-w-5xl w-full text-center mx-auto reveal-on-scroll">
+                    <div class="mb-6 mt-[-30px] max-w-5xl w-full text-center mx-auto reveal-on-scroll">
                         <h1 class="text-2xl md:text-5xl font-extrabold text-[#0C3B2E] mb-2 drop-shadow"
                             style="font-family: 'Poppins', sans-serif;">
                             Panduan Mengurus Surat Kehilangan
@@ -112,7 +112,7 @@
 
                     <!-- Tips -->
                     <div
-                        class="bg-[#F9DCC1]/50 border-l-4 border-[#E8C187] text-[#155145] px-5 py-4 rounded-xl mb-10 flex items-center gap-3 shadow-sm max-w-2xl mx-auto reveal-on-scroll">
+                        class="bg-[#F9DCC1]/50 border-l-4 border-[#E8C187] text-[#155145] px-5 py-4 rounded-xl mb-8 flex items-center gap-3 shadow-sm max-w-2xl mx-auto reveal-on-scroll">
                         <i data-lucide="info" class="w-6 h-6 text-[#E8C187]"></i>
                         <span class="text-sm md:text-base">
                             Surat kehilangan akan diterbitkan oleh kepolisian. Kantor desa membantu mengurus
@@ -123,9 +123,9 @@
 
                     <div class="mb-10 flex justify-center w-full reveal-on-scroll">
                         <div class="relative">
-                            <img src="{{ asset('images/surat-kehilangan.jpg') }}" alt="Surat Kehilangan"
-                                class="rounded-3xl w-full max-w-[300px] md:max-w-[320px] h-[420px] md:h-[400px] mx-auto shadow-xl border-4 border-[#C7F3E7]/70 cursor-pointer object-cover group-hover:scale-105 transition-all duration-300 bg-white/50"
-                                @click="modalOpen = true; modalImg = '{{ asset('images/surat-kehilangan.jpg') }}'">
+                            <img src="{{ asset('images/surat-kehilangan.png') }}" alt="Surat Kehilangan"
+                                class="rounded-xl w-110 h-150 object-cover shadow border-4 border-[#0C3B2E]/40 cursor-pointer transition group-hover:scale-105"
+                                @click="modalOpen = true; modalImg = '{{ asset('images/surat-kehilangan.png') }}'">
                             <div
                                 class="absolute inset-0 bg-gradient-to-tr from-[#C7F3E7]/10 to-transparent rounded-3xl pointer-events-none">
                             </div>

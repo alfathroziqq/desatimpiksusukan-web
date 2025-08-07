@@ -119,9 +119,9 @@
 
                     <div class="flex justify-center">
                         <div class="relative group w-full h-64 md:h-[320px]">
-                            <img src="{{ asset('images/surat-masuk.jpg') }}" alt="Alur Surat Masuk"
+                            <img src="{{ asset('images/surat-masuk.png') }}" alt="Alur Surat Masuk"
                                 class="w-full h-full object-cover rounded-3xl shadow-xl border-4 border-[#C7F3E7]/70 group-hover:scale-105 transition-all duration-300 bg-white/50 cursor-pointer"
-                                @click="modalOpen = true; modalImg = '{{ asset('images/surat-masuk.jpg') }}'">
+                                @click="modalOpen = true; modalImg = '{{ asset('images/surat-masuk.png') }}'">
                             <div
                                 class="absolute inset-0 bg-gradient-to-tr from-[#C7F3E7]/10 to-transparent rounded-3xl pointer-events-none">
                             </div>
@@ -214,9 +214,9 @@
 
                     <div class="flex justify-center order-1 md:order-2">
                         <div class="relative group w-full h-64 md:h-[320px]">
-                            <img src="{{ asset('images/surat-keluar.jpg') }}" alt="Alur Surat Keluar"
+                            <img src="{{ asset('images/surat-keluar.png') }}" alt="Alur Surat Keluar"
                                 class="w-full h-full object-cover rounded-3xl shadow-xl border-4 border-[#E8C187]/70 group-hover:scale-105 transition-all duration-300 bg-white/50 cursor-pointer"
-                                @click="modalOpen = true; modalImg = '{{ asset('images/surat-keluar.jpg') }}'">
+                                @click="modalOpen = true; modalImg = '{{ asset('images/surat-keluar.png') }}'">
                             <div class="absolute inset-0 bg-gradient-to-tr from-[#E8C187]/10 to-transparent rounded-3xl pointer-events-none"></div>
                         </div>
                     </div>
@@ -277,7 +277,7 @@
                             class="cursor-pointer group bg-[#E8C187]/20 hover:bg-[#F9DCC1]/50 rounded-xl shadow transition-all p-4 reveal-on-scroll">
                             <div class="flex items-center gap-3">
                                 <span
-                                    class="bg-[#F9DCC1]/80 text-[#C2977D] rounded-full w-7 h-7 flex items-center justify-center font-bold mr-1 group-hover:bg-[#C7F3E7] transition">
+                                    class="bg-[#F9DCC1]/80 text-[#0C3B2E] rounded-full w-7 h-7 flex items-center justify-center font-bold mr-1 group-hover:bg-[#C7F3E7] transition">
                                     <i data-lucide="badge-check" class="w-5 h-5"></i>
                                 </span>
                                 <span class="font-semibold text-[#12715D]">Apakah ada biaya untuk pengurusan surat?</span>

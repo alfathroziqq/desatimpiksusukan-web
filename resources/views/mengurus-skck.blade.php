@@ -141,9 +141,9 @@
                         </h2>
 
                         <div class="flex justify-center mb-6">
-                            <img src="{{ asset('images/surat-skck-offline.jpg') }}" alt="SKCK Offline"
-                                class="rounded-xl w-100 h-110 object-cover shadow border-4 border-[#E8C187]/40 cursor-pointer transition group-hover:scale-105"
-                                @click="modalOpen = true; modalImg = '{{ asset('images/surat-skck-offline.jpg') }}'">
+                            <img src="{{ asset('images/surat-skck-offline.png') }}" alt="SKCK Offline"
+                                class="rounded-xl w-100 h-135 object-cover shadow border-4 border-[#E8C187]/40 cursor-pointer transition group-hover:scale-105"
+                                @click="modalOpen = true; modalImg = '{{ asset('images/surat-skck-offline.png') }}'">
                         </div>
 
                         <div class="space-y-0">
@@ -182,9 +182,9 @@
                         </h2>
 
                         <div class="flex justify-center mb-6">
-                            <img src="{{ asset('images/surat-skck-online.jpg') }}" alt="SKCK Online"
-                                class="rounded-xl w-100 h-110 object-cover shadow border-4 border-[#0C3B2E]/40 cursor-pointer transition group-hover:scale-105"
-                                @click="modalOpen = true; modalImg = '{{ asset('images/surat-skck-online.jpg') }}'">
+                            <img src="{{ asset('images/surat-skck-online.png') }}" alt="SKCK Online"
+                                class="rounded-xl w-100 h-135 object-cover shadow border-4 border-[#0C3B2E]/40 cursor-pointer transition group-hover:scale-105"
+                                @click="modalOpen = true; modalImg = '{{ asset('images/surat-skck-online.png') }}'">
                         </div>
 
                         <div class="space-y-0">
@@ -281,11 +281,10 @@
                             <i data-lucide="x" class="w-6 h-6"></i>
                         </button>
                         <img :src="modalImg" alt="Preview Gambar SKCK"
-                            class="rounded-xl max-h-[80vh] object-contain w-full" />
+                            class="rounded-xl max-h-[85vh] object-contain w-full" />
                     </div>
                 </div>
             </div>
-
 
         </div>
     </main>
