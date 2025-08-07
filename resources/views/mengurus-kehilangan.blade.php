@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mengurus Surat Masuk & Keluar | Desa Timpik</title>
+    <title>Kehilangan Surat | Desa Timpik</title>
 
     <link rel="icon" type="image/png" href="{{ asset('images/logo-timpik.png') }}">
 
@@ -87,7 +87,7 @@
                 <span class="mx-2">></span>
                 <span class="text-[#0C3B2E]">Layanan Publik</span>
                 <span class="mx-2">></span>
-                <span class="text-[#DBAA7C]">Surat Masuk & Keluar</span>
+                <span class="text-[#DBAA7C]">Mengurus Surat Kehilangan</span>
             </div>
 
             <div class="container mx-auto px-2 sm:px-12 lg:px-40 py-8">

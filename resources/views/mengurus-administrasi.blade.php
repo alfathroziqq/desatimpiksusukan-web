@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SKCK | Desa Timpik</title>
+    <title>Administrasi Kependudukan Online | Desa Timpik</title>
 
     <link rel="icon" type="image/png" href="{{ asset('images/logo-timpik.png') }}">
 
@@ -87,72 +87,101 @@
                 <span class="mx-2">></span>
                 <span class="text-[#0C3B2E]">Layanan Publik</span>
                 <span class="mx-2">></span>
-                <span class="text-[#DBAA7C]">Mengurus SKCK</span>
+                <span class="text-[#DBAA7C]">Administrasi Kependudukan Online</span>
             </div>
 
-            <div class="container mx-auto px-2 sm:px-12 lg:px-40 py-8 font-['Poppins']" x-data="{ modalOpen: false, modalImg: '' }">
-                <div class="mt-[-30px] mb-8 flex flex-col items-center text-center reveal-on-scroll">
+            <div class="container mx-auto px-2 sm:px-12 lg:px-30 py-8 font-['Poppins']" x-data="{ modalOpen: false, modalImg: '' }">
+
+                <div class="mt-[-30px] mb-8 text-center max-w-4xl mx-auto reveal-on-scroll">
                     <h1 class="text-2xl md:text-5xl font-extrabold text-[#0C3B2E] mb-3 drop-shadow"
                         style="font-family: 'Poppins', sans-serif;">
-                        Pengurusan SKCK Desa Timpik
+                        Administrasi Kependudukan Online
                     </h1>
-
                     <div
                         class="w-24 md:w-40 h-1 mx-auto bg-gradient-to-r from-[#C7F3E7] via-[#0C3B2E] to-[#F9DCC1] rounded-lg">
                     </div>
-
                     <p class="max-w-2xl mx-auto text-[#155145] text-md md:text-xl mt-3">
-                        Dapatkan <b>SKCK</b> dengan mudah! Pilih pengurusan secara <b>Offline</b> di Kantor Desa/Polsek
-                        atau <b>Online</b> lewat aplikasi resmi Polri.
+                        <b>Urus dokumen kependudukan</b> (KTP, KK, Akta, dan lainnya) dengan mudah secara daring tanpa
+                        harus antre lama! Berikut alur resmi pengajuan administrasi online untuk warga Desa Timpik.
                     </p>
-
-                    <div class="mt-4 flex justify-center gap-4">
-                        <span
-                            class="inline-flex items-center gap-2 bg-[#E8C187]/40 text-[#0C3B2E] font-semibold rounded-full px-4 py-1 text-sm">
-                            <i data-lucide="clock-4" class="w-5 h-5"></i>
-                            Selesai 1 Hari Kerja*
-                        </span>
-                        <span
-                            class="inline-flex items-center gap-2 bg-[#C7F3E7]/40 text-[#12715D] font-semibold rounded-full px-4 py-1 text-sm">
-                            <i data-lucide="info" class="w-5 h-5"></i>
-                            Biaya Resmi Rp 30.000
-                        </span>
-                    </div>
                 </div>
 
-                <!-- Tips -->
-                <div
-                    class="bg-[#E8C187]/30 border-l-4 border-[#C2977D] text-[#0C3B2E] px-4 py-3 rounded-xl mb-8 flex items-center gap-3 shadow-sm max-w-3xl mx-auto reveal-on-scroll">
-                    <i data-lucide="alert-circle" class="w-6 h-6"></i>
-                    <span class="text-sm md:text-base">
-                        SKCK wajib untuk keperluan kerja, sekolah, pindah domisili, dan lainnya. Siapkan dokumen dari
-                        rumah!
-                    </span>
-                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-14">
 
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-12 mb-16">
-                    <!-- Offline -->
                     <div
-                        class="bg-white/70 rounded-2xl shadow-lg px-7 py-8 reveal-on-scroll flex flex-col h-full border-l-4 border-[#E8C187]/70">
-
+                        class="bg-white/70 rounded-2xl shadow-lg px-7 py-8 reveal-on-scroll flex flex-col h-full border-l-4 border-[#C7F3E7]/70">
                         <h2 class="font-bold text-xl md:text-2xl mb-5 flex items-center gap-2 text-[#12715D]">
-                            <i data-lucide="edit-3" class="w-6 h-6 text-[#E8C187]"></i>
-                            SKCK Offline (Kantor Desa & Polsek)
+                            <i data-lucide="globe" class="w-7 h-7 text-[#12715D]"></i>
+                            Pengajuan Dokumen Online
                         </h2>
-
                         <div class="flex justify-center mb-6">
-                            <img src="{{ asset('images/surat-skck-offline.png') }}" alt="SKCK Offline"
-                                class="rounded-xl w-100 h-135 object-cover shadow border-4 border-[#E8C187]/40 cursor-pointer transition group-hover:scale-105"
-                                @click="modalOpen = true; modalImg = '{{ asset('images/surat-skck-offline.png') }}'">
+                            <img src="images/administrasi-kependudukan-online-1.png" alt="Cek Keaslian Dokumen"
+                                class="rounded-xl w-full max-w-xs sm:max-w-md md:max-w-lg lg:max-w-xl xl:max-w-2xl h-auto object-cover shadow border-4 border-[#E8C187]/40 cursor-pointer transition group-hover:scale-105"
+                                @click="modalOpen = true; modalImg = 'images/administrasi-kependudukan-online-1.png'">
                         </div>
-
                         <div class="space-y-0">
                             <template
                                 x-for="(step, i) in [
-                                { title: 'Pengantar RT/RW & Desa', desc: 'Minta pengantar dari RT/RW lalu legalisasi ke kantor Desa.' },
-                                { title: 'Siapkan Berkas', desc: 'KTP, KK, Akta Lahir/Ijazah, pas foto, dokumen pendukung.' },
-                                { title: 'Datang ke Polsek', desc: 'Verifikasi berkas, sidik jari, bayar Rp 30.000.' },
-                                { title: 'Proses & Ambil SKCK', desc: 'SKCK dicetak & diambil di Polsek.' },
+                                    {
+                                        title: 'Buka Website',
+                                        url: 'https://sipendukonline.semarangkab.go.id',
+                                        urlText: 'sipendukonline.semarangkab.go.id',
+                                        desc: 'Atau gunakan aplikasi SIPENDUK Online (scan QR di brosur).'
+                                    },
+                                    { title: 'Daftar Akun & Isi Data', desc: 'Lengkapi data diri dan nomor HP aktif. Ikuti langkah verifikasi yang dikirim lewat WA/SMS.' },
+                                    { title: 'Login & Pilih Layanan', desc: 'Masuk dengan NIK dan kata sandi, lalu pilih layanan: KTP, KK, Akta Lahir, Akta Kematian, dsb.' },
+                                    { title: 'Unggah Dokumen Persyaratan', desc: 'Upload scan/foto dokumen sesuai jenis layanan. Pastikan file jelas & sesuai.' },
+                                    { title: 'Kirim Permohonan & Pantau Proses', desc: 'Kirim Permohonan & Pantau Proses' }
+                                ]"
+                                :key="i">
+                                <div class="flex gap-4 items-start">
+                                    <div class="flex flex-col items-center">
+                                        <div
+                                            class="w-7 h-7 rounded-full bg-[#C7F3E7]/80 flex items-center justify-center text-[#12715D] font-bold">
+                                            <span x-text="i+1"></span>
+                                        </div>
+                                        <div :class="i < 4 ? 'h-12 w-1 mx-auto bg-[#C7F3E7]/60' : ''"></div>
+                                    </div>
+                                    <div class="pb-5">
+                                        <!-- Langkah pertama: judul dengan backlink -->
+                                        <template x-if="i === 0">
+                                            <div class="font-semibold text-[#0C3B2E] mb-1">
+                                                <span x-text="step.title"></span>
+                                                <a :href="step.url" target="_blank"
+                                                    class="text-blue-700 underline hover:text-blue-900 font-semibold ml-1"
+                                                    x-text="step.urlText"></a>
+                                            </div>
+                                        </template>
+                                        <!-- Langkah lainnya: judul biasa -->
+                                        <template x-if="i !== 0">
+                                            <div class="font-semibold text-[#0C3B2E] mb-1" x-text="step.title"></div>
+                                        </template>
+                                        <div class="text-sm text-[#155145]" x-text="step.desc"></div>
+                                    </div>
+                                </div>
+                            </template>
+
+                        </div>
+                    </div>
+
+                    <div
+                        class="bg-white/70 rounded-2xl shadow-lg px-7 py-8 reveal-on-scroll flex flex-col h-full border-l-4 border-[#E8C187]/70">
+                        <h2 class="font-bold text-xl md:text-2xl mb-5 flex items-center gap-2 text-[#12715D]">
+                            <i data-lucide="check-circle" class="w-7 h-7 text-[#E8C187]"></i>
+                            Cek Keaslian Dokumen (TTE)
+                        </h2>
+                        <div class="flex justify-center mb-6">
+                            <img src="images/administrasi-kependudukan-online-2.png" alt="Cek Keaslian Dokumen"
+                                class="rounded-xl w-full max-w-xs sm:max-w-md md:max-w-lg lg:max-w-xl xl:max-w-2xl h-auto object-cover shadow border-4 border-[#E8C187]/40 cursor-pointer transition group-hover:scale-105"
+                                @click="modalOpen = true; modalImg = 'images/administrasi-kependudukan-online-2.png'">
+                        </div>
+                        <div class="space-y-0">
+                            <template
+                                x-for="(step, i) in [
+                                { title: 'Siapkan Dokumen TTE', desc: 'Ambil file dokumen kependudukan dengan QR Code/TTE (PDF/fisik).' },
+                                { title: 'Install & Buka Aplikasi VeryDS', desc: 'Unduh aplikasi <b>VeryDS</b> di Play Store. Jalankan aplikasinya.' },
+                                { title: 'Scan QR Code Dokumen', desc: 'Pilih menu VERIFY PRINTED DOCUMENT lalu scan QR pada dokumen.' },
+                                { title: 'Lihat Status Keaslian', desc: 'Status & detail keaslian akan muncul di layar aplikasi atau website Dukcapil.' },
                             ]"
                                 :key="i">
                                 <div class="flex gap-4 items-start">
@@ -161,7 +190,7 @@
                                             class="w-7 h-7 rounded-full bg-[#E8C187]/80 flex items-center justify-center text-white font-bold">
                                             <span x-text="i+1"></span>
                                         </div>
-                                        <div :class="i < 3 ? 'h-10 w-1 mx-auto bg-[#E8C187]/60' : ''"></div>
+                                        <div :class="i < 3 ? 'h-15 w-1 mx-auto bg-[#E8C187]/60' : ''"></div>
                                     </div>
                                     <div class="pb-5">
                                         <div class="font-semibold text-[#0C3B2E] mb-1" x-text="step.title"></div>
@@ -170,95 +199,80 @@
                                 </div>
                             </template>
                         </div>
-
-                    </div>
-
-                    <!-- Online -->
-                    <div
-                        class="bg-white/70 rounded-2xl shadow-lg px-7 py-8 reveal-on-scroll flex flex-col h-full border-l-4 border-[#C7F3E7]/70">
-                        <h2 class="font-bold text-xl md:text-2xl mb-5 flex items-center gap-2 text-[#12715D]">
-                            <i data-lucide="globe" class="w-6 h-6 text-[#0C3B2E]"></i>
-                            SKCK Online (Aplikasi Super App Presisi)
-                        </h2>
-
-                        <div class="flex justify-center mb-6">
-                            <img src="{{ asset('images/surat-skck-online.png') }}" alt="SKCK Online"
-                                class="rounded-xl w-100 h-135 object-cover shadow border-4 border-[#0C3B2E]/40 cursor-pointer transition group-hover:scale-105"
-                                @click="modalOpen = true; modalImg = '{{ asset('images/surat-skck-online.png') }}'">
-                        </div>
-
-                        <div class="space-y-0">
-                            <template
-                                x-for="(step, i) in [
-                                { title: 'Kunjungi Aplikasi Super App Presisi', desc: 'Akses aplikasi Super App Presisi, Pilih SKCK.' },
-                                { title: 'Isi Formulir & Upload', desc: 'Data diri, dokumen scan: KTP, KK, foto, surat pengantar.' },
-                                { title: 'Cetak Bukti Pendaftaran', desc: 'Print bukti/unduh PDF, bawa ke Polsek.' },
-                                { title: 'Verifikasi di Polsek', desc: 'Verifikasi, sidik jari, pengambilan SKCK.' },
-                            ]"
-                                :key="i">
-                                <div class="flex gap-4 items-start">
-                                    <div class="flex flex-col items-center">
-                                        <div
-                                            class="w-7 h-7 rounded-full bg-[#C7F3E7]/80 flex items-center justify-center text-[#12715D] font-bold">
-                                            <span x-text="i+1"></span>
-                                        </div>
-                                        <div :class="i < 3 ? 'h-10 w-1 mx-auto bg-[#C7F3E7]/60' : ''"></div>
-                                    </div>
-                                    <div class="pb-5">
-                                        <div class="font-semibold text-[#0C3B2E] mb-1" x-html="step.title"></div>
-                                        <div class="text-sm text-[#155145]" x-text="step.desc"></div>
-                                    </div>
-                                </div>
-                            </template>
-                        </div>
-
                     </div>
                 </div>
 
-                <!-- Dokumen Persyaratan -->
-                <div class="max-w-4xl mx-auto mt-8 bg-[#F9DCC1]/30 rounded-2xl shadow-md px-7 py-8 reveal-on-scroll">
-                    <h3 class="text-xl font-bold text-[#12715D] mb-3 flex items-center gap-2">
-                        <i data-lucide="files" class="w-6 h-6 text-[#E8C187]"></i>
-                        Dokumen yang Wajib Disiapkan
-                    </h3>
-                    <ul class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-[#0C3B2E] font-medium">
-                        <li class="flex items-center gap-2"><i data-lucide="file-text" class="w-5 h-5"></i> KTP Asli &
-                            Fotokopi</li>
-                        <li class="flex items-center gap-2"><i data-lucide="file-text" class="w-5 h-5"></i> KK (Kartu
-                            Keluarga)</li>
-                        <li class="flex items-center gap-2"><i data-lucide="file-text" class="w-5 h-5"></i> Akta Lahir /
-                            Ijazah</li>
-                        <li class="flex items-center gap-2"><i data-lucide="file-text" class="w-5 h-5"></i> Surat
-                            Pengantar RT/RW & Desa</li>
-                        <li class="flex items-center gap-2"><i data-lucide="file-text" class="w-5 h-5"></i> Pas Foto
-                            4x6 (Latar Merah)</li>
-                    </ul>
-                </div>
-
-                <!-- FAQ Accordion -->
+                <!-- FAQ Mini -->
                 <div class="mt-10 w-full max-w-4xl mx-auto" x-data="{ openFaq: null }">
                     <h3 class="text-lg font-bold text-[#12715D] mb-4 flex items-center gap-2 reveal-on-scroll">
                         <i data-lucide="help-circle" class="w-6 h-6 text-[#E8C187]"></i>
-                        Tanya Jawab SKCK
+                        Tanya Jawab Administrasi Online
                     </h3>
                     <div class="space-y-4">
                         <!-- FAQ 1 -->
                         <div @click="openFaq === 1 ? openFaq = null : openFaq = 1"
-                            class="cursor-pointer group bg-[#C7F3E7]/30 hover:bg-[#C7F3E7]/50 rounded-xl shadow transition-all p-4 reveal-on-scroll">
+                            class="cursor-pointer group bg-[#F9DCC1]/40 hover:bg-[#E8C187]/30 rounded-xl shadow transition-all p-4 reveal-on-scroll">
                             <div class="flex items-center gap-3">
                                 <span
                                     class="bg-[#E8C187]/70 text-[#12715D] rounded-full w-7 h-7 flex items-center justify-center font-bold mr-1 group-hover:bg-[#C7F3E7] transition">
-                                    <i data-lucide="folder-check" class="w-5 h-5"></i>
+                                    <i data-lucide="user-check" class="w-5 h-5"></i>
                                 </span>
-                                <span class="font-semibold text-[#12715D]">Bisa SKCK diurus orang lain?</span>
-                                <i data-lucide="chevron-down"
-                                    class="ml-auto w-6 h-6 transition-transform duration-300"
+                                <span class="font-semibold text-[#12715D]">Apakah bisa mengurus KTP hilang secara
+                                    online?</span>
+                                <i data-lucide="chevron-down" class="ml-auto w-6 h-6 transition-transform duration-300"
                                     :class="{ 'rotate-180': openFaq === 1 }"></i>
                             </div>
                             <div x-show="openFaq === 1" x-collapse>
                                 <div class="mt-2 pl-10 text-[#155145]">
                                     <span class="font-semibold text-[#12715D]">Jawaban:</span>
-                                    Bisa, asalkan membawa surat kuasa dan KTP asli pemohon.
+                                    Bisa, silakan pilih layanan <b>KTP</b> pada SIPENDUK Online dan upload surat
+                                    kehilangan dari kepolisian.
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- FAQ 2 -->
+                        <div @click="openFaq === 2 ? openFaq = null : openFaq = 2"
+                            class="cursor-pointer group bg-[#C7F3E7]/30 hover:bg-[#C7F3E7]/50 rounded-xl shadow transition-all p-4 reveal-on-scroll">
+                            <div class="flex items-center gap-3">
+                                <span
+                                    class="bg-[#C7F3E7]/70 text-[#0C3B2E] rounded-full w-7 h-7 flex items-center justify-center font-bold mr-1 group-hover:bg-[#E8C187] transition">
+                                    <i data-lucide="timer" class="w-5 h-5"></i>
+                                </span>
+                                <span class="font-semibold text-[#12715D]">Bagaimana jika dokumen tidak kunjung
+                                    jadi?</span>
+                                <i data-lucide="chevron-down"
+                                    class="ml-auto w-6 h-6 transition-transform duration-300"
+                                    :class="{ 'rotate-180': openFaq === 2 }"></i>
+                            </div>
+                            <div x-show="openFaq === 2" x-collapse>
+                                <div class="mt-2 pl-10 text-[#155145]">
+                                    <span class="font-semibold text-[#12715D]">Jawaban:</span>
+                                    Hubungi <b>WA Center Disdukcapil</b> atau datang ke kantor desa dengan membawa bukti
+                                    pengajuan.
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- FAQ 3 -->
+                        <div @click="openFaq === 3 ? openFaq = null : openFaq = 3"
+                            class="cursor-pointer group bg-[#E8C187]/20 hover:bg-[#F9DCC1]/50 rounded-xl shadow transition-all p-4 reveal-on-scroll">
+                            <div class="flex items-center gap-3">
+                                <span
+                                    class="bg-[#F9DCC1]/80 text-[#0C3B2E] rounded-full w-7 h-7 flex items-center justify-center font-bold mr-1 group-hover:bg-[#C7F3E7] transition">
+                                    <i data-lucide="badge-check" class="w-5 h-5"></i>
+                                </span>
+                                <span class="font-semibold text-[#12715D]">Bagaimana cek keaslian dokumen
+                                    digital?</span>
+                                <i data-lucide="chevron-down"
+                                    class="ml-auto w-6 h-6 transition-transform duration-300"
+                                    :class="{ 'rotate-180': openFaq === 3 }"></i>
+                            </div>
+                            <div x-show="openFaq === 3" x-collapse>
+                                <div class="mt-2 pl-10 text-[#155145]">
+                                    <span class="font-semibold text-[#12715D]">Jawaban:</span>
+                                    Gunakan aplikasi <b>VeryDS</b> untuk scan QR code pada dokumen, atau cek melalui
+                                    website Dukcapil.
                                 </div>
                             </div>
                         </div>
@@ -280,8 +294,8 @@
                             class="absolute top-3 right-3 bg-gray-200 hover:bg-gray-400 text-gray-800 rounded-full p-2 transition">
                             <i data-lucide="x" class="w-6 h-6"></i>
                         </button>
-                        <img :src="modalImg" alt="Preview Gambar SKCK"
-                            class="rounded-xl max-h-[85vh] object-contain w-full" />
+                        <img :src="modalImg" alt="Preview Gambar Surat"
+                            class="rounded-xl max-h-[80vh] object-contain w-full" />
                     </div>
                 </div>
             </div>

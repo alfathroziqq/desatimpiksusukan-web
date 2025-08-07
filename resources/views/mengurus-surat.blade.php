@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mengurus Surat Masuk & Keluar | Desa Timpik</title>
+    <title>Surat Masuk & Keluar | Desa Timpik</title>
 
     <link rel="icon" type="image/png" href="{{ asset('images/logo-timpik.png') }}">
 
@@ -118,9 +118,9 @@
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-10 items-center mb-16 reveal-on-scroll w-full max-w-7xl px-4 sm:px-6 md:px-8 mx-auto">
 
                     <div class="flex justify-center">
-                        <div class="relative group w-full h-64 md:h-[320px]">
+                        <div class="relative group w-full h-55 md:h-[320px]">
                             <img src="{{ asset('images/surat-masuk.png') }}" alt="Alur Surat Masuk"
-                                class="w-full h-full object-cover rounded-3xl shadow-xl border-4 border-[#C7F3E7]/70 group-hover:scale-105 transition-all duration-300 bg-white/50 cursor-pointer"
+                                class="w-full h-full object-cover rounded-3xl shadow-xl border-4 border-[#C7F3E7]/70 transition-all duration-300 bg-white/50 cursor-pointer"
                                 @click="modalOpen = true; modalImg = '{{ asset('images/surat-masuk.png') }}'">
                             <div
                                 class="absolute inset-0 bg-gradient-to-tr from-[#C7F3E7]/10 to-transparent rounded-3xl pointer-events-none">
@@ -213,9 +213,9 @@
                     </div>
 
                     <div class="flex justify-center order-1 md:order-2">
-                        <div class="relative group w-full h-64 md:h-[320px]">
+                        <div class="relative group w-full h-55 md:h-[320px]">
                             <img src="{{ asset('images/surat-keluar.png') }}" alt="Alur Surat Keluar"
-                                class="w-full h-full object-cover rounded-3xl shadow-xl border-4 border-[#E8C187]/70 group-hover:scale-105 transition-all duration-300 bg-white/50 cursor-pointer"
+                                class="w-full h-full object-cover rounded-3xl shadow-xl border-4 border-[#E8C187]/70 transition-all duration-300 bg-white/50 cursor-pointer"
                                 @click="modalOpen = true; modalImg = '{{ asset('images/surat-keluar.png') }}'">
                             <div class="absolute inset-0 bg-gradient-to-tr from-[#E8C187]/10 to-transparent rounded-3xl pointer-events-none"></div>
                         </div>
@@ -224,7 +224,7 @@
                 </div>
 
                 <!-- FAQ Mini -->
-                <div class="mt-14 w-full max-w-7xl mx-auto px-4 sm:px-8 lg:px-12" x-data="{ openFaq: null }">
+                <div class="mt-10 w-full max-w-4xl mx-auto" x-data="{ openFaq: null }">
                     <h3 class="text-2xl font-bold text-[#12715D] mb-4 flex items-center gap-2 reveal-on-scroll">
                         <i data-lucide="help-circle" class="w-6 h-6 text-[#E8C187]"></i>
                         Tanya Jawab Mengurus Surat
