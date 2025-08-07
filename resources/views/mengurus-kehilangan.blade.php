@@ -113,7 +113,7 @@
                     <!-- Tips -->
                     <div
                         class="bg-[#F9DCC1]/50 border-l-4 border-[#E8C187] text-[#155145] px-5 py-4 rounded-xl mb-8 flex items-center gap-3 shadow-sm max-w-2xl mx-auto reveal-on-scroll">
-                        <i data-lucide="info" class="w-10 h-10 text-[#E8C187]"></i>
+                        <i data-lucide="info" class="w-10 h-10 text-[#0C3B2E]"></i>
                         <span class="text-sm md:text-base">
                             Surat kehilangan akan diterbitkan oleh kepolisian. Kantor desa membantu mengurus
                             pengantar & dokumen pendukung.<br>
@@ -220,44 +220,47 @@
                                 <li>Ajukan duplikat ke sekolah</li>
                             </ul>
                         </div>
-                        <!-- Card BPKB -->
-                        <div
-                            class="bg-white/90 border-l-4 border-[#12715D]/80 shadow-xl rounded-2xl px-6 py-6 flex flex-col gap-3 reveal-on-scroll">
-                            <div class="flex items-center gap-2 mb-1">
-                                <i data-lucide="graduation-cap" class="w-7 h-7 text-[#12715D]"></i>
-                                <span class="text-lg font-bold text-[#12715D]">BPKB</span>
-                            </div>
-                            <div class="text-sm text-[#155145] mb-1">Kehilangan BPKB</div>
-                            <ul class="list-disc pl-4 text-xs text-[#0C3B2E] mb-2">
-                                <li>Surat Pengantar dari Kepala Desa/Kelurahan</li>
-                                <li>Surat Rekomendasi dari Satlantas</li>
-                                <li>Surat Keterangan dari Bank Nasional</li>
-                                <li>Foto Copy KTP & BPKB</li>
-                                <li>Bukti Iklan</li>
-                                <li>Proses di Satlantas</li>
-                            </ul>
                         </div>
-                        <!-- Card Sertifikat Tanah -->
-                        <div
-                            class="bg-white/90 border-l-4 border-[#0C3B2E]/80 shadow-xl rounded-2xl px-6 py-6 flex flex-col gap-3 reveal-on-scroll">
-                            <div class="flex items-center gap-2 mb-1">
-                                <i data-lucide="map-pin" class="w-7 h-7 text-[#0C3B2E]"></i>
-                                <span class="text-lg font-bold text-[#0C3B2E]">Sertifikat Tanah</span>
+                        <!-- Wrapper 2 card terakhir -->
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 justify-center max-w-4xl mx-auto mt-10">
+                            <!-- Card BPKB -->
+                            <div class="bg-white/90 border-l-4 border-[#12715D]/80 shadow-xl rounded-2xl px-6 py-6 flex flex-col gap-3 reveal-on-scroll">
+                                <div class="flex items-center gap-2 mb-1">
+                                    <i data-lucide="graduation-cap" class="w-7 h-7 text-[#12715D]"></i>
+                                    <span class="text-lg font-bold text-[#12715D]">BPKB</span>
+                                </div>
+                                <div class="text-sm text-[#155145] mb-1">Kehilangan BPKB</div>
+                                <ul class="list-disc pl-4 text-xs text-[#0C3B2E] mb-2">
+                                    <li>Surat Pengantar dari Kepala Desa/Kelurahan</li>
+                                    <li>Surat Rekomendasi dari Satlantas</li>
+                                    <li>Surat Keterangan dari Bank Nasional</li>
+                                    <li>Foto Copy KTP & BPKB</li>
+                                    <li>Bukti Iklan</li>
+                                    <li>Proses di Satlantas</li>
+                                </ul>
                             </div>
-                            <div class="text-sm text-[#155145] mb-1">Kehilangan Sertifikat Hak Milik / Girik.</div>
-                            <ul class="list-disc pl-4 text-xs text-[#0C3B2E] mb-2">
-                                <li>Surat Pengantar dari Kepala Desa/Kelurahan</li>
-                                <li>Surat Keterangan dari Kelurahan bahwa tanah tidak dalam sengketa</li>
-                                <li>Surat Keterangan dari Bank Nasional</li>
-                                <li>Surat Pernyataan Kehilangan Bermaterai</li>
-                                <li>Pemilik harus hadir/ Surat Kuasa</li>
-                                <li>Foto Copy KTP Pemilik, Pelapor, KK, Akta Jual Beli, Sertifikat, & PBB Terakhir</li>
-                                <li>Surat Ahli Waris, Surat Kematian</li>
-                                <li>Bukti Iklan</li>
-                                <li>Bawa dokumen pendukung (fotokopi sertifikat, bukti kepemilikan)</li>
-                            </ul>
+
+                            <!-- Card Sertifikat Tanah -->
+                            <div class="bg-white/90 border-l-4 border-[#0C3B2E]/80 shadow-xl rounded-2xl px-6 py-6 flex flex-col gap-3 reveal-on-scroll">
+                                <div class="flex items-center gap-2 mb-1">
+                                    <i data-lucide="map-pin" class="w-7 h-7 text-[#0C3B2E]"></i>
+                                    <span class="text-lg font-bold text-[#0C3B2E]">Sertifikat Tanah</span>
+                                </div>
+                                <div class="text-sm text-[#155145] mb-1">Kehilangan Sertifikat Hak Milik / Girik.</div>
+                                <ul class="list-disc pl-4 text-xs text-[#0C3B2E] mb-2">
+                                    <li>Surat Pengantar dari Kepala Desa/Kelurahan</li>
+                                    <li>Surat Keterangan dari Kelurahan bahwa tanah tidak dalam sengketa</li>
+                                    <li>Surat Keterangan dari Bank Nasional</li>
+                                    <li>Surat Pernyataan Kehilangan Bermaterai</li>
+                                    <li>Pemilik harus hadir/ Surat Kuasa</li>
+                                    <li>Foto Copy KTP Pemilik, Pelapor, KK, Akta Jual Beli, Sertifikat, & PBB Terakhir</li>
+                                    <li>Surat Ahli Waris, Surat Kematian</li>
+                                    <li>Bukti Iklan</li>
+                                    <li>Bawa dokumen pendukung (fotokopi sertifikat, bukti kepemilikan)</li>
+                                </ul>
+                            </div>
                         </div>
-                    </div>
+
 
                     <!-- FAQ Mini -->
                     <div class="mt-10 w-full max-w-4xl mx-auto" x-data="{ openFaq: null }">
