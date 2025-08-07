@@ -115,7 +115,7 @@
                             Dokumen Resmi & Digital
                         </span>
                         <span
-                            class="inline-flex items-center gap-2 bg-[#E8C187]/40 text-[#C2977D] font-semibold rounded-full px-4 py-1 text-sm">
+                            class="inline-flex items-center gap-2 bg-[#E8C187]/40 text-[#8d6245] font-semibold rounded-full px-4 py-1 text-sm">
                             <i data-lucide="badge-check" class="w-5 h-5"></i>
                             Akta Otentik, Diakui Hukum
                         </span>
@@ -132,50 +132,46 @@
                     </span>
                 </div>
 
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-16">
+                <!-- Wrapper Utama -->
+                <div class="space-y-12">
 
-                    <!-- Fitur Kanan: Gambar -->
-                    <section class="flex flex-col gap-7">
-
-                        <div class="relative group reveal-on-scroll">
+                    <!-- Baris Gambar (2 gambar di atas) -->
+                    <section class="grid grid-cols-1 md:grid-cols-2 gap-6 reveal-on-scroll">
+                        <!-- Gambar 1 -->
+                        <div class="relative group">
                             <img src="images/pelayanan-catat-sipil-1.png" alt="Alur Layanan Pencatatan Sipil"
-                                class="rounded-2xl w-full max-w-2xl h-auto object-cover shadow-xl border-4 border-[#C7F3E7]/50 cursor-pointer transition-all duration-300 bg-white/50 mx-auto"
+                                class="rounded-2xl w-full h-auto object-cover shadow-xl border-4 border-[#C7F3E7]/50 cursor-pointer transition-all duration-300 bg-white/50"
                                 @click="modalOpen = true; modalImg = 'images/pelayanan-catat-sipil-1.png'">
-                            <div
-                                class="absolute inset-0 bg-gradient-to-tr from-[#C7F3E7]/15 to-transparent rounded-3xl pointer-events-none">
-                            </div>
+                            <div class="absolute inset-0 bg-gradient-to-tr from-[#C7F3E7]/15 to-transparent rounded-3xl pointer-events-none"></div>
                         </div>
 
-                        <div class="relative group reveal-on-scroll">
+                        <!-- Gambar 2 -->
+                        <div class="relative group">
                             <img src="images/pelayanan-catat-sipil-2.png" alt="Syarat Pencatatan Sipil"
-                                class="rounded-2xl w-full max-w-2xl h-auto object-cover shadow-xl border-4 border-[#E8C187]/50 cursor-pointer transition-all duration-300 bg-white/50 mx-auto"
+                                class="rounded-2xl w-full h-auto object-cover shadow-xl border-4 border-[#E8C187]/50 cursor-pointer transition-all duration-300 bg-white/50"
                                 @click="modalOpen = true; modalImg = 'images/pelayanan-catat-sipil-2.png'">
-                            <div
-                                class="absolute inset-0 bg-gradient-to-br from-[#E8C187]/10 to-transparent rounded-3xl pointer-events-none">
-                            </div>
-                        </div>
-                        <!-- Info tambahan -->
-                        <div class="mt-2 text-xs md:text-base text-[#0C3B2E] italic text-center px-4">
-                            Klik gambar untuk perbesar & lihat detail brosur layanan. Semua layanan <b>GRATIS</b> (tidak
-                            dipungut biaya).
+                            <div class="absolute inset-0 bg-gradient-to-br from-[#E8C187]/10 to-transparent rounded-3xl pointer-events-none"></div>
                         </div>
                     </section>
 
-                    <!-- Fitur Kiri: Syarat Pencatatan Sipil -->
-                    <section
-                        class="bg-white/80 border-l-4 border-[#0C3B2E] rounded-2xl shadow-xl px-8 py-8 reveal-on-scroll flex flex-col gap-2">
-                        <h2 class="text-xl md:text-2xl font-bold text-[#0C3B2E] mb-3 flex items-center gap-2">
-                            <i data-lucide="list-checks" class="w-7 h-7 text-[#0C3B2E]"></i>
-                            Jenis Layanan & Persyaratan
-                        </h2>
-                        <div class="space-y-7 text-[#0C3B2E] text-base md:text-lg">
+                    <!-- Teks di bawah gambar -->
+                    <div class="text-lg md:text-sm text-[#0C3B2E] italic text-center">
+                        Klik gambar untuk perbesar & lihat detail brosur layanan. Semua layanan <b>GRATIS</b>.
+                    </div>
+
+                    <!-- Baris Konten (2 kolom konten layanan) -->
+                    <section class="grid grid-cols-1 md:grid-cols-2 gap-8 text-[#0C3B2E] reveal-on-scroll">
+
+                        <!-- Konten Kiri -->
+                        <div class="bg-white/80 border-l-4 border-[#0C3B2E] rounded-2xl shadow-xl px-6 py-6 space-y-6 text-sm md:text-base">
+                            <h2 class="text-lg md:text-xl font-bold flex items-center gap-2">
+                                <i data-lucide="list-checks" class="w-6 h-6"></i> Jenis Layanan
+                            </h2>
 
                             <!-- Akta Kelahiran -->
                             <div>
-                                <h3 class="font-bold text-[#0C3B2E] flex items-center gap-2 mb-1">
-                                    <i data-lucide="baby" class="w-5 h-5 text-[#0C3B2E]"></i> Akta Kelahiran
-                                </h3>
-                                <ul class="list-disc pl-11 text-sm md:text-base space-y-1">
+                                <h3 class="font-bold flex items-center gap-2 mb-1"><i data-lucide="baby" class="w-5 h-5"></i> Akta Kelahiran</h3>
+                                <ul class="list-disc pl-6 space-y-1">
                                     <li>Surat Keterangan Lahir dari bidan/dokter/desa.</li>
                                     <li>Fotokopi Akta Nikah/Surat Nikah/Surat Cerai Orang Tua.</li>
                                     <li>Fotokopi KK & KTP-el orangtua/keluarga.</li>
@@ -186,10 +182,8 @@
 
                             <!-- Akta Kematian -->
                             <div>
-                                <h3 class="font-bold text-[#0C3B2E] flex items-center gap-2 mb-1">
-                                    <i data-lucide="skull" class="w-5 h-5 text-[#0C3B2E]"></i> Akta Kematian
-                                </h3>
-                                <ul class="list-disc pl-11 text-sm md:text-base space-y-1">
+                                <h3 class="font-bold flex items-center gap-2 mb-1"><i data-lucide="skull" class="w-5 h-5"></i> Akta Kematian</h3>
+                                <ul class="list-disc pl-6 space-y-1">
                                     <li>Surat Keterangan Kematian (asli) dari desa/dokter.</li>
                                     <li>Kartu Keluarga (KK) asli.</li>
                                     <li>Nama & identitas 2 saksi, usia minimal 21 tahun, fotokopi KTP-el saksi.</li>
@@ -198,10 +192,8 @@
 
                             <!-- Akta Perkawinan -->
                             <div>
-                                <h3 class="font-bold text-[#0C3B2E] flex items-center gap-2 mb-1">
-                                    <i data-lucide="users" class="w-5 h-5 text-[#0C3B2E]"></i> Akta Perkawinan
-                                </h3>
-                                <ul class="list-disc pl-11 text-sm md:text-base space-y-1">
+                                <h3 class="font-bold flex items-center gap-2 mb-1"><i data-lucide="users" class="w-5 h-5"></i> Akta Perkawinan</h3>
+                                <ul class="list-disc pl-6 space-y-1">
                                     <li>Surat pengantar desa/lurah & diketahui camat.</li>
                                     <li>Fotokopi KK & KTP-el calon pengantin.</li>
                                     <li>Pas foto berdampingan 4x6 warna 2 lembar.</li>
@@ -209,13 +201,15 @@
                                     <li>Bagi WNA: fotokopi akta kelahiran terjemahan, paspor, visa.</li>
                                 </ul>
                             </div>
+                        </div>
+
+                        <!-- Konten Kanan -->
+                        <div class="bg-white/80 border-l-4 border-[#0C3B2E] rounded-2xl shadow-xl px-6 py-6 space-y-6 text-sm md:text-base">
 
                             <!-- Akta Perceraian -->
                             <div>
-                                <h3 class="font-bold text-[#0C3B2E] flex items-center gap-2 mb-1">
-                                    <i data-lucide="gavel" class="w-5 h-5 text-[#0C3B2E]"></i> Akta Perceraian
-                                </h3>
-                                <ul class="list-disc pl-11 text-sm md:text-base space-y-1">
+                                <h3 class="font-bold flex items-center gap-2 mb-1"><i data-lucide="gavel" class="w-5 h-5"></i> Akta Perceraian</h3>
+                                <ul class="list-disc pl-6 space-y-1">
                                     <li>Salinan Keputusan Pengadilan (berkekuatan hukum tetap).</li>
                                     <li>Kutipan Akta Perkawinan asli.</li>
                                     <li>KTP-el & KK asli.</li>
@@ -224,10 +218,8 @@
 
                             <!-- Pengangkatan Anak -->
                             <div>
-                                <h3 class="font-bold text-[#0C3B2E] flex items-center gap-2 mb-1">
-                                    <i data-lucide="baby" class="w-5 h-5 text-[#0C3B2E]"></i> Pengangkatan Anak
-                                </h3>
-                                <ul class="list-disc pl-11 text-sm md:text-base space-y-1">
+                                <h3 class="font-bold flex items-center gap-2 mb-1"><i data-lucide="baby" class="w-5 h-5"></i> Pengangkatan Anak</h3>
+                                <ul class="list-disc pl-6 space-y-1">
                                     <li>Putusan/salinan pengadilan tentang pengangkatan anak.</li>
                                     <li>Pengantar desa/kelurahan.</li>
                                     <li>Kutipan akta kelahiran anak.</li>
@@ -237,19 +229,18 @@
 
                             <!-- Perubahan Data -->
                             <div>
-                                <h3 class="font-bold text-[#0C3B2E] flex items-center gap-2 mb-1">
-                                    <i data-lucide="edit" class="w-5 h-5 text-[#0C3B2E]"></i> Perubahan Nama/Tanggal
-                                    Lahir
-                                </h3>
-                                <ul class="list-disc pl-11 text-sm md:text-base space-y-1">
+                                <h3 class="font-bold flex items-center gap-2 mb-1"><i data-lucide="edit" class="w-5 h-5"></i> Perubahan Nama/Tanggal Lahir</h3>
+                                <ul class="list-disc pl-6 space-y-1">
                                     <li>Salinan penetapan pengadilan ttg perubahan data.</li>
                                     <li>Kutipan akta catatan sipil sebelumnya.</li>
                                     <li>KTP-el & KK asli.</li>
                                 </ul>
                             </div>
                         </div>
+
                     </section>
                 </div>
+
 
                 <!-- Legalisir, GISA, dan Info Tambahan -->
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-10 reveal-on-scroll">
