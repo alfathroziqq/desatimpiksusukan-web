@@ -96,16 +96,16 @@
 
         <div class="px-30 flex flex-col sm:flex-row justify-between items-center text-center sm:text-left">
             <p class="text-sm text-gray-400 mb-4 sm:mb-0" style="font-family: 'Poppins', sans-serif;">
-                &copy; {{ date('Y') }} Desa Timpik. All Rights Reserved.
+                &copy; {{ date('Y') }} Desa Timpik. KKN UNS 283, All Rights Reserved.
             </p>
             <div class="flex space-x-4">
                 <a href="https://web.facebook.com/groups/306956933596513" class="text-gray-400 hover:text-white transition-colors">
                     <i data-lucide="facebook" class="w-5 h-5"></i>
                 </a>
-                <a href="#" class="text-gray-400 hover:text-white transition-colors">
-                    <i data-lucide="instagram" class="w-5 h-5"></i>
+                <a href="https://api.whatsapp.com/send?text=https://desatimpiksusukan.id" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-white transition-colors">
+                    <i data-lucide="phone" class="w-5 h-5"></i>
                 </a>
-                <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                <a href="https://www.youtube.com/@desatimpiksusukansemarang" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-white transition-colors">
                     <i data-lucide="youtube" class="w-5 h-5"></i>
                 </a>
             </div>
