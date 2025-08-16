@@ -109,29 +109,29 @@
 
     @include('layouts.partials.header')
 
-    <main>
-        <!-- Hero -->
-        <section class="relative min-h-screen w-full -mt-20 flex items-center justify-center lg:justify-start">
-            <div class="absolute inset-0 bg-cover bg-center"
-                style="background-image: url('{{ asset('images/welcome-sawah.png') }}');">
-            </div>
+<main>
+    <!-- Hero -->
+    <section class="relative min-h-screen w-full -mt-20 flex items-center justify-center lg:justify-start">
+        <div class="absolute inset-0 bg-cover bg-[center_top_30%]"
+            style="background-image: url('{{ asset('images/timpik_sawah2.jpg') }}');">
+        </div>
 
-            <div class="absolute inset-0 bg-gradient-to-t from-[#0C3B2E]/60 via-transparent to-transparent"></div>
-            <div class="absolute inset-0 bg-black/20"></div>
+        <div class="absolute inset-0 bg-gradient-to-t from-[#0C3B2E]/60 via-transparent to-transparent"></div>
+        <div class="absolute inset-0 bg-black/20"></div>
 
-            <div class="relative z-10 container mx-auto px-6 text-center lg:text-left lg:pl-24">
-                <div class="max-w-xl lg:max-w-2xl">
-                    <h1 class="text-4xl md:text-5xl lg:text-7xl font-bold text-[#0C3B2E] reveal-on-scroll"
-                        style="font-family: 'Poppins', sans-serif; text-shadow: 2px 2px 4px rgba(0,0,0,0.4);">
-                        Selamat Datang
-                    </h1>
-                    <p class="lg:mt-4 text-4xl md:text-5xl lg:text-7xl text-white italic reveal-on-scroll"
-                        style="font-family: 'Playfair Display', serif; text-shadow: 2px 2px 4px rgba(0,0,0,0.4);">
-                        Website <span class="text-[#E8C187]">Desa Timpik</span>
-                    </p>
-                </div>
+        <div class="relative z-10 container mx-auto px-6 text-center lg:text-left lg:pl-24 mt-6">
+            <div class="max-w-xl lg:max-w-2xl">
+                <h1 class="text-4xl md:text-5xl lg:text-7xl font-bold text-[#0C3B2E] reveal-on-scroll"
+                    style="font-family: 'Poppins', sans-serif; text-shadow: 2px 2px 4px rgba(0,0,0,0.4);">
+                    Selamat Datang
+                </h1>
+                <p class="lg:mt-4 text-4xl md:text-5xl lg:text-7xl text-white italic reveal-on-scroll"
+                    style="font-family: 'Playfair Display', serif; text-shadow: 2px 2px 4px rgba(0,0,0,0.4);">
+                    Website <span class="text-[#E8C187]">Desa Timpik</span>
+                </p>
             </div>
-        </section>
+        </div>
+    </section>
 
         <!-- Sejarah Section -->
         <section class="py-16 md:py-14 relative overflow-x-clip">
