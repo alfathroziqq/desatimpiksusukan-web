@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Visi Misi | Desa Timpik</title>
 
-    <link rel="icon" type="image/png" href="{{ asset('images/logo-timpik.png') }}">
+    <link rel="icon" type="image/png" href="{{ asset('/public/images/logo-timpik.png') }}">
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -91,7 +91,7 @@
         <!-- Hero Section -->
         <section class="relative h-80 md:h-120 w-full flex items-center justify-center text-white -mt-20">
             <div class="absolute inset-0 overflow-hidden">
-                <img src="{{ asset('images/timpik_sawah2.jpg') }}"
+                <img src="{{ asset('/public/images/timpik_sawah2.png') }}"
                     onerror="this.onerror=null;this.src='https://placehold.co/1920x1080/445566/FFFFFF?text=Latar+Belakang';"
                     alt="Pemandangan sawah Desa Timpik"
                     class="w-full h-full object-cover transform translate-y-10">
@@ -221,7 +221,7 @@
 
                 <div
                     class="max-w-5xl mx-auto p-4 rounded-2xl shadow-lg border border-gray-200/80 reveal-on-scroll">
-                    <img src="{{ asset('images/struktur-org.png') }}"
+                    <img src="{{ asset('/public/images/struktur-org.png') }}"
                         onerror="this.onerror=null;this.src='https://placehold.co/1200x800/E0E0E0/BDBDBD?text=Bagan+Struktur+Organisasi';"
                         alt="Bagan Struktur Organisasi Desa Timpik" class="w-full h-auto">
                 </div>

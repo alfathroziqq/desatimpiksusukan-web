@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Surat Masuk & Keluar | Desa Timpik</title>
 
-    <link rel="icon" type="image/png" href="{{ asset('images/logo-timpik.png') }}">
+    <link rel="icon" type="image/png" href="{{ asset('/public/images/logo-timpik.png') }}">
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -119,9 +119,9 @@
 
                     <div class="flex justify-center">
                         <div class="relative group w-full h-55 md:h-[320px]">
-                            <img src="{{ asset('images/surat-masuk.png') }}" alt="Alur Surat Masuk"
+                            <img src="{{ asset('/public/images/surat-masuk.png') }}" alt="Alur Surat Masuk"
                                 class="w-full h-full object-cover rounded-3xl shadow-xl border-4 border-[#0C3B2E] transition-all duration-300 bg-white/50 cursor-pointer"
-                                @click="modalOpen = true; modalImg = '{{ asset('images/surat-masuk.png') }}'">
+                                @click="modalOpen = true; modalImg = '{{ asset('/public/images/surat-masuk.png') }}'">
                             <div
                                 class="absolute inset-0 bg-gradient-to-tr from-[#0C3B2E]/10 to-transparent rounded-3xl pointer-events-none">
                             </div>
@@ -214,9 +214,9 @@
 
                     <div class="flex justify-center order-1 md:order-2">
                         <div class="relative group w-full h-55 md:h-[320px]">
-                            <img src="{{ asset('images/surat-keluar.png') }}" alt="Alur Surat Keluar"
+                            <img src="{{ asset('/public/images/surat-keluar.png') }}" alt="Alur Surat Keluar"
                                 class="w-full h-full object-cover rounded-3xl shadow-xl border-4 border-[#0C3B2E] transition-all duration-300 bg-white/50 cursor-pointer"
-                                @click="modalOpen = true; modalImg = '{{ asset('images/surat-keluar.png') }}'">
+                                @click="modalOpen = true; modalImg = '{{ asset('/public/images/surat-keluar.png') }}'">
                             <div class="absolute inset-0 bg-gradient-to-tr from-[#0C3B2E]/10 to-transparent rounded-3xl pointer-events-none"></div>
                         </div>
                     </div>

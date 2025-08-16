@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Administrasi Kependudukan Online | Desa Timpik</title>
 
-    <link rel="icon" type="image/png" href="{{ asset('images/logo-timpik.png') }}">
+    <link rel="icon" type="image/png" href="{{ asset('/public/images/logo-timpik.png') }}">
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -115,9 +115,9 @@
                             Pengajuan Dokumen Online
                         </h2>
                         <div class="flex justify-center mb-6">
-                            <img src="images/administrasi-kependudukan-online-1.png" alt="Cek Keaslian Dokumen"
+                            <img src="/public/images/administrasi-kependudukan-online-1.png" alt="Cek Keaslian Dokumen"
                                 class="rounded-xl w-full max-w-xs sm:max-w-md md:max-w-lg lg:max-w-xl xl:max-w-2xl h-auto object-cover shadow border-4 border-[#E8C187]/40 cursor-pointer transition group-hover:scale-105"
-                                @click="modalOpen = true; modalImg = 'images/administrasi-kependudukan-online-1.png'">
+                                @click="modalOpen = true; modalImg = '/public/images/administrasi-kependudukan-online-1.png'">
                         </div>
                         <div class="space-y-0">
                             <template
@@ -171,9 +171,9 @@
                             Cek Keaslian Dokumen (TTE)
                         </h2>
                         <div class="flex justify-center mb-6">
-                            <img src="images/administrasi-kependudukan-online-2.png" alt="Cek Keaslian Dokumen"
+                            <img src="/public/images/administrasi-kependudukan-online-2.png" alt="Cek Keaslian Dokumen"
                                 class="rounded-xl w-full max-w-xs sm:max-w-md md:max-w-lg lg:max-w-xl xl:max-w-2xl h-auto object-cover shadow border-4 border-[#E8C187]/40 cursor-pointer transition group-hover:scale-105"
-                                @click="modalOpen = true; modalImg = 'images/administrasi-kependudukan-online-2.png'">
+                                @click="modalOpen = true; modalImg = '/public/images/administrasi-kependudukan-online-2.png'">
                         </div>
                         <div class="space-y-0">
                             <template

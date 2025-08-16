@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SKCK | Desa Timpik</title>
 
-    <link rel="icon" type="image/png" href="{{ asset('images/logo-timpik.png') }}">
+    <link rel="icon" type="image/png" href="{{ asset('/public/images/logo-timpik.png') }}">
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -141,9 +141,9 @@
                         </h2>
 
                         <div class="flex justify-center mb-6">
-                            <img src="{{ asset('images/surat-skck-offline.png') }}" alt="SKCK Offline"
+                            <img src="{{ asset('/public/images/surat-skck-offline.png') }}" alt="SKCK Offline"
                                 class="rounded-xl w-100 h-135 object-cover shadow border-4 border-[#E8C187]/40 cursor-pointer transition group-hover:scale-105"
-                                @click="modalOpen = true; modalImg = '{{ asset('images/surat-skck-offline.png') }}'">
+                                @click="modalOpen = true; modalImg = '{{ asset('/public/images/surat-skck-offline.png') }}'">
                         </div>
 
                         <div class="space-y-0">
@@ -182,9 +182,9 @@
                         </h2>
 
                         <div class="flex justify-center mb-6">
-                            <img src="{{ asset('images/surat-skck-online.png') }}" alt="SKCK Online"
+                            <img src="{{ asset('/public/images/surat-skck-online.png') }}" alt="SKCK Online"
                                 class="rounded-xl w-100 h-135 object-cover shadow border-4 border-[#0C3B2E] cursor-pointer transition group-hover:scale-105"
-                                @click="modalOpen = true; modalImg = '{{ asset('images/surat-skck-online.png') }}'">
+                                @click="modalOpen = true; modalImg = '{{ asset('/public/images/surat-skck-online.png') }}'">
                         </div>
 
                         <div class="space-y-0">

@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pendaftaran Penduduk | Desa Timpik</title>
 
-    <link rel="icon" type="image/png" href="{{ asset('images/logo-timpik.png') }}">
+    <link rel="icon" type="image/png" href="{{ asset('/public/images/logo-timpik.png') }}">
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -138,17 +138,17 @@
                     <div class="flex flex-col gap-7 reveal-on-scroll">
 
                         <div class="relative group">
-                            <img src="images/pendaftaran-penduduk-1.png" alt="Brosur Pendaftaran Penduduk"
+                            <img src="/public/images/pendaftaran-penduduk-1.png" alt="Brosur Pendaftaran Penduduk"
                                 class="rounded-2xl w-full max-w-2xl h-auto object-cover shadow-xl border-4 border-[#0C3B2E] cursor-pointer transition-all duration-300 bg-white/50 mx-auto"
-                                @click="modalOpen = true; modalImg = 'images/pendaftaran-penduduk-1.png'">
+                                @click="modalOpen = true; modalImg = '/public/images/pendaftaran-penduduk-1.png'">
                             <div
                                 class="absolute inset-0 bg-gradient-to-tr from-[#0C3B2E]/15 to-transparent rounded-3xl pointer-events-none">
                             </div>
                         </div>
                         <div class="relative group">
-                            <img src="images/pendaftaran-penduduk-2.png" alt="Brosur Pendaftaran Penduduk 2"
+                            <img src="/public/images/pendaftaran-penduduk-2.png" alt="Brosur Pendaftaran Penduduk 2"
                                 class="rounded-2xl w-full max-w-2xl h-auto object-cover shadow-xl border-4 border-[#0C3B2E] cursor-pointer transition-all duration-300 bg-white/50 mx-auto"
-                                @click="modalOpen = true; modalImg = 'images/pendaftaran-penduduk-2.png'">
+                                @click="modalOpen = true; modalImg = '/public/images/pendaftaran-penduduk-2.png'">
                             <div
                                 class="absolute inset-0 bg-gradient-to-br from-[#0C3B2E]/15 to-transparent rounded-3xl pointer-events-none">
                             </div>

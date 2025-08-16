@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Galeri | Desa Timpik</title>
 
-    <link rel="icon" type="image/png" href="images/logo-timpik.png">
+    <link rel="icon" type="image/png" href="/public/images/logo-timpik.png">
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -141,7 +141,7 @@
         <!-- Hero Section -->
         <section class="relative h-80 md:h-120 w-full flex items-center justify-center text-white -mt-20">
             <div class="absolute inset-0 overflow-hidden">
-                <img src="{{ asset('images/timpik_sawah2.jpg') }}"
+                <img src="{{ asset('/public/images/timpik_sawah2.png') }}"
                     onerror="this.onerror=null;this.src='https://placehold.co/1920x1080/445566/FFFFFF?text=Latar+Belakang';"
                     alt="Pemandangan sawah Desa Timpik"
                     class="w-full h-full object-cover transform translate-y-10">

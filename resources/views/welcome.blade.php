@@ -112,7 +112,7 @@
 <main>
     <!-- Hero -->
     <section class="relative min-h-screen w-full -mt-20 flex items-center justify-center lg:justify-start">
-        <img src="{{ asset('/public/images/timpik_sawah2.jpg') }}"
+        <img src="{{ asset('/public/images/timpik_sawah2.png') }}"
             alt="Sawah Timpik"
             class="absolute inset-0 w-full h-full object-cover object-[center_top_30%]">
 

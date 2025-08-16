@@ -63,7 +63,7 @@
                 <div class="flex-shrink-0">
                     <a href="{{ route('dashboard') }}" class="flex items-center space-x-2">
                         <!-- Placeholder for Logo -->
-                        <img src="/images/logo-timpik.png" alt="Logo Desa Timpik" class="h-10 w-auto">
+                        <img src="/public/images/logo-timpik.png" alt="Logo Desa Timpik" class="h-10 w-auto">
                     </a>
                 </div>
 

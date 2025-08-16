@@ -85,7 +85,7 @@
         <!-- Hero Section -->
         <section class="relative h-80 md:h-120 w-full flex items-center justify-center text-white -mt-20">
             <div class="absolute inset-0 overflow-hidden">
-                <img src="{{ asset('/public/images/welcome-sawah.png') }}"
+                <img src="{{ asset('/public/images/timpik_sawah2.png') }}"
                     onerror="this.onerror=null;this.src='https://placehold.co/1920x1080/445566/FFFFFF?text=Latar+Belakang';"
                     alt="Pemandangan sawah Desa Timpik"
                     class="w-full h-full object-cover transform translate-y-10">

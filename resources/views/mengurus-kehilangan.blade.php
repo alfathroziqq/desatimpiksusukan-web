@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kehilangan Surat | Desa Timpik</title>
 
-    <link rel="icon" type="image/png" href="{{ asset('images/logo-timpik.png') }}">
+    <link rel="icon" type="image/png" href="{{ asset('/public/images/logo-timpik.png') }}">
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -123,9 +123,9 @@
 
                     <div class="mb-10 flex justify-center w-full reveal-on-scroll">
                         <div class="relative">
-                            <img src="{{ asset('images/surat-kehilangan.png') }}" alt="Surat Kehilangan"
+                            <img src="{{ asset('/public/images/surat-kehilangan.png') }}" alt="Surat Kehilangan"
                                 class="rounded-xl w-110 h-150 object-cover shadow border-4 border-[#0C3B2E] cursor-pointer transition group-hover:scale-105"
-                                @click="modalOpen = true; modalImg = '{{ asset('images/surat-kehilangan.png') }}'">
+                                @click="modalOpen = true; modalImg = '{{ asset('/public/images/surat-kehilangan.png') }}'">
                             <div
                                 class="absolute inset-0 bg-gradient-to-tr from-[#0C3B2E]/10 to-transparent rounded-3xl pointer-events-none">
                             </div>

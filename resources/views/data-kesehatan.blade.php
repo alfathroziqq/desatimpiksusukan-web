@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Data Kesehatan | Desa Timpik</title>
 
-    <link rel="icon" type="image/png" href="{{ asset('images/logo-timpik.png') }}">
+    <link rel="icon" type="image/png" href="{{ asset('/public/images/logo-timpik.png') }}">
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -105,7 +105,7 @@
         <!-- Hero Section -->
         <section class="relative h-80 md:h-120 w-full flex items-center justify-center text-white -mt-20">
             <div class="absolute inset-0 overflow-hidden">
-                <img src="{{ asset('images/timpik_sawah2.jpg') }}"
+                <img src="{{ asset('/public/images/timpik_sawah2.png') }}"
                     onerror="this.onerror=null;this.src='https://placehold.co/1920x1080/445566/FFFFFF?text=Latar+Belakang';"
                     alt="Pemandangan sawah Desa Timpik"
                     class="w-full h-full object-cover transform translate-y-10">
@@ -426,7 +426,7 @@
                 'bayiChart',
                 ['Jumlah Bayi Lahir', 'Jumlah Bayi Meninggal'],
                 [bayiLahir, bayiMeninggal],
-                ['#4C6B58', '#7C9B81'], 
+                ['#4C6B58', '#7C9B81'],
                 'Jumlah'
             );
 
@@ -434,7 +434,7 @@
                 'ibuChart',
                 ['Jumlah Ibu Melahirkan', 'Jumlah Ibu Meninggal'],
                 [ibuMelahirkan, ibuMeninggal],
-                ['#A4753A', '#C89B65'], 
+                ['#A4753A', '#C89B65'],
                 'Jumlah'
             );
 
@@ -442,7 +442,7 @@
                 'imunisasiChart',
                 ['Polio 3', 'DPT-1', 'Cacar'],
                 [imunisasiPolio, imunisasiDpt1, imunisasiCacar],
-                ['#BFA67A', '#D4BC9C', '#E0C097'], 
+                ['#BFA67A', '#D4BC9C', '#E0C097'],
                 'Jumlah Anak'
             );
 
@@ -450,7 +450,7 @@
                 'airChart',
                 ['Sumur Galian', 'Air PAH', 'Sumur Pompa', 'Hidran Umum', 'Air Sungai'],
                 [sumurGalian, airPah, sumurPompa, hidranUmum, airSungai],
-                ['#0C3B2E', '#2E5246', '#4F6F5A', '#6D9773', '#A8BBA6'], 
+                ['#0C3B2E', '#2E5246', '#4F6F5A', '#6D9773', '#A8BBA6'],
                 'Jumlah KK'
             );
 

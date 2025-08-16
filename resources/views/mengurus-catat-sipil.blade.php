@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pencatatan Sipil | Desa Timpik</title>
 
-    <link rel="icon" type="image/png" href="{{ asset('images/logo-timpik.png') }}">
+    <link rel="icon" type="image/png" href="{{ asset('/public/images/logo-timpik.png') }}">
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -139,17 +139,17 @@
                     <section class="grid grid-cols-1 md:grid-cols-2 gap-6 reveal-on-scroll">
                         <!-- Gambar 1 -->
                         <div class="relative group">
-                            <img src="images/pelayanan-catat-sipil-1.png" alt="Alur Layanan Pencatatan Sipil"
+                            <img src="/public/images/pelayanan-catat-sipil-1.png" alt="Alur Layanan Pencatatan Sipil"
                                 class="rounded-2xl w-full h-auto object-cover shadow-xl border-4 border-[#C7F3E7]/50 cursor-pointer transition-all duration-300 bg-white/50"
-                                @click="modalOpen = true; modalImg = 'images/pelayanan-catat-sipil-1.png'">
+                                @click="modalOpen = true; modalImg = '/public/images/pelayanan-catat-sipil-1.png'">
                             <div class="absolute inset-0 bg-gradient-to-tr from-[#C7F3E7]/15 to-transparent rounded-3xl pointer-events-none"></div>
                         </div>
 
                         <!-- Gambar 2 -->
                         <div class="relative group">
-                            <img src="images/pelayanan-catat-sipil-2.png" alt="Syarat Pencatatan Sipil"
+                            <img src="/public/images/pelayanan-catat-sipil-2.png" alt="Syarat Pencatatan Sipil"
                                 class="rounded-2xl w-full h-auto object-cover shadow-xl border-4 border-[#E8C187]/50 cursor-pointer transition-all duration-300 bg-white/50"
-                                @click="modalOpen = true; modalImg = 'images/pelayanan-catat-sipil-2.png'">
+                                @click="modalOpen = true; modalImg = '/public/images/pelayanan-catat-sipil-2.png'">
                             <div class="absolute inset-0 bg-gradient-to-br from-[#E8C187]/10 to-transparent rounded-3xl pointer-events-none"></div>
                         </div>
                     </section>
