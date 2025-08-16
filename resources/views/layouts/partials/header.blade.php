@@ -28,7 +28,7 @@
     <nav class="container mx-auto px-6 lg:px-16 py-3 flex justify-between items-center">
         <!-- Logo -->
         <a href="/" class="flex-shrink-0 flex items-center space-x-3">
-            <img src="{{ asset('images/logo-timpik.png') }}" alt="Logo Desa Timpik" class="h-14 w-auto">
+            <img src="{{ asset('/public/images/logo-timpik.png') }}" alt="Logo Desa Timpik" class="h-14 w-auto">
             <div class="flex flex-col leading-tight">
                 <span class="hidden sm:inline text-lg font-semibold text-[#D5C578] tracking-wide">Desa Timpik</span>
                 <span class="hidden sm:inline text-xs text-white">Kec. Susukan, Kab. Semarang</span>
