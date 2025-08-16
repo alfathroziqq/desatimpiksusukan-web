@@ -162,8 +162,8 @@
         </section>
 
         <!-- Section Mapping -->
-        <section class="mt-[-50px] font-['Poppins',sans-serif] mb-12 text-[#0C3B2E]" x-data="{ modalOpen: false, modalImg: '' }">
-            <div class="container mx-auto px-8 sm:px-12 lg:px-40">
+        <section class="font-['Poppins',sans-serif] mb-12 text-[#0C3B2E]" x-data="{ modalOpen: false, modalImg: '' }">
+            <div class="mt-[-30px] container mx-auto px-8 sm:px-12 lg:px-40">
 
                 <!-- Grid 2 kolom dengan nama -->
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-10 text-center">
