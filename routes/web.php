@@ -41,6 +41,9 @@ Route::get('/tata-kelola-desa', action: fn() => view('tata-kelola'))->name('tata
 // Peta Potensi Desa
 Route::get('/peta-potensi-desa', fn() => view('peta-potensi-desa'))->name('peta-potensi-desa');
 
+// Mapping Desa
+Route::get('/mapping-desa', fn() => view('mapping-desa'))->name('mapping-desa');
+
 // Data Jenis Kelamin
 Route::get('/data-jenis-kelamin', [DataKelaminController::class, 'public'])->name('data-jenis-kelamin');
 
