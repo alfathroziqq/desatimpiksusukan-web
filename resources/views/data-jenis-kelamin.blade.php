@@ -233,7 +233,7 @@
                                         <h4 class="text-3xl font-bold mt-1">{{ number_format($data->laki_laki) }}</h4>
                                     </div>
                                     <div class="bg-white/20 backdrop-blur-md p-3 rounded-full shadow-inner">
-                                        <i data-lucide="male" class="w-6 h-6 text-white"></i>
+                                        <i data-lucide="mars" class="w-6 h-6 text-white"></i>
                                     </div>
                                 </div>
                             </div>
@@ -246,7 +246,7 @@
                                         <h4 class="text-3xl font-bold mt-1">{{ number_format($data->perempuan) }}</h4>
                                     </div>
                                     <div class="bg-white/30 backdrop-blur-md p-3 rounded-full shadow-inner">
-                                        <i data-lucide="female" class="w-6 h-6 text-[#0C3B2E]"></i>
+                                        <i data-lucide="venus" class="w-6 h-6 text-[#0C3B2E]"></i>
                                     </div>
                                 </div>
                             </div>

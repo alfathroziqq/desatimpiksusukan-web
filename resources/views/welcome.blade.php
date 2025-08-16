@@ -6,7 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Desa Timpik | Website Resmi</title>
-    <meta name="description" content="Informasi, pelayanan publik, dan berita terbaru dari Desa Timpik, Kecamatan Susukan, Kabupaten Semarang.">
+    <meta name="description"
+        content="Informasi, pelayanan publik, dan berita terbaru dari Desa Timpik, Kecamatan Susukan, Kabupaten Semarang.">
 
     <link rel="canonical" href="https://desatimpiksusukan.id/" />
 
@@ -109,29 +110,29 @@
 
     @include('layouts.partials.header')
 
-<main>
-    <!-- Hero -->
-    <section class="relative min-h-screen w-full -mt-20 flex items-center justify-center lg:justify-start">
-        <div class="absolute inset-0 bg-cover bg-[center_top_30%]"
-            style="background-image: url('{{ asset('/public/images/timpik_sawah2.png') }}');">
-        </div>
-
-        <div class="absolute inset-0 bg-gradient-to-t from-[#0C3B2E]/60 via-transparent to-transparent"></div>
-        <div class="absolute inset-0 bg-black/20"></div>
-
-        <div class="relative z-10 container mx-auto px-6 text-center lg:text-left lg:pl-24 mt-6">
-            <div class="max-w-xl lg:max-w-2xl">
-                <h1 class="text-4xl md:text-5xl lg:text-7xl font-bold text-[#0C3B2E] reveal-on-scroll"
-                    style="font-family: 'Poppins', sans-serif; text-shadow: 2px 2px 4px rgba(0,0,0,0.4);">
-                    Selamat Datang
-                </h1>
-                <p class="lg:mt-4 text-4xl md:text-5xl lg:text-7xl text-white italic reveal-on-scroll"
-                    style="font-family: 'Playfair Display', serif; text-shadow: 2px 2px 4px rgba(0,0,0,0.4);">
-                    Website <span class="text-[#E8C187]">Desa Timpik</span>
-                </p>
+    <main>
+        <!-- Hero -->
+        <section class="relative min-h-screen w-full -mt-20 flex items-center justify-center lg:justify-start">
+            <div class="absolute inset-0 bg-cover bg-[center_top_30%]"
+                style="background-image: url('{{ asset('/public/images/timpik_sawah2.png') }}');">
             </div>
-        </div>
-    </section>
+
+            <div class="absolute inset-0 bg-gradient-to-t from-[#0C3B2E]/60 via-transparent to-transparent"></div>
+            <div class="absolute inset-0 bg-black/20"></div>
+
+            <div class="relative z-10 container mx-auto px-6 text-center lg:text-left lg:pl-24 mt-6">
+                <div class="max-w-xl lg:max-w-2xl">
+                    <h1 class="text-4xl md:text-5xl lg:text-7xl font-bold text-[#0C3B2E] reveal-on-scroll"
+                        style="font-family: 'Poppins', sans-serif; text-shadow: 2px 2px 4px rgba(0,0,0,0.4);">
+                        Selamat Datang
+                    </h1>
+                    <p class="lg:mt-4 text-4xl md:text-5xl lg:text-7xl text-white italic reveal-on-scroll"
+                        style="font-family: 'Playfair Display', serif; text-shadow: 2px 2px 4px rgba(0,0,0,0.4);">
+                        Website <span class="text-[#E8C187]">Desa Timpik</span>
+                    </p>
+                </div>
+            </div>
+        </section>
 
         <!-- Sejarah Section -->
         <section class="py-16 md:py-14 relative overflow-x-clip">
@@ -410,7 +411,8 @@
                                 style="font-family: 'Poppins', sans-serif;">
                                 <div
                                     class="bg-gradient-to-br from-[#f7fbe9] via-[#ebf6f2] to-[#f9f6f0] rounded-lg shadow-md overflow-hidden h-full group transition-transform duration-300 ease-in-out hover:scale-105 hover:shadow-lg border border-gray-300">
-                                    <img src="{{ asset('/public/storage/' . $aparatur->foto) }}" alt="{{ $aparatur->nama }}"
+                                    <img src="{{ asset('/public/storage/' . $aparatur->foto) }}"
+                                        alt="{{ $aparatur->nama }}"
                                         class="mt-4 w-auto max-w-full max-h-55 mx-auto object-contain">
                                     <div class="px-3 text-center mt-3 mb-4">
                                         <h4 class="font-bold text-[17px] text-[#0C3B2E] leading-snug">
@@ -769,56 +771,65 @@
             }
 
             const tahunDropdown = document.getElementById('tahunDropdown');
-            tahunDropdown.addEventListener('change', function() {
-                const tahun = this.value;
-                fetch(`/apbdesa/data/${tahun}`)
-                    .then(res => res.json())
-                    .then(data => {
-                        document.querySelectorAll('.apbdesa-tahun').forEach(el => el.textContent = data.tahun);
-                        document.getElementById('pendapatanRealisasi').textContent = formatRupiah(data
-                            .totalPendapatanRealisasi);
-                        document.getElementById('belanjaRealisasi').textContent = formatRupiah(data
-                            .totalBelanjaRealisasi);
-                        document.getElementById('surplus').textContent = formatRupiah(data.surplus);
-                        document.getElementById('progressPendapatan').style.width = data.persenPendapatan + '%';
-                        document.getElementById('persenPendapatan').textContent = data.persenPendapatan + '%';
-                        document.getElementById('progressBelanja').style.width = data.persenBelanja + '%';
-                        document.getElementById('persenBelanja').textContent = data.persenBelanja + '%';
-                        document.getElementById('totalPendapatanAnggaran').textContent = 'Anggaran: ' +
-                            formatRupiah(data.totalPendapatan);
-                        document.getElementById('totalPendapatanRealisasi').textContent = 'Realisasi: ' +
-                            formatRupiah(data.totalPendapatanRealisasi);
+            if (tahunDropdown) {
+                tahunDropdown.addEventListener('change', function() {
+                    const tahun = this.value;
+                    fetch(`/apbdesa/data/${tahun}`)
+                        .then(res => res.json())
+                        .then(data => {
+                            document.querySelectorAll('.apbdesa-tahun').forEach(el => el.textContent = data.tahun);
+                            document.getElementById('pendapatanRealisasi').textContent = formatRupiah(data
+                                .totalPendapatanRealisasi);
+                            document.getElementById('belanjaRealisasi').textContent = formatRupiah(data
+                                .totalBelanjaRealisasi);
+                            document.getElementById('surplus').textContent = formatRupiah(data.surplus);
+                            document.getElementById('progressPendapatan').style.width = data.persenPendapatan + '%';
+                            document.getElementById('persenPendapatan').textContent = data.persenPendapatan + '%';
+                            document.getElementById('progressBelanja').style.width = data.persenBelanja + '%';
+                            document.getElementById('persenBelanja').textContent = data.persenBelanja + '%';
+                            document.getElementById('totalPendapatanAnggaran').textContent = 'Anggaran: ' +
+                                formatRupiah(data.totalPendapatan);
+                            document.getElementById('totalPendapatanRealisasi').textContent = 'Realisasi: ' +
+                                formatRupiah(data.totalPendapatanRealisasi);
 
-                        document.getElementById('totalBelanjaAnggaran').textContent = 'Anggaran: ' + formatRupiah(
-                            data.totalBelanja);
-                        document.getElementById('totalBelanjaRealisasi').textContent = 'Realisasi: ' + formatRupiah(
-                            data.totalBelanjaRealisasi);
+                            document.getElementById('totalBelanjaAnggaran').textContent = 'Anggaran: ' +
+                                formatRupiah(
+                                    data.totalBelanja);
+                            document.getElementById('totalBelanjaRealisasi').textContent = 'Realisasi: ' +
+                                formatRupiah(
+                                    data.totalBelanjaRealisasi);
 
-                        data.pendapatan.forEach((item, i) => {
-                            const persen = item.anggaran > 0 ? (item.realisasi / item.anggaran * 100)
-                                .toFixed(2) : 0;
-                            document.getElementById(`pendapatanLabel${i}`).textContent = item.label;
-                            document.getElementById(`pendapatanAnggaran${i}`).textContent = formatRupiah(
-                                item.anggaran);
-                            document.getElementById(`pendapatanRealisasi${i}`).textContent = formatRupiah(
-                                item.realisasi);
-                            document.getElementById(`pendapatanProgress${i}`).style.width = persen + '%';
-                            document.getElementById(`pendapatanPersen${i}`).textContent = persen + '%';
+                            data.pendapatan.forEach((item, i) => {
+                                const persen = item.anggaran > 0 ? (item.realisasi / item.anggaran * 100)
+                                    .toFixed(2) : 0;
+                                document.getElementById(`pendapatanLabel${i}`).textContent = item.label;
+                                document.getElementById(`pendapatanAnggaran${i}`).textContent =
+                                    formatRupiah(
+                                        item.anggaran);
+                                document.getElementById(`pendapatanRealisasi${i}`).textContent =
+                                    formatRupiah(
+                                        item.realisasi);
+                                document.getElementById(`pendapatanProgress${i}`).style.width = persen +
+                                '%';
+                                document.getElementById(`pendapatanPersen${i}`).textContent = persen + '%';
+                            });
+
+                            data.belanja.forEach((item, i) => {
+                                const persen = item.anggaran > 0 ? (item.realisasi / item.anggaran * 100)
+                                    .toFixed(2) : 0;
+                                document.getElementById(`belanjaLabel${i}`).textContent = item.label;
+                                document.getElementById(`belanjaAnggaran${i}`).textContent = formatRupiah(
+                                    item
+                                    .anggaran);
+                                document.getElementById(`belanjaRealisasi${i}`).textContent = formatRupiah(
+                                    item
+                                    .realisasi);
+                                document.getElementById(`belanjaProgress${i}`).style.width = persen + '%';
+                                document.getElementById(`belanjaPersen${i}`).textContent = persen + '%';
+                            });
                         });
-
-                        data.belanja.forEach((item, i) => {
-                            const persen = item.anggaran > 0 ? (item.realisasi / item.anggaran * 100)
-                                .toFixed(2) : 0;
-                            document.getElementById(`belanjaLabel${i}`).textContent = item.label;
-                            document.getElementById(`belanjaAnggaran${i}`).textContent = formatRupiah(item
-                                .anggaran);
-                            document.getElementById(`belanjaRealisasi${i}`).textContent = formatRupiah(item
-                                .realisasi);
-                            document.getElementById(`belanjaProgress${i}`).style.width = persen + '%';
-                            document.getElementById(`belanjaPersen${i}`).textContent = persen + '%';
-                        });
-                    });
-            });
+                });
+            }
         </script>
 
     </main>
