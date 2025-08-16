@@ -112,9 +112,9 @@
 <main>
     <!-- Hero -->
     <section class="relative min-h-screen w-full -mt-20 flex items-center justify-center lg:justify-start">
-        <img src="{{ asset('/public/images/timpik_sawah2.png') }}"
-            alt="Sawah Timpik"
-            class="absolute inset-0 w-full h-full object-cover object-[center_top_30%]">
+        <div class="absolute inset-0 bg-cover bg-[center_top_30%]"
+            style="background-image: url('{{ asset('/public/images/timpik_sawah2.png') }}');">
+        </div>
 
         <div class="absolute inset-0 bg-gradient-to-t from-[#0C3B2E]/60 via-transparent to-transparent"></div>
         <div class="absolute inset-0 bg-black/20"></div>
