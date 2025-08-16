@@ -17,7 +17,7 @@
                     @endphp
 
                     @foreach ($galleryItems as $item)
-                        <img src="{{ asset('storage/' . $item->gambar) }}" alt="{{ $item->judul }}"
+                        <img src="{{ asset('/public/storage/' . $item->gambar) }}" alt="{{ $item->judul }}"
                             onerror="this.onerror=null;this.src='https://placehold.co/100x80/E0E0E0/BDBDBD?text=Gambar';"
                             class="w-1/3 h-20 object-cover rounded-md hover:scale-105 transition-transform duration-300">
                     @endforeach

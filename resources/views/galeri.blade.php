@@ -112,7 +112,7 @@
         showModal: false,
         currentIndex: 0,
         // PERBAIKAN: ->values() dipanggil sebelum json_encode()
-        images: {{ json_encode($galleryItems->map(fn($item) => ['src' => asset('storage/' . $item->gambar), 'title' => $item->judul])->values()) }},
+        images: {{ json_encode($galleryItems->map(fn($item) => ['src' => asset('/public/storage/' . $item->gambar), 'title' => $item->judul])->values()) }},
         openModal(index) {
             this.currentIndex = index;
             this.showModal = true;
@@ -216,7 +216,7 @@
                             class="absolute inset-0 z-10 bg-gradient-to-b from-[#0C3B2E]/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center">
                             <i data-lucide="search" class="text-white text-5xl drop-shadow-xl"></i>
                         </div>
-                        <img src="{{ asset('storage/' . $item->gambar) }}" alt="{{ $item->judul }}"
+                        <img src="{{ asset('/public/storage/' . $item->gambar) }}" alt="{{ $item->judul }}"
                             onerror="this.onerror=null;this.src='https://placehold.co/400x400/E0E0E0/BDBDBD?text=Gambar';"
                             class="w-full h-60 object-cover group-hover:scale-105 transition-transform duration-500">
 

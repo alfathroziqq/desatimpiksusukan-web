@@ -98,7 +98,7 @@
                         class="relative bg-gradient-to-br from-[#F9F7F6] via-white to-[#E8F7F2]/60 border border-[#C7F3E7]/50 rounded-3xl shadow-2xl p-0 md:p-0 overflow-hidden mb-8 lg:mb-0">
                         <!-- Featured Image with overlay -->
                         <div class="relative">
-                            <img src="{{ asset('storage/' . $berita->foto) }}" alt="{{ $berita->nama_berita }}"
+                            <img src="{{ asset('/public/storage/' . $berita->foto) }}" alt="{{ $berita->nama_berita }}"
                                 class="w-full aspect-video object-cover rounded-t-3xl md:rounded-t-3xl shadow"
                                 onerror="this.src='https://placehold.co/600x400?text=Foto+Tidak+Tersedia';">
 
@@ -162,7 +162,7 @@
                                     <a href="{{ route('berita.detail', $item) }}"
                                         class="flex items-center gap-4 group p-2 rounded-xl hover:bg-[#C7F3E7]/20 transition-all duration-200 border border-transparent hover:border-[#C7F3E7]/60 shadow-sm">
                                         <div class="relative">
-                                            <img src="{{ asset('storage/' . $item->foto) }}"
+                                            <img src="{{ asset('/public/storage/' . $item->foto) }}"
                                                 alt="{{ $item->nama_berita }}"
                                                 class="w-16 h-16 rounded-lg object-cover bg-[#e7e7e7] shadow group-hover:scale-105 transition-transform duration-200"
                                                 onerror="this.src='https://placehold.co/100x100?text=No+Image';">

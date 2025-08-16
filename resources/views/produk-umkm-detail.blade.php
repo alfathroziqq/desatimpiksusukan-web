@@ -99,7 +99,7 @@
                     <!-- Gambar Produk -->
                     <div
                         class="w-full md:w-[330px] max-h-[370px] flex-shrink-0 rounded-2xl overflow-hidden border-2 border-[#C7F3E7]/80 relative shadow-md group">
-                        <img src="{{ asset('storage/' . $produk->foto) }}"
+                        <img src="{{ asset('/public/storage/' . $produk->foto) }}"
                             onerror="this.onerror=null;this.src='https://placehold.co/500x400?text=No+Image';"
                             alt="{{ $produk->nama_produk }}"
                             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">

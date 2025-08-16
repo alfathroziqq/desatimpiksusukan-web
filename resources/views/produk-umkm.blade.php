@@ -153,7 +153,7 @@
                             class="bg-gray rounded-2xl shadow-lg overflow-hidden group transform hover:-translate-y-2 transition-all duration-300 border border-gray-200/80">
                             <a href="{{ route('belanja.detail', $produk->id) }}" class="block">
                                 <div class="w-full h-[200px] md:h-[220px] lg:h-[230px] overflow-hidden">
-                                    <img src="{{ asset('storage/' . $produk->foto) }}" alt="{{ $produk->nama_produk }}"
+                                    <img src="{{ asset('/public/storage/' . $produk->foto) }}" alt="{{ $produk->nama_produk }}"
                                         onerror="this.onerror=null;this.src='https://placehold.co/500x500?text=No+Image';"
                                         class="w-full h-full object-cover rounded-t-2xl">
                                 </div>

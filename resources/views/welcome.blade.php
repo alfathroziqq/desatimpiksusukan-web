@@ -338,7 +338,7 @@
                     @forelse ($beritaTerbaru as $berita)
                         <div
                             class="min-w-[80%] md:min-w-[50%] lg:min-w-[27%] bg-white rounded-3xl overflow-hidden shadow-lg snap-start">
-                            <img src="{{ asset('storage/' . $berita->foto) }}"
+                            <img src="{{ asset('/public/storage/' . $berita->foto) }}"
                                 alt="Gambar {{ $berita->nama_berita }}" class="w-full h-50 object-cover">
                             <div class="p-4">
                                 <h3 class="font-bold text-[18px] mb-2 text-[#0C3B2E]"
@@ -410,7 +410,7 @@
                                 style="font-family: 'Poppins', sans-serif;">
                                 <div
                                     class="bg-gradient-to-br from-[#f7fbe9] via-[#ebf6f2] to-[#f9f6f0] rounded-lg shadow-md overflow-hidden h-full group transition-transform duration-300 ease-in-out hover:scale-105 hover:shadow-lg border border-gray-300">
-                                    <img src="{{ asset('storage/' . $aparatur->foto) }}" alt="{{ $aparatur->nama }}"
+                                    <img src="{{ asset('/public/storage/' . $aparatur->foto) }}" alt="{{ $aparatur->nama }}"
                                         class="mt-4 w-auto max-w-full max-h-55 mx-auto object-contain">
                                     <div class="px-3 text-center mt-3 mb-4">
                                         <h4 class="font-bold text-[17px] text-[#0C3B2E] leading-snug">
@@ -473,7 +473,7 @@
                                 @foreach ($semuaGaleri as $index => $item)
                                     <div
                                         class="absolute inset-0 transition-opacity duration-1000 ease-in-out slideshow-slide {{ $index === 0 ? 'opacity-100 z-10' : 'opacity-0 z-0' }}">
-                                        <img src="{{ asset('storage/' . $item->gambar) }}"
+                                        <img src="{{ asset('/public/storage/' . $item->gambar) }}"
                                             alt="{{ $item->judul ?? 'Galeri Desa' }}"
                                             class="object-cover w-full h-full transition-transform duration-700 group-hover:scale-105" />
                                         <div
@@ -494,7 +494,7 @@
                                 @foreach ($galeriTerbaru->skip(1) as $img)
                                     <div
                                         class="relative rounded-2xl overflow-hidden shadow-lg group min-h-[130px] reveal-on-scroll">
-                                        <img src="{{ asset('storage/' . $img->gambar) }}"
+                                        <img src="{{ asset('/public/storage/' . $img->gambar) }}"
                                             alt="{{ $img->judul ?? 'Galeri Desa' }}"
                                             class="object-cover w-full h-44 lg:h-36 group-hover:scale-105 transition-all duration-500" />
                                         <div

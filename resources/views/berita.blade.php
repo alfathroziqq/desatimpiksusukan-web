@@ -159,7 +159,7 @@
                         class="reveal-on-scroll relative bg-white/90 backdrop-blur-lg shadow-2xl border border-[#C7F3E7]/40 rounded-3xl mb-16 flex flex-col md:flex-row overflow-hidden hover:shadow-3xl transition group">
                         <div
                             class="md:w-1/3 min-h-[270px] bg-gradient-to-tr from-[#C7F3E7]/40 via-[#E8C187]/30 to-[#f7efe5]/50 relative">
-                            <img src="{{ asset('storage/' . $highlight->foto) }}" alt="{{ $highlight->nama_berita }}"
+                            <img src="{{ asset('/public/storage/' . $highlight->foto) }}" alt="{{ $highlight->nama_berita }}"
                                 class="w-full h-full object-cover object-center rounded-t-3xl md:rounded-tr-none md:rounded-l-3xl transition group-hover:scale-105"
                                 onerror="this.src='https://placehold.co/600x400?text=Foto+Tidak+Tersedia';">
                             <span
@@ -208,7 +208,7 @@
                         <div
                             class="bg-white rounded-2xl shadow-lg overflow-hidden group transform hover:-translate-y-2 transition-all duration-300 border border-gray-200/80">
                             <a href="{{ route('berita.detail', $berita->id) }}" class="block">
-                                <img src="{{ asset('storage/' . $berita->foto) }}" alt="{{ $berita->nama_berita }}"
+                                <img src="{{ asset('/public/storage/' . $berita->foto) }}" alt="{{ $berita->nama_berita }}"
                                     class="w-full h-52 object-cover"
                                     onerror="this.src='https://placehold.co/600x400?text=Foto+Tidak+Tersedia';">
                                 <div class="p-5">

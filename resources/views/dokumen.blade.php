@@ -234,7 +234,7 @@
                                 <span class="text-[10px] text-[#12715D]">{{ $dokumen->download_count }}x</span>
                             </div>
                             <div class="flex flex-col gap-2 mt-auto">
-                                <a href="{{ asset('storage/' . $dokumen->file_path) }}" target="_blank"
+                                <a href="{{ asset('/public/storage/' . $dokumen->file_path) }}" target="_blank"
                                     class="bg-[#F9DCC1]/90 text-[#0C3B2E] font-semibold px-4 py-2 rounded-lg flex items-center justify-center space-x-2 hover:bg-orange-300 hover:scale-105 transition-all">
                                     <i data-lucide="eye" class="w-5 h-5"></i>
                                     <span>Lihat Berkas</span>

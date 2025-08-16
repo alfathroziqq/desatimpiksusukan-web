@@ -251,7 +251,7 @@
                                 style="font-family: 'Poppins', sans-serif;">
                                 <div
                                     class="bg-gradient-to-br from-[#f7fbe9] via-[#ebf6f2] to-[#f9f6f0] rounded-lg shadow-md overflow-hidden h-full group transition-transform duration-300 ease-in-out hover:scale-105 hover:shadow-lg border border-gray-300">
-                                    <img src="{{ asset('storage/' . $aparatur->foto) }}" alt="{{ $aparatur->nama }}"
+                                    <img src="{{ asset('/public/storage/' . $aparatur->foto) }}" alt="{{ $aparatur->nama }}"
                                         class="mt-4 w-auto max-w-full max-h-55 mx-auto object-contain">
                                     <div class="px-3 text-center mt-3 mb-4">
                                         <h4 class="font-bold text-[17px] text-[#0C3B2E] leading-snug">
