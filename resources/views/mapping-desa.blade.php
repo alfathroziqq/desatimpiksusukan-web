@@ -162,14 +162,14 @@
         </section>
 
         <!-- Section Mapping -->
-        <section class="mt-[-30px] font-['Poppins',sans-serif] mb-8 text-[#0C3B2E]" x-data="{ modalOpen: false, modalImg: '' }">
+        <section class="mt-[-40px] font-['Poppins',sans-serif] mb-12 text-[#0C3B2E]" x-data="{ modalOpen: false, modalImg: '' }">
             <div class="container mx-auto px-8 sm:px-12 lg:px-40">
 
                 <!-- Grid 2 kolom dengan nama -->
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-10 text-center">
                     <!-- Item 1 -->
                     <div class="reveal-on-scroll text-center">
-                        <h3 class="font-semibold text-lg mb-3 text-[#0C3B2E]">Peta Administrasi Desa</h3>
+                        <h3 class="font-semibold text-lg md:text-xl mb-3 text-[#0C3B2E]">Peta Administrasi Desa</h3>
                         <img src="{{ asset('/public/images/mapping-administrasi.png') }}" alt="Peta Administrasi Desa"
                             class="rounded-lg shadow-lg mx-auto cursor-pointer"
                             @click="modalOpen = true; modalImg = '{{ asset('/public/images/mapping-administrasi.png') }}'">
@@ -177,7 +177,7 @@
 
                     <!-- Item 2 -->
                     <div class="reveal-on-scroll text-center">
-                        <h3 class="font-semibold text-lg mb-3 text-[#0C3B2E]">Peta Jenis Lahan Pertanian</h3>
+                        <h3 class="font-semibold text-lg md:text-xl mb-3 text-[#0C3B2E]">Peta Jenis Lahan Pertanian</h3>
                         <img src="{{ asset('/public/images/mapping-lahan-pertanian.png') }}" alt="Peta Jenis Lahan Pertanian"
                             class="rounded-lg shadow-lg mx-auto cursor-pointer"
                             @click="modalOpen = true; modalImg = '{{ asset('/public/images/mapping-lahan-pertanian.png') }}'">
@@ -185,7 +185,7 @@
 
                     <!-- Item 3 -->
                     <div class="reveal-on-scroll text-center">
-                        <h3 class="font-semibold text-lg mb-3 text-[#0C3B2E]">Peta Aliran Sungai & Bak Air</h3>
+                        <h3 class="font-semibold text-lg md:text-xl mb-3 text-[#0C3B2E]">Peta Aliran Sungai & Bak Air</h3>
                         <img src="{{ asset('/public/images/mapping-aliran-sungai.png') }}" alt="Peta Aliran Sungai & Bak Air"
                             class="rounded-lg shadow-lg mx-auto cursor-pointer"
                             @click="modalOpen = true; modalImg = '{{ asset('/public/images/mapping-aliran-sungai.png') }}'">
@@ -193,7 +193,7 @@
 
                     <!-- Item 4 -->
                     <div class="reveal-on-scroll text-center">
-                        <h3 class="font-semibold text-lg mb-3 text-[#0C3B2E]">Peta Rumah Kepala Desa</h3>
+                        <h3 class="font-semibold text-lg md:text-xl mb-3 text-[#0C3B2E]">Peta Rumah Kepala Desa</h3>
                         <img src="{{ asset('/public/images/mapping-rumah-kepala.png') }}" alt="Peta Infrastruktur Desa"
                             class="rounded-lg shadow-lg mx-auto cursor-pointer"
                             @click="modalOpen = true; modalImg = '{{ asset('/public/images/mapping-rumah-kepala.png') }}'">
@@ -201,7 +201,7 @@
 
                     <!-- Item 5 -->
                     <div class="reveal-on-scroll text-center">
-                        <h3 class="font-semibold text-lg mb-3 text-[#0C3B2E]">Peta Fasilitas Pendidikan</h3>
+                        <h3 class="font-semibold text-lg md:text-xl mb-3 text-[#0C3B2E]">Peta Fasilitas Pendidikan</h3>
                         <img src="{{ asset('/public/images/mapping-pendidikan.png') }}" alt="Peta Fasilitas Pendidikan"
                             class="rounded-lg shadow-lg mx-auto cursor-pointer"
                             @click="modalOpen = true; modalImg = '{{ asset('/public/images/mapping-pendidikan.png') }}'">
@@ -209,7 +209,7 @@
 
                     <!-- Item 6 -->
                     <div class="reveal-on-scroll text-center">
-                        <h3 class="font-semibold text-lg mb-3 text-[#0C3B2E]">Peta Fasilitas Kesehatan</h3>
+                        <h3 class="font-semibold text-lg md:text-xl mb-3 text-[#0C3B2E]">Peta Fasilitas Kesehatan</h3>
                         <img src="{{ asset('/public/images/mapping-olahraga.png') }}" alt="Peta Fasilitas Kesehatan"
                             class="rounded-lg shadow-lg mx-auto cursor-pointer"
                             @click="modalOpen = true; modalImg = '{{ asset('/public/images/mapping-olahraga.png') }}'">
@@ -217,7 +217,7 @@
 
                     <!-- Item 7 -->
                     <div class="reveal-on-scroll text-center">
-                        <h3 class="font-semibold text-lg mb-3 text-[#0C3B2E]">Peta Persebaran Hewan Ternak</h3>
+                        <h3 class="font-semibold text-lg md:text-xl mb-3 text-[#0C3B2E]">Peta Persebaran Hewan Ternak</h3>
                         <img src="{{ asset('/public/images/mapping-hewan.png') }}" alt="Peta Persebaran Hewan Ternak"
                             class="rounded-lg shadow-lg mx-auto cursor-pointer"
                             @click="modalOpen = true; modalImg = '{{ asset('/public/images/mapping-hewan.png') }}'">
@@ -225,7 +225,7 @@
 
                     <!-- Item 8 -->
                     <div class="reveal-on-scroll text-center">
-                        <h3 class="font-semibold text-lg mb-3 text-[#0C3B2E]">Peta Sosial Budaya</h3>
+                        <h3 class="font-semibold text-lg md:text-xl mb-3 text-[#0C3B2E]">Peta Sosial Budaya</h3>
                         <img src="{{ asset('/public/images/mapping-kebudayaan.png') }}" alt="Peta Sosial Budaya"
                             class="rounded-lg shadow-lg mx-auto cursor-pointer"
                             @click="modalOpen = true; modalImg = '{{ asset('/public/images/mapping-kebudayaan.png') }}'">
@@ -233,7 +233,7 @@
 
                     <!-- Item 9 -->
                     <div class="reveal-on-scroll text-center">
-                        <h3 class="font-semibold text-lg mb-3 text-[#0C3B2E]">Peta Aliran Listrik & Titik Lampu</h3>
+                        <h3 class="font-semibold text-lg md:text-xl mb-3 text-[#0C3B2E]">Peta Aliran Listrik & Titik Lampu</h3>
                         <img src="{{ asset('/public/images/mapping-jaringan-listrik.png') }}" alt="Peta Aliran Listrik & Titik Lampu"
                             class="rounded-lg shadow-lg mx-auto cursor-pointer"
                             @click="modalOpen = true; modalImg = '{{ asset('/public/images/mapping-jaringan-listrik.png') }}'">
@@ -241,7 +241,7 @@
 
                     <!-- Item 10 -->
                     <div class="reveal-on-scroll text-center">
-                        <h3 class="font-semibold text-lg mb-3 text-[#0C3B2E]">Peta Aliran Listrik & Titik Lampu</h3>
+                        <h3 class="font-semibold text-lg md:text-xl mb-3 text-[#0C3B2E]">Peta Aliran Listrik & Titik Lampu</h3>
                         <img src="{{ asset('/public/images/mapping-listrik-lampu.png') }}" alt="Peta Aliran Listrik & Titik Lampu"
                             class="rounded-lg shadow-lg mx-auto cursor-pointer"
                             @click="modalOpen = true; modalImg = '{{ asset('/public/images/mapping-listrik-lampu.png') }}'">
