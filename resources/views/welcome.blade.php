@@ -6,6 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Desa Timpik | Website Resmi</title>
+    <meta name="description" content="Informasi, pelayanan publik, dan berita terbaru dari Desa Timpik, Kecamatan Susukan, Kabupaten Semarang.">
+
+    <link rel="canonical" href="https://desatimpiksusukan.id/" />
 
     <link rel="icon" type="image/png" href="{{ asset('images/logo-timpik.png') }}">
 
