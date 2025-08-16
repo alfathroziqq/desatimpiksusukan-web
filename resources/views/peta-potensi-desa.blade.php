@@ -1212,7 +1212,7 @@
                         <div
                             class="group bg-[#D9E6E6] rounded-xl shadow-lg p-5 w-full text-center transition-all duration-300 ease-in-out hover:-translate-y-1.5 hover:shadow-xl hover:bg-brand-dark">
                             <h3
-                                class="text-md md:text-2xl font-bold text-brand-dark group-hover:text-white transition-colors duration-300 text-justify">
+                                class="text-md md:text-2xl font-bold text-brand-dark group-hover:text-white transition-colors duration-300">
                                 Lempuyangan</h3>
                             <button @click="showModal = true"
                                 class="mt-2 text-sm bg-white text-[#0C3B2E] border border-[#0C3B2E] hover:bg-[#0C3B2E] hover:text-white hover:border-white transition-colors duration-300 px-5 py-1 rounded-full cursor-pointer">
