@@ -144,7 +144,7 @@
                         class="inline-block mb-3 bg-[#C7F3E7] text-[#12715D] px-4 py-1 rounded-full font-semibold text-xs tracking-wider shadow">
                         DATA GEOSPASIAL
                     </span>
-                    <h2 class="text-4xl md:text-5xl font-extrabold text-[#0C3B2E] drop-shadow-lg mb-2">Mapping Desa
+                    <h2 class="text-4xl md:text-5xl font-extrabold text-[#0C3B2E] drop-shadow-lg mb-3">Mapping Desa
                     </h2>
                     <div
                         class="mx-auto w-24 md:w-48 h-1 bg-gradient-to-r from-[#C7F3E7] via-[#0C3B2E] to-[#E8C187] rounded-full mb-1">
@@ -162,7 +162,7 @@
         </section>
 
         <!-- Section Mapping -->
-        <section class="font-['Poppins',sans-serif] mb-8 text-[#0C3B2E]">
+        <section class="mt-[20px] font-['Poppins',sans-serif] mb-8 text-[#0C3B2E]">
             <div class="container mx-auto px-8 sm:px-12 lg:px-40" x-data="{ modalOpen: false, modalImg: '' }">
 
                 <!-- Grid 2 kolom dengan nama -->
