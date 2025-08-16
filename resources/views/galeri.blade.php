@@ -195,7 +195,7 @@
         <div class="container mx-auto px-8 sm:px-12 lg:px-40 py-14">
 
             <!-- Title Section -->
-            <div class="flex flex-col items-center mb-6 md:mb-14">
+            <div class="flex flex-col items-center mb-6 md:mb-14 reveal-on-scroll">
                 <span
                     class="uppercase tracking-widest text-[13px] font-semibold text-[#12715D] bg-[#C7F3E7]/60 rounded-full px-4 py-1 mb-3 shadow-sm">Galeri
                     Desa</span>
@@ -207,7 +207,7 @@
             </div>
 
             <!-- Photo Grid -->
-            <div class="grid gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+            <div class="grid gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 reveal-on-scroll">
                 @forelse ($galleryItems as $index => $item)
                     <div @click="openModal({{ $index }})"
                         class="gallery-card relative rounded-2xl shadow-2xl border border-[#C7F3E7]/60 overflow-hidden cursor-pointer bg-gradient-to-tl from-white via-[#F9DCC1]/20 to-[#C7F3E7]/10 transition-all duration-700 opacity-0 translate-y-8 group hover:shadow-[0_8px_40px_-8px_#0C3B2E33] hover:scale-[1.03]">
