@@ -136,7 +136,7 @@
             </div>
         </section>
 
-        <section class="mt-[-30px] font-['Poppins',sans-serif] mb-6">
+        <section class="py-12 font-['Poppins',sans-serif] mb-6">
             <div class="container mx-auto px-8 sm:px-12 lg:px-40">
 
                 <div class="text-center mb-9 reveal-on-scroll">
