@@ -139,7 +139,7 @@
         <section class="py-12 font-['Poppins',sans-serif] mb-6">
             <div class="container mx-auto px-8 sm:px-12 lg:px-40">
 
-                <div class="text-center mb-9 reveal-on-scroll">
+                <div class="text-center reveal-on-scroll">
                     <span
                         class="inline-block mb-3 bg-[#C7F3E7] text-[#12715D] px-4 py-1 rounded-full font-semibold text-xs tracking-wider shadow">
                         DATA GEOSPASIAL
@@ -163,7 +163,7 @@
 
         <!-- Section Mapping -->
         <section class="font-['Poppins',sans-serif] mb-12 text-[#0C3B2E]" x-data="{ modalOpen: false, modalImg: '' }">
-            <div class="mt-[-10px] container mx-auto px-8 sm:px-12 lg:px-40">
+            <div class="mt-[-30px] container mx-auto px-8 sm:px-12 lg:px-40">
 
                 <!-- Grid 2 kolom dengan nama -->
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-10 text-center">
