@@ -136,7 +136,7 @@
             </div>
         </section>
 
-        <section class="py-12 font-['Poppins',sans-serif] mb-6">
+        <section class="mt-[-30px] font-['Poppins',sans-serif] mb-6">
             <div class="container mx-auto px-8 sm:px-12 lg:px-40">
 
                 <div class="text-center mb-9 reveal-on-scroll">
@@ -162,7 +162,7 @@
         </section>
 
         <!-- Section Mapping -->
-        <section class="mt-[-40px] font-['Poppins',sans-serif] mb-12 text-[#0C3B2E]" x-data="{ modalOpen: false, modalImg: '' }">
+        <section class="mt-[-30px] font-['Poppins',sans-serif] mb-12 text-[#0C3B2E]" x-data="{ modalOpen: false, modalImg: '' }">
             <div class="container mx-auto px-8 sm:px-12 lg:px-40">
 
                 <!-- Grid 2 kolom dengan nama -->
