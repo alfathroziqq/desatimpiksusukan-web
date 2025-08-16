@@ -90,7 +90,7 @@
                 <span class="text-[#DBAA7C]">Surat Masuk & Keluar</span>
             </div>
 
-            <div class="w-full max-w-7xl mx-auto px-4 sm:px-6 md:px-8 py-8" x-data="{ modalOpen: false, modalImg: '' }">
+            <div class="container mx-auto px-2 sm:px-12 lg:px-30 py-8 font-['Poppins']" x-data="{ modalOpen: false, modalImg: '' }">
                 <div class="mt-[-30px] mb-6 reveal-on-scroll w-full text-center">
                     <h1 class="text-3xl md:text-5xl font-extrabold text-[#0C3B2E] mb-3 drop-shadow font-['Poppins']">
                         Alur Pengurusan Surat Masuk & Keluar
@@ -118,9 +118,9 @@
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-10 items-center mb-16 reveal-on-scroll w-full max-w-7xl px-4 sm:px-6 md:px-8 mx-auto">
 
                     <div class="flex justify-center">
-                        <div class="relative group w-full h-55 md:h-[320px]">
+                        <div class="relative group">
                             <img src="{{ asset('/public/images/surat-masuk.png') }}" alt="Alur Surat Masuk"
-                                class="w-full h-full object-cover rounded-3xl shadow-xl border-4 border-[#0C3B2E] transition-all duration-300 bg-white/50 cursor-pointer"
+                                class="w-full h-auto object-cover rounded-3xl shadow-xl border-4 border-[#0C3B2E] transition-all duration-300 bg-white/50 cursor-pointer"
                                 @click="modalOpen = true; modalImg = '{{ asset('/public/images/surat-masuk.png') }}'">
                             <div
                                 class="absolute inset-0 bg-gradient-to-tr from-[#0C3B2E]/10 to-transparent rounded-3xl pointer-events-none">
@@ -213,9 +213,9 @@
                     </div>
 
                     <div class="flex justify-center order-1 md:order-2">
-                        <div class="relative group w-full h-55 md:h-[320px]">
+                        <div class="relative group">
                             <img src="{{ asset('/public/images/surat-keluar.png') }}" alt="Alur Surat Keluar"
-                                class="w-full h-full object-cover rounded-3xl shadow-xl border-4 border-[#0C3B2E] transition-all duration-300 bg-white/50 cursor-pointer"
+                                class="w-full h-auto object-cover rounded-3xl shadow-xl border-4 border-[#0C3B2E] transition-all duration-300 bg-white/50 cursor-pointer"
                                 @click="modalOpen = true; modalImg = '{{ asset('/public/images/surat-keluar.png') }}'">
                             <div class="absolute inset-0 bg-gradient-to-tr from-[#0C3B2E]/10 to-transparent rounded-3xl pointer-events-none"></div>
                         </div>
