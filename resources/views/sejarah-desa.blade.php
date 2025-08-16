@@ -9,6 +9,9 @@
 
     <link rel="canonical" href="https://desatimpiksusukan.id/sejarah-desa" />
 
+    <meta name="keywords"
+        content="Desa Timpik, Susukan, Kabupaten Semarang, sejarah desa, sejarah website">
+
     <link rel="icon" type="image/png" href="{{ asset('/public/images/logo-timpik.png') }}">
 
     <!-- Google Fonts -->

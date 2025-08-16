@@ -11,6 +11,9 @@
 
     <link rel="canonical" href="https://desatimpiksusukan.id/" />
 
+    <meta name="keywords"
+        content="Desa Timpik, Susukan, Kabupaten Semarang, informasi desa, pelayanan publik, berita desa, sejarah desa, tata kelola desa, peta potensi desa, website desa, pemerintahan desa, Jawa Tengah">
+
     <link rel="icon" type="image/png" href="{{ asset('/public/images/logo-timpik.png') }}">
 
     <!-- Google Fonts -->

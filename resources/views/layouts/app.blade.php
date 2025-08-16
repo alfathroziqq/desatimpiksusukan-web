@@ -8,6 +8,8 @@
         <title>@yield('title', 'Website Desa Timpik')</title>
 
         <meta name="description" content="Informasi, pelayanan publik, dan berita terbaru dari Desa Timpik, Kecamatan Susukan, Kabupaten Semarang.">
+        <meta name="keywords"
+            content="Desa Timpik, Susukan, Kabupaten Semarang, informasi desa, pelayanan publik, berita desa, sejarah desa, tata kelola desa, peta potensi desa, website desa, pemerintahan desa, Jawa Tengah">
 
         <meta property="og:title" content="{{ config('app.name', 'Desa Timpik | Website Resmi') }}" />
         <meta property="og:description" content="Dapatkan layanan administrasi, info desa, dan berita terkini langsung dari website resmi kami Desa Timpik, Kecamatan Susukan, Kabupaten Semarang." />

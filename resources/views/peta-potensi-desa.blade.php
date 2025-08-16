@@ -5,6 +5,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Peta Potensi Desa | Desa Timpik</title>
+    <meta name="description" content="Peta Potensi Desa Timpik, Kecamatan Susukan, Kabupaten Semarang.">
+
+    <link rel="canonical" href="https://desatimpiksusukan.id/peta-potensi-desa" />
+
+    <meta name="keywords"
+        content="Desa Timpik, Susukan, Kabupaten Semarang, tata kelola desa, tata kelola, tata, kelola">
 
     <link rel="icon" type="image/png" href="{{ asset('/public/images/logo-timpik.png') }}">
 
