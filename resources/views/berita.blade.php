@@ -5,6 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Berita | Desa Timpik</title>
+    <meta name="description" content="Berita terbaru Desa Timpik, Kecamatan Susukan, Kabupaten Semarang. Dapatkan update kegiatan, pengumuman, dan informasi penting masyarakat.">
+
+    <link rel="canonical" href="https://desatimpiksusukan.id/berita" />
 
     <link rel="icon" type="image/png" href="{{ asset('images/logo-timpik.png') }}">
 

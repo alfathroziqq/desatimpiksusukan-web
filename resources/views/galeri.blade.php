@@ -194,7 +194,7 @@
         <div class="container mx-auto px-8 sm:px-12 lg:px-40 py-14">
 
             <!-- Title Section -->
-            <div class="flex flex-col items-center mb-14">
+            <div class="flex flex-col items-center mb-6 md:mb-14">
                 <span
                     class="uppercase tracking-widest text-[13px] font-semibold text-[#12715D] bg-[#C7F3E7]/60 rounded-full px-4 py-1 mb-3 shadow-sm">Galeri
                     Desa</span>

@@ -5,6 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sejarah | Desa Timpik</title>
+    <meta name="description" content="Sejarah Desa Timpik, Kecamatan Susukan, Kabupaten Semarang. Pelajari asal-usul, perkembangan, dan perjalanan penting desa dari masa ke masa.">
+
+    <link rel="canonical" href="https://desatimpiksusukan.id/sejarah-desa" />
 
     <link rel="icon" type="image/png" href="{{ asset('images/logo-timpik.png') }}">
 

@@ -5,6 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dokumen | Desa Timpik</title>
+    <meta name="description" content="Kumpulan dokumen resmi Desa Timpik, Kecamatan Susukan, Kabupaten Semarang. Unduh peraturan, laporan, dan arsip publik terbaru.">
+
+    <link rel="canonical" href="https://desatimpiksusukan.id/dokumen" />
 
     <link rel="icon" type="image/png" href="{{ asset('images/logo-timpik.png') }}">
 
@@ -211,12 +214,12 @@
                         <div
                             class="relative bg-white/80 backdrop-blur-md rounded-3xl shadow-xl border border-[#C7F3E7]/60 hover:shadow-2xl transition-all duration-300 flex flex-col p-6 group overflow-hidden">
                             <div class="absolute -top-6 -left-8 w-24 h-24 bg-[#C7F3E7]/30 rounded-full blur-2xl"></div>
-                            <span
-                                class="absolute top-5 right-5 bg-[#F9DCC1]/80 text-[#C2977D] font-bold px-3 py-1 rounded-xl text-xs shadow-md">
-                                {{ $dokumen->jenis_dokumen }}
-                            </span>
                             <h3 class="font-bold text-lg md:text-xl mb-1 text-[#0C3B2E] line-clamp-2">
                                 {{ $dokumen->judul }}</h3>
+                            <span
+                                class="inline-block self-start bg-[#F9DCC1]/80 text-[#C2977D] font-bold px-3 py-1 rounded-xl text-xs shadow-md mb-2">
+                                {{ $dokumen->jenis_dokumen }}
+                            </span>
                             <div class="flex items-center text-xs text-[#12715D]/80 mb-2 gap-2">
                                 <i data-lucide="calendar" class="w-4 h-4"></i>
                                 {{ \Carbon\Carbon::parse($dokumen->tanggal_input)->isoFormat('dddd, D MMMM Y') }}
@@ -254,12 +257,12 @@
                 style="font-family: 'Poppins', sans-serif">
                 <div class="absolute left-0 top-0 w-28 h-28 bg-[#C7F3E7]/30 rounded-full blur-2xl"></div>
                 <div class="absolute right-0 bottom-0 w-32 h-32 bg-[#E8C187]/40 rounded-full blur-2xl"></div>
-                <h2 class="text-2xl md:text-3xl font-extrabold text-[#0C3B2E] mb-3 drop-shadow">
-                    <i data-lucide="help-circle" class="inline w-7 h-7 align-text-bottom text-[#12715D] mr-2"></i>
+                <i data-lucide="help-circle" class="inline w-7 h-7 align-text-bottom text-[#12715D] mb-2"></i>
+                <h2 class="text-lg md:text-3xl font-extrabold text-[#0C3B2E] mb-2 drop-shadow">
                     Ingin mengajukan permohonan informasi?
                 </h2>
                 <a href="{{ route('permohonan.create') }}"
-                    class="inline-block bg-[#0C3B2E] text-white font-bold px-8 py-3 rounded-xl shadow hover:bg-[#12715D] hover:scale-105 transition-all duration-300 mt-4 text-lg">
+                    class="inline-block bg-[#0C3B2E] text-white font-bold px-3 md:px-8 py-3 rounded-xl shadow hover:bg-[#12715D] hover:scale-105 transition-all duration-300 mt-4 text-sm md:text-lg">
                     Ajukan Permohonan Informasi
                 </a>
             </section>

@@ -281,7 +281,7 @@
                             class="bg-gray-50 rounded-2xl shadow-2xl w-full max-w-4xl transform">
 
                             <div class="relative bg-[#0C3B2E] text-white p-5 text-center rounded-t-2xl">
-                                <h3 class="text-2xl font-bold">Potensi Dusun Timpik</h3>
+                                <h3 class="text-xl md:text-2xl font-bold">Potensi Dusun Timpik</h3>
                                 <p class="text-amber-300 text-sm">Detail Keunggulan Dusun</p>
                                 <button @click="showModal = false"
                                     class="absolute top-3 right-3 text-white/70 hover:text-white cursor-pointer p-1 rounded-full hover:bg-white/20 transition-colors">
@@ -378,7 +378,7 @@
                         <div
                             class="group bg-[#D9E6E6] rounded-xl shadow-lg p-5 w-full text-center transition-all duration-300 ease-in-out hover:-translate-y-1.5 hover:shadow-xl hover:bg-brand-dark">
                             <h3
-                                class="text-xl md:text-2xl font-bold text-brand-dark group-hover:text-white transition-colors duration-300">
+                                class="text-md md:text-2xl font-bold text-brand-dark group-hover:text-white transition-colors duration-300">
                                 Karangsalam</h3>
                             <button @click="showModal = true"
                                 class="mt-2 text-sm bg-white text-[#0C3B2E] border border-[#0C3B2E] hover:bg-[#0C3B2E] hover:text-white hover:border-white transition-colors duration-300 px-5 py-1 rounded-full cursor-pointer">
@@ -401,7 +401,7 @@
                                 x-transition:leave-end="opacity-0 scale-95"
                                 class="bg-gray-50 rounded-2xl shadow-2xl w-full max-w-4xl transform">
                                 <div class="relative bg-[#0C3B2E] text-white p-5 text-center rounded-t-2xl">
-                                    <h3 class="text-2xl font-bold">Potensi Dusun Karangsalam</h3>
+                                    <h3 class="text-lg md:text-2xl font-bold">Potensi Dusun Karangsalam</h3>
                                     <p class="text-amber-300 text-sm">Detail Keunggulan Dusun</p>
                                     <button @click="showModal = false"
                                         class="absolute top-3 right-3 text-white/70 hover:text-white cursor-pointer p-1 rounded-full hover:bg-white/20 transition-colors">
@@ -488,7 +488,7 @@
                                 x-transition:leave-end="opacity-0 scale-95"
                                 class="bg-gray-50 rounded-2xl shadow-2xl w-full max-w-4xl transform">
                                 <div class="relative bg-[#0C3B2E] text-white p-5 text-center rounded-t-2xl">
-                                    <h3 class="text-2xl font-bold">Potensi Dusun Kaliabon</h3>
+                                    <h3 class="text-xl md:text-2xl font-bold">Potensi Dusun Kaliabon</h3>
                                     <p class="text-amber-300 text-sm">Detail Keunggulan Dusun</p>
                                     <button @click="showModal = false"
                                         class="absolute top-3 right-3 text-white/70 hover:text-white cursor-pointer p-1 rounded-full hover:bg-white/20 transition-colors">
@@ -551,7 +551,7 @@
                                 x-transition:leave-end="opacity-0 scale-95"
                                 class="bg-gray-50 rounded-2xl shadow-2xl w-full max-w-4xl transform">
                                 <div class="relative bg-[#0C3B2E] text-white p-5 text-center rounded-t-2xl">
-                                    <h3 class="text-2xl font-bold">Potensi Dusun Gedangan</h3>
+                                    <h3 class="text-xl md:text-2xl font-bold">Potensi Dusun Gedangan</h3>
                                     <p class="text-amber-300 text-sm">Detail Keunggulan Dusun</p>
                                     <button @click="showModal = false"
                                         class="absolute top-3 right-3 text-white/70 hover:text-white cursor-pointer p-1 rounded-full hover:bg-white/20 transition-colors">
@@ -639,7 +639,7 @@
                                 x-transition:leave-end="opacity-0 scale-95"
                                 class="bg-gray-50 rounded-2xl shadow-2xl w-full max-w-4xl transform">
                                 <div class="relative bg-[#0C3B2E] text-white p-5 text-center rounded-t-2xl">
-                                    <h3 class="text-2xl font-bold">Potensi Dusun Geneng</h3>
+                                    <h3 class="text-xl md:text-2xl font-bold">Potensi Dusun Geneng</h3>
                                     <p class="text-amber-300 text-sm">Detail Keunggulan Dusun</p>
                                     <button @click="showModal = false"
                                         class="absolute top-3 right-3 text-white/70 hover:text-white cursor-pointer p-1 rounded-full hover:bg-white/20 transition-colors">
@@ -686,7 +686,7 @@
                                 x-transition:leave-end="opacity-0 scale-95"
                                 class="bg-gray-50 rounded-2xl shadow-2xl w-full max-w-4xl transform">
                                 <div class="relative bg-[#0C3B2E] text-white p-5 text-center rounded-t-2xl">
-                                    <h3 class="text-2xl font-bold">Potensi Dusun Kauman</h3>
+                                    <h3 class="text-xl md:text-2xl font-bold">Potensi Dusun Kauman</h3>
                                     <p class="text-amber-300 text-sm">Detail Keunggulan Dusun</p>
                                     <button @click="showModal = false"
                                         class="absolute top-3 right-3 text-white/70 hover:text-white cursor-pointer p-1 rounded-full hover:bg-white/20 transition-colors">
@@ -774,7 +774,7 @@
                                 x-transition:leave-end="opacity-0 scale-95"
                                 class="bg-gray-50 rounded-2xl shadow-2xl w-full max-w-4xl transform">
                                 <div class="relative bg-[#0C3B2E] text-white p-5 text-center rounded-t-2xl">
-                                    <h3 class="text-2xl font-bold">Potensi Dusun Kauman</h3>
+                                    <h3 class="text-xl md:text-2xl font-bold">Potensi Dusun Kauman</h3>
                                     <p class="text-amber-300 text-sm">Detail Keunggulan Dusun</p>
                                     <button @click="showModal = false"
                                         class="absolute top-3 right-3 text-white/70 hover:text-white cursor-pointer p-1 rounded-full hover:bg-white/20 transition-colors">
@@ -862,7 +862,7 @@
                                 x-transition:leave-end="opacity-0 scale-95"
                                 class="bg-gray-50 rounded-2xl shadow-2xl w-full max-w-4xl transform">
                                 <div class="relative bg-[#0C3B2E] text-white p-5 text-center rounded-t-2xl">
-                                    <h3 class="text-2xl font-bold">Potensi Dusun Sumber</h3>
+                                    <h3 class="text-xl md:text-2xl font-bold">Potensi Dusun Sumber</h3>
                                     <p class="text-amber-300 text-sm">Detail Keunggulan Dusun</p>
                                     <button @click="showModal = false"
                                         class="absolute top-3 right-3 text-white/70 hover:text-white cursor-pointer p-1 rounded-full hover:bg-white/20 transition-colors">
@@ -978,7 +978,7 @@
                                 x-transition:leave-end="opacity-0 scale-95"
                                 class="bg-gray-50 rounded-2xl shadow-2xl w-full max-w-4xl transform">
                                 <div class="relative bg-[#0C3B2E] text-white p-5 text-center rounded-t-2xl">
-                                    <h3 class="text-2xl font-bold">Potensi Dusun Ngasinan</h3>
+                                    <h3 class="text-xl md:text-2xl font-bold">Potensi Dusun Ngasinan</h3>
                                     <p class="text-amber-300 text-sm">Detail Keunggulan Dusun</p>
                                     <button @click="showModal = false"
                                         class="absolute top-3 right-3 text-white/70 hover:text-white cursor-pointer p-1 rounded-full hover:bg-white/20 transition-colors">
@@ -1064,7 +1064,7 @@
                                 x-transition:leave-end="opacity-0 scale-95"
                                 class="bg-gray-50 rounded-2xl shadow-2xl w-full max-w-4xl transform">
                                 <div class="relative bg-[#0C3B2E] text-white p-5 text-center rounded-t-2xl">
-                                    <h3 class="text-2xl font-bold">Potensi Dusun Bogo</h3>
+                                    <h3 class="text-xl md:text-2xl font-bold">Potensi Dusun Bogo</h3>
                                     <p class="text-amber-300 text-sm">Detail Keunggulan Dusun</p>
                                     <button @click="showModal = false"
                                         class="absolute top-3 right-3 text-white/70 hover:text-white cursor-pointer p-1 rounded-full hover:bg-white/20 transition-colors">
@@ -1171,7 +1171,7 @@
                                 x-transition:leave-end="opacity-0 scale-95"
                                 class="bg-gray-50 rounded-2xl shadow-2xl w-full max-w-4xl transform">
                                 <div class="relative bg-[#0C3B2E] text-white p-5 text-center rounded-t-2xl">
-                                    <h3 class="text-2xl font-bold">Potensi Dusun Jetak</h3>
+                                    <h3 class="text-xl md:text-2xl font-bold">Potensi Dusun Jetak</h3>
                                     <p class="text-amber-300 text-sm">Detail Keunggulan Dusun</p>
                                     <button @click="showModal = false"
                                         class="absolute top-3 right-3 text-white/70 hover:text-white cursor-pointer p-1 rounded-full hover:bg-white/20 transition-colors">
@@ -1211,7 +1211,7 @@
                         <div
                             class="group bg-[#D9E6E6] rounded-xl shadow-lg p-5 w-full text-center transition-all duration-300 ease-in-out hover:-translate-y-1.5 hover:shadow-xl hover:bg-brand-dark">
                             <h3
-                                class="text-xl md:text-2xl font-bold text-brand-dark group-hover:text-white transition-colors duration-300">
+                                class="text-md md:text-2xl font-bold text-brand-dark group-hover:text-white transition-colors duration-300 text-justify">
                                 Lempuyangan</h3>
                             <button @click="showModal = true"
                                 class="mt-2 text-sm bg-white text-[#0C3B2E] border border-[#0C3B2E] hover:bg-[#0C3B2E] hover:text-white hover:border-white transition-colors duration-300 px-5 py-1 rounded-full cursor-pointer">
@@ -1234,7 +1234,7 @@
                                 x-transition:leave-end="opacity-0 scale-95"
                                 class="bg-gray-50 rounded-2xl shadow-2xl w-full max-w-4xl transform">
                                 <div class="relative bg-[#0C3B2E] text-white p-5 text-center rounded-t-2xl">
-                                    <h3 class="text-2xl font-bold">Potensi Dusun Lempuyangan</h3>
+                                    <h3 class="text-md md:text-2xl font-bold">Potensi Dusun Lempuyangan</h3>
                                     <p class="text-amber-300 text-sm">Detail Keunggulan Dusun</p>
                                     <button @click="showModal = false"
                                         class="absolute top-3 right-3 text-white/70 hover:text-white cursor-pointer p-1 rounded-full hover:bg-white/20 transition-colors">
@@ -1297,7 +1297,7 @@
                                 x-transition:leave-end="opacity-0 scale-95"
                                 class="bg-gray-50 rounded-2xl shadow-2xl w-full max-w-4xl transform">
                                 <div class="relative bg-[#0C3B2E] text-white p-5 text-center rounded-t-2xl">
-                                    <h3 class="text-2xl font-bold">Potensi Dusun Cengklik</h3>
+                                    <h3 class="text-xl md:text-2xl font-bold">Potensi Dusun Cengklik</h3>
                                     <p class="text-amber-300 text-sm">Detail Keunggulan Dusun</p>
                                     <button @click="showModal = false"
                                         class="absolute top-3 right-3 text-white/70 hover:text-white cursor-pointer p-1 rounded-full hover:bg-white/20 transition-colors">
