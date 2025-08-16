@@ -9,7 +9,7 @@
     <title>Admin | Daftar Akun</title>
 
     <!-- Favicon -->
-    <link rel="icon" type="image/png" href="{{ asset('images/logo-timpik.png') }}">
+    <link rel="icon" type="image/png" href="{{ asset('/public/images/logo-timpik.png') }}">
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -35,7 +35,7 @@
         <!-- Logo -->
         <div class="flex justify-center mb-6">
             <a href="/">
-                <img src="{{ asset('images/logo-timpik.png') }}" alt="Logo Desa Timpik" class="h-20 w-auto">
+                <img src="{{ asset('/public/images/logo-timpik.png') }}" alt="Logo Desa Timpik" class="h-20 w-auto">
             </a>
         </div>
 
