@@ -9,7 +9,7 @@
 
     <link rel="canonical" href="https://desatimpiksusukan.id/sejarah-desa" />
 
-    <link rel="icon" type="image/png" href="{{ asset('images/logo-timpik.png') }}">
+    <link rel="icon" type="image/png" href="{{ asset('/public/images/logo-timpik.png') }}">
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -85,7 +85,7 @@
         <!-- Hero Section -->
         <section class="relative h-80 md:h-120 w-full flex items-center justify-center text-white -mt-20">
             <div class="absolute inset-0 overflow-hidden">
-                <img src="{{ asset('images/timpik_sawah2.jpg') }}"
+                <img src="{{ asset('/public/images/timpik_sawah2.jpg') }}"
                     onerror="this.onerror=null;this.src='https://placehold.co/1920x1080/445566/FFFFFF?text=Latar+Belakang';"
                     alt="Pemandangan sawah Desa Timpik"
                     class="w-full h-full object-cover transform translate-y-10">
@@ -201,7 +201,7 @@
                     <div class="w-full lg:w-2/5 flex justify-center items-center">
                         <div
                             class="relative group transition-all duration-500 hover:scale-105 shadow-2xl rounded-3xl overflow-hidden border-4 border-[#E8C187]/50 bg-white/50">
-                            <img src="{{ asset('images/kantor-timpik.png') }}" alt="Kantor Desa Timpik"
+                            <img src="{{ asset('/public/images/kantor-timpik.png') }}" alt="Kantor Desa Timpik"
                                 class="w-[340px] md:w-[410px] h-auto object-cover block rounded-3xl drop-shadow-xl transition duration-500 group-hover:brightness-105">
                             <div
                                 class="absolute inset-0 bg-gradient-to-tr from-[#E8C187]/20 to-transparent pointer-events-none rounded-3xl">
