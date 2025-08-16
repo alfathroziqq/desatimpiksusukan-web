@@ -162,7 +162,7 @@
         </section>
 
         <!-- Section Mapping -->
-        <section class="py-12 font-['Poppins',sans-serif] mb-6 text-[#0C3B2E]">
+        <section class="font-['Poppins',sans-serif] mb-8 text-[#0C3B2E]">
             <div class="container mx-auto px-8 sm:px-12 lg:px-40" x-data="{ modalOpen: false, modalImg: '' }">
 
                 <!-- Grid 2 kolom dengan nama -->
