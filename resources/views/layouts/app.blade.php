@@ -21,7 +21,7 @@
         <meta name="twitter:description" content="Dapatkan layanan administrasi, info desa, dan berita terkini langsung dari website resmi kami Desa Timpik, Kecamatan Susukan, Kabupaten Semarang.">
         <meta name="twitter:image" content="{{ asset('/public/images/logo-timpik.png') }}">
 
-        <link rel="icon" type="image/png" href="{{ asset('/public/images/logo-timpik.png') }}">
+        <link rel="icon" type="image/png" href="{{ asset('images/logo-timpik.png') }}">
 
         <!-- Fonts -->
         <link rel="preconnect" href="https://fonts.bunny.net">
