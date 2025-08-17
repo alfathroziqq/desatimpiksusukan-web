@@ -5,23 +5,41 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="csrf-token" content="{{ csrf_token() }}">
 
-        <title>@yield('title', 'Website Desa Timpik')</title>
+        <title>@yield('title', 'Desa Timpik | Website Resmi')</title>
 
         <meta name="description" content="Informasi, pelayanan publik, dan berita terbaru dari Desa Timpik, Kecamatan Susukan, Kabupaten Semarang.">
         <meta name="keywords"
             content="Desa Timpik, Susukan, Kabupaten Semarang, informasi desa, pelayanan publik, berita desa, sejarah desa, tata kelola desa, peta potensi desa, website desa, pemerintahan desa, Jawa Tengah">
 
-        <meta property="og:title" content="{{ config('app.name', 'Desa Timpik | Website Resmi') }}" />
-        <meta property="og:description" content="Dapatkan layanan administrasi, info desa, dan berita terkini langsung dari website resmi kami Desa Timpik, Kecamatan Susukan, Kabupaten Semarang." />
+        <meta property="og:site_name" content="Desa Timpik | Website Resmi" />
+        <meta property="og:title" content="@yield('title', 'Desa Timpik | Website Resmi')" />
+        <meta property="og:description" content="Dapatkan layanan administrasi, info desa, dan berita terkini langsung dari website resmi Desa Timpik, Kecamatan Susukan, Kabupaten Semarang." />
         <meta property="og:image" content="{{ asset('/public/images/logo-timpik.png') }}" />
         <meta property="og:url" content="{{ url()->current() }}" />
 
         <meta name="twitter:card" content="summary_large_image">
-        <meta name="twitter:title" content="{{ config('app.name', 'Desa Timpik | Website Resmi') }}">
-        <meta name="twitter:description" content="Dapatkan layanan administrasi, info desa, dan berita terkini langsung dari website resmi kami Desa Timpik, Kecamatan Susukan, Kabupaten Semarang.">
+        <meta name="twitter:title" content="@yield('title', 'Desa Timpik | Website Resmi')">
+        <meta name="twitter:description" content="Dapatkan layanan administrasi, info desa, dan berita terkini langsung dari website resmi Desa Timpik, Kecamatan Susukan, Kabupaten Semarang.">
         <meta name="twitter:image" content="{{ asset('/public/images/logo-timpik.png') }}">
 
         <link rel="icon" type="image/png" href="{{ asset('images/logo-timpik.png') }}">
+
+        <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "WebSite",
+            "name": "Desa Timpik",
+            "url": "https://desatimpiksusukan.id",
+            "publisher": {
+                "@type": "Organization",
+                "name": "Pemerintah Desa Timpik",
+                "logo": {
+                "@type": "ImageObject",
+                "url": "https://desatimpiksusukan.id/public/images/logo-timpik.png"
+                }
+            }
+        }
+        </script>
 
         <!-- Fonts -->
         <link rel="preconnect" href="https://fonts.bunny.net">
